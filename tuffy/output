@@ -1,0 +1,4 @@
+1.0000	Likes("John", "Sue")
+1.0000	Likes("Eric", "Sue")
+0.0000	Likes("John", "Mary")
+0.0000	Likes("Eric", "Mary")
