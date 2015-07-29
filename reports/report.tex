@@ -1,0 +1,741 @@
+%%%%%%%%%%%class file
+\documentclass{imamci}
+
+
+%this command gives the journal no. 
+%
+\jno{dnnxxx}
+%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%
+%call  packages
+\usepackage{natbib}
+%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm,bm,mathrsfs}
+
+%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%
+%this files contains Theorem styles based in IMA JOURNALS
+%
+\input standard.tex
+
+%%%%%%%%%%%%%
+
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\numberwithin{equation}{section}
+\def\citeasnoun{\cite}
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%
+\title{Article summarization}
+\author{ {\sc David A.PANOU}\\[2pt]
+School of Mathematics, University of Manchester, \\
+ Sackville Street, Manchester, M60 1QD, UK.\\[6pt]
+{\rm [Received on 18 February 2005]}\vspace*{6pt}}
+\pagestyle{headings}
+\markboth{C. E. POWELL}{\rm PARAMETER-FREE H(DIV) PRECONDITIONING}
+\maketitle
+
+%%%%%%%%%%%%%%%%%abstract style
+%Two grouping braces are necessary in abstract environment
+%first argument contains abstract text; second argument contains keywords
+%text
+
+\begin{abstract}
+{
+Des différentes applications des Markov Logic Network
+
+Mixed finite element formulations of generalised diffusion problems yield linear systems with  ill-conditioned, symmetric and indefinite coefficient matrices. Preconditioners with optimal work complexity that do not rely on artificial parameters are essential. We implement lowest-order Raviart-Thomas elements and analyse practical issues associated with so-called $`H({\it
+div})$ preconditioning'. Properties of the exact scheme are discussed in  Powell \& Silvester (2003), `Optimal preconditioning for Raviart-Thomas mixed formulation of second-order elliptic problems,' \textit{SIAM J. Matrix Anal. Appl.,} \textbf{25}(3), 718--738. We extend the discussion, here, to practical implementation, the components of which are any available multilevel solver for a weighted $H({\it div})$ operator and a pressure mass matrix. A new bound is established for the eigenvalue spectrum of the preconditioned system matrix and extensive numerical results are presented.}
+{saddle point problems, mixed finite elements, Raviart-Thomas, preconditioning.}
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%section A%%%%%%%%%
+\section{Introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Let $\Omega$ be a polygon in $I\!\!R^{d} $ $(d=2,3)$ and consider the boundary value-problem,
+\begin{align}\label{mixedcont}
+\begin{split}
+\mathcal{A}^{-1}\vec{u}-\nabla p &=  0,\\
+\nabla \cdot \vec {u} &= -f \quad  \mbox{in } \Omega,\\
+p &= g
+\quad\ \ \ \, \mbox{on } \partial\Omega_{D},\\
+\vec {u}\cdot\vec {n} &= 0
+\quad\quad \mbox{on } \partial\Omega_{N},
+\end{split}
+\end{align}
+where $\partial\Omega_{D}\neq \emptyset$ and $\mathcal{A} = \mathcal{A}(\vec{x})$
+is a $d \times d$ bounded, symmetric and uniformly positive definite matrix-valued
+function with minimum eigenvalue bounded away from zero. 
+
+%%%%%%%%%%%Section B
+\subsection{Second level section}
+%%%%%%%%%%%%%%%%%%%
+
+The mixed first-order system (\ref{mixedcont}) occurs in models of fluid
+flow in porous media (see Russell \& Wheeler (1983) and Ewing {\it et al.}
+(1983).) The macroscopic flow of groundwater satisfies $\vec{u} =   -k\mu^{-1} \nabla\break
+P_{R},$ where $\vec{u}$ denotes fluid discharge, $P_{R}$ is `residual pressure',
+$k$ is the permeability coefficient and $\mu$ is viscosity. Coupling Darcy's
+law with mass conservation yields (\ref{mixedcont}) with $f=0$, $\mathcal{A}
+= -\frac{k}{\mu}\mathcal{I}$ and $p:=P_{R}$. To fix ideas, we call $p$ and
+$\vec{u}= \mathcal{A} \nabla p$ the `pressure' and `velocity' solutions,
+respectively.  Flow domains are often comprised of different media with spatially
+varying permeability coefficients, leading to heterogeneous problems with
+discontinuous $\mathcal{A}.$ In stratified media, the entries of $\mathcal{A}$
+corresponding to different co-ordinate directions vary in magnitude, yielding
+anisotropic $\mathcal{A}.$ Mixed finite element methods are favoured when
+$\vec{u}$ is the variable of interest as post-processing primal solutions
+leads to loss of accuracy. Low order mixed methods also conserve mass locally.
+
+The Krylov subspace method \textsc{minres} (see Paige \& Saunder (1975)) is an
+optimal solver for (\ref{RT_matrix}). The $k$th iterate minimises the Euclidean
+norm of the $k$th residual error over the corresponding Krylov space and,
+since $C$ is sparse, the cost per iteration depends linearly on the problem
+size. Popular alternative soltution schemes include Uzawa's method and the
+augmented Lagrangian method (see Fortin \& Glowinski (1983, Ch. 1)). However, these
+methods require nested iteration and the user's choice of relaxation parameter
+determines the convergence of the outer iteration. Deficiencies associated
+with this are highlighted in Rusten \& Winther (1992). Fast convergence is obtained
+for the outer iteration if the relaxation parameter is tuned in the right
+way but for the augmented Lagrangian method, that cripples the inner-iteration.
+Preconditioners for the inner-solve have been suggested, see Hiptmair (1997),
+but optimal parameter values have not been discussed. Vassilevski \& Lazarov
+(1996)
+use \textsc{minres} but  introduce artificial parameters. Applying \textsc{minres}
+directly to (\ref{RT_matrix}) is simpler and more user-friendly.
+%%%%%%%%%%%%%%this is lemma style
+\begin{lemma}\label{identitybd}
+The $(n+m)$ eigenvalues of the generalised eigenvalue problem,
+\begin{equation}
+\left( \begin{array}{@{\ }cc@{\ }}
+\mathnormal{A}_{I} & \mathnormal{B}^{T} \\
+\mathnormal{B} & 0
+\end{array} \right) \left( \begin{array}{@{\ }c@{\ }} 
+ \underline{u} \\ 
+ \underline{p}
+\end{array} \right) = \sigma\left(\begin{array}{@{\ }cc@{\ }}
+\mathnormal{A}_{I} + \mathnormal{D} & 0 \\
+0 & \mathnormal{N} 
+\end{array}\right) \left(\begin{array}{@{\ }c@{\ }} 
+ \underline{u} \\
+ \underline{p}
+\end{array}\right),\label{RT_matrix}
+\end{equation}
+arising in the Raviart-Thomas approximation of (\ref{neweq}) are bounded by
+constants independent of $h$ and lie in the intervals $\left[ -1, -\beta_{*}^{2}
+\right] \cup \left[ 1 \right],$ where $\beta_{*}$ is the discrete inf-sup
+constant in (\ref{neweq}).
+\end{lemma}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}
+It remains to prove the last assertion. The idea is to take ${\xi}$ equal to ${\rm grad}\,\theta$ in the first line of (2.10). This yields
+$$
+\int_\Omega \vert {\hbox{grad\,}}\theta\vert^2\,{\rm d} {\textbf{\textit{x}}} = 0.
+$$
+So, since $\Omega$ is connected, $\theta$ is a constant and its nullity follows
+from the boundary conditions that it satisfies on $\Gamma_0$.
+\end{proof}
+
+
+\noindent When $\mathcal{A}=\mathcal{I},$ choosing $\mathnormal{P}_{1}$ and
+$\mathnormal{P}_{2}$ to represent the norms for which stability holds, leads
+to an $h$-optimal eigenvalue bound. For problems with general coefficient
+tensors, however, $\mathnormal{P}$ must also supply scaling with respect
+to $\mathcal{A}$. We choose $P_{1} = A+D,$ representing the weighted norm
+$\| \cdot \|_{{\it div}, \mathcal{A}},$ induced by the inner-product (\ref{Vconstants}).
+
+\section{Practical $H({\it div})$ preconditioning} 
+
+Now, let $\mathnormal{V}$ be \textit{any} symmetric and positive
+definite approximation to $\mathnormal{H}=A+D.$ An ideal choice is a V-cycle
+of multigrid, the cost of which is known to depend linearly on the problem
+size (see Trottenberg {\it et al.} (2001, p. 74).) However, \textit{any} available approximation
+can be substituted, provided that there exist positive constants $\theta$
+and $\Theta,$ satisfying,
+\begin{eqnarray}\label{Vconstants}
+0 < \theta \le \frac{\underline{u}^{T}\mathnormal{H}\underline{u}}{\underline{u}^{T}
+\mathnormal{V}\underline{u}} \le  \Theta \le  1  \quad \forall\, \underline{u} \in I\!\!R^{n}\backslash\{\underline{0}\}. 
+\end{eqnarray}
+The condition $\Theta \le 1$ is not restrictive, since the chosen $\mathnormal{V}$
+can always be rescaled. It is purely to simplify presentation in the sequel.
+In section 5 we perform numerical computations with a particular $V$ and
+compute corresponding values of $\theta$ and $\Theta.$ 
+
+Now consider the preconditioner,
+\begin{equation}\label{pracprec}
+P= \left(\begin{array}{@{\ }cc@{\ }}
+\mathnormal{V}& 0 \\
+0 & \mathnormal{N} 
+\end{array}\right).
+\end{equation}
+We require bounds for the eigenvalues of $P^{-1}C.$ To simplify notation
+further, let\footnote{In the context of $\mathscr{H}$-matrices, this twofold hierarchy is called $\mathscr{H}^{2}$-format.}
+\begin{equation}\label{exacta}
+a = \left(\frac{c\mu_{min}}{\mid T \mid_{min}  + \mu_{min}}\right), 
+\end{equation}
+so that the ideal bound (\ref{pracprec}) reads $[-1, -a] \cup [1]$. In the
+proof, given in Powell \& Silvester (2003, Lemma 2.3), we establish that the negative
+eigenvalues of (\ref{exacta}) are the values $\left\{ \lambda \right\}$
+satisfying, $BH^{-1}\break B^{T}\underline{p} = - \lambda N \underline{p}.$ In other
+words,
+\begin{eqnarray}\label{newadded}
+ 0 < a  \le  \frac{\underline{p}^{T}BH^{-1}B^{T}\underline{p}}{\underline{p}^{T}N
+\underline{p}} \le  1 \quad \forall \, \underline{p} \in I\!\!R^{m}\backslash\{\underline{0}\}.
+\end{eqnarray}
+
+%%%%%%%%%%%%%%this is theorem style
+\begin{theorem}\label{bigresult}
+The $(n+m)$ eigenvalues $\{\lambda_{i}\}_{i=1}^{n+m}$ of the generalised
+eigenvalue problem,
+\begin{equation}\label{approxprec} 
+\left( \begin{array}{@{\ }cc@{\ }}
+\mathnormal{A} & \mathnormal{B}^{T} \\
+\mathnormal{B} & 0
+\end{array} \right) \left( \begin{array}{@{\ }c@{\ }} 
+ \underline{u} \\
+ \underline{p} 
+\end{array} \right) = \lambda\left(\begin{array}{@{\ }cc@{\ }}
+ \mathnormal{V}& 0 \\
+ 0 & \mathnormal{N} 
+ \end{array}\right) \left(\begin{array}{@{\ }c@{\ }} 
+ \underline{u} \\ 
+ \underline{p}
+\end{array}\right),
+\end{equation}
+in the Raviart-Thomas approximation of (\ref{approxprec}), lie in the union of the
+intervals, 
+\begin{equation}\label{bigsimple} 
+\left[ -1,\frac{1}{2}\left(\theta\left(1-a\right)-\sqrt{\theta^{2}\left(a
+-1\right)^{2}+4a\theta}\right) \right] \cup  [\theta, 1], 
+\end{equation}
+where $\theta$ is the constant satisfying (\ref{Vconstants}) and $a$ is the
+constant defined in (\ref{exacta}).
+\end{theorem}
+%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%% proof style
+\begin{proof}
+First note that since the eigenvalues $\{\lambda_{i}\}_{i=1}^{m+n}$ satisfy,
+ \[
+\mathnormal{A}\underline{u} + \mathnormal{B}^{T}\underline{p}
+= \lambda V\underline{u},\quad \quad\mathnormal{B}\underline{u} = \lambda
+\mathnormal{N}\underline{p},
+ \]
+eliminating $\underline{p}$ yields $\lambda \underline{u}^{T}A\underline{u}
++ \underline{u}^{T}D\underline{u} = \lambda^{2}\underline{u}^{T}V\underline{u}$.
+Applying \eqref{Vconstants} yields,
+\begin{eqnarray}
+\label{neweq} \lambda^{2}\underline{u}^{T}H\underline{u} \le \lambda 
+\underline{u}^{T}A\underline{u} + \underline{u}^{T}D\underline{u}  \le  
+\lambda^{2}\theta^{-1}\underline{u}^{T}H\underline{u}.
+\end{eqnarray}
+From the left inequality we obtain,
+\begin{eqnarray}
+\label{added} \left(\lambda^{2} - \lambda\right)\underline{u}^{T}A\underline{u}
++ \left(\lambda^{2} - 1 \right)\underline{u}^{T}D\underline{u} \le  0,
+\end{eqnarray}
+and since $A$ is positive definite and $D$ is semi-positive definite, we
+immediately establish $|\lambda| \le 1.$ The right inequality in \eqref{neweq}
+yields,
+ \[
+\left(1 - \lambda\right) \underline{u}^{T} D
+\underline{u}  \le  \left(\lambda^{2}\theta^{-1} - \lambda
+\right) \underline{u}^{T} H \underline{u}.
+ \]
+Since $0 \le 1-\lambda $ it follows that $0  \le  \lambda \left(\lambda\theta^{-1}
+- 1 \right)$. Hence if $\lambda >0$, we have $\lambda \ge \theta$, and the
+bound for the positive eigenvalues is proved. 
+\begin{BL}
+\item $\overline{\Omega} = \bigcup_{T \in\mathcal{M}} \overline T$;
+
+\item for any $(T,T') \in \mathcal{M}^2$, $T \not =  T'$ $ \Longrightarrow T \cap T' = \emptyset$;  
+
+\item for any $(T,T') \in \mathcal{M}^2$, $\overline T \cap \overline T' = \emptyset$ or $\overline T \cap \overline T'$ is a common edge (or a face in three-space dimensions) or a common vertex of $T$ and $T'$.
+\end{BL}
+\begin{definition}
+Let 
+\begin{equation}
+\sum_{j=0}^{k}\alpha_{j}u^{n+j-k}={\Delta t}\sum_{j=0}^{k}%
+\beta_{j}f(u^{n+j-k})  \label{eqn:4}
+\end{equation}
+be a linear multistep method for an ordinary differential equation %
+\mbox{$u^{\prime}(t)=f(u(t))$}, where $u^{n}\approx u(t_{n})$. Define 
+\begin{equation*}
+\gamma(\zeta):=\frac{\sum_{j=0}^{k}\alpha_{j}\zeta^{k-j}}{%
+\sum_{j=0}^{k}\beta_{j}\zeta^{k-j}}
+\end{equation*}
+as the quotient of its generating polynomials. %
+\end{definition}
+\begin{algorithm}
+Since $u$ is also the solution to (2.1), from (2.2)
+we have that $b(v,p)=0$ for all $v\in X$. Thanks to the inf--sup condition (2.1),
+the result follows immediately.
+\end{algorithm}
+
+
+
+Now assume that $\lambda <0$. Eliminating $\underline{u}$ yields,
+\begin{equation}
+\label{negeigs} B\left(\lambda V-A\right)^{-1}B^{T}
+\underline{p} = \lambda N \underline{p}.
+\end{equation}
+The values of $\lambda$ satisfying (\ref{negeigs})
+are the eigenvalues of the matrix,
+\begin{align*}
+\mathnormal{N}^{-\frac{1}{2}}\mathnormal{B}\left(\lambda
+V - A \right)^{-1}\mathnormal{B}^{T}\mathnormal{N}^{-\frac{1}{2}}
+& = \mathnormal{N}^{-\frac{1}{2}}\mathnormal{B}\left(\lambda V -
+H
++ D\right)^{-1}\mathnormal{B}^{T}\mathnormal{N}^{-\frac{1}{2}} \\
+ & =\mathnormal{N}^{-\frac{1}{2}}\mathnormal{B}\left(\lambda V - H
++ B^{T}N^{-1}B\right)^{-1}\mathnormal{B}^{T}\mathnormal{N}^{-\frac{1}{2}}\\
+ &= \mathnormal{N}^{-\frac{1}{2}}\mathnormal{B}Y^{-\frac{1}{2}}\left(I
++ Y^{-\frac{1}{2}} B^{T}N^{-1}B Y^{-\frac{1}{2}}\right)^{-1} Y^{-\frac{1}{2}}
+ \mathnormal{B}^{T}\mathnormal{N}^{-\frac{1}{2}} \\
+ & =\mathnormal{X}\left(\mathnormal{I} + \mathnormal{X}^{T}\mathnormal{X}
+ \right)^{-1}\mathnormal{X}^{T},
+\end{align*}
+where, here, $\mathnormal{X} = \mathnormal{N}^{-\frac{1}{2}}\mathnormal{B}
+\mathnormal{Y}^{-\frac{1}{2}}$ and $Y=\lambda V - H$. Applying the 
+Sherman-Morrison-Woodbury formula to $\left(I + XX^{T} \right)^{-1}$ yields,
+\begin{equation}
+\label{SMW}
+X\left(I + XX^{T} \right)^{-1}X^{T}= X\left(I-X^{T}\left(I + XX^{T} \right)^{-1}
+X\right)X^{T}.
+\end{equation}
+Let $\underline{v}$ be an eigenvector of $XX^{T}$ and let $\sigma$ denote
+the corresponding eigenvalue. Then, with (\ref{SMW}), we obtain,
+\begin{align*}
+ X\left(I + XX^{T} \right)^{-1}X^{T}\underline{v} & =   XX^{T}\underline{v}
+ - XX^{T}\left(I + XX^{T} \right)^{-1}XX^{T}\underline{v} \\
+ & =  \sigma \underline{v} - \left(\frac{\sigma^{2}}{1+\sigma}\right) \underline{v}
+ =  \left( \frac{\sigma}{1 + \sigma}\right) \underline{v}.
+\end{align*}
+Hence, the values $\{\lambda\}$ we are seeking in (\ref{negeigs}) satisfy,
+\begin{equation}\label{sl} 
+\lambda_{i} = \frac{\sigma_{i}}{1 +\sigma_{i}}, 
+\end{equation} 
+where each $\sigma_{i}$ is an eigenvalue of,
+\begin{equation}
+\label{needthis} B\left(\lambda_{i}V - H
+\right)^{-1}B^{T}\underline{p} = \sigma N \underline{p}.
+\end{equation}
+We now can obtain a bound for these values by exploiting the spectral equivalence
+of $H$ and $V$ defined by (\ref{Vconstants}). (Note that we have no readily
+available information about the spectral equivalence of the leading blocks
+$A$ and $V$.)
+\end{proof}
+
+Consider, first, the eigenvalues $\{ \mu \}$ of,
+\begin{eqnarray}
+\label{star2} \left(\lambda V - H \right)^{-1} \underline{u} =
+\mu  H^{-1} \underline{u}.
+\end{eqnarray}
+Since $\left(\lambda V - H\right)$ is negative definite and $H^{-1}$ is positive
+definite, the values of $\mu$ are negative. Rearranging \eqref{star2} and
+applying (\ref{Vconstants}) yields $\theta \le \lambda \mu \left(\mu + 1\right)^{-1}
+\le  1$. Recalling that $\theta >0$, $\mu<0$ and $\lambda<0$, we find that,
+\begin{equation}
+\label{star3} \mu  \in \left[ \frac{1}{\lambda - 1},
+\frac{\theta}{\lambda - \theta} \right].
+\end{equation}
+
+%%%%%%%%%remark style
+\begin{remark}
+When $\theta = 1$, we recover the eigenvalue bound (\ref{eigs1}).
+\end{remark}
+
+\begin{corollary}
+\label{Corfdee}Let the assumptions of Theorem 2.1 be satisfied.
+Let $\Delta t\sim h^{m+3/2}$ and choose $\varepsilon\sim h^{7m/2+25/4}$.
+Then, the solution $\tilde{\phi}_{\Delta t,h}$ exists and converges with
+the optimal rate
+\begin{equation*}
+\|\tilde{\phi}_{\Delta t,h}^{n}-\phi(\cdot,t_{n})
+\|_{H^{-1/2}(\Gamma)}\leq C_{g}(T)
+h^{m+3/2}\sim C_{g}(T) \Delta t^{2}.
+\end{equation*}
+\end{corollary}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%This is table style%%%%
+%This \tblcaption styles contains 2 argument
+%first argument is caption style; second argument is table body style
+%\tblhead defines table heading style
+%\lastline defines last line of the table 
+\begin{table}[!b] %T1
+\tblcaption{Eigenvalues of  $V^{-1}H$, unit coefficients}
+{\mbox{\tabcolsep=18pt\begin{tabular}{@{}cccc@{}}
+\tblhead{$h$ & $\frac{1}{4}$  & $\frac{1}{8}$ &$\frac{1}{16}$\\[-9.5pt]}\\[-9.5pt]
+$\theta$ & 0.5938 & 0.4595 & 0.4273    \\
+$\Theta$ &  1 & 1 &1 \lastline
+\end{tabular}
+\label{eigs1}
+}}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%This is table style with notes
+%
+\begin{table}[b!] %T2
+\tblcaptionnotes{Theoretical bounds and observed eigenvalues,
+unit coefficients}
+{\mbox{\tabcolsep=10pt\begin{tabular}{@{}ccc@{}}
+\tblhead{$h$ & $bounds^{a}$ &$observed^{b}$\\[-11pt]}\\[-9.5pt]
+$\frac{1}{4}$   &$[-0.9983,\, -0.7381]  \cup  [0.5938 ,1]$ &
+$[-0.9879, \, -0.8507] \cup [0.5943 ,1] $\\[3pt]
+$\frac{1}{8}$   &  $[-0.9996, \, -0.6504] \cup [0.4595 ,1]$
+&$[-0.9972, \, -0.8438] \cup [0.4598 ,1]$\\[3pt]
+$\frac{1}{16}$  &  $[-0.9999, \, -0.6503] \cup [0.4273 ,1]$ &
+$[-0.9994, \, -0.8481] \cup [0.4273 ,1] $\\[-9pt] \lastline
+\end{tabular}
+\label{Neigs2}
+}}{$^a$ Iteration counts obtained with the ideal preconditioner are
+listed in columns 2--3 of Table 2\\$^b$ The negative eigenvalues
+of the preconditioned saddle point system.}\vspace*{-2pt}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%example style
+\begin{example}
+Next, introduce a jump in the coefficient and set $\mathcal{A} = \alpha \mathcal{I}$
+in one quadrant of $\Omega$ so that $\mu_{min} \to 0$ in (\ref{exacta})
+as $\alpha \to 0$ (see Powell \& Silvester (2003).) Values of $\theta$ are listed
+in Table \ref{eigs1};  $\Theta =1$ in all cases. The approximation to $\mathcal{H
+}_{\mathcal{A}}$ is $\mathcal{A}$-optimal and $h$-optimal. The negative eigenvalues
+of the preconditioned saddle point system, for $\alpha = 10^{-3}$ and $10^{-6}$
+are listed in Tables~\ref{eigs1}--\ref{Neigs2}. Observe that the right-hand
+bound for the negative eigenvalues is tighter as $\alpha \to 0.$ The eigenvalues
+of the preconditioned saddle point system, for fixed $h$ and varying $\alpha$
+are plotted in Fig. \ref{approxeig}. The scale on the $y$-axis corresponds
+to values of $\alpha \in \left[10^{-6}, 10^{6}\right]$ and each line of the
+plot depicts the eigenvalues for a different value of $\alpha.$ 
+
+
+ Clearly, for small values $\alpha < <1$, \textsc{minres} convergence will
+deteriorate. Iteration counts obtained with the ideal preconditioner are
+listed in columns 2--4 of Table 1. Counts for the multigrid
+version are given in columns 5--7. As Theorem \ref{bigresult} predicts, the
+multigrid preconditioner exhibits exactly the same asymptotic behaviour as
+the ideal version as $\alpha \to 0$. 
+
+
+
+Clearly, for small values $\alpha < <1$, \textsc{minres} convergence will
+deteriorate. Iteration counts obtained with the ideal preconditioner are
+listed in columns 2--4 of Table 1. Counts for the multigrid
+version are given in columns 5--7. As Theorem \ref{bigresult} predicts, the
+multigrid preconditioner exhibits exactly the same asymptotic behaviour as
+the ideal version as $\alpha \to 0$. Note that the deterioration in convergence
+has nothing to do with the chosen multigrid solver. It performs optimally,
+with respect to $h$ and $\mathcal{A}.$ In this simple case, the deterioration
+can be corrected by rescaling $\mathcal{A}$ so that the minimum value of
+any coefficient is unity.
+\end{example}
+\begin{case}
+  The operator $M$ is clearly bounded; let us prove that it also has closed
+  range. To see this, use the existence of a bounded extension
+  operator from $H^2(\Omega)$ to $H^2(T^2)$ to observe that the range of
+  $M$ is $(M)=\{(\phi,\gamma)^T\in \phi_{|\Omega^c}=0\}$. By the continuity of the restriction operator we have that this set is closed.
+  
+  An operator between two Hilbert spaces which is bounded and has
+  closed range has a bounded Moore--Penrose pseudoinverse (see, e.g. Arnold
+  {\it et al.}, 1997). Thus, the pseudoinverse $M^\dagger$ of $M$ exists
+  and is bounded.
+\end{case}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\markboth{C. E. POWELL}{\rm PARAMETER-FREE H(DIV) PRECONDITIONING}
+
+
+\section{Concluding remarks} 
+Motivated by standard stability theory and discussion in Arnold {\it et al.}
+(2000) and Powell \& Silvester (2003), we described a block-diagonal parameter free preconditioning
+scheme for the linear systems (\ref{RT_matrix}) arising in the lowest-order
+Raviart-Thomas discretisation of generalised diffusion problems. New bounds
+are established for the eigenvalue spectrum of the preconditioned saddle
+point matrix when the leading block of the ideal preconditioner is replaced
+with a suitable approximation. In numerical experiments, we demonstrated
+the impact of general coefficient tensors on the performance of a particular
+multilevel approximation and on the theoretical eigenvalue bound.
+%%%%%%%%%%%%%figure style
+\begin{figure}[!t] %F1
+\centering\includegraphics[width=0.45\textwidth] {sisceigs2}
+\caption{Eigenvalues of preconditioned saddle point system,
+$h=\frac{1}{16}, \alpha \in \left[10^{-6}, 10^{6}\right]$ }
+\label{approxeig}\vspace*{-9pt}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\vspace*{6pt}
+
+\begin{references}\markboth{C. E. POWELL}{\rm PARAMETER-FREE H(DIV) PRECONDITIONING}
+
+\item{}
+\textsc{Arnold, D.N., Falk, R.S. \& Winther, R.} (1997)   Preconditioning
+in $H({\it div})$ and applications,   {\em Math. Comp.,}   \textbf{66}
+(219), 957--984.
+
+\item{}
+\textsc{Arnold, D.N., Falk, R.S. \& Winther, R.} (2000)   Multigrid
+in $H({\it div})$ and $H(curl)$, {\em Numer. Math.,}   \textbf{85},\break 197--218.
+
+\item{}
+\textsc{Brezzi, F.} (1974)  {On the existence, uniqueness and approximation
+of saddle point problems arising from\break Lagrangian multipliers,}
+ {\em RAIRO Anal. Num\'er.,} \textbf{8}, 129--151.
+
+\item{}
+\textsc{Brezzi, F. \& Bathe, K.J.} (1990)  {A discourse on the stability
+conditions for mixed finite element formulations},  {\em Comp. Methods.
+Appl. Mech. Engrg.,}   \textbf{82}, 27--57.
+
+\item{}
+\textsc{Brezzi, F. \& Fortin, M.} (1991)  {\em Mixed and Hybrid Finite
+Element Methods.}   New York: Springer-Verlag.
+
+\item{}
+\textsc{Cai, Z., Goldstein, C.I. \& Pasciak, J.E.} (1993)  {Multilevel
+iteration for mixed finite element systems with penalty},  {\em SIAM
+J. Sci. Comput.,}   \textbf{14} (5), 1072--1088.
+
+\item{}
+\textsc{Ewing, R.E. \& Wheeler, M.F.} (1983)  {Computational aspects
+of mixed finite element methods.}  {In: \textsc{R. Stepleman,} ed.
+ \em Numerical methods for Scientific Computing,} North-Holland, 163--172.
+
+\item{}
+\textsc{Ewing, R.E. \& Wang, J.} (1992)  {Analysis of the Schwarz
+algorithm for mixed finite elements methods},  {\em M$^2$AN, Math.
+Model. Numer. Anal.,}   \textbf{26} (6), 739--756.
+
+\item{}
+\textsc{Ewing, R.E. \& Wang, J.} (1994)  {Analysis of multilevel
+decomposition iterative methods for mixed finite element methods},  {\em M$^2$AN, Math. Model. Numer. Anal.,}   \textbf{28} (4), 377--398.
+
+
+\item{}
+\textsc{Fortin, M. \& Glowinski, R.} (1983)  {\em Augmented Lagrangian
+Methods: Applications to the Numerical Solution of Boundary-Value Problems.}
+Amsterdam: North-Holland.
+
+\item{}
+\textsc{Hiptmair, R.} (1997)  {Multigrid methods for $H({\it div})$ in
+three dimensions},  { \em Electron. Trans. Numer. Anal.,}  
+\textbf{6}, 133--152.
+
+\item{}
+\textsc{Kellogg, R.B.,} (1975)  {On the Poisson equation with intersecting
+interfaces},  {\em Appl., Anal.,}   \textbf{4}, 101--129.
+
+\item{}
+\textsc{Morin, P., Nochetto, R.H. \& Siebert, K.G.} (2002)  {Convergence
+of adaptive finite element methods},  {\em SIAM Rev.,}  
+1--28.
+
+\item{}
+\textsc{Paige, C.C. \& Saunders, M.A.} (1975)  {Solution of sparse
+indefinite systems of linear equations,}  {\em SIAM J. Numer. Anal.,}
+  \textbf{12}, 617--629.
+
+\item{}
+\textsc{Powell, C.E. \& Silvester, D.} (2003)  {Optimal preconditioning
+for Raviart-Thomas mixed formulation of second-order elliptic problems,}
+ {\em SIAM J. Matrix Anal. Appl.,} \textbf{25} (3), 718--738.
+
+\item{}
+\textsc{Raviart, P.A. \& Thomas, J.M.} (1977)  {A mixed finite element
+method for second order elliptic problems.}  {In: \textsc{I. Galligani
+and E. Magenes,} eds. \em Mathematical Aspects of the Finite Element Method,
+Lect. Notes in Math.,} 606, New York: Springer-Verlag, 292--315.
+
+\item{}
+\textsc{Russell, T.F. \& Wheeler, M.F.} (1983)  {Finite element and
+finite difference methods for continuous flows in porous media.}  {In:
+\textsc{R.E. Ewing,} ed. \em  The Mathematics of Reservoir Simulation.} Philadelphia:
+SIAM, 35--106.
+
+\item{}
+\textsc{Rusten, T. \& Winther, R.} (1992)  {A preconditioned iterative
+method for saddlepoint problems},  {\em SIAM J. Matrix. Anal. Appl.,}
+  \textbf{13} (3), 887--904.
+
+\item{}
+\textsc{Rusten, T., Vassilevski, P.S. \& Winther, R.} (1996)  {Interior
+preconditioners for mixed finite element approximations of elliptic problems},
+ {\em Math. Comp.,}   \textbf{65} (214), 447--466.
+
+\item{}
+\textsc{Scheichl, R.} (2000)  {\em Iterative solution of saddle point
+problems using divergence-free finite elements with applications to groundwater
+flow.} Thesis (PhD). Bath University.
+
+\item{}
+\textsc{Trottenberg, U., Oosterlee, C. \& Sch\"uller, A.} (2001)  {Multigrid.}
+ {Academic Press.}
+
+\item{}
+\textsc{Vassilevski, P.S. \& Wang, J.} (1992)  {Multilevel iterative
+methods for mixed finite element discretizations of elliptic problems},  {\em
+Numer. Math.},   \textbf{63}, 503--520.
+
+\item{}
+\textsc{Vassilevski, P.S. \& Lazarov, R.D.} (1996)  {Preconditioning
+mixed finite element saddle point elliptic problems,}  {\em Numer.
+Linear Algebra Appl.,}   \textbf{3} (1), 1--20.
+\end{references}
+
+
+
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%bibliography style
+\begin{thebibliography}{99}\markboth{C. E. POWELL}{\rm PARAMETER-FREE H(DIV) PRECONDITIONING}
+\harvarditem{Arnold \textit{et al.}}{1997}{arnoldthree}
+\textsc{Arnold, D.N., Falk, R.S. \& Winther, R.} (1997)   Preconditioning
+in $H({\it div})$ and applications,   {\em Math. Comp.,}   \textbf{66}
+(219), 957--984.
+
+\harvarditem{Arnold \textit{et al.}}{2000}{arnoldtwo}
+\textsc{Arnold, D.N., Falk, R.S. \& Winther, R.} (2000)   Multigrid
+in $H({\it div})$ and $H(curl)$,   {\em Numer. Math.,}   \textbf{85},
+197--218.
+
+\harvarditem{Brezzi}{1974}{brezzi1}
+\textsc{Brezzi, F.} (1974)  {On the existence, uniqueness and approximation
+of saddle point problems arising from Lagrangian multipliers,}
+ {\em RAIRO Anal. Num\'er.,} \textbf{8}, 129--151.
+
+\harvarditem{Brezzi \& Bathe}{1990}{brezzibathe}
+\textsc{Brezzi, F. \& Bathe, K.J.} (1990)  {A discourse on the stability
+conditions for mixed finite element formulations},  {\em Comp. Methods.
+Appl. Mech. Engrg.,}   \textbf{82}, 27--57.
+
+\harvarditem{Brezzi \& Fortin}{1991}{brezzifortin}
+\textsc{Brezzi, F. \& Fortin, M.} (1991)  {\em Mixed and Hybrid Finite
+Element Methods.}   New York: Springer-Verlag.
+
+\harvarditem{Cai \textit{et al.}}{1993}{cai2}
+\textsc{Cai, Z., Goldstein, C.I. \& Pasciak, J.E.} (1993)  {Multilevel
+iteration for mixed finite element systems with penalty},  {\em SIAM
+J. Sci. Comput.,}   \textbf{14} (5), 1072--1088.
+
+\harvarditem{Ewing \textit{et al.}}{1983}{ewingwheeler}
+\textsc{Ewing, R.E. \& Wheeler, M.F.} (1983)  {Computational aspects
+of mixed finite element methods.}  {In: \textsc{R. Stepleman,} ed.
+ \em Numerical methods for Scientific Computing,} North-Holland, 163--172.
+
+\harvarditem{Ewing \& Wang}{1992}{ewingone}
+\textsc{Ewing, R.E. \& Wang, J.} (1992)  {Analysis of the Schwarz
+algorithm for mixed finite elements methods},  {\em M$^2$AN, Math.
+Model. Numer. Anal.,}   \textbf{26} (6), 739--756.
+
+\harvarditem{Ewing \& Wang}{1994} {ewingtwo}
+\textsc{Ewing, R.E. \& Wang, J.} (1994)  {Analysis of multilevel
+decomposition iterative methods for mixed finite element methods},  {\em M$^2$AN, Math. Model. Numer. Anal.,}   \textbf{28} (4), 377--398.
+
+
+\harvarditem{Fortin \& Glowinski}{1983}{glow}
+\textsc{Fortin, M. \& Glowinski, R.} (1983)  {\em Augmented Lagrangian
+Methods: Applications to the Numerical Solution of Boundary-Value Problems.}
+Amsterdam: North-Holland.
+
+\harvarditem{Hiptmair}{1997}{hiptmair}
+\textsc{Hiptmair, R.} (1997)  {Multigrid methods for $H({\it div})$ in
+three dimensions},  { \em Electron. Trans. Numer. Anal.,}  
+\textbf{6}, 133--152.
+
+\harvarditem{Kellogg}{1975}{kellogg}
+\textsc{Kellogg, R.B.,} (1975)  {On the Poisson equation with intersecting
+interfaces},  {\em Appl., Anal.,}   \textbf{4}, 101--129.
+
+\harvarditem{Morin \textit{et al.}}{2002}{morin}
+\textsc{Morin, P., Nochetto, R.H. \& Siebert, K.G.} (2002)  {Convergence
+of adaptive finite element methods},  {\em SIAM Rev.,}  
+1--28.
+
+\harvarditem{Paige \& Saunders}{1975}{paige}
+\textsc{Paige, C.C. \& Saunders, M.A.} (1975)  {Solution of sparse
+indefinite systems of linear equations,}  {\em SIAM J. Numer. Anal.,}
+  \textbf{12}, 617--629.
+
+\harvarditem{Powell \& Silvester}{2003}{me1}
+\textsc{Powell, C.E. \& Silvester, D.} (2003)  {Optimal preconditioning
+for Raviart-Thomas mixed formulation of second-order elliptic problems,}
+ {\em SIAM J. Matrix Anal. Appl.,} \textbf{25} (3), 718--738.
+
+\harvarditem{Raviart \& Thomas}{1977}{ravtom}
+\textsc{Raviart, P.A. \& Thomas, J.M.} (1977)  {A mixed finite element
+method for second order elliptic problems.}  {In: \textsc{I. Galligani
+and E. Magenes,} eds. \em Mathematical Aspects of the Finite Element Method,
+Lect. Notes in Math.,} 606, New York: Springer-Verlag, 292--315.
+
+\harvarditem{Russell \& Wheeler}{1983}{russell}
+\textsc{Russell, T.F. \& Wheeler, M.F.} (1983)  {Finite element and
+finite difference methods for continuous flows in porous media.}  {In:
+\textsc{R.E. Ewing,} ed. \em  The Mathematics of Reservoir Simulation.} Philadelphia:
+SIAM, 35--106.
+
+\harvarditem{Rusten \& Winther}{1992}{rusten}
+\textsc{Rusten, T. \& Winther, R.} (1992)  {A preconditioned iterative
+method for saddlepoint problems},  {\em SIAM J. Matrix. Anal. Appl.,}
+  \textbf{13} (3), 887--904.
+
+\harvarditem{Rusten \textit{et al.}}{1996}{rusten3}
+\textsc{Rusten, T., Vassilevski, P.S. \& Winther, R.} (1996)  {Interior
+preconditioners for mixed finite element approximations of elliptic problems},
+ {\em Math. Comp.,}   \textbf{65} (214), 447--466.
+
+\harvarditem{Scheichl}{2000}{scheichl}
+\textsc{Scheichl, R.} (2000)  {\em Iterative solution of saddle point
+problems using divergence-free finite elements with applications to groundwater
+flow.} Thesis (PhD). Bath University.
+
+\harvarditem{Trottenberg \textit{et al.}}{2001}{trot}
+\textsc{Trottenberg, U., Oosterlee, C. \& Sch\"uller, A.} (2001)  {Multigrid.}
+ {Academic Press.}
+
+\harvarditem{Vassilevski \& Wang}{1992}{vasswang}
+\textsc{Vassilevski, P.S. \& Wang, J.} (1992)  {Multilevel iterative
+methods for mixed finite element discretizations of elliptic problems},  {\em
+Numer. Math.},   \textbf{63}, 503--520.
+
+\harvarditem{Vassilevski \& Lazarov}{1996}{vasslaz}
+\textsc{Vassilevski, P.S. \& Lazarov, R.D.} (1996)  {Preconditioning
+mixed finite element saddle point elliptic problems,}  {\em Numer.
+Linear Algebra Appl.,}   \textbf{3} (1), 1--20.
+\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+%%%%%%%%%%%%%%% this is title page style%%%%%%%%%
