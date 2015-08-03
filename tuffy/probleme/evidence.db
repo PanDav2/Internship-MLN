@@ -1,9 +1,71 @@
-Friends(Anna, Bob)
-Friends(Anna, Edward)
-Friends(Anna, Frank)
-Friends(Edward, Frank)
-Friends(Gary, Helen)
-!Friends(Gary, Frank)
+### TODO CODER LE RESTE DES VALEURS
+resourceType(dbo:software[Class],Class)
+resourceType(dbo:software,Relation)
+resourceType(dbo:software,Entity)
 
-Smokes(Anna)
-Smokes(Edward)
+resourceType(Developed,Relation)
+resourceType(Developed,Entity)
+resourceType(Developed,Class)
+
+resourceType(developedBy,Relation)
+resourceType(developedBy,Entity)
+resourceType(developedBy,Class)
+
+resourceType(California,
+resourceType(
+resourceType(
+
+========================================================================
+
+phraseIndex(Software,1,1)
+phraseIndex(Developed,4,4)
+phraseIndex(developedBy,4,5)
+phraseIndex(California,9,9)
+phraseIndex(Organizations,6,6)
+phraseIndex(Founded,7,7)
+phraseIndex(FoundedIn,7,8)
+phraseIndex(USA,10,10)
+
+=======================================
+resourceType(software[c],class)
+resourceType(software[e],entity)
+
+resourceType(developed[r],relation)
+resourceType(deleloped[e],entity)
+
+resourceType(developer[c],entity)
+
+resourceType(developedby[r],relation)
+
+resourceType(organization[e],entity)
+resourceType(organizer[e],entity)
+
+resourceType(founded[r],relation)
+resourceType(founder[e],entity)
+
+resourceType(foundedin[r],relation)
+
+resourceType(california[e],entity)
+resourceType(california[r],relation)
+
+resourceType(usa[e],entity)
+========================================
+
+priorMatchScore(Software,sofware[c],0.4)
+priorMatchScore(Software,software[e],0.8)
+
+priorMatchScore(Developed,developed[r],0.6)
+priorMatchScore(Developed,developed[e],0.4)
+
+priorMatchScore(developedBy,developer[c],0.5)
+priorMatchScore(developedBy,developedby[c],0.5)
+
+priorMatchScore(Organizations,organization[e],0.8)
+priorMatchScore(Organizations,organizer[e],0.9)
+
+priorMatchScore(Founded,founded[r],0.4)
+priorMatchScore(Founded,founder[e],0.6)
+
+priorMatchScore(FoundedIn,foundedin[r],0.7)
+
+priorMatchScore(USA,usa[e],0.8)
