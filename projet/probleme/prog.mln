@@ -1,17 +1,16 @@
 // Hard Constraints
 
-//h++
 
 //h1
-hasPhrase(p) => hasResource(p,x).
+hasPhrase(p) => hasResource(p,v22).
 //h2
-hasRessource(p,x) =>hasPhrase(p).
+hasRessource(p,23) =>hasPhrase(p).
 //h3
-hasResource(p,v18) AND  hasResource(p,v19)  => v18 = v19
+hasResource(p,v18) AND hasResource(p,v19)  => v18 = v19
 //h4
 !hasPhrase(p) =>!hasResource(p,r).
 //h5
-hasRessource(x,r) => hasRelation(r,v1,v2)vhasrelation(v3,r,v4).
+hasRessource(v24,r) => hasRelation(r,v1,v2)vhasrelation(v3,r,v4).
 //h6
 hasRelation(r1,r2,v20) AND hasRelation(r1,r2,v21)  => v20=v21
 //h7

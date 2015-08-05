@@ -69,3 +69,17 @@ priorMatchScore(Founded,founder[e],0.6)
 priorMatchScore(FoundedIn,foundedin[r],0.7)
 
 priorMatchScore(USA,usa[e],0.8)
+
+
+
+==============================================
+hasRelatedness(software[c],developed[e]
+hasRelatedness(software[c],developed[r]
+hasRelatedness(software[c],software[e]
+hasRelatedness(software[c],developed[c]
+hasRelatedness(software[c],developer[c]
+
+hasRelatedness(Developed,developedBy
+
+hasRelatedness(
+hasRelatedness(
