@@ -1,19 +1,30 @@
 ### TODO CODER LE RESTE DES VALEURS
-resourceType(dbo:software[Class],Class)
-resourceType(dbo:software,Relation)
-resourceType(dbo:software,Entity)
 
-resourceType(Developed,Relation)
-resourceType(Developed,Entity)
-resourceType(Developed,Class)
+resourceType(dbo:software[c],C)
+resourceType(dbo:software[e],E)
+resourceType(dbo:software[r],R)
+resourceType(dbo:developed[c],C)
+resourceType(dbo:developed[e],E)
+resourceType(dbo:developed[r],R)
+resourceType(dbo:developedby[c],C)
+resourceType(dbo:developedby[e],E)
+resourceType(dbo:developedby[r],R)
+resourceType(dbo:california[c],C)
+resourceType(dbo:california[e],E)
+resourceType(dbo:california[r],R)
+resourceType(dbo:organization[c],C)
+resourceType(dbo:organization[e],E)
+resourceType(dbo:organization[r],R)
+resourceType(dbo:founded[c],C)
+resourceType(dbo:founded[e],E)
+resourceType(dbo:founded[r],R)
+resourceType(dbo:foundedin[c],C)
+resourceType(dbo:foundedin[e],E)
+resourceType(dbo:foundedin[r],R)
+resourceType(dbo:usa[c],C)
+resourceType(dbo:usa[e],E)
+resourceType(dbo:usa[r],R)
 
-resourceType(developedBy,Relation)
-resourceType(developedBy,Entity)
-resourceType(developedBy,Class)
-
-resourceType(California,
-resourceType(
-resourceType(
 
 ========================================================================
 
@@ -27,28 +38,29 @@ phraseIndex(FoundedIn,7,8)
 phraseIndex(USA,10,10)
 
 =======================================
-resourceType(software[c],class)
-resourceType(software[e],entity)
-
-resourceType(developed[r],relation)
-resourceType(deleloped[e],entity)
-
-resourceType(developer[c],entity)
-
-resourceType(developedby[r],relation)
-
-resourceType(organization[e],entity)
-resourceType(organizer[e],entity)
-
-resourceType(founded[r],relation)
-resourceType(founder[e],entity)
-
-resourceType(foundedin[r],relation)
-
-resourceType(california[e],entity)
-resourceType(california[r],relation)
-
-resourceType(usa[e],entity)
+hasRelatedness(software[c],software[e], XXX  )
+hasRelatedness(software[c],software[r], XXX  )
+hasRelatedness(software[c],developed[c], XXX  )
+hasRelatedness(software[c],developed[e], XXX  )
+hasRelatedness(software[c],developed[r], XXX  )
+hasRelatedness(software[c],developedby[c], XXX  )
+hasRelatedness(software[c],developedby[e], XXX  )
+hasRelatedness(software[c],developedby[r], XXX  )
+hasRelatedness(software[c],california[c], XXX  )
+hasRelatedness(software[c],california[e], XXX  )
+hasRelatedness(software[c],california[r], XXX  )
+hasRelatedness(software[c],organization[c], XXX  )
+hasRelatedness(software[c],organization[e], XXX  )
+hasRelatedness(software[c],organization[r], XXX  )
+hasRelatedness(software[c],founded[c], XXX  )
+hasRelatedness(software[c],founded[e], XXX  )
+hasRelatedness(software[c],founded[r], XXX  )
+hasRelatedness(software[c],foundedin[c], XXX  )
+hasRelatedness(software[c],foundedin[e], XXX  )
+hasRelatedness(software[c],foundedin[r], XXX  )
+hasRelatedness(software[c],usa[c], XXX  )
+hasRelatedness(software[c],usa[e], XXX  )
+hasRelatedness(software[c],usa[r], XXX  )
 ========================================
 
 priorMatchScore(Software,sofware[c],0.4)
@@ -69,3 +81,29 @@ priorMatchScore(Founded,founder[e],0.6)
 priorMatchScore(FoundedIn,foundedin[r],0.7)
 
 priorMatchScore(USA,usa[e],0.8)
+
+
+
+==============================================
+
+==============================================
+# This feature is created using 
+
+
+phraseDepTag(Developed,Software,nsubjpass)
+phraseDepTag(Organization,developedBy,case)
+phraseDepTag(Organization,Developed,mod:agent)
+phraseDepTag(Organization,Founded,acl)
+phraseDepTag(USA,FoundedIn,case)
+phraseDepTag(USA,California,compound)
+phraseDepTag(Founded,USA,nmod:in)
+
+
+phrasePosTag(Software,NN)     
+phrasePosTag(Developed,VBN)
+phrasePosTag(developedBy,IN)  
+phrasePosTag(California,NNP)
+phrasePosTag(Organization,NNS)
+phrasePosTag(Founded,VBN)
+phrasePosTag(FoundedIn,IN)    
+phrasePosTag(USA,NNP)  

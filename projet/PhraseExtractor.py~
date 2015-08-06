@@ -1,0 +1,5 @@
+#-*- coding: utf-8 -*-
+
+""" This class is intended to extract phrases according to the given parameters.
+ TODO: Implement differents parameters for the phrase extraction from sentences.
+Actual parameters are He,  the usual NER from Stanford CoreNLP and the unigramm model without stopwords """

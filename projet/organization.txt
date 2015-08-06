@@ -9,4 +9,4 @@
 
 To get our hands on the Tuffy framework and to sensibilize ouserlves to the creation and edition of MLN's, we decided to implent a hand-crafted version of the example showed in the He:2014 paper.
 
-The question is plain and sample and is "Which software has been developed by organizations founded in California, USA?"
+The question is plain and simple and is "Which software has been developed by organizations founded in California, USA?"

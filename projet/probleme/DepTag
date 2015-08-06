@@ -1,0 +1,1 @@
+root(ROOT-0, developed-5) det(software-2, Which-1) nsubjpass(developed-5, software-2) aux(developed-5, has-3) auxpass(developed-5, been-4) case(organizations-7, by-6) nmod:agent(developed-5, organizations-7) acl(organizations-7, founded-8) case(USA-12, in-9) compound(USA-12, California-10) nmod:in(founded-8, USA-12)

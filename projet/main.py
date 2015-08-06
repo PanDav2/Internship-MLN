@@ -5,7 +5,7 @@
 
 import re
 import numpy as np
-from stanford_corenlp_pywrapper import CoreNLP
+#from stanford_corenlp_pywrapper import CoreNLP
 
 
 #TODO extraire a partir d'un fichier donnée en argument (adresse, puis interface graphique) 
@@ -19,7 +19,7 @@ def extract():
     with open(data,'w') as out:
         with open(loc,'r') as inp:
             for line in inp:
-            #On détecte les lignes ou les phrases sont en allemand
+            #On détecte les lignes ou les phrases sont en anglais
                 if "<string lang=\"en" in line:
                     out.write(inp.next())
 
@@ -36,4 +36,4 @@ def extract():
 
 #POS tagging using Stanford NLP tagger
 
-proc = CoreNLP("pos",corenlp_jars=["/people/panou/Stage/projet/stanford-corenlp-full-2015-04-20/*"])
+#proc = CoreNLP("pos",corenlp_jars=["/people/panou/Stage/projet/stanford-corenlp-full-2015-04-20/*"])
