@@ -1,30 +1,29 @@
 ### TODO CODER LE RESTE DES VALEURS
 
-resourceType(dbo:software[c],C)
-resourceType(dbo:software[e],E)
-resourceType(dbo:software[r],R)
-resourceType(dbo:developed[c],C)
-resourceType(dbo:developed[e],E)
-resourceType(dbo:developed[r],R)
-resourceType(dbo:developedby[c],C)
-resourceType(dbo:developedby[e],E)
-resourceType(dbo:developedby[r],R)
-resourceType(dbo:california[c],C)
-resourceType(dbo:california[e],E)
-resourceType(dbo:california[r],R)
-resourceType(dbo:organization[c],C)
-resourceType(dbo:organization[e],E)
-resourceType(dbo:organization[r],R)
-resourceType(dbo:founded[c],C)
-resourceType(dbo:founded[e],E)
-resourceType(dbo:founded[r],R)
-resourceType(dbo:foundedin[c],C)
-resourceType(dbo:foundedin[e],E)
-resourceType(dbo:foundedin[r],R)
-resourceType(dbo:usa[c],C)
-resourceType(dbo:usa[e],E)
-resourceType(dbo:usa[r],R)
-
+resourceType(software[c],C)
+resourceType(software[e],E)
+resourceType(software[r],R)
+resourceType(developed[c],C)
+resourceType(developed[e],E)
+resourceType(developed[r],R)
+resourceType(developedby[c],C)
+resourceType(developedby[e],E)
+resourceType(developedby[r],R)
+resourceType(california[c],C)
+resourceType(california[e],E)
+resourceType(california[r],R)
+resourceType(organization[c],C)
+resourceType(organization[e],E)
+resourceType(organization[r],R)
+resourceType(founded[c],C)
+resourceType(founded[e],E)
+resourceType(founded[r],R)
+resourceType(foundedin[c],C)
+resourceType(foundedin[e],E)
+resourceType(foundedin[r],R)
+resourceType(usa[c],C)
+resourceType(usa[e],E)
+resourceType(usa[r],R)
 
 ========================================================================
 
@@ -86,7 +85,7 @@ priorMatchScore(USA,usa[e],0.8)
 
 ==============================================
 
-==============================================
+
 # This feature is created using 
 
 

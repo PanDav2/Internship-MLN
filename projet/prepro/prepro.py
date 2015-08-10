@@ -1,17 +1,15 @@
 #-*- coding: utf-8 -*-
 ## This script is meant to pre-process the data #TO COMPLETE
-
+import sys
 from stanford_corenlp_pywrapper import CoreNLP
 
 java= "/people/panou/Stage/projet/stanford-corenlp-full-2015-04-20/*"
 quest = "./output/quest-en.txt"
 typeOfContent = ["Class","Entity","Relationship"]
 
-def runall(loc):
-    question(loc)
-    phrases()
-    ressourcesType()
 
+
+#TODO gérer les problèmes d'encodage
 #TODO extraire a partir d'un fichier donnée en argument 
 def question(loc):
     print "\n ####  Extraction des questions à partir du fichier donnees en parametre  ####\n"
@@ -22,7 +20,7 @@ def question(loc):
         with open(loc,'r') as inp:
             for line in inp:
             #On détecte les lignes ou les phrases sont en anglais
-                if "<string lang=\"en" in line:
+                if "<string lang=\"de" in line:
                     out.write(inp.next())
     with open(data,'r') as inp:
         with open(quest,'w') as out:
@@ -48,17 +46,18 @@ def phrases():
             print "traitement de la ligne " + str(i)
             p.append(proc.parse_doc(line))
             i+=1
-    with open('./output/phrases.txt','w') as out:
-        with open('./output/ressources1.txt','w') as out:
+    with open('./output/phrases.txt','w') as outp:
+        with open('./output/ressources1.txt','w') as outr:
             for elmt in p:
                 for tok in elmt["sentences"][0]["lemmas"]:
                     if not tok in stopwords: 
-                        out.write(tok+'\n')
-                        out.write('\n')
+                        print tok
+                        outr.write(tok+'\n')
+                        outr.write('\n')
                 for tok in elmt["sentences"][0]["tokens"]:
                     if not tok in stopwords: 
-                        out.write(tok+'\n')
-                        out.write('\n')
+                        outp.write(tok+'\n')
+                        outp.write('\n')
 def ressourcesType():
     print "\t #### Création de la feature RessourceType à partir du fichier en cours...  ####"
     #We create an array that will remember the resourceType created in case of redundance and will allow us to match ressource types to 
@@ -81,4 +80,12 @@ def ressourcesType():
                             if temp not in res :
                                 res.append(temp)
                                 file.write("resourceType("+temp.lower()+","+X[:1]+")\n")
-    print "\t #### Création de la feature RessourceType à partir du fichier terminéé.  ####"
+    print "\t\t #### Création de la feature RessourceType à partir du fichier terminéé.  ####"
+
+
+loc = sys.argv[1]
+
+print "LE fichier d'origine est en " + loc
+question(loc)
+phrases()
+ressourcesType()
