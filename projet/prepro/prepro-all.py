@@ -2,8 +2,6 @@
 ## This script is meant to pre-process the data #TO COMPLETE
 #from __future__ import unicode_literals
 import sys
-import random
-import numpy
 from stanford_corenlp_pywrapper import CoreNLP
 
 java= "/people/panou/Stage/projet/stanford-corenlp-full-2015-04-20/*"
@@ -87,46 +85,8 @@ def ressourcesType():
     print "\t\t #### Création de la feature RessourceType à partir du fichier terminéé.  ####"
 
 
-def Pclean():
-    with open("./output/phrases.txt","r") as inp:
-        with open("./output/phrases-p.txt",'w') as out:
-            for line1 in inp:
-                if line1 != "\n":
-                    out.write(line1)
-
-
-def Rclean():
-    a = []
-    
-    with open("./output/ressources1.txt","r") as inp:
-        with open("./output/clean-r.txt",'w') as out:
-            for line1 in inp:
-                if line1 != "\n":
-                    if line1 not in a: 
-                        a.append(line1)
-                        out.write(line1)
-
-def hasRelatedness():
-    a=[]
-    with open("./output/clean-r.txt","r") as inp:
-        for elmt in inp: 
-            if elmt != '\n':
-                if elmt not in a:
-                    a.append(elmt)
-        with open("./output/related.txt",'w') as out:
-            for elmt in a:                     
-                for elmt2 in a:
-                    #print elmt
-                    #print "hasRelatedness("+line1[:-1]+","+line2[:-1]+","+str(random.random())+')'
-                    out.write("hasRelatedness("+elmt[:-1]+","+elmt2[:-1]+","+str(random.random())+")\n")
-
-
-
-
 loc = sys.argv[1]
 
 question(loc)
 phrases()
 ressourcesType()
-hasRelatedness()
-#clean()
