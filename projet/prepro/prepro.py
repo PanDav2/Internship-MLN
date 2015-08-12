@@ -29,7 +29,7 @@ def depOne(inp,stopwords):
         for elmt in a:
             for elmt2 in a:
                     if random.random()<0.01:
-                        depone.write("phraseDepOne("+elmt+','+elmt2+')\n')
+                        depone.write("PhraseDepOne("+elmt.title()+','+elmt2.title()+')\n')
 
 
     
@@ -44,7 +44,7 @@ def question(loc):
             for line in inp:
             #On détecte les lignes ou les phrases sont en anglais
                 if "<string lang=\"en".decode().encode('utf-8') in line:
-                    out.write(inp.next())
+                    out.write(inp.next().title())
     with open(data,'r') as inp:
         with open(quest,'w') as out:
             for line in inp:
@@ -59,14 +59,16 @@ def question(loc):
 
 ## Cette fonction gère la création des features phraseIndex, PosTag et crée les ressources.
 
-def phrases():
+## TODO Faire des fonctions afin que l'on s'y retouve mieux dans le traitement de données
+
+def phrases(data):
     #STOPWORDS is the list of words we'd like to discards in our 
     stopwords =[".","?","!",',']
     proc = CoreNLP("nerparse",corenlp_jars=[java])
     p=[]
     i=1
     print "####  Traitement et mise en forme des questions extraites  ####"
-    with open(quest,'r') as inp:
+    with open(data,'r') as inp:
         for line in inp:
             #print "traitement de la ligne " + str(i)
             p.append(proc.parse_doc(line))
@@ -78,19 +80,22 @@ def phrases():
                 with open("./output/posTag.txt",'w') as outpos:
                     with open("./output/depTag.txt",'w') as outdep:
                         for elmt in p:
+                            #### DEBUG
+                            #print elmt["sentences"][0]["tokens"]
+                            ####
                             for tok in elmt["sentences"][0]["lemmas"]:
                                 if not tok in stopwords: 
-                                    a =tok                                
-                                    outr.write(a+'\n'.decode().encode('utf-8'))
+                                    a = tok                                
+                                    outr.write(a)
                                     outr.write('\n'.decode().encode('utf-8'))
                                     #Création de la feature phraseIndex
-                                index=0
-                                i=0
+                            index=0
+                            i=0
                             tableau=elmt["sentences"][0]["tokens"]
                             deptag=elmt['sentences'][0]['deps_cc']
                             for cpt in range(len(deptag)):
                                 if not tableau[deptag[cpt][1]] in stopwords:
-                                    outdep.write("phraseDepTag("+tableau[deptag[cpt][1]]+","+tableau[deptag[cpt][2]]+","+deptag[cpt][0]+")\n")
+                                    outdep.write("PhraseDepTag("+tableau[deptag[cpt][1]]+","+tableau[deptag[cpt][2]]+","+deptag[cpt][0].title()+")\n")
                             for tok in tableau:
                                 j=0
                                 if not tok in stopwords: 
@@ -98,15 +103,15 @@ def phrases():
                                     for pos in elmt["sentences"][0]['pos']:
                                         #On crée la feature DepTag
                                         if i==j:
-                                            outpos.write("phrasePosTag("+tok+','+pos+")\n")
-                                            j=j+1
-                                            i=i+1
-
-                                            outp.write(tok.decode().encode('utf-8')+'\n'.decode().encode('utf-8'))
-                                            outp.write('\n'.decode().encode('utf-8'))
-                                            outi.write("phraseIndex("+tok+","+str(index)+","+str(index+1)+")")
-                                            index=index+1
-                                            outi.write('\n'.decode().encode('utf-8'))
+                                            outpos.write("PhrasePosTag("+tok+','+pos+")\n")
+                                        j=j+1
+                                    i=i+1
+                                        
+                                    outp.write(tok.decode().encode('utf-8')+'\n'.decode().encode('utf-8'))
+                                    outp.write('\n'.decode().encode('utf-8'))
+                                    outi.write("PhraseIndex("+tok+","+str(index)+","+str(index+1)+")")
+                                    index=index+1
+                                    outi.write('\n'.decode().encode('utf-8'))
                         
 
 
@@ -134,27 +139,26 @@ def ressourcesType():
                             ress.write(temp+"\n")
                             if temp not in res :
                                 res.append(temp)
-                                file.write("resourceType("+temp.lower()+","+X[:1]+")\n")
+                                file.write("ResourceType("+temp.title()+","+X[:1]+")\n")
     print "\t\t #### Création de la feature RessourceType à partir du fichier terminéé.  ####"
 
 
 def Pclean():
     with open("./output/phrases.txt","r") as inp:
-        with open("./output/phrases-p.txt",'w') as out:
+        with open("./output/clean-p.txt",'w') as out:
             for line1 in inp:
-                if line1 != "\n":
+                if not len(line1.split())<1:
                     out.write(line1)
 
 
 def Rclean():
-    a = []
-    
+    a = []    
     with open("./output/ressources1.txt","r") as inp:
         with open("./output/clean-r.txt",'w') as out:
             for line1 in inp:
                 if line1 != "\n":
                     if line1 not in a: 
-                        a.append(line1)
+                        a.append(line1.title())
                         out.write(line1)
 
 def hasRelatedness():
@@ -168,18 +172,34 @@ def hasRelatedness():
             for elmt in a:                     
                 for elmt2 in a:
                     if elmt == elmt2 :
-                        out.write("hasRelatedness("+elmt[:-1]+","+elmt2[:-1]+","+"1)\n")
+                        out.write("HasRelatedness("+elmt[:-1].title()+","+elmt2[:-1].title()+","+"1)\n")
                     else:
                         #print elmt
                         #print "hasRelatedness("+line1[:-1]+","+line2[:-1]+","+str(random.random())+')'
-                        out.write("hasRelatedness("+elmt[:-1]+","+elmt2[:-1]+","+str(random.random())+")\n")
+                        out.write("HasRelatedness("+elmt[:-1].title()+","+elmt2[:-1].title()+","+str(random.random())+")\n")
 
 
 ## Nous construisons la feature priorMatchScore en nous basant sur la similarité
+## On suppose que tous les types sont compatibles entre eux
+def priorMatchScore():
+    with open("./output/clean-r.txt","r") as Rinp:
+        with open("./ressources.txt","r") as Pinp:
+            with open("./output/priorMatchScore.txt","w") as out:
+                with open("./output/isTypeCompatible.txt","w") as outtype:
+                    for line1 in Rinp:
+                        for line2 in Pinp:
+                            out.write("PriorMatchScore("+line1[:-1].title()+','+line2[:-1].title()+','+str(random.random())+')\n')
+                            outtype.write("IsTypeCompatible("+line1[:-1].title()+','+line2[:-1].title()+','+"True"+')\n')
 
 loc = sys.argv[1]
 
+## Création de la base de connaissances
 question(loc)
-phrases()
+phrases(quest)
 ressourcesType()
 hasRelatedness()
+Pclean()
+priorMatchScore()
+
+
+
