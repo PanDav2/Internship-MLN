@@ -19,7 +19,7 @@ hasRelation(r1,r2,v5) => hasResource(v6,r1) AND hasResource(v7,r2).
 //h8
 phraseIndex(p1,s1,e1,) AND phraseIndex(p2,s2,e2) AND overlap(s1,e1,s2,e2) AND hasPhrase(p1) =>!hasPhrase(p2).
 //h9
-resourceType(r,"Entity") => !hasRelation(r,v8,"2_1") AND !hasRelation(r,v9,"2_2").
+resourceType(r,Entity) => !hasRelation(r,v8,"2_1") AND !hasRelation(r,v9,"2_2").
 //h10
 resourceType(r,Entity) => !hasRelation(,r,"2_1") AND !hasRelation(r,v10,"2_2").
 //h11
