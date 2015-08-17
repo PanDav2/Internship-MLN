@@ -1,0 +1,9 @@
+#-*- coding: utf-8 -*-
+## This script is meant to pre-process the data #TO COMPLETE
+import sys
+from stanford_corenlp_pywrapper import CoreNLP
+
+java= "../stanford-corenlp-full-2015-04-20/*"
+quest = "./output/quest-en.txt"
+typeOfContent = ["Class","Entity","Relationship"]
+

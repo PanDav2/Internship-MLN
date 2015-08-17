@@ -3,7 +3,7 @@
 import sys
 from stanford_corenlp_pywrapper import CoreNLP
 
-java= "/people/panou/Stage/projet/stanford-corenlp-full-2015-04-20/*"
+java= "../stanford-corenlp-full-2015-04-20/*"
 quest = "./output/quest-en.txt"
 typeOfContent = ["Class","Entity","Relationship"]
 
@@ -35,7 +35,7 @@ def question(loc):
     print "\n ####  Extraction des questions terminé  ####\n"
 
 def phrases():
-    #STOPWORDS is the list of words we'd like to discards in our 
+    #STOPWORDS is the list of words we'd like to discards in our phrases and relation extraction
     stopwords =[".","?","!",',']
     proc = CoreNLP("nerparse",corenlp_jars=[java])
     p=[]
@@ -85,7 +85,6 @@ def ressourcesType():
 
 loc = sys.argv[1]
 
-print "LE fichier d'origine est en " + loc
 question(loc)
 phrases()
 ressourcesType()
