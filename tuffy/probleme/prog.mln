@@ -1,40 +1,51 @@
 // Hard Constraints
-
-//h++
+//Predicats clos
+*HasMeanWord(p,q)
+*PhrasesDepOne(p,q)
+HasPhrase(p)
+HasResource(p,q)
+HasRelation(p,q,r)
+PhraseIndex(p,i,j)
+PhrasePosTag(p,pt)
+PhraseDepTag(p,q,dt)
+PriorMatchScore(p,r,s)
+IsTypeCompatible(p,q,rr)
+HasQueryResult(s,p,o,rr1,rr2)
+HasRelatedness(p,q,s)
+Overlap(s1,e1,s2,e2)
+ResourceType(r,rt)
 
 //h1
-hasPhrase(p) => hasResource(p,x).
+!HasPhrase(p) v HasResource(p,v22).
 //h2
-hasRessource(p,x) =>hasPhrase(p).
+!HasResource(p,v23) v HasPhrase(p).
 //h3
-hasResource(p,v18) AND  hasResource(p,v19)  => v18 = v19
+!HasResource(p,v18) v !HasResource(p,v19)  v v18 = v19.
 //h4
-!hasPhrase(p) =>!hasResource(p,r).
+HasPhrase(p) v!HasResource(p,r).
 //h5
-hasRessource(x,r) => hasRelation(r,v1,v2)vhasrelation(v3,r,v4).
+!HasResource(v24,r) v HasRelation(r,v1,v2) v HasRelation(v3,r,v4).
 //h6
-hasRelation(r1,r2,v20) AND hasRelation(r1,r2,v21)  => v20=v21
+!HasRelation(r1,r2,v20) v !HasRelation(r1,r2,v21) v v20=v21.
 //h7
-hasRelation(r1,r2,v5) => hasResource(v6,r1) AND hasResource(v7,r2).
+!HasRelation(r1,r2,v5) v HasResource(v6,r1) v HasResource(v7,r2).
 //h8
-phraseIndex(p1,s1,e1,) AND phraseIndex(p2,s2,e2) AND overlap(s1,e1,s2,e2) AND hasPhrase(p1) =>!hasPhrase(p2).
+!PhraseIndex(p1,s1,e1) v !PhraseIndex(p2,s2,e2) v !Overlap(s1,e1,s2,e2) v !HasPhrase(p1) v !HasPhrase(p2).
 //h9
-resourceType(r,"Entity") => !hasRelation(r,v8,"2_1") AND !hasRelation(r,v9,"2_2").
+!ResourceType(r,Entity) v !HasRelation(r,v8,"2_1") v !HasRelation(r,v9,"2_2").
 //h10
-resourceType(r,Entity) => !hasRelation(,r,"2_1") AND !hasRelation(r,v10,"2_2").
+!ResourceType(r,Entity) v !HasRelation(v25,r,"2_1") v !HasRelation(r,v10,"2_2").
 //h11
-resourceType(r,Class) => !hasRelation(r,v11,"2_1") AND !hasRelation(r,v12,"2_2").
+!ResourceType(r,Class) v !HasRelation(r,v11,"2_1") v !HasRelation(r,v12,"2_2").
 //h12
-resourceType(r,Class) => !hasRelation(v13,r,"2_1") AND !hasRelation(r,v14,"2_2").
+!ResourceType(r,Class) v !HasRelation(v13,r,"2_1") v !HasRelation(r,v14,"2_2").
 //h13
-!isTypeCompatible(r1,r2,rr) => !hasRelation(r1,r2,rr).
-
+IsTypeCompatible(r1,r2,rr) v !HasRelation(r1,r2,rr).
 //SOFT CONSTRAINTS FORMULAS
-
-priorMatchScore(p,r,s) => hasPhrase(p)
-priorMatchScore(p,r,s) => hasResource(p)
-phrasePosTag(p,pt) AND resourceType(r,rt)  => hasResource(p,r)
-phraseDepTag(p1,p2,dp) AND hasResource(p1,r1) AND hasResource(p2,r2)  => hasRelation(r1,r2,rr)
-phraseDepTag(p1,p2,dp) AND hasResource(p1,r1) AND hasResource(p2,r2) AND !hasMeanWord(p1,p2) => hasRelation(r4,r2,rr)
-hasRelatedness(r1,r2,s) AND hasResource(v15,r1) AND hasResource(v16,r2)  => hasRelation(r1,r2,v17)
-hasQueryResult(r1,r2,r3,rr1,rr2) => hasRelation(r1,r2,rr1) AND hasrelation(r2,r3,rr2)
+0 PriorMatchScore(p,r,s) => HasPhrase(p)
+0 PriorMatchScore(p,r,s) => HasResource(p,r)
+0 PhrasePosTag(p,pt), ResourceType(r,rt)  => HasResource(p,r)
+0 PhraseDepTag(p1,p2,dp), HasResource(p1,r1), HasResource(p2,r2)  => HasRelation(r1,r2,rr)
+0 PhraseDepTag(p1,p2,dp), HasResource(p1,r1), HasResource(p2,r2), !HasMeanWord(p1,p2) => HasRelation(r4,r2,rr)
+0 HasRelatedness(r1,r2,s), HasResource(v15,r1), HasResource(v16,r2)  => HasRelation(r1,r2,v17)
+0 !HasQueryResult(r1,r2,r3,rr1,rr2) v HasRelation(r1,r2,rr1) HasRelation(r2,r3,rr2)
