@@ -61,18 +61,21 @@ def question(loc):
 
 ## TODO Faire des fonctions afin que l'on s'y retouve mieux dans le traitement de données
 
-def phrases(data):
+def phrases(data="./output/quest-en.txt"):
     #STOPWORDS is the list of words we'd like to discards in our 
     stopwords =[".","?","!",',']
-    proc = CoreNLP("nerparse",corenlp_jars=[java])
+    #proc = CoreNLP("nerparse",corenlp_jars=[java])
     p=[]
     i=1
     print "####  Traitement et mise en forme des questions extraites  ####"
     with open(data,'r') as inp:
         for line in inp:
             #print "traitement de la ligne " + str(i)
-            p.append(proc.parse_doc(line))
+            #p.append(proc.parse_doc(line))
+            print "ligne " + str(i)
             i+=1
+
+    """        
     depOne(p,stopwords)
     with open('./output/phrases.txt','w') as outp:
         with open('./output/ressources1.txt','w') as outr:
@@ -113,7 +116,7 @@ def phrases(data):
                                     index=index+1
                                     outi.write('\n'.decode().encode('utf-8'))
                         
-
+    """
 
 
 
@@ -191,15 +194,12 @@ def priorMatchScore():
                             out.write("PriorMatchScore("+line1[:-1].title()+','+line2[:-1].title()+','+str(random.random())+')\n')
                             outtype.write("IsTypeCompatible("+line1[:-1].title()+','+line2[:-1].title()+','+"True"+')\n')
 
-loc = sys.argv[1]
+#loc = sys.argv[1]
 
 ## Création de la base de connaissances
-question(loc)
-phrases(quest)
-ressourcesType()
-hasRelatedness()
-Pclean()
-priorMatchScore()
+
+phrases()
+
 
 
 
