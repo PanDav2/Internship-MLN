@@ -1,7 +1,7 @@
-// Hard Constraints
-//Predicats clos
+//Hard Constraints
+
 *HasMeanWord(p,q)
-*PhrasesDepOne(p,q)
+*PhraseDepOne(p,q)
 HasPhrase(p)
 HasResource(p,q)
 HasRelation(p,q,r)
@@ -48,4 +48,4 @@ IsTypeCompatible(r1,r2,rr) v !HasRelation(r1,r2,rr).
 0 PhraseDepTag(p1,p2,dp), HasResource(p1,r1), HasResource(p2,r2)  => HasRelation(r1,r2,rr)
 0 PhraseDepTag(p1,p2,dp), HasResource(p1,r1), HasResource(p2,r2), !HasMeanWord(p1,p2) => HasRelation(r4,r2,rr)
 0 HasRelatedness(r1,r2,s), HasResource(v15,r1), HasResource(v16,r2)  => HasRelation(r1,r2,v17)
-0 !HasQueryResult(r1,r2,r3,rr1,rr2) v HasRelation(r1,r2,rr1) HasRelation(r2,r3,rr2)
+0 !HasQueryResult(r1,r2,r3,rr1,rr2) v HasRelation(r1,r2,rr1)v HasRelation(r2,r3,rr2)
