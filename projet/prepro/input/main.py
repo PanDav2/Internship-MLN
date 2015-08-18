@@ -5,7 +5,7 @@ import random
 import numpy
 from stanford_corenlp_pywrapper import CoreNLP
 from difflib import SequenceMatcher
-
+import re
 java= "/people/panou/Stage/projet/stanford-corenlp-full-2015-04-20/*"
 quest = "./output/quest-en.txt"
 typeOfContent = ["Class","Entity","Relationship"]
@@ -14,8 +14,6 @@ typeOfContent = ["Class","Entity","Relationship"]
 #TODO gérer les problèmes d'encodage
 #TODO extraire a partir d'un fichier donnée en argument 
 
-def similar(a,b):
-    return SequenceMatcher(None,a,b).ratio()
 
 #TODO Définir une variable score
 def depOne(inp,stopwords):
@@ -33,28 +31,48 @@ def depOne(inp,stopwords):
 
     
 
-def question(loc):
+def question(loc='./donnee.xml'):
     print "\n ####  Extraction des questions à partir du fichier donnees en parametre  ####\n"
-    data = "./output/data.txt"
+    data = "./data.txt"
     #TODO gérer l'extraction multi-lingue par un tableau
     #lan=["fr,en,es,it,fr,nl,ro"]
+    i=0
+    cpt1=0
+    cpt2=0
     with open(data,'w') as out:
         with open(loc,'r') as inp:
             for line in inp:
-            #On détecte les lignes ou les phrases sont en anglais
-                if "<string lang=\"en".decode().encode('utf-8') in line:
-                    out.write(inp.next().title())
+                a = inp.next()
+                if i!=0:
+                    cpt2=cpt2+1
+                    #print line
+                    out.write(line)
+                    i=i-1
+                    
+                #On détecte les lignes ou les phrases sont en anglais
+                elif "<string lang=\"en" in line:
+                    cpt2=cpt2+1
+                    if re.search("<!\[CDATA\[$",a):
+                        i=i+1
+                        #print a
+                    else :
+                        out.write(str(a)[10:len(str(a))-4]+'\n')
+                    
+            print "Nombre total de lignes \t" + str(cpt2)
+                                                
+"""                 
     with open(data,'r') as inp:
         with open(quest,'w') as out:
             for line in inp:
                 if len(line.split())>1:
-                    """
+
                     #Tentative de concatenner l'ensemble des mots en une phrase
                     for i in len(line.split()):
                     print line.split()[i]
-                    """
+
                     out.write(line[10:len(line)-4]+'\n'.decode().encode('utf-8'))
     print "\n ####  Extraction des questions terminée  ####\n"
+"""
 
 ## Cette fonction gère la création des features phraseIndex, PosTag et crée les ressources.
 
@@ -197,7 +215,7 @@ def priorMatchScore():
 
 ## Création de la base de connaissances
 
-phrases()
+question()
 
 
 

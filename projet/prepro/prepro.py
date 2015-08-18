@@ -7,7 +7,7 @@ import numpy
 from stanford_corenlp_pywrapper import CoreNLP
 from difflib import SequenceMatcher
 
-java= "/people/panou/Stage/projet/stanford-corenlp-full-2015-04-20/*"
+java= "../stanford-corenlp-full-2015-04-20/*"
 quest = "./output/quest-en.txt"
 typeOfContent = ["Class","Entity","Relationship"]
 
@@ -197,6 +197,7 @@ def priorMatchScore():
 #loc = sys.argv[1]
 
 ## Création de la base de connaissances
+
 
 phrases()
 
