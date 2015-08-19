@@ -35,3 +35,4 @@ with open ("./res.txt", "r+") as file:
 
 with open ("./res.txt", "r+") as file:
     print str(file.seek(2))
+    

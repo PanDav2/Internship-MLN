@@ -89,8 +89,7 @@ def phrases(data="./output/quest-en.txt"):
                             for tok in elmt["sentences"][0]["lemmas"]:
                                 if not tok in stopwords: 
                                     a = tok                                
-                                    outr.write(a)
-                                    outr.write('\n'.decode().encode('utf-8'))
+                                    outr.write(a+'\n')
                                     #Création de la feature phraseIndex
                             index=0
                             i=0
