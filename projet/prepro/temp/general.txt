@@ -1,5 +1,9 @@
-Give me all cosmonauts.  
+Give me all cosmonauts. 
 [u'Give', u'me', u'all', u'cosmonauts', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Cosmonauts,4,4)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -14,6 +18,13 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dbo: <http://db
 
 In which country does the Nile start? 
 [u'In', u'which', u'country', u'does', u'the', u'Nile', u'start', u'?']
+PhraseIndex(In,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(Country,3,3)
+PhraseIndex(Does,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Nile,6,6)
+PhraseIndex(Start,7,7)
 PhrasePosTag(In,IN)
 PhrasePosTag(which,WDT)
 PhrasePosTag(country,NN)
@@ -32,22 +43,25 @@ phraseDepTag(start,Nile,nsubj)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Nile dbo:sourceCountry ?uri . }
 
 
+PhraseIndex(When,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Movie,4,4)
+PhraseIndex(Worst,5,5)
+PhraseIndex(Case,6,6)
+PhraseIndex(Scenario,7,7)
+PhraseIndex(Going,8,8)
+PhraseIndex(To,9,9)
+PhraseIndex(Be,10,10)
+PhraseIndex(In,11,11)
+PhraseIndex(Cinemas,12,12)
+PhraseIndex(In,13,13)
+PhraseIndex(The,14,14)
+PhraseIndex(Netherlands,15,15)
+
+[u'When', u'is', u'the', u'movie', u'Worst', u'Case', u'Scenario', u'going', u'to', u'be', u'in', u'cinemas', u'in', u'the', u'Netherlands']
 When is the movie Worst Case Scenario going to be in cinemas in the Netherlands?
-[u'root', -1, 7]
-[u'det', 3, 2]
-[u'dep', 3, 6]
-[u'amod', 6, 4]
-[u'compound', 6, 5]
-[u'advmod', 7, 0]
-[u'aux', 7, 1]
-[u'nsubj', 7, 3]
-[u'xcomp', 7, 11]
-[u'mark', 11, 8]
-[u'cop', 11, 9]
-[u'case', 11, 10]
-[u'nmod:in', 11, 14]
-[u'case', 14, 12]
-[u'det', 14, 13]
+	 La ligne est isolée 
 PhrasePosTag(When,WRB)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -78,15 +92,18 @@ phraseDepTag(cinemas,in,case)
 phraseDepTag(cinemas,Netherlands,nmod:in)
 phraseDepTag(Netherlands,in,case)
 phraseDepTag(Netherlands,the,det)
+PhraseIndex(Which,1,1)
+PhraseIndex(German,2,2)
+PhraseIndex(Cities,3,3)
+PhraseIndex(Have,4,4)
+PhraseIndex(More,5,5)
+PhraseIndex(Than,6,6)
+PhraseIndex(250000,7,7)
+PhraseIndex(Inhabitants,8,8)
+
+[u'Which', u'German', u'cities', u'have', u'more', u'than', u'250000', u'inhabitants']
 Which German cities have more than 250000 inhabitants?
-[u'root', -1, 3]
-[u'det', 2, 0]
-[u'amod', 2, 1]
-[u'nsubj', 3, 2]
-[u'dobj', 3, 7]
-[u'mwe', 4, 5]
-[u'advmod', 6, 4]
-[u'nummod', 7, 6]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(German,JJ)
 PhrasePosTag(cities,NNS)
@@ -109,6 +126,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who was John F. Kennedy's vice president? 
 [u'Who', u'was', u'John', u'F.', u'Kennedy', u"'s", u'vice', u'president', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Was,2,2)
+PhraseIndex(John,3,3)
+PhraseIndex(F.,4,4)
+PhraseIndex(Kennedy,5,5)
+PhraseIndex('S,6,6)
+PhraseIndex(Vice,7,7)
+PhraseIndex(President,8,8)
 PhrasePosTag(Who,WP)
 PhrasePosTag(was,VBD)
 PhrasePosTag(John,NNP)
@@ -131,6 +156,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who is the mayor of Berlin? 
 [u'Who', u'is', u'the', u'mayor', u'of', u'Berlin', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Mayor,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Berlin,6,6)
 PhrasePosTag(Who,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -147,17 +178,20 @@ phraseDepTag(Berlin,of,case)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Berlin dbo:leader ?uri . }
 
 
+PhraseIndex(How,1,1)
+PhraseIndex(Many,2,2)
+PhraseIndex(Students,3,3)
+PhraseIndex(Does,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Free,6,6)
+PhraseIndex(University,7,7)
+PhraseIndex(In,8,8)
+PhraseIndex(Amsterdam,9,9)
+PhraseIndex(Have,10,10)
+
+[u'How', u'many', u'students', u'does', u'the', u'Free', u'University', u'in', u'Amsterdam', u'have']
 How many students does the Free University in Amsterdam have?
-[u'root', -1, 9]
-[u'advmod', 1, 0]
-[u'amod', 2, 1]
-[u'det', 6, 4]
-[u'compound', 6, 5]
-[u'nmod:in', 6, 8]
-[u'case', 8, 7]
-[u'dobj', 9, 2]
-[u'aux', 9, 3]
-[u'nsubj', 9, 6]
+	 La ligne est isolée 
 PhrasePosTag(How,WRB)
 PhrasePosTag(many,JJ)
 PhrasePosTag(students,NNS)
@@ -184,6 +218,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the second highest mountain on Earth? 
 [u'What', u'is', u'the', u'second', u'highest', u'mountain', u'on', u'Earth', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Second,4,4)
+PhraseIndex(Highest,5,5)
+PhraseIndex(Mountain,6,6)
+PhraseIndex(On,7,7)
+PhraseIndex(Earth,8,8)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -204,14 +246,17 @@ phraseDepTag(Earth,on,case)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain . ?uri dbo:elevation ?elevation . } ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Professional,4,4)
+PhraseIndex(Skateboarders,5,5)
+PhraseIndex(From,6,6)
+PhraseIndex(Sweden,7,7)
+
+[u'Give', u'me', u'all', u'professional', u'skateboarders', u'from', u'Sweden']
 Give me all professional skateboarders from Sweden.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 4]
-[u'det', 4, 2]
-[u'amod', 4, 3]
-[u'nmod:from', 4, 6]
-[u'case', 6, 5]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -232,6 +277,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 When was Alberta admitted as province? 
 [u'When', u'was', u'Alberta', u'admitted', u'as', u'province', u'?']
+PhraseIndex(When,1,1)
+PhraseIndex(Was,2,2)
+PhraseIndex(Alberta,3,3)
+PhraseIndex(Admitted,4,4)
+PhraseIndex(As,5,5)
+PhraseIndex(Province,6,6)
 PhrasePosTag(When,WRB)
 PhrasePosTag(was,VBD)
 PhrasePosTag(Alberta,NNP)
@@ -248,16 +299,19 @@ phraseDepTag(province,as,case)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Alberta dbp:admittancedate ?date . }
 
 
+PhraseIndex(To,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(Countries,3,3)
+PhraseIndex(Does,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Himalayan,6,6)
+PhraseIndex(Mountain,7,7)
+PhraseIndex(System,8,8)
+PhraseIndex(Extend,9,9)
+
+[u'To', u'which', u'countries', u'does', u'the', u'Himalayan', u'mountain', u'system', u'extend']
 To which countries does the Himalayan mountain system extend?
-[u'root', -1, 8]
-[u'case', 2, 0]
-[u'det', 2, 1]
-[u'det', 7, 4]
-[u'amod', 7, 5]
-[u'compound', 7, 6]
-[u'nmod:to', 8, 2]
-[u'aux', 8, 3]
-[u'nsubj', 8, 7]
+	 La ligne est isolée 
 PhrasePosTag(To,TO)
 PhrasePosTag(which,WDT)
 PhrasePosTag(countries,NNS)
@@ -280,17 +334,20 @@ phraseDepTag(extend,system,nsubj)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Himalayas dbp:country ?uri . }
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(A,3,3)
+PhraseIndex(List,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(All,6,6)
+PhraseIndex(Bandleaders,7,7)
+PhraseIndex(That,8,8)
+PhraseIndex(Play,9,9)
+PhraseIndex(Trumpet,10,10)
+
+[u'Give', u'me', u'a', u'list', u'of', u'all', u'bandleaders', u'that', u'play', u'trumpet']
 Give me a list of all bandleaders that play trumpet.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 3]
-[u'det', 3, 2]
-[u'nmod:of', 3, 6]
-[u'case', 6, 4]
-[u'det', 6, 5]
-[u'acl:relcl', 6, 8]
-[u'nsubj', 8, 7]
-[u'dobj', 8, 9]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(a,DT)
@@ -317,6 +374,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which countries have more than ten caves? 
 [u'Which', u'countries', u'have', u'more', u'than', u'ten', u'caves', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Countries,2,2)
+PhraseIndex(Have,3,3)
+PhraseIndex(More,4,4)
+PhraseIndex(Than,5,5)
+PhraseIndex(Ten,6,6)
+PhraseIndex(Caves,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(countries,NNS)
 PhrasePosTag(have,VBP)
@@ -335,21 +399,23 @@ phraseDepTag(caves,ten,nummod)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country . ?cave rdf:type dbo:Cave . { ?cave dbo:location ?uri . } UNION { ?cave dbo:location ?loc . ?loc dbo:country ?uri . } } GROUP BY ?uri HAVING(COUNT(?cave) > 10)
 
 
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Total,4,4)
+PhraseIndex(Amount,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(Men,7,7)
+PhraseIndex(And,8,8)
+PhraseIndex(Women,9,9)
+PhraseIndex(Serving,10,10)
+PhraseIndex(In,11,11)
+PhraseIndex(The,12,12)
+PhraseIndex(Fdny,13,13)
+
+[u'What', u'is', u'the', u'total', u'amount', u'of', u'men', u'and', u'women', u'serving', u'in', u'the', u'FDNY']
 What is the total amount of men and women serving in the FDNY?
-[u'root', -1, 9]
-[u'det', 4, 2]
-[u'amod', 4, 3]
-[u'nmod:of', 4, 6]
-[u'nmod:of', 4, 8]
-[u'case', 6, 5]
-[u'cc', 6, 7]
-[u'conj:and', 6, 8]
-[u'dobj', 9, 0]
-[u'aux', 9, 1]
-[u'nsubj', 9, 4]
-[u'nmod:in', 9, 12]
-[u'case', 12, 10]
-[u'det', 12, 11]
+	 La ligne est isolée 
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -382,6 +448,9 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 Who produces Orangina? 
 [u'Who', u'produces', u'Orangina', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Produces,2,2)
+PhraseIndex(Orangina,3,3)
 PhrasePosTag(Who,WP)
 PhrasePosTag(produces,VBZ)
 PhrasePosTag(Orangina,NNP)
@@ -392,18 +461,21 @@ phraseDepTag(produces,Orangina,dobj)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:product res:Orangina . }
 
 
+PhraseIndex(Who,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Formula,4,4)
+PhraseIndex(1,5,5)
+PhraseIndex(Race,6,6)
+PhraseIndex(Driver,7,7)
+PhraseIndex(With,8,8)
+PhraseIndex(The,9,9)
+PhraseIndex(Most,10,10)
+PhraseIndex(Races,11,11)
+
+[u'Who', u'is', u'the', u'Formula', u'1', u'race', u'driver', u'with', u'the', u'most', u'races']
 Who is the Formula 1 race driver with the most races?
-[u'root', -1, 0]
-[u'cop', 0, 1]
-[u'nsubj', 0, 6]
-[u'det', 6, 2]
-[u'compound', 6, 3]
-[u'nummod', 6, 4]
-[u'compound', 6, 5]
-[u'nmod:with', 6, 8]
-[u'case', 8, 7]
-[u'advmod', 8, 9]
-[u'dep', 8, 10]
+	 La ligne est isolée 
 PhrasePosTag(Who,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -430,19 +502,22 @@ phraseDepTag(the,races,dep)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:FormulaOneRacer . ?uri dbo:races ?x . } ORDER BY DESC(?x) OFFSET 0 LIMIT 1
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(World,4,4)
+PhraseIndex(Heritage,5,5)
+PhraseIndex(Sites,6,6)
+PhraseIndex(Designated,7,7)
+PhraseIndex(Within,8,8)
+PhraseIndex(The,9,9)
+PhraseIndex(Past,10,10)
+PhraseIndex(Two,11,11)
+PhraseIndex(Years,12,12)
+
+[u'Give', u'me', u'all', u'world', u'heritage', u'sites', u'designated', u'within', u'the', u'past', u'two', u'years']
 Give me all world heritage sites designated within the past two years.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 5]
-[u'det', 5, 2]
-[u'compound', 5, 3]
-[u'compound', 5, 4]
-[u'acl', 5, 6]
-[u'nmod:within', 6, 11]
-[u'case', 11, 7]
-[u'det', 11, 8]
-[u'amod', 11, 9]
-[u'nummod', 11, 10]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -473,6 +548,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all members of Prodigy. 
 [u'Give', u'me', u'all', u'members', u'of', u'Prodigy', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Members,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Prodigy,6,6)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -491,6 +572,11 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the longest river? 
 [u'What', u'is', u'the', u'longest', u'river', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Longest,4,4)
+PhraseIndex(River,5,5)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -505,17 +591,20 @@ phraseDepTag(river,longest,amod)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:River . { ?uri dbo:length ?l . } UNION { ?uri dbp:length ?l . } } ORDER BY DESC(?l) OFFSET 0 LIMIT 1
 
 
+PhraseIndex(Does,1,1)
+PhraseIndex(Breaking,2,2)
+PhraseIndex(Bad,3,3)
+PhraseIndex(Have,4,4)
+PhraseIndex(More,5,5)
+PhraseIndex(Episodes,6,6)
+PhraseIndex(Than,7,7)
+PhraseIndex(Game,8,8)
+PhraseIndex(Of,9,9)
+PhraseIndex(Thrones,10,10)
+
+[u'Does', u'Breaking', u'Bad', u'have', u'more', u'episodes', u'than', u'Game', u'of', u'Thrones']
 Does Breaking Bad have more episodes than Game of Thrones?
-[u'root', -1, 3]
-[u'xcomp', 0, 1]
-[u'xcomp', 1, 2]
-[u'csubj', 3, 0]
-[u'dobj', 3, 5]
-[u'nmod:than', 3, 7]
-[u'amod', 5, 4]
-[u'case', 7, 6]
-[u'nmod:of', 7, 9]
-[u'case', 9, 8]
+	 La ligne est isolée 
 PhrasePosTag(Does,VBZ)
 PhrasePosTag(Breaking,VBG)
 PhrasePosTag(Bad,JJ)
@@ -542,6 +631,15 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all cars that are produced in Germany. 
 [u'Give', u'me', u'all', u'cars', u'that', u'are', u'produced', u'in', u'Germany', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Cars,4,4)
+PhraseIndex(That,5,5)
+PhraseIndex(Are,6,6)
+PhraseIndex(Produced,7,7)
+PhraseIndex(In,8,8)
+PhraseIndex(Germany,9,9)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -564,17 +662,20 @@ phraseDepTag(Germany,in,case)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Automobile . { ?uri dbo:assembly res:Germany . } UNION { ?uri dbp:assembly res:Germany . } UNION { { ?uri dbo:manufacturer ?x . } UNION { ?uri dbp:manufacturer ?x . } { ?x dbo:locationCountry res:Germany . } UNION { ?x dbo:location res:Germany . } } }
 
 
+PhraseIndex(What,1,1)
+PhraseIndex(Were,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Main,4,4)
+PhraseIndex(Discoveries,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(The,7,7)
+PhraseIndex(Mars,8,8)
+PhraseIndex(Rover,9,9)
+PhraseIndex(Curiosity,10,10)
+
+[u'What', u'were', u'the', u'main', u'discoveries', u'of', u'the', u'Mars', u'rover', u'Curiosity']
 What were the main discoveries of the Mars rover Curiosity?
-[u'root', -1, 0]
-[u'cop', 0, 1]
-[u'nsubj', 0, 4]
-[u'det', 4, 2]
-[u'amod', 4, 3]
-[u'nmod:of', 4, 9]
-[u'case', 9, 5]
-[u'det', 9, 6]
-[u'compound', 9, 7]
-[u'compound', 9, 8]
+	 La ligne est isolée 
 PhrasePosTag(What,WP)
 PhrasePosTag(were,VBD)
 PhrasePosTag(the,DT)
@@ -595,20 +696,23 @@ phraseDepTag(Curiosity,of,case)
 phraseDepTag(Curiosity,the,det)
 phraseDepTag(Curiosity,Mars,compound)
 phraseDepTag(Curiosity,rover,compound)
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(People,4,4)
+PhraseIndex(That,5,5)
+PhraseIndex(Were,6,6)
+PhraseIndex(Born,7,7)
+PhraseIndex(In,8,8)
+PhraseIndex(Vienna,9,9)
+PhraseIndex(And,10,10)
+PhraseIndex(Died,11,11)
+PhraseIndex(In,12,12)
+PhraseIndex(Berlin,13,13)
+
+[u'Give', u'me', u'all', u'people', u'that', u'were', u'born', u'in', u'Vienna', u'and', u'died', u'in', u'Berlin']
 Give me all people that were born in Vienna and died in Berlin.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 3]
-[u'cc', 0, 9]
-[u'conj:and', 0, 10]
-[u'det', 3, 2]
-[u'acl:relcl', 3, 6]
-[u'nsubjpass', 6, 4]
-[u'auxpass', 6, 5]
-[u'nmod:in', 6, 8]
-[u'case', 8, 7]
-[u'nmod:in', 10, 12]
-[u'case', 12, 11]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -641,6 +745,10 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Is proinsulin a protein? 
 [u'Is', u'proinsulin', u'a', u'protein', u'?']
+PhraseIndex(Is,1,1)
+PhraseIndex(Proinsulin,2,2)
+PhraseIndex(A,3,3)
+PhraseIndex(Protein,4,4)
 PhrasePosTag(Is,VBZ)
 PhrasePosTag(proinsulin,NN)
 PhrasePosTag(a,DT)
@@ -655,6 +763,11 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 How tall is Michael Jordan? 
 [u'How', u'tall', u'is', u'Michael', u'Jordan', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Tall,2,2)
+PhraseIndex(Is,3,3)
+PhraseIndex(Michael,4,4)
+PhraseIndex(Jordan,5,5)
 PhrasePosTag(How,WRB)
 PhrasePosTag(tall,JJ)
 PhrasePosTag(is,VBZ)
@@ -671,6 +784,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the capital of Canada? 
 [u'What', u'is', u'the', u'capital', u'of', u'Canada', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Capital,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Canada,6,6)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -689,6 +808,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who is the governor of Wyoming? 
 [u'Who', u'is', u'the', u'governor', u'of', u'Wyoming', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Governor,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Wyoming,6,6)
 PhrasePosTag(Who,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -705,18 +830,20 @@ phraseDepTag(Wyoming,of,case)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Wyoming dbp:governor ?uri . }
 
 
+PhraseIndex(Do,1,1)
+PhraseIndex(Prince,2,2)
+PhraseIndex(Harry,3,3)
+PhraseIndex(And,4,4)
+PhraseIndex(Prince,5,5)
+PhraseIndex(William,6,6)
+PhraseIndex(Have,7,7)
+PhraseIndex(The,8,8)
+PhraseIndex(Same,9,9)
+PhraseIndex(Mother,10,10)
+
+[u'Do', u'Prince', u'Harry', u'and', u'Prince', u'William', u'have', u'the', u'same', u'mother']
 Do Prince Harry and Prince William have the same mother?
-[u'root', -1, 0]
-[u'ccomp', 0, 6]
-[u'compound', 2, 1]
-[u'cc', 2, 3]
-[u'conj:and', 2, 5]
-[u'compound', 5, 4]
-[u'nsubj', 6, 2]
-[u'nsubj', 6, 5]
-[u'dobj', 6, 9]
-[u'det', 9, 7]
-[u'amod', 9, 8]
+	 La ligne est isolée 
 PhrasePosTag(Do,VB)
 PhrasePosTag(Prince,NNP)
 PhrasePosTag(Harry,NNP)
@@ -743,6 +870,14 @@ PREFIX dbp: <http://dbpedia.org/property/> ASK WHERE { <http://dbpedia.org/resou
 
 Who was the father of Queen Elizabeth II? 
 [u'Who', u'was', u'the', u'father', u'of', u'Queen', u'Elizabeth', u'II', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Was,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Father,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Queen,6,6)
+PhraseIndex(Elizabeth,7,7)
+PhraseIndex(Ii,8,8)
 PhrasePosTag(Who,WP)
 PhrasePosTag(was,VBD)
 PhrasePosTag(the,DT)
@@ -765,6 +900,13 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/prope
 
 Which U.S. state has been admitted latest? 
 [u'Which', u'U.S.', u'state', u'has', u'been', u'admitted', u'latest', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(U.S.,2,2)
+PhraseIndex(State,3,3)
+PhraseIndex(Has,4,4)
+PhraseIndex(Been,5,5)
+PhraseIndex(Admitted,6,6)
+PhraseIndex(Latest,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(U.S.,NNP)
 PhrasePosTag(state,NN)
@@ -785,6 +927,13 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX yago: <http://dbpedia.org/clas
 
 How many languages are spoken in Turkmenistan? 
 [u'How', u'many', u'languages', u'are', u'spoken', u'in', u'Turkmenistan', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Many,2,2)
+PhraseIndex(Languages,3,3)
+PhraseIndex(Are,4,4)
+PhraseIndex(Spoken,5,5)
+PhraseIndex(In,6,6)
+PhraseIndex(Turkmenistan,7,7)
 PhrasePosTag(How,WRB)
 PhrasePosTag(many,JJ)
 PhrasePosTag(languages,NNS)
@@ -803,16 +952,19 @@ phraseDepTag(Turkmenistan,in,case)
 PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:governor res:Sean_Parnell . }
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Movies,4,4)
+PhraseIndex(Directed,5,5)
+PhraseIndex(By,6,6)
+PhraseIndex(Francis,7,7)
+PhraseIndex(Ford,8,8)
+PhraseIndex(Coppola,9,9)
+
+[u'Give', u'me', u'all', u'movies', u'directed', u'by', u'Francis', u'Ford', u'Coppola']
 Give me all movies directed by Francis Ford Coppola.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 3]
-[u'det', 3, 2]
-[u'acl', 3, 4]
-[u'nmod:by', 4, 8]
-[u'case', 8, 5]
-[u'compound', 8, 6]
-[u'compound', 8, 7]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -835,18 +987,21 @@ phraseDepTag(Coppola,Ford,compound)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:director res:Francis_Ford_Coppola . }
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Actors,4,4)
+PhraseIndex(Starring,5,5)
+PhraseIndex(In,6,6)
+PhraseIndex(Movies,7,7)
+PhraseIndex(Directed,8,8)
+PhraseIndex(By,9,9)
+PhraseIndex(William,10,10)
+PhraseIndex(Shatner,11,11)
+
+[u'Give', u'me', u'all', u'actors', u'starring', u'in', u'movies', u'directed', u'by', u'William', u'Shatner']
 Give me all actors starring in movies directed by William Shatner.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 3]
-[u'det', 3, 2]
-[u'acl', 3, 4]
-[u'nmod:in', 4, 6]
-[u'case', 6, 5]
-[u'acl', 6, 7]
-[u'nmod:by', 7, 10]
-[u'case', 10, 8]
-[u'compound', 10, 9]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -875,6 +1030,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/prope
 
 Are tree frogs a type of amphibian? 
 [u'Are', u'tree', u'frogs', u'a', u'type', u'of', u'amphibian', u'?']
+PhraseIndex(Are,1,1)
+PhraseIndex(Tree,2,2)
+PhraseIndex(Frogs,3,3)
+PhraseIndex(A,4,4)
+PhraseIndex(Type,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(Amphibian,7,7)
 PhrasePosTag(Are,VBP)
 PhrasePosTag(tree,NN)
 PhrasePosTag(frogs,NNS)
@@ -895,6 +1057,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the birth name of Angela Merkel? 
 [u'What', u'is', u'the', u'birth', u'name', u'of', u'Angela', u'Merkel', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Birth,4,4)
+PhraseIndex(Name,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(Angela,7,7)
+PhraseIndex(Merkel,8,8)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -917,6 +1087,11 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all Methodist politicians. 
 [u'Give', u'me', u'all', u'Methodist', u'politicians', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Methodist,4,4)
+PhraseIndex(Politicians,5,5)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -933,6 +1108,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 How often did Jane Fonda marry? 
 [u'How', u'often', u'did', u'Jane', u'Fonda', u'marry', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Often,2,2)
+PhraseIndex(Did,3,3)
+PhraseIndex(Jane,4,4)
+PhraseIndex(Fonda,5,5)
+PhraseIndex(Marry,6,6)
 PhrasePosTag(How,WRB)
 PhrasePosTag(often,RB)
 PhrasePosTag(did,VBD)
@@ -949,16 +1130,19 @@ phraseDepTag(marry,Fonda,nsubj)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:type res:Nonprofit_organization . { ?uri dbo:locationCountry res:Australia . } UNION { ?uri dbo:location ?x . ?x dbo:country res:Australia . } }
 
 
+PhraseIndex(In,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(Military,3,3)
+PhraseIndex(Conflicts,4,4)
+PhraseIndex(Did,5,5)
+PhraseIndex(Lawrence,6,6)
+PhraseIndex(Of,7,7)
+PhraseIndex(Arabia,8,8)
+PhraseIndex(Participate,9,9)
+
+[u'In', u'which', u'military', u'conflicts', u'did', u'Lawrence', u'of', u'Arabia', u'participate']
 In which military conflicts did Lawrence of Arabia participate?
-[u'root', -1, 8]
-[u'case', 3, 0]
-[u'det', 3, 1]
-[u'amod', 3, 2]
-[u'nmod:of', 5, 7]
-[u'case', 7, 6]
-[u'nmod:in', 8, 3]
-[u'aux', 8, 4]
-[u'nsubj', 8, 5]
+	 La ligne est isolée 
 PhrasePosTag(In,IN)
 PhrasePosTag(which,WDT)
 PhrasePosTag(military,JJ)
@@ -983,6 +1167,9 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who developed Minecraft? 
 [u'Who', u'developed', u'Minecraft', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Developed,2,2)
+PhraseIndex(Minecraft,3,3)
 PhrasePosTag(Who,WP)
 PhrasePosTag(developed,VBD)
 PhrasePosTag(Minecraft,NNP)
@@ -995,6 +1182,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the melting point of copper? 
 [u'What', u'is', u'the', u'melting', u'point', u'of', u'copper', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Melting,4,4)
+PhraseIndex(Point,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(Copper,7,7)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -1011,6 +1205,13 @@ phraseDepTag(point,copper,nmod:of)
 phraseDepTag(copper,of,case)
 Give me all sister cities of Brno. 
 [u'Give', u'me', u'all', u'sister', u'cities', u'of', u'Brno', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Sister,4,4)
+PhraseIndex(Cities,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(Brno,7,7)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -1027,6 +1228,12 @@ phraseDepTag(cities,Brno,nmod:of)
 phraseDepTag(Brno,of,case)
 How many inhabitants does Maribor have? 
 [u'How', u'many', u'inhabitants', u'does', u'Maribor', u'have', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Many,2,2)
+PhraseIndex(Inhabitants,3,3)
+PhraseIndex(Does,4,4)
+PhraseIndex(Maribor,5,5)
+PhraseIndex(Have,6,6)
 PhrasePosTag(How,WRB)
 PhrasePosTag(many,JJ)
 PhrasePosTag(inhabitants,NNS)
@@ -1045,6 +1252,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all companies in Munich. 
 [u'Give', u'me', u'all', u'companies', u'in', u'Munich', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Companies,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(Munich,6,6)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -1063,6 +1276,11 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 How tall is Claudia Schiffer? 
 [u'How', u'tall', u'is', u'Claudia', u'Schiffer', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Tall,2,2)
+PhraseIndex(Is,3,3)
+PhraseIndex(Claudia,4,4)
+PhraseIndex(Schiffer,5,5)
 PhrasePosTag(How,WRB)
 PhrasePosTag(tall,JJ)
 PhrasePosTag(is,VBZ)
@@ -1079,6 +1297,11 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontol
 
 List all games by GMT. 
 [u'List', u'all', u'games', u'by', u'GMT', u'.']
+PhraseIndex(List,1,1)
+PhraseIndex(All,2,2)
+PhraseIndex(Games,3,3)
+PhraseIndex(By,4,4)
+PhraseIndex(Gmt,5,5)
 PhrasePosTag(List,VB)
 PhrasePosTag(all,DT)
 PhrasePosTag(games,NNS)
@@ -1095,6 +1318,9 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who founded Intel? 
 [u'Who', u'founded', u'Intel', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Founded,2,2)
+PhraseIndex(Intel,3,3)
 PhrasePosTag(Who,WP)
 PhrasePosTag(founded,VBD)
 PhrasePosTag(Intel,NNP)
@@ -1107,6 +1333,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who is the husband of Amanda Palmer? 
 [u'Who', u'is', u'the', u'husband', u'of', u'Amanda', u'Palmer', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Husband,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Amanda,6,6)
+PhraseIndex(Palmer,7,7)
 PhrasePosTag(Who,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -1127,6 +1360,15 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all breeds of the German Shepherd dog. 
 [u'Give', u'me', u'all', u'breeds', u'of', u'the', u'German', u'Shepherd', u'dog', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Breeds,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(German,7,7)
+PhraseIndex(Shepherd,8,8)
+PhraseIndex(Dog,9,9)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -1151,6 +1393,13 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 Which cities does the Weser flow through? 
 [u'Which', u'cities', u'does', u'the', u'Weser', u'flow', u'through', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Cities,2,2)
+PhraseIndex(Does,3,3)
+PhraseIndex(The,4,4)
+PhraseIndex(Weser,5,5)
+PhraseIndex(Flow,6,6)
+PhraseIndex(Through,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(cities,NNS)
 PhrasePosTag(does,VBZ)
@@ -1171,6 +1420,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which countries are connected by the Rhine? 
 [u'Which', u'countries', u'are', u'connected', u'by', u'the', u'Rhine', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Countries,2,2)
+PhraseIndex(Are,3,3)
+PhraseIndex(Connected,4,4)
+PhraseIndex(By,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Rhine,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(countries,NNS)
 PhrasePosTag(are,VBP)
@@ -1191,6 +1447,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/prope
 
 Which professional surfers were born in Australia? 
 [u'Which', u'professional', u'surfers', u'were', u'born', u'in', u'Australia', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Professional,2,2)
+PhraseIndex(Surfers,3,3)
+PhraseIndex(Were,4,4)
+PhraseIndex(Born,5,5)
+PhraseIndex(In,6,6)
+PhraseIndex(Australia,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(professional,JJ)
 PhrasePosTag(surfers,NNS)
@@ -1211,6 +1474,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the average temperature on Hawaii? 
 [u'What', u'is', u'the', u'average', u'temperature', u'on', u'Hawaii', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Average,4,4)
+PhraseIndex(Temperature,5,5)
+PhraseIndex(On,6,6)
+PhraseIndex(Hawaii,7,7)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -1227,6 +1497,16 @@ phraseDepTag(temperature,Hawaii,nmod:on)
 phraseDepTag(Hawaii,on,case)
 In which UK city are the headquarters of the MI6? 
 [u'In', u'which', u'UK', u'city', u'are', u'the', u'headquarters', u'of', u'the', u'MI6', u'?']
+PhraseIndex(In,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(Uk,3,3)
+PhraseIndex(City,4,4)
+PhraseIndex(Are,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Headquarters,7,7)
+PhraseIndex(Of,8,8)
+PhraseIndex(The,9,9)
+PhraseIndex(Mi6,10,10)
 PhrasePosTag(In,IN)
 PhrasePosTag(which,WDT)
 PhrasePosTag(UK,NNP)
@@ -1251,17 +1531,20 @@ phraseDepTag(MI6,the,det)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City . res:Secret_Intelligence_Service dbo:headquarter ?uri . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Other,2,2)
+PhraseIndex(Weapons,3,3)
+PhraseIndex(Did,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Designer,6,6)
+PhraseIndex(Of,7,7)
+PhraseIndex(The,8,8)
+PhraseIndex(Uzi,9,9)
+PhraseIndex(Develop,10,10)
+
+[u'Which', u'other', u'weapons', u'did', u'the', u'designer', u'of', u'the', u'Uzi', u'develop']
 Which other weapons did the designer of the Uzi develop?
-[u'root', -1, 9]
-[u'det', 2, 0]
-[u'amod', 2, 1]
-[u'det', 5, 4]
-[u'nmod:of', 5, 8]
-[u'case', 8, 6]
-[u'det', 8, 7]
-[u'dobj', 9, 2]
-[u'aux', 9, 3]
-[u'nsubj', 9, 5]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(other,JJ)
 PhrasePosTag(weapons,NNS)
@@ -1288,6 +1571,9 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/prope
 
 Who created Goofy? 
 [u'Who', u'created', u'Goofy', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Created,2,2)
+PhraseIndex(Goofy,3,3)
 PhrasePosTag(Who,WP)
 PhrasePosTag(created,VBD)
 PhrasePosTag(Goofy,NNP)
@@ -1298,19 +1584,22 @@ phraseDepTag(created,Goofy,dobj)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Goofy dbo:creator ?uri . }
 
 
+PhraseIndex(Was,1,1)
+PhraseIndex(The,2,2)
+PhraseIndex(Cuban,3,3)
+PhraseIndex(Missile,4,4)
+PhraseIndex(Crisis,5,5)
+PhraseIndex(Earlier,6,6)
+PhraseIndex(Than,7,7)
+PhraseIndex(The,8,8)
+PhraseIndex(Bay,9,9)
+PhraseIndex(Of,10,10)
+PhraseIndex(Pigs,11,11)
+PhraseIndex(Invasion,12,12)
+
+[u'Was', u'the', u'Cuban', u'Missile', u'Crisis', u'earlier', u'than', u'the', u'Bay', u'of', u'Pigs', u'Invasion']
 Was the Cuban Missile Crisis earlier than the Bay of Pigs Invasion?
-[u'root', -1, 5]
-[u'det', 4, 1]
-[u'amod', 4, 2]
-[u'compound', 4, 3]
-[u'cop', 5, 0]
-[u'nsubj', 5, 4]
-[u'nmod:than', 5, 8]
-[u'case', 8, 6]
-[u'det', 8, 7]
-[u'nmod:of', 8, 11]
-[u'case', 11, 9]
-[u'compound', 11, 10]
+	 La ligne est isolée 
 PhrasePosTag(Was,VBD)
 PhrasePosTag(the,DT)
 PhrasePosTag(Cuban,JJ)
@@ -1341,6 +1630,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all islands that belong to Japan. 
 [u'Give', u'me', u'all', u'islands', u'that', u'belong', u'to', u'Japan', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Islands,4,4)
+PhraseIndex(That,5,5)
+PhraseIndex(Belong,6,6)
+PhraseIndex(To,7,7)
+PhraseIndex(Japan,8,8)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -1363,6 +1660,10 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who invented the zipper? 
 [u'Who', u'invented', u'the', u'zipper', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Invented,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Zipper,4,4)
 PhrasePosTag(Who,WP)
 PhrasePosTag(invented,VBD)
 PhrasePosTag(the,DT)
@@ -1373,6 +1674,13 @@ phraseDepTag(invented,zipper,dobj)
 phraseDepTag(zipper,the,det)
 What is the ruling party in Lisbon? 
 [u'What', u'is', u'the', u'ruling', u'party', u'in', u'Lisbon', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Ruling,4,4)
+PhraseIndex(Party,5,5)
+PhraseIndex(In,6,6)
+PhraseIndex(Lisbon,7,7)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -1393,6 +1701,13 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 What are the nicknames of San Francisco? 
 [u'What', u'are', u'the', u'nicknames', u'of', u'San', u'Francisco', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Are,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Nicknames,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(San,6,6)
+PhraseIndex(Francisco,7,7)
 PhrasePosTag(What,WP)
 PhrasePosTag(are,VBP)
 PhrasePosTag(the,DT)
@@ -1413,6 +1728,13 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 Which Greek goddesses dwelt on Mount Olympus? 
 [u'Which', u'Greek', u'goddesses', u'dwelt', u'on', u'Mount', u'Olympus', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Greek,2,2)
+PhraseIndex(Goddesses,3,3)
+PhraseIndex(Dwelt,4,4)
+PhraseIndex(On,5,5)
+PhraseIndex(Mount,6,6)
+PhraseIndex(Olympus,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(Greek,JJ)
 PhrasePosTag(goddesses,NNS)
@@ -1433,6 +1755,12 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 When were the Hells Angels founded? 
 [u'When', u'were', u'the', u'Hells', u'Angels', u'founded', u'?']
+PhraseIndex(When,1,1)
+PhraseIndex(Were,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Hells,4,4)
+PhraseIndex(Angels,5,5)
+PhraseIndex(Founded,6,6)
 PhrasePosTag(When,WRB)
 PhrasePosTag(were,VBD)
 PhrasePosTag(the,DT)
@@ -1451,6 +1779,12 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all Apollo 14 astronauts. 
 [u'Give', u'me', u'all', u'Apollo', u'14', u'astronauts', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Apollo,4,4)
+PhraseIndex(14,5,5)
+PhraseIndex(Astronauts,6,6)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -1469,6 +1803,15 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the time zone of Salt Lake City? 
 [u'What', u'is', u'the', u'time', u'zone', u'of', u'Salt', u'Lake', u'City', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Time,4,4)
+PhraseIndex(Zone,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(Salt,7,7)
+PhraseIndex(Lake,8,8)
+PhraseIndex(City,9,9)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -1491,18 +1834,21 @@ phraseDepTag(City,Lake,compound)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Salt_Lake_City dbp:timezone ?uri . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(U.S.,2,2)
+PhraseIndex(States,3,3)
+PhraseIndex(Are,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Same,7,7)
+PhraseIndex(Time,8,8)
+PhraseIndex(Zone,9,9)
+PhraseIndex(As,10,10)
+PhraseIndex(Utah,11,11)
+
+[u'Which', u'U.S.', u'states', u'are', u'in', u'the', u'same', u'time', u'zone', u'as', u'Utah']
 Which U.S. states are in the same time zone as Utah?
-[u'root', -1, 3]
-[u'det', 2, 0]
-[u'compound', 2, 1]
-[u'nsubj', 3, 2]
-[u'nmod:in', 3, 8]
-[u'case', 8, 4]
-[u'det', 8, 5]
-[u'amod', 8, 6]
-[u'compound', 8, 7]
-[u'nmod:as', 8, 10]
-[u'case', 10, 9]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(U.S.,NNP)
 PhrasePosTag(states,NNS)
@@ -1531,6 +1877,15 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/prope
 
 Give me the capitals of all countries in Africa. 
 [u'Give', u'me', u'the', u'capitals', u'of', u'all', u'countries', u'in', u'Africa', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Capitals,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(All,6,6)
+PhraseIndex(Countries,7,7)
+PhraseIndex(In,8,8)
+PhraseIndex(Africa,9,9)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(the,DT)
@@ -1555,6 +1910,15 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX yago: <http://dbpedia.org/clas
 
 Give me a list of all lakes in Denmark. 
 [u'Give', u'me', u'a', u'list', u'of', u'all', u'lakes', u'in', u'Denmark', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(A,3,3)
+PhraseIndex(List,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(All,6,6)
+PhraseIndex(Lakes,7,7)
+PhraseIndex(In,8,8)
+PhraseIndex(Denmark,9,9)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(a,DT)
@@ -1579,6 +1943,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 How many space missions have there been? 
 [u'How', u'many', u'space', u'missions', u'have', u'there', u'been', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Many,2,2)
+PhraseIndex(Space,3,3)
+PhraseIndex(Missions,4,4)
+PhraseIndex(Have,5,5)
+PhraseIndex(There,6,6)
+PhraseIndex(Been,7,7)
 PhrasePosTag(How,WRB)
 PhrasePosTag(many,JJ)
 PhrasePosTag(space,NN)
@@ -1599,6 +1970,11 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all Danish films. 
 [u'Give', u'me', u'all', u'Danish', u'films', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Danish,4,4)
+PhraseIndex(Films,5,5)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -1615,6 +1991,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all launch pads operated by NASA. 
 [u'Give', u'me', u'all', u'launch', u'pads', u'operated', u'by', u'NASA', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Launch,4,4)
+PhraseIndex(Pads,5,5)
+PhraseIndex(Operated,6,6)
+PhraseIndex(By,7,7)
+PhraseIndex(Nasa,8,8)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -1637,6 +2021,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which instruments does Cat Stevens play? 
 [u'Which', u'instruments', u'does', u'Cat', u'Stevens', u'play', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Instruments,2,2)
+PhraseIndex(Does,3,3)
+PhraseIndex(Cat,4,4)
+PhraseIndex(Stevens,5,5)
+PhraseIndex(Play,6,6)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(instruments,NNS)
 PhrasePosTag(does,VBZ)
@@ -1655,6 +2045,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which ships were called after Benjamin Franklin? 
 [u'Which', u'ships', u'were', u'called', u'after', u'Benjamin', u'Franklin', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Ships,2,2)
+PhraseIndex(Were,3,3)
+PhraseIndex(Called,4,4)
+PhraseIndex(After,5,5)
+PhraseIndex(Benjamin,6,6)
+PhraseIndex(Franklin,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(ships,NNS)
 PhrasePosTag(were,VBD)
@@ -1675,6 +2072,17 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/prope
 
 Who are the parents of the wife of Juan Carlos I? 
 [u'Who', u'are', u'the', u'parents', u'of', u'the', u'wife', u'of', u'Juan', u'Carlos', u'I', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Are,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Parents,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Wife,7,7)
+PhraseIndex(Of,8,8)
+PhraseIndex(Juan,9,9)
+PhraseIndex(Carlos,10,10)
+PhraseIndex(I,11,11)
 PhrasePosTag(Who,WP)
 PhrasePosTag(are,VBP)
 PhrasePosTag(the,DT)
@@ -1703,6 +2111,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 How many employees does Google have? 
 [u'How', u'many', u'employees', u'does', u'Google', u'have', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Many,2,2)
+PhraseIndex(Employees,3,3)
+PhraseIndex(Does,4,4)
+PhraseIndex(Google,5,5)
+PhraseIndex(Have,6,6)
 PhrasePosTag(How,WRB)
 PhrasePosTag(many,JJ)
 PhrasePosTag(employees,NNS)
@@ -1721,6 +2135,14 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontol
 
 Did Tesla win a nobel prize in physics? 
 [u'Did', u'Tesla', u'win', u'a', u'nobel', u'prize', u'in', u'physics', u'?']
+PhraseIndex(Did,1,1)
+PhraseIndex(Tesla,2,2)
+PhraseIndex(Win,3,3)
+PhraseIndex(A,4,4)
+PhraseIndex(Nobel,5,5)
+PhraseIndex(Prize,6,6)
+PhraseIndex(In,7,7)
+PhraseIndex(Physics,8,8)
 PhrasePosTag(Did,VBD)
 PhrasePosTag(Tesla,NNP)
 PhrasePosTag(win,VB)
@@ -1741,19 +2163,22 @@ phraseDepTag(physics,in,case)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Nikola_Tesla dbo:award res:Nobel_Prize_in_Physics . }
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Cities,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(New,6,6)
+PhraseIndex(Jersey,7,7)
+PhraseIndex(With,8,8)
+PhraseIndex(More,9,9)
+PhraseIndex(Than,10,10)
+PhraseIndex(100000,11,11)
+PhraseIndex(Inhabitants,12,12)
+
+[u'Give', u'me', u'all', u'cities', u'in', u'New', u'Jersey', u'with', u'more', u'than', u'100000', u'inhabitants']
 Give me all cities in New Jersey with more than 100000 inhabitants.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 3]
-[u'det', 3, 2]
-[u'nmod:in', 3, 6]
-[u'case', 6, 4]
-[u'compound', 6, 5]
-[u'nmod:with', 6, 11]
-[u'mwe', 8, 9]
-[u'advmod', 10, 8]
-[u'case', 11, 7]
-[u'nummod', 11, 10]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -1784,6 +2209,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Is Michelle Obama the wife of Barack Obama? 
 [u'Is', u'Michelle', u'Obama', u'the', u'wife', u'of', u'Barack', u'Obama', u'?']
+PhraseIndex(Is,1,1)
+PhraseIndex(Michelle,2,2)
+PhraseIndex(Obama,3,3)
+PhraseIndex(The,4,4)
+PhraseIndex(Wife,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(Barack,7,7)
+PhraseIndex(Obama,8,8)
 PhrasePosTag(Is,VBZ)
 PhrasePosTag(Michelle,NNP)
 PhrasePosTag(Obama,NNP)
@@ -1806,6 +2239,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 When was the Statue of Liberty built? 
 [u'When', u'was', u'the', u'Statue', u'of', u'Liberty', u'built', u'?']
+PhraseIndex(When,1,1)
+PhraseIndex(Was,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Statue,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Liberty,6,6)
+PhraseIndex(Built,7,7)
 PhrasePosTag(When,WRB)
 PhrasePosTag(was,VBD)
 PhrasePosTag(the,DT)
@@ -1826,6 +2266,14 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 In which U.S. state is Fort Knox located? 
 [u'In', u'which', u'U.S.', u'state', u'is', u'Fort', u'Knox', u'located', u'?']
+PhraseIndex(In,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(U.S.,3,3)
+PhraseIndex(State,4,4)
+PhraseIndex(Is,5,5)
+PhraseIndex(Fort,6,6)
+PhraseIndex(Knox,7,7)
+PhraseIndex(Located,8,8)
 PhrasePosTag(In,IN)
 PhrasePosTag(which,WDT)
 PhrasePosTag(U.S.,NNP)
@@ -1848,6 +2296,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/prope
 
 How many children did Benjamin Franklin have? 
 [u'How', u'many', u'children', u'did', u'Benjamin', u'Franklin', u'have', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Many,2,2)
+PhraseIndex(Children,3,3)
+PhraseIndex(Did,4,4)
+PhraseIndex(Benjamin,5,5)
+PhraseIndex(Franklin,6,6)
+PhraseIndex(Have,7,7)
 PhrasePosTag(How,WRB)
 PhrasePosTag(many,JJ)
 PhrasePosTag(children,NNS)
@@ -1866,19 +2321,22 @@ phraseDepTag(have,Franklin,nsubj)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Michael_Jackson dbo:deathDate ?date . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Chess,2,2)
+PhraseIndex(Players,3,3)
+PhraseIndex(Died,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Same,7,7)
+PhraseIndex(Place,8,8)
+PhraseIndex(They,9,9)
+PhraseIndex(Were,10,10)
+PhraseIndex(Born,11,11)
+PhraseIndex(In,12,12)
+
+[u'Which', u'Chess', u'players', u'died', u'in', u'the', u'same', u'place', u'they', u'were', u'born', u'in']
 Which Chess players died in the same place they were born in?
-[u'root', -1, 10]
-[u'compound', 2, 1]
-[u'dobj', 3, 0]
-[u'nsubj', 3, 2]
-[u'nmod:in', 3, 7]
-[u'case', 7, 4]
-[u'det', 7, 5]
-[u'amod', 7, 6]
-[u'advcl', 10, 3]
-[u'nsubjpass', 10, 8]
-[u'auxpass', 10, 9]
-[u'nmod', 10, 11]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(Chess,NN)
 PhrasePosTag(players,NNS)
@@ -1909,6 +2367,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/0
 
 List the children of Margaret Thatcher. 
 [u'List', u'the', u'children', u'of', u'Margaret', u'Thatcher', u'.']
+PhraseIndex(List,1,1)
+PhraseIndex(The,2,2)
+PhraseIndex(Children,3,3)
+PhraseIndex(Of,4,4)
+PhraseIndex(Margaret,5,5)
+PhraseIndex(Thatcher,6,6)
 PhrasePosTag(List,VB)
 PhrasePosTag(the,DT)
 PhrasePosTag(children,NNS)
@@ -1927,6 +2391,10 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontol
 
 Who was called Scarface? 
 [u'Who', u'was', u'called', u'Scarface', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Was,2,2)
+PhraseIndex(Called,3,3)
+PhraseIndex(Scarface,4,4)
 PhrasePosTag(Who,WP)
 PhrasePosTag(was,VBD)
 PhrasePosTag(called,VBN)
@@ -1941,6 +2409,11 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 Was Margaret Thatcher a chemist? 
 [u'Was', u'Margaret', u'Thatcher', u'a', u'chemist', u'?']
+PhraseIndex(Was,1,1)
+PhraseIndex(Margaret,2,2)
+PhraseIndex(Thatcher,3,3)
+PhraseIndex(A,4,4)
+PhraseIndex(Chemist,5,5)
 PhrasePosTag(Was,VBD)
 PhrasePosTag(Margaret,NNP)
 PhrasePosTag(Thatcher,NNP)
@@ -1957,6 +2430,11 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontol
 
 Was Marc Chagall a jew? 
 [u'Was', u'Marc', u'Chagall', u'a', u'jew', u'?']
+PhraseIndex(Was,1,1)
+PhraseIndex(Marc,2,2)
+PhraseIndex(Chagall,3,3)
+PhraseIndex(A,4,4)
+PhraseIndex(Jew,5,5)
 PhrasePosTag(Was,VBD)
 PhrasePosTag(Marc,NNP)
 PhrasePosTag(Chagall,NNP)
@@ -1971,19 +2449,22 @@ phraseDepTag(jew,a,det)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Scream dbo:museum ?uri . }
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Books,4,4)
+PhraseIndex(By,5,5)
+PhraseIndex(William,6,6)
+PhraseIndex(Goldman,7,7)
+PhraseIndex(With,8,8)
+PhraseIndex(More,9,9)
+PhraseIndex(Than,10,10)
+PhraseIndex(300,11,11)
+PhraseIndex(Pages,12,12)
+
+[u'Give', u'me', u'all', u'books', u'by', u'William', u'Goldman', u'with', u'more', u'than', u'300', u'pages']
 Give me all books by William Goldman with more than 300 pages.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 3]
-[u'nmod:by', 0, 6]
-[u'det', 3, 2]
-[u'case', 6, 4]
-[u'compound', 6, 5]
-[u'nmod:with', 6, 11]
-[u'mwe', 8, 9]
-[u'advmod', 10, 8]
-[u'case', 11, 7]
-[u'nummod', 11, 10]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -2012,16 +2493,19 @@ phraseDepTag(pages,300,nummod)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book . ?uri dbo:author res:William_Goldman . ?uri dbo:numberOfPages ?x . FILTER (?x > 300) }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Books,2,2)
+PhraseIndex(By,3,3)
+PhraseIndex(Kerouac,4,4)
+PhraseIndex(Were,5,5)
+PhraseIndex(Published,6,6)
+PhraseIndex(By,7,7)
+PhraseIndex(Viking,8,8)
+PhraseIndex(Press,9,9)
+
+[u'Which', u'books', u'by', u'Kerouac', u'were', u'published', u'by', u'Viking', u'Press']
 Which books by Kerouac were published by Viking Press?
-[u'root', -1, 5]
-[u'det', 1, 0]
-[u'nmod:by', 1, 3]
-[u'case', 3, 2]
-[u'nsubjpass', 5, 1]
-[u'auxpass', 5, 4]
-[u'nmod:agent', 5, 8]
-[u'case', 8, 6]
-[u'amod', 8, 7]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(books,NNS)
 PhrasePosTag(by,IN)
@@ -2046,6 +2530,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me a list of all American inventions. 
 [u'Give', u'me', u'a', u'list', u'of', u'all', u'American', u'inventions', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(A,3,3)
+PhraseIndex(List,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(All,6,6)
+PhraseIndex(American,7,7)
+PhraseIndex(Inventions,8,8)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(a,DT)
@@ -2068,6 +2560,12 @@ PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/199
 
 How high is the Mount Everest? 
 [u'How', u'high', u'is', u'the', u'Mount', u'Everest', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(High,2,2)
+PhraseIndex(Is,3,3)
+PhraseIndex(The,4,4)
+PhraseIndex(Mount,5,5)
+PhraseIndex(Everest,6,6)
 PhrasePosTag(How,WRB)
 PhrasePosTag(high,JJ)
 PhrasePosTag(is,VBZ)
@@ -2086,6 +2584,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who created the comic Captain America? 
 [u'Who', u'created', u'the', u'comic', u'Captain', u'America', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Created,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Comic,4,4)
+PhraseIndex(Captain,5,5)
+PhraseIndex(America,6,6)
 PhrasePosTag(Who,WP)
 PhrasePosTag(created,VBD)
 PhrasePosTag(the,DT)
@@ -2104,6 +2608,15 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 How many people live in the capital of Australia? 
 [u'How', u'many', u'people', u'live', u'in', u'the', u'capital', u'of', u'Australia', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Many,2,2)
+PhraseIndex(People,3,3)
+PhraseIndex(Live,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Capital,7,7)
+PhraseIndex(Of,8,8)
+PhraseIndex(Australia,9,9)
 PhrasePosTag(How,WRB)
 PhrasePosTag(many,JJ)
 PhrasePosTag(people,NNS)
@@ -2128,6 +2641,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the largest city in Australia? 
 [u'What', u'is', u'the', u'largest', u'city', u'in', u'Australia', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Largest,4,4)
+PhraseIndex(City,5,5)
+PhraseIndex(In,6,6)
+PhraseIndex(Australia,7,7)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -2148,6 +2668,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who composed the music for Harold and Maude? 
 [u'Who', u'composed', u'the', u'music', u'for', u'Harold', u'and', u'Maude', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Composed,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Music,4,4)
+PhraseIndex(For,5,5)
+PhraseIndex(Harold,6,6)
+PhraseIndex(And,7,7)
+PhraseIndex(Maude,8,8)
 PhrasePosTag(Who,WP)
 PhrasePosTag(composed,VBN)
 PhrasePosTag(the,DT)
@@ -2168,16 +2696,19 @@ phraseDepTag(Harold,and,cc)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Films,2,2)
+PhraseIndex(Starring,3,3)
+PhraseIndex(Clint,4,4)
+PhraseIndex(Eastwood,5,5)
+PhraseIndex(Did,6,6)
+PhraseIndex(He,7,7)
+PhraseIndex(Direct,8,8)
+PhraseIndex(Himself,9,9)
+
+[u'Which', u'films', u'starring', u'Clint', u'Eastwood', u'did', u'he', u'direct', u'himself']
 Which films starring Clint Eastwood did he direct himself?
-[u'root', -1, 7]
-[u'det', 1, 0]
-[u'nmod:starring', 1, 4]
-[u'case', 4, 2]
-[u'compound', 4, 3]
-[u'dep', 7, 1]
-[u'aux', 7, 5]
-[u'nsubj', 7, 6]
-[u'dobj', 7, 8]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(films,NNS)
 PhrasePosTag(starring,VBG)
@@ -2200,17 +2731,20 @@ phraseDepTag(direct,himself,dobj)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Clint_Eastwood . ?uri dbo:starring res:Clint_Eastwood . }
 
 
+PhraseIndex(In,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(City,3,3)
+PhraseIndex(Was,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Former,6,6)
+PhraseIndex(Dutch,7,7)
+PhraseIndex(Queen,8,8)
+PhraseIndex(Juliana,9,9)
+PhraseIndex(Buried,10,10)
+
+[u'In', u'which', u'city', u'was', u'the', u'former', u'Dutch', u'queen', u'Juliana', u'buried']
 In which city was the former Dutch queen Juliana buried?
-[u'root', -1, 9]
-[u'case', 2, 0]
-[u'det', 2, 1]
-[u'det', 8, 4]
-[u'amod', 8, 5]
-[u'compound', 8, 6]
-[u'compound', 8, 7]
-[u'nmod:in', 9, 2]
-[u'auxpass', 9, 3]
-[u'nsubjpass', 9, 8]
+	 La ligne est isolée 
 PhrasePosTag(In,IN)
 PhrasePosTag(which,WDT)
 PhrasePosTag(city,NN)
@@ -2237,6 +2771,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Is Egypts largest city also its capital? 
 [u'Is', u'Egypts', u'largest', u'city', u'also', u'its', u'capital', u'?']
+PhraseIndex(Is,1,1)
+PhraseIndex(Egypts,2,2)
+PhraseIndex(Largest,3,3)
+PhraseIndex(City,4,4)
+PhraseIndex(Also,5,5)
+PhraseIndex(Its,6,6)
+PhraseIndex(Capital,7,7)
 PhrasePosTag(Is,VBZ)
 PhrasePosTag(Egypts,RB)
 PhrasePosTag(largest,JJS)
@@ -2255,17 +2796,20 @@ phraseDepTag(capital,its,nmod:poss)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> ASK WHERE { res:Egypt dbo:largestCity ?large . res:Egypt dbo:capital ?capital . FILTER (?large = ?capital) }
 
 
+PhraseIndex(Where,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Residence,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Prime,7,7)
+PhraseIndex(Minister,8,8)
+PhraseIndex(Of,9,9)
+PhraseIndex(Spain,10,10)
+
+[u'Where', u'is', u'the', u'residence', u'of', u'the', u'prime', u'minister', u'of', u'Spain']
 Where is the residence of the prime minister of Spain?
-[u'root', -1, 1]
-[u'advmod', 1, 0]
-[u'nsubj', 1, 3]
-[u'det', 3, 2]
-[u'nmod:of', 3, 7]
-[u'case', 7, 4]
-[u'det', 7, 5]
-[u'amod', 7, 6]
-[u'nmod:of', 7, 9]
-[u'case', 9, 8]
+	 La ligne est isolée 
 PhrasePosTag(Where,WRB)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -2292,6 +2836,13 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 Which U.S. state has the abbreviation MN? 
 [u'Which', u'U.S.', u'state', u'has', u'the', u'abbreviation', u'MN', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(U.S.,2,2)
+PhraseIndex(State,3,3)
+PhraseIndex(Has,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Abbreviation,6,6)
+PhraseIndex(Mn,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(U.S.,NNP)
 PhrasePosTag(state,NN)
@@ -2310,19 +2861,22 @@ phraseDepTag(MN,abbreviation,compound)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:director res:Akira_Kurosawa . { ?uri dbo:releaseDate ?x . } UNION { ?uri dbp:released ?x . } res:Rashomon dbo:releaseDate ?y . FILTER (?y > ?x) }
 
 
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Founding,4,4)
+PhraseIndex(Year,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(The,7,7)
+PhraseIndex(Brewery,8,8)
+PhraseIndex(That,9,9)
+PhraseIndex(Produces,10,10)
+PhraseIndex(Pilsner,11,11)
+PhraseIndex(Urquell,12,12)
+
+[u'What', u'is', u'the', u'founding', u'year', u'of', u'the', u'brewery', u'that', u'produces', u'Pilsner', u'Urquell']
 What is the founding year of the brewery that produces Pilsner Urquell?
-[u'root', -1, 0]
-[u'cop', 0, 1]
-[u'nsubj', 0, 4]
-[u'det', 4, 2]
-[u'compound', 4, 3]
-[u'nmod:of', 4, 7]
-[u'case', 7, 5]
-[u'det', 7, 6]
-[u'acl:relcl', 7, 9]
-[u'nsubj', 9, 8]
-[u'dobj', 9, 11]
-[u'compound', 11, 10]
+	 La ligne est isolée 
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -2351,16 +2905,19 @@ phraseDepTag(Urquell,Pilsner,compound)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Pilsner_Urquell dbp:brewery ?uri . ?uri dbp:foundation ?num . }
 
 
+PhraseIndex(Who,1,1)
+PhraseIndex(Wrote,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Lyrics,4,4)
+PhraseIndex(For,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Polish,7,7)
+PhraseIndex(National,8,8)
+PhraseIndex(Anthem,9,9)
+
+[u'Who', u'wrote', u'the', u'lyrics', u'for', u'the', u'Polish', u'national', u'anthem']
 Who wrote the lyrics for the Polish national anthem?
-[u'root', -1, 1]
-[u'nsubj', 1, 0]
-[u'dobj', 1, 3]
-[u'nmod:for', 1, 8]
-[u'det', 3, 2]
-[u'case', 8, 4]
-[u'det', 8, 5]
-[u'amod', 8, 6]
-[u'amod', 8, 7]
+	 La ligne est isolée 
 PhrasePosTag(Who,WP)
 PhrasePosTag(wrote,VBD)
 PhrasePosTag(the,DT)
@@ -2385,6 +2942,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/prope
 
 Give me all B-sides of the Ramones. 
 [u'Give', u'me', u'all', u'B-sides', u'of', u'the', u'Ramones', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(B-Sides,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Ramones,7,7)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -2405,6 +2969,15 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who painted The Storm on the Sea of Galilee? 
 [u'Who', u'painted', u'The', u'Storm', u'on', u'the', u'Sea', u'of', u'Galilee', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Painted,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Storm,4,4)
+PhraseIndex(On,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Sea,7,7)
+PhraseIndex(Of,8,8)
+PhraseIndex(Galilee,9,9)
 PhrasePosTag(Who,WP)
 PhrasePosTag(painted,VBD)
 PhrasePosTag(The,DT)
@@ -2429,6 +3002,15 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which country does the creator of Miffy come from? 
 [u'Which', u'country', u'does', u'the', u'creator', u'of', u'Miffy', u'come', u'from', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Country,2,2)
+PhraseIndex(Does,3,3)
+PhraseIndex(The,4,4)
+PhraseIndex(Creator,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(Miffy,7,7)
+PhraseIndex(Come,8,8)
+PhraseIndex(From,9,9)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(country,NN)
 PhrasePosTag(does,VBZ)
@@ -2453,6 +3035,15 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 For which label did Elvis record his first album? 
 [u'For', u'which', u'label', u'did', u'Elvis', u'record', u'his', u'first', u'album', u'?']
+PhraseIndex(For,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(Label,3,3)
+PhraseIndex(Did,4,4)
+PhraseIndex(Elvis,5,5)
+PhraseIndex(Record,6,6)
+PhraseIndex(His,7,7)
+PhraseIndex(First,8,8)
+PhraseIndex(Album,9,9)
 PhrasePosTag(For,IN)
 PhrasePosTag(which,WDT)
 PhrasePosTag(label,NN)
@@ -2475,19 +3066,22 @@ phraseDepTag(album,first,amod)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?x rdf:type dbo:Album . ?x dbo:artist res:Elvis_Presley . ?x dbo:releaseDate ?y . ?x dbo:recordLabel ?uri . } ORDER BY ASC(?y) OFFSET 0 LIMIT 1
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Birthdays,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(All,6,6)
+PhraseIndex(Actors,7,7)
+PhraseIndex(Of,8,8)
+PhraseIndex(The,9,9)
+PhraseIndex(Television,10,10)
+PhraseIndex(Show,11,11)
+PhraseIndex(Charmed,12,12)
+
+[u'Give', u'me', u'the', u'birthdays', u'of', u'all', u'actors', u'of', u'the', u'television', u'show', u'Charmed']
 Give me the birthdays of all actors of the television show Charmed.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 3]
-[u'det', 3, 2]
-[u'nmod:of', 3, 6]
-[u'case', 6, 4]
-[u'det', 6, 5]
-[u'nmod:of', 6, 11]
-[u'case', 11, 7]
-[u'det', 11, 8]
-[u'compound', 11, 9]
-[u'compound', 11, 10]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(the,DT)
@@ -2518,6 +3112,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 How many employees does IBM have? 
 [u'How', u'many', u'employees', u'does', u'IBM', u'have', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Many,2,2)
+PhraseIndex(Employees,3,3)
+PhraseIndex(Does,4,4)
+PhraseIndex(Ibm,5,5)
+PhraseIndex(Have,6,6)
 PhrasePosTag(How,WRB)
 PhrasePosTag(many,JJ)
 PhrasePosTag(employees,NNS)
@@ -2536,6 +3136,10 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which states border Illinois? 
 [u'Which', u'states', u'border', u'Illinois', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(States,2,2)
+PhraseIndex(Border,3,3)
+PhraseIndex(Illinois,4,4)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(states,NNS)
 PhrasePosTag(border,VBP)
@@ -2550,6 +3154,13 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/prope
 
 In which country is the Limerick Lake? 
 [u'In', u'which', u'country', u'is', u'the', u'Limerick', u'Lake', u'?']
+PhraseIndex(In,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(Country,3,3)
+PhraseIndex(Is,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Limerick,6,6)
+PhraseIndex(Lake,7,7)
 PhrasePosTag(In,IN)
 PhrasePosTag(which,WDT)
 PhrasePosTag(country,NN)
@@ -2568,15 +3179,18 @@ phraseDepTag(Lake,Limerick,compound)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Limerick_Lake dbo:country ?uri . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Television,2,2)
+PhraseIndex(Shows,3,3)
+PhraseIndex(Were,4,4)
+PhraseIndex(Created,5,5)
+PhraseIndex(By,6,6)
+PhraseIndex(Walt,7,7)
+PhraseIndex(Disney,8,8)
+
+[u'Which', u'television', u'shows', u'were', u'created', u'by', u'Walt', u'Disney']
 Which television shows were created by Walt Disney?
-[u'root', -1, 4]
-[u'det', 1, 0]
-[u'dep', 1, 2]
-[u'nsubjpass', 4, 1]
-[u'auxpass', 4, 3]
-[u'nmod:agent', 4, 7]
-[u'case', 7, 5]
-[u'compound', 7, 6]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(television,NN)
 PhrasePosTag(shows,NNS)
@@ -2599,6 +3213,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which mountain is the highest after the Annapurna? 
 [u'Which', u'mountain', u'is', u'the', u'highest', u'after', u'the', u'Annapurna', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Mountain,2,2)
+PhraseIndex(Is,3,3)
+PhraseIndex(The,4,4)
+PhraseIndex(Highest,5,5)
+PhraseIndex(After,6,6)
+PhraseIndex(The,7,7)
+PhraseIndex(Annapurna,8,8)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(mountain,NN)
 PhrasePosTag(is,VBZ)
@@ -2619,18 +3241,21 @@ phraseDepTag(Annapurna,the,det)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Annapurna dbo:elevation ?elevation . ?uri rdf:type dbo:Mountain . ?uri dbo:elevation ?otherelevation . FILTER (?otherelevation < ?elevation) . } ORDER BY DESC(?otherelevation) OFFSET 0 LIMIT 1
 
 
+PhraseIndex(In,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(Films,3,3)
+PhraseIndex(Directed,4,4)
+PhraseIndex(By,5,5)
+PhraseIndex(Garry,6,6)
+PhraseIndex(Marshall,7,7)
+PhraseIndex(Was,8,8)
+PhraseIndex(Julia,9,9)
+PhraseIndex(Roberts,10,10)
+PhraseIndex(Starring,11,11)
+
+[u'In', u'which', u'films', u'directed', u'by', u'Garry', u'Marshall', u'was', u'Julia', u'Roberts', u'starring']
 In which films directed by Garry Marshall was Julia Roberts starring?
-[u'root', -1, 3]
-[u'case', 2, 0]
-[u'det', 2, 1]
-[u'nmod:in', 3, 2]
-[u'nmod:by', 3, 6]
-[u'case', 6, 4]
-[u'compound', 6, 5]
-[u'acl:relcl', 6, 9]
-[u'cop', 9, 7]
-[u'compound', 9, 8]
-[u'acl', 9, 10]
+	 La ligne est isolée 
 PhrasePosTag(In,IN)
 PhrasePosTag(which,WDT)
 PhrasePosTag(films,NNS)
@@ -2657,18 +3282,21 @@ phraseDepTag(Roberts,starring,acl)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:starring res:Julia_Roberts . ?uri dbo:director res:Garry_Marshall . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Bridges,2,2)
+PhraseIndex(Are,3,3)
+PhraseIndex(Of,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Same,6,6)
+PhraseIndex(Type,7,7)
+PhraseIndex(As,8,8)
+PhraseIndex(The,9,9)
+PhraseIndex(Manhattan,10,10)
+PhraseIndex(Bridge,11,11)
+
+[u'Which', u'bridges', u'are', u'of', u'the', u'same', u'type', u'as', u'the', u'Manhattan', u'Bridge']
 Which bridges are of the same type as the Manhattan Bridge?
-[u'root', -1, 2]
-[u'det', 1, 0]
-[u'nsubj', 2, 1]
-[u'nmod:of', 2, 6]
-[u'case', 6, 3]
-[u'det', 6, 4]
-[u'amod', 6, 5]
-[u'nmod:as', 6, 10]
-[u'case', 10, 7]
-[u'det', 10, 8]
-[u'compound', 10, 9]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(bridges,NNS)
 PhrasePosTag(are,VBP)
@@ -2697,6 +3325,11 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all communist countries. 
 [u'Give', u'me', u'all', u'communist', u'countries', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Communist,4,4)
+PhraseIndex(Countries,5,5)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -2713,6 +3346,11 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which awards did WikiLeaks win? 
 [u'Which', u'awards', u'did', u'WikiLeaks', u'win', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Awards,2,2)
+PhraseIndex(Did,3,3)
+PhraseIndex(Wikileaks,4,4)
+PhraseIndex(Win,5,5)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(awards,NNS)
 PhrasePosTag(did,VBD)
@@ -2729,6 +3367,15 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/prope
 
 Who is the daughter of Ingrid Bergman married to? 
 [u'Who', u'is', u'the', u'daughter', u'of', u'Ingrid', u'Bergman', u'married', u'to', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Daughter,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Ingrid,6,6)
+PhraseIndex(Bergman,7,7)
+PhraseIndex(Married,8,8)
+PhraseIndex(To,9,9)
 PhrasePosTag(Who,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -2751,15 +3398,18 @@ phraseDepTag(married,to,xcomp)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ingrid_Bergman dbo:child ?child . ?child dbo:spouse ?uri . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(U.S.,2,2)
+PhraseIndex(State,3,3)
+PhraseIndex(Has,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Highest,6,6)
+PhraseIndex(Population,7,7)
+PhraseIndex(Density,8,8)
+
+[u'Which', u'U.S.', u'state', u'has', u'the', u'highest', u'population', u'density']
 Which U.S. state has the highest population density?
-[u'root', -1, 3]
-[u'det', 2, 0]
-[u'compound', 2, 1]
-[u'nsubj', 3, 2]
-[u'dobj', 3, 7]
-[u'det', 7, 4]
-[u'amod', 7, 5]
-[u'compound', 7, 6]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(U.S.,NNP)
 PhrasePosTag(state,NN)
@@ -2782,6 +3432,14 @@ PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/pr
 
 What is the currency of the Czech Republic? 
 [u'What', u'is', u'the', u'currency', u'of', u'the', u'Czech', u'Republic', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Currency,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Czech,7,7)
+PhraseIndex(Republic,8,8)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -2804,6 +3462,11 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which countries adopted the Euro? 
 [u'Which', u'countries', u'adopted', u'the', u'Euro', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Countries,2,2)
+PhraseIndex(Adopted,3,3)
+PhraseIndex(The,4,4)
+PhraseIndex(Euro,5,5)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(countries,NNS)
 PhrasePosTag(adopted,VBD)
@@ -2818,15 +3481,18 @@ phraseDepTag(Euro,the,det)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Berlin dbo:areaCode ?string . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Countries,2,2)
+PhraseIndex(Have,3,3)
+PhraseIndex(More,4,4)
+PhraseIndex(Than,5,5)
+PhraseIndex(Two,6,6)
+PhraseIndex(Official,7,7)
+PhraseIndex(Languages,8,8)
+
+[u'Which', u'countries', u'have', u'more', u'than', u'two', u'official', u'languages']
 Which countries have more than two official languages?
-[u'root', -1, 2]
-[u'det', 1, 0]
-[u'nsubj', 2, 1]
-[u'dobj', 2, 7]
-[u'mwe', 3, 4]
-[u'advmod', 5, 3]
-[u'nummod', 7, 5]
-[u'amod', 7, 6]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(countries,NNS)
 PhrasePosTag(have,VBP)
@@ -2849,6 +3515,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/0
 
 Who is the owner of Universal Studios? 
 [u'Who', u'is', u'the', u'owner', u'of', u'Universal', u'Studios', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Owner,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Universal,6,6)
+PhraseIndex(Studios,7,7)
 PhrasePosTag(Who,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -2867,15 +3540,18 @@ phraseDepTag(Studios,Universal,compound)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Universal_Studios dbo:owner ?uri . }
 
 
+PhraseIndex(Through,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(Countries,3,3)
+PhraseIndex(Does,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Yenisei,6,6)
+PhraseIndex(River,7,7)
+PhraseIndex(Flow,8,8)
+
+[u'Through', u'which', u'countries', u'does', u'the', u'Yenisei', u'river', u'flow']
 Through which countries does the Yenisei river flow?
-[u'root', -1, 3]
-[u'case', 1, 0]
-[u'nmod:through', 3, 1]
-[u'nsubj', 3, 2]
-[u'dobj', 3, 7]
-[u'det', 7, 4]
-[u'compound', 7, 5]
-[u'compound', 7, 6]
+	 La ligne est isolée 
 PhrasePosTag(Through,IN)
 PhrasePosTag(which,WDT)
 PhrasePosTag(countries,NNS)
@@ -2898,6 +3574,12 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontol
 
 When did Latvia join the EU? 
 [u'When', u'did', u'Latvia', u'join', u'the', u'EU', u'?']
+PhraseIndex(When,1,1)
+PhraseIndex(Did,2,2)
+PhraseIndex(Latvia,3,3)
+PhraseIndex(Join,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Eu,6,6)
 PhrasePosTag(When,WRB)
 PhrasePosTag(did,VBD)
 PhrasePosTag(Latvia,NNP)
@@ -2916,6 +3598,13 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/prope
 
 Which monarchs were married to a German? 
 [u'Which', u'monarchs', u'were', u'married', u'to', u'a', u'German', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Monarchs,2,2)
+PhraseIndex(Were,3,3)
+PhraseIndex(Married,4,4)
+PhraseIndex(To,5,5)
+PhraseIndex(A,6,6)
+PhraseIndex(German,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(monarchs,NNS)
 PhrasePosTag(were,VBD)
@@ -2936,6 +3625,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 When was the Battle of Gettysburg? 
 [u'When', u'was', u'the', u'Battle', u'of', u'Gettysburg', u'?']
+PhraseIndex(When,1,1)
+PhraseIndex(Was,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Battle,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Gettysburg,6,6)
 PhrasePosTag(When,WRB)
 PhrasePosTag(was,VBD)
 PhrasePosTag(the,DT)
@@ -2954,6 +3649,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which river does the Brooklyn Bridge cross? 
 [u'Which', u'river', u'does', u'the', u'Brooklyn', u'Bridge', u'cross', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(River,2,2)
+PhraseIndex(Does,3,3)
+PhraseIndex(The,4,4)
+PhraseIndex(Brooklyn,5,5)
+PhraseIndex(Bridge,6,6)
+PhraseIndex(Cross,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(river,NN)
 PhrasePosTag(does,VBZ)
@@ -2974,6 +3676,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the highest mountain in Australia? 
 [u'What', u'is', u'the', u'highest', u'mountain', u'in', u'Australia', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Highest,4,4)
+PhraseIndex(Mountain,5,5)
+PhraseIndex(In,6,6)
+PhraseIndex(Australia,7,7)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -2994,6 +3703,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all soccer clubs in Spain. 
 [u'Give', u'me', u'all', u'soccer', u'clubs', u'in', u'Spain', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Soccer,4,4)
+PhraseIndex(Clubs,5,5)
+PhraseIndex(In,6,6)
+PhraseIndex(Spain,7,7)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -3014,6 +3730,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who is the mayor of Tel Aviv? 
 [u'Who', u'is', u'the', u'mayor', u'of', u'Tel', u'Aviv', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Mayor,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Tel,6,6)
+PhraseIndex(Aviv,7,7)
 PhrasePosTag(Who,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -3034,6 +3757,11 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who designed the Brooklyn Bridge? 
 [u'Who', u'designed', u'the', u'Brooklyn', u'Bridge', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Designed,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Brooklyn,4,4)
+PhraseIndex(Bridge,5,5)
 PhrasePosTag(Who,WP)
 PhrasePosTag(designed,VBD)
 PhrasePosTag(the,DT)
@@ -3048,14 +3776,17 @@ phraseDepTag(Bridge,Brooklyn,compound)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbp:designer ?uri . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Telecommunications,2,2)
+PhraseIndex(Organizations,3,3)
+PhraseIndex(Are,4,4)
+PhraseIndex(Located,5,5)
+PhraseIndex(In,6,6)
+PhraseIndex(Belgium,7,7)
+
+[u'Which', u'telecommunications', u'organizations', u'are', u'located', u'in', u'Belgium']
 Which telecommunications organizations are located in Belgium?
-[u'root', -1, 4]
-[u'det', 1, 0]
-[u'dep', 1, 2]
-[u'nsubj', 4, 1]
-[u'cop', 4, 3]
-[u'nmod:in', 4, 6]
-[u'case', 6, 5]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(telecommunications,NNS)
 PhrasePosTag(organizations,NNS)
@@ -3076,6 +3807,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who is the editor of Forbes? 
 [u'Who', u'is', u'the', u'editor', u'of', u'Forbes', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Editor,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Forbes,6,6)
 PhrasePosTag(Who,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -3094,6 +3831,14 @@ PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontol
 
 Give me all companies in the advertising industry. 
 [u'Give', u'me', u'all', u'companies', u'in', u'the', u'advertising', u'industry', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Companies,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Advertising,7,7)
+PhraseIndex(Industry,8,8)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -3114,15 +3859,18 @@ phraseDepTag(industry,advertising,compound)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Bruce_Carver dbo:deathCause ?uri . }
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Libraries,4,4)
+PhraseIndex(Established,5,5)
+PhraseIndex(Earlier,6,6)
+PhraseIndex(Than,7,7)
+PhraseIndex(1400,8,8)
+
+[u'Give', u'me', u'all', u'libraries', u'established', u'earlier', u'than', u'1400']
 Give me all libraries established earlier than 1400.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 3]
-[u'det', 3, 2]
-[u'acl', 3, 4]
-[u'advmod', 4, 5]
-[u'nmod:than', 4, 7]
-[u'case', 7, 6]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -3145,6 +3893,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/prope
 
 Which presidents were born in 1945? 
 [u'Which', u'presidents', u'were', u'born', u'in', u'1945', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Presidents,2,2)
+PhraseIndex(Were,3,3)
+PhraseIndex(Born,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(1945,6,6)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(presidents,NNS)
 PhrasePosTag(were,VBD)
@@ -3163,6 +3917,14 @@ PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resou
 
 Who was the wife of U.S. president Lincoln? 
 [u'Who', u'was', u'the', u'wife', u'of', u'U.S.', u'president', u'Lincoln', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Was,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Wife,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(U.S.,6,6)
+PhraseIndex(President,7,7)
+PhraseIndex(Lincoln,8,8)
 PhrasePosTag(Who,WP)
 PhrasePosTag(was,VBD)
 PhrasePosTag(the,DT)
@@ -3185,6 +3947,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who developed the video game World of Warcraft? 
 [u'Who', u'developed', u'the', u'video', u'game', u'World', u'of', u'Warcraft', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Developed,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Video,4,4)
+PhraseIndex(Game,5,5)
+PhraseIndex(World,6,6)
+PhraseIndex(Of,7,7)
+PhraseIndex(Warcraft,8,8)
 PhrasePosTag(Who,WP)
 PhrasePosTag(developed,VBD)
 PhrasePosTag(the,DT)
@@ -3207,6 +3977,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 What is the official website of Tom Cruise? 
 [u'What', u'is', u'the', u'official', u'website', u'of', u'Tom', u'Cruise', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(Is,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Official,4,4)
+PhraseIndex(Website,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(Tom,7,7)
+PhraseIndex(Cruise,8,8)
 PhrasePosTag(What,WP)
 PhrasePosTag(is,VBZ)
 PhrasePosTag(the,DT)
@@ -3227,21 +4005,24 @@ phraseDepTag(Cruise,Tom,compound)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Tom_Cruise dbp:website ?string . }
 
 
+PhraseIndex(List,1,1)
+PhraseIndex(All,2,2)
+PhraseIndex(Episodes,3,3)
+PhraseIndex(Of,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(First,6,6)
+PhraseIndex(Season,7,7)
+PhraseIndex(Of,8,8)
+PhraseIndex(The,9,9)
+PhraseIndex(Hbo,10,10)
+PhraseIndex(Television,11,11)
+PhraseIndex(Series,12,12)
+PhraseIndex(The,13,13)
+PhraseIndex(Sopranos,14,14)
+
+[u'List', u'all', u'episodes', u'of', u'the', u'first', u'season', u'of', u'the', u'HBO', u'television', u'series', u'The', u'Sopranos']
 List all episodes of the first season of the HBO television series The Sopranos.
-[u'root', -1, 0]
-[u'xcomp', 0, 13]
-[u'det', 2, 1]
-[u'nmod:of', 2, 6]
-[u'case', 6, 3]
-[u'det', 6, 4]
-[u'amod', 6, 5]
-[u'nmod:of', 6, 11]
-[u'case', 11, 7]
-[u'det', 11, 8]
-[u'compound', 11, 9]
-[u'compound', 11, 10]
-[u'nsubj', 13, 2]
-[u'det', 13, 12]
+	 La ligne est isolée 
 PhrasePosTag(List,VB)
 PhrasePosTag(all,DT)
 PhrasePosTag(episodes,NNS)
@@ -3276,6 +4057,11 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Who produced the most films? 
 [u'Who', u'produced', u'the', u'most', u'films', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Produced,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Most,4,4)
+PhraseIndex(Films,5,5)
 PhrasePosTag(Who,WP)
 PhrasePosTag(produced,VBD)
 PhrasePosTag(the,DT)
@@ -3292,6 +4078,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Is there a video game called Battle Chess? 
 [u'Is', u'there', u'a', u'video', u'game', u'called', u'Battle', u'Chess', u'?']
+PhraseIndex(Is,1,1)
+PhraseIndex(There,2,2)
+PhraseIndex(A,3,3)
+PhraseIndex(Video,4,4)
+PhraseIndex(Game,5,5)
+PhraseIndex(Called,6,6)
+PhraseIndex(Battle,7,7)
+PhraseIndex(Chess,8,8)
 PhrasePosTag(Is,VBZ)
 PhrasePosTag(there,EX)
 PhrasePosTag(a,DT)
@@ -3314,6 +4108,9 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/prope
 
 Who created Wikipedia? 
 [u'Who', u'created', u'Wikipedia', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Created,2,2)
+PhraseIndex(Wikipedia,3,3)
 PhrasePosTag(Who,WP)
 PhrasePosTag(created,VBD)
 PhrasePosTag(Wikipedia,NNP)
@@ -3326,6 +4123,15 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Give me all actors starring in Last Action Hero. 
 [u'Give', u'me', u'all', u'actors', u'starring', u'in', u'Last', u'Action', u'Hero', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Actors,4,4)
+PhraseIndex(Starring,5,5)
+PhraseIndex(In,6,6)
+PhraseIndex(Last,7,7)
+PhraseIndex(Action,8,8)
+PhraseIndex(Hero,9,9)
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -3348,17 +4154,20 @@ phraseDepTag(Hero,Action,compound)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Last_Action_Hero dbo:starring ?uri . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Software,2,2)
+PhraseIndex(Has,3,3)
+PhraseIndex(Been,4,4)
+PhraseIndex(Developed,5,5)
+PhraseIndex(By,6,6)
+PhraseIndex(Organizations,7,7)
+PhraseIndex(Founded,8,8)
+PhraseIndex(In,9,9)
+PhraseIndex(California,10,10)
+
+[u'Which', u'software', u'has', u'been', u'developed', u'by', u'organizations', u'founded', u'in', u'California']
 Which software has been developed by organizations founded in California?
-[u'root', -1, 4]
-[u'det', 1, 0]
-[u'nsubjpass', 4, 1]
-[u'aux', 4, 2]
-[u'auxpass', 4, 3]
-[u'nmod:agent', 4, 6]
-[u'case', 6, 5]
-[u'acl', 6, 7]
-[u'nmod:in', 7, 9]
-[u'case', 9, 8]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(software,NN)
 PhrasePosTag(has,VBZ)
@@ -3383,21 +4192,22 @@ phraseDepTag(California,in,case)
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Software . ?company rdf:type dbo:Company . ?uri dbo:developer ?company . { ?company dbo:foundationPlace res:California . } UNION { ?company dbp:foundation res:California . } }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Companies,2,2)
+PhraseIndex(Work,3,3)
+PhraseIndex(In,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Aerospace,6,6)
+PhraseIndex(Industry,7,7)
+PhraseIndex(As,8,8)
+PhraseIndex(Well,9,9)
+PhraseIndex(As,10,10)
+PhraseIndex(In,11,11)
+PhraseIndex(Medicine,12,12)
+
+[u'Which', u'companies', u'work', u'in', u'the', u'aerospace', u'industry', u'as', u'well', u'as', u'in', u'medicine']
 Which companies work in the aerospace industry as well as in medicine?
-[u'root', -1, 2]
-[u'dobj', 2, 0]
-[u'nsubj', 2, 1]
-[u'conj:and', 2, 2]
-[u'nmod:in', 2, 6]
-[u'cc', 2, 7]
-[u'nsubj', 2, 1]
-[u'nmod:in', 2, 11]
-[u'case', 6, 3]
-[u'det', 6, 4]
-[u'compound', 6, 5]
-[u'mwe', 7, 8]
-[u'mwe', 7, 9]
-[u'case', 11, 10]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(companies,NNS)
 PhrasePosTag(work,VBP)
@@ -3428,6 +4238,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Is Christian Bale starring in Velvet Goldmine? 
 [u'Is', u'Christian', u'Bale', u'starring', u'in', u'Velvet', u'Goldmine', u'?']
+PhraseIndex(Is,1,1)
+PhraseIndex(Christian,2,2)
+PhraseIndex(Bale,3,3)
+PhraseIndex(Starring,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(Velvet,6,6)
+PhraseIndex(Goldmine,7,7)
 PhrasePosTag(Is,VBZ)
 PhrasePosTag(Christian,NNP)
 PhrasePosTag(Bale,NNP)
@@ -3446,18 +4263,21 @@ phraseDepTag(Goldmine,Velvet,compound)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Velvet_Goldmine dbo:starring res:Christian_Bale . }
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(Websites,4,4)
+PhraseIndex(Of,5,5)
+PhraseIndex(Companies,6,6)
+PhraseIndex(With,7,7)
+PhraseIndex(More,8,8)
+PhraseIndex(Than,9,9)
+PhraseIndex(500000,10,10)
+PhraseIndex(Employees,11,11)
+
+[u'Give', u'me', u'the', u'websites', u'of', u'companies', u'with', u'more', u'than', u'500000', u'employees']
 Give me the websites of companies with more than 500000 employees.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 3]
-[u'det', 3, 2]
-[u'nmod:of', 3, 5]
-[u'case', 5, 4]
-[u'nmod:with', 5, 10]
-[u'mwe', 7, 8]
-[u'advmod', 9, 7]
-[u'case', 10, 6]
-[u'nummod', 10, 9]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(the,DT)
@@ -3486,6 +4306,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/prope
 
 Which actors were born in Germany? 
 [u'Which', u'actors', u'were', u'born', u'in', u'Germany', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Actors,2,2)
+PhraseIndex(Were,3,3)
+PhraseIndex(Born,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(Germany,6,6)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(actors,NNS)
 PhrasePosTag(were,VBD)
@@ -3504,6 +4330,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which caves have more than 3 entrances? 
 [u'Which', u'caves', u'have', u'more', u'than', u'3', u'entrances', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Caves,2,2)
+PhraseIndex(Have,3,3)
+PhraseIndex(More,4,4)
+PhraseIndex(Than,5,5)
+PhraseIndex(3,6,6)
+PhraseIndex(Entrances,7,7)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(caves,NNS)
 PhrasePosTag(have,VBP)
@@ -3524,6 +4357,14 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/prope
 
 Is the wife of president Obama called Michelle? 
 [u'Is', u'the', u'wife', u'of', u'president', u'Obama', u'called', u'Michelle', u'?']
+PhraseIndex(Is,1,1)
+PhraseIndex(The,2,2)
+PhraseIndex(Wife,3,3)
+PhraseIndex(Of,4,4)
+PhraseIndex(President,5,5)
+PhraseIndex(Obama,6,6)
+PhraseIndex(Called,7,7)
+PhraseIndex(Michelle,8,8)
 PhrasePosTag(Is,VBZ)
 PhrasePosTag(the,DT)
 PhrasePosTag(wife,NN)
@@ -3544,17 +4385,20 @@ phraseDepTag(called,Michelle,dobj)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:producer res:Hal_Roach . }
 
 
+PhraseIndex(Give,1,1)
+PhraseIndex(Me,2,2)
+PhraseIndex(All,3,3)
+PhraseIndex(Video,4,4)
+PhraseIndex(Games,5,5)
+PhraseIndex(Published,6,6)
+PhraseIndex(By,7,7)
+PhraseIndex(Mean,8,8)
+PhraseIndex(Hamster,9,9)
+PhraseIndex(Software,10,10)
+
+[u'Give', u'me', u'all', u'video', u'games', u'published', u'by', u'Mean', u'Hamster', u'Software']
 Give me all video games published by Mean Hamster Software.
-[u'root', -1, 0]
-[u'iobj', 0, 1]
-[u'dobj', 0, 4]
-[u'det', 4, 2]
-[u'compound', 4, 3]
-[u'acl', 4, 5]
-[u'nmod:by', 5, 9]
-[u'case', 9, 6]
-[u'compound', 9, 7]
-[u'compound', 9, 8]
+	 La ligne est isolée 
 PhrasePosTag(Give,VB)
 PhrasePosTag(me,PRP)
 PhrasePosTag(all,DT)
@@ -3581,6 +4425,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which languages are spoken in Estonia? 
 [u'Which', u'languages', u'are', u'spoken', u'in', u'Estonia', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Languages,2,2)
+PhraseIndex(Are,3,3)
+PhraseIndex(Spoken,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(Estonia,6,6)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(languages,NNS)
 PhrasePosTag(are,VBP)
@@ -3599,6 +4449,12 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 How many Aldi stores are there? 
 [u'How', u'many', u'Aldi', u'stores', u'are', u'there', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(Many,2,2)
+PhraseIndex(Aldi,3,3)
+PhraseIndex(Stores,4,4)
+PhraseIndex(Are,5,5)
+PhraseIndex(There,6,6)
 PhrasePosTag(How,WRB)
 PhrasePosTag(many,JJ)
 PhrasePosTag(Aldi,NNP)
@@ -3615,19 +4471,22 @@ phraseDepTag(are,there,expl)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?number WHERE { res:Aldi dbo:numberOfLocations ?number . }
 
 
+PhraseIndex(Which,1,1)
+PhraseIndex(Capitals,2,2)
+PhraseIndex(In,3,3)
+PhraseIndex(Europe,4,4)
+PhraseIndex(Were,5,5)
+PhraseIndex(Host,6,6)
+PhraseIndex(Cities,7,7)
+PhraseIndex(Of,8,8)
+PhraseIndex(The,9,9)
+PhraseIndex(Summer,10,10)
+PhraseIndex(Olympic,11,11)
+PhraseIndex(Games,12,12)
+
+[u'Which', u'capitals', u'in', u'Europe', u'were', u'host', u'cities', u'of', u'the', u'summer', u'olympic', u'games']
 Which capitals in Europe were host cities of the summer olympic games?
-[u'root', -1, 4]
-[u'det', 1, 0]
-[u'nmod:in', 1, 3]
-[u'case', 3, 2]
-[u'dep', 4, 1]
-[u'nsubj', 4, 6]
-[u'compound', 6, 5]
-[u'nmod:of', 6, 11]
-[u'case', 11, 7]
-[u'det', 11, 8]
-[u'compound', 11, 9]
-[u'amod', 11, 10]
+	 La ligne est isolée 
 PhrasePosTag(Which,WDT)
 PhrasePosTag(capitals,NNS)
 PhrasePosTag(in,IN)
@@ -3658,6 +4517,15 @@ PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/199
 
 Who was the first president of the United States? 
 [u'Who', u'was', u'the', u'first', u'president', u'of', u'the', u'United', u'States', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(Was,2,2)
+PhraseIndex(The,3,3)
+PhraseIndex(First,4,4)
+PhraseIndex(President,5,5)
+PhraseIndex(Of,6,6)
+PhraseIndex(The,7,7)
+PhraseIndex(United,8,8)
+PhraseIndex(States,9,9)
 PhrasePosTag(Who,WP)
 PhrasePosTag(was,VBD)
 PhrasePosTag(the,DT)
@@ -3682,6 +4550,13 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 
 Which airports are located in California, USA? 
 [u'Which', u'airports', u'are', u'located', u'in', u'California', u',', u'USA', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Airports,2,2)
+PhraseIndex(Are,3,3)
+PhraseIndex(Located,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(California,6,6)
+PhraseIndex(Usa,8,8)
 PhrasePosTag(Which,WDT)
 PhrasePosTag(airports,NNS)
 PhrasePosTag(are,VBP)

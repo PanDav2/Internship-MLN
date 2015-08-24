@@ -5,7 +5,7 @@ from fyzz import parse
 from stanford_corenlp_pywrapper import CoreNLP
 tempq='./temp/question.txt'
 
-# g est la liste des questions posant problème à
+# g est la liste des questions posant problème au parseur SPARQL
 java= "../stanford-corenlp-full-2015-04-20/*"
 def question(loc="./input/donnee.xml"):
     i=0
@@ -18,8 +18,8 @@ def question(loc="./input/donnee.xml"):
         compteur=0
         for j,line in enumerate(tab):
             flag=0
-            if j ==0:
-                print j
+            #if j ==0:
+                #print j
             g=[16, 30, 37, 65, 78, 84, 98, 99, 114, 121, 131, 135, 136, 139, 140, 143, 149, 150, 152, 162, 168, 169, 170, 173, 175, 182, 186]
 
             #
@@ -54,21 +54,23 @@ def question(loc="./input/donnee.xml"):
 
             stopwords = ["?",",",".","!"]
             cpt1=0
+            #Cas o`u la ligne de questions est isolée
             if i!=0:
+                #gen.write("")
                 var=tab[j+1]
                 if compteur not in g:
                     elmt=proc.parse_doc(var)
                     tableau=[]
-                    for token in elmt['sentences'][0]['tokens']:
+                    # On stock l'ensemble des tokens dans un tableau
+                    for l,token in enumerate(elmt['sentences'][0]['tokens']):
                          if token not in stopwords:
                              tableau.append(token)
-
+                             gen.write("PhraseIndex("+token.title()+','+str(l+1)+','+str(l+1)+')\n')
+                    gen.write('\n'+str(tableau)+'\n')
                     #tok.write(tableau)
-                    out.write(var)
-                    gen.write(var)
-                    for value in elmt['sentences'][0]['deps_cc']:
-                        gen.write(str(value)+ '\n')
 
+                    out.write(var)
+                    gen.write(var+"\t La ligne est isolée \n")
                     for token in tableau:
                         cpt2=0
                         #On crée la feature PosTag
@@ -86,7 +88,7 @@ def question(loc="./input/donnee.xml"):
                     for cpt in range(len(deptag)):
                         if cpt < len(tableau):
                             a= "phraseDepTag("+tableau[deptag[cpt][1]]+","+tableau[deptag[cpt][2]]+","+deptag[cpt][0]+")\n"
-                            print a
+                            #print a
                             gen.write(a)
                             
                     #
@@ -96,12 +98,17 @@ def question(loc="./input/donnee.xml"):
                 else:
                     print "discarded question : "+ var
                 i=i-1
+            #Cas général, on détecte les questions en anglais
             elif "<string lang=\"en" in line:
                 #a = inp.next()  // Remplacement de l'itérateur pour prendre l'element suivant 
+                #On recherche si la ligne suivante ne contient que le signe CDATA
                 var=tab[j+1]
                 m=re.search("<!\[CDATA\[$",var)
+                #On s'apprete à extraire la ligne suivant qui est une question isolée.
                 if m:
-                    i=i+1
+                    if not re.search("PREFIX(.)*",var):
+                        i=i+1
+                #La ligne suivante n'est pas isolée, il s'agit d'une question entourée de marqueurs.
                 else :
                     #print a[10:len(str(a))-4]
                     temp=var[10:len(str(var))-4]
@@ -116,10 +123,10 @@ def question(loc="./input/donnee.xml"):
                         #
 
                         tableau=[]
-                        for token in elmt['sentences'][0]['tokens']:
+                        for l,token in enumerate(elmt['sentences'][0]['tokens']):
                             if token not in stopwords:
                                 tableau.append(token)
-
+                                gen.write("PhraseIndex("+token.title()+','+str(l+1)+','+str(l+1)+')\n')
                         for token in tableau:
                             cpt2=0
                             #On crée la feature PosTag
@@ -134,7 +141,7 @@ def question(loc="./input/donnee.xml"):
                         for cpt in range(len(deptag)):
                             if cpt < len(tableau):
                                 a= "phraseDepTag("+tableau[deptag[cpt][1]]+","+tableau[deptag[cpt][2]]+","+deptag[cpt][0]+")\n"
-                                print a
+                                #print a
                                 gen.write(a)
                             
                         #
@@ -152,7 +159,5 @@ def question(loc="./input/donnee.xml"):
                         for elmt in proc.parse_doc(temp)['sentences'][0]['pos']:
                             gen.write(str(elmt))
 """             
-                        
-                
 
 question()

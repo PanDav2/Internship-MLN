@@ -1,0 +1,5 @@
+//Evidence
+B(class,class!)
+*A(class)
+
+1 !A(x) v B(Sol,x)

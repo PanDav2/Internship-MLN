@@ -1,0 +1,15 @@
+
+
+//////////////WEIGHT OF LAST ITERATION//////////////
+!HasPhrase(v0)  v  HasResource(v0, v1) . //1.0hardfixed
+-0.4058       !PhrasePosTag(v0, v1)  v !ResourceType(v2, v3)  v  HasResource(v0, v2)  //10.0
+1.1933       !PhraseDepTag(v0, v1, v2)  v !HasResource(v0, v3)  v !HasResource(v1, v4)  v  HasRelation(v3, v4, v5)  //11.0
+!HasResource(v0, v1)  v  HasPhrase(v0) . //2.0hardfixed
+HasPhrase(v0)  v !HasResource(v0, v1) . //3.0hardfixed
+!HasResource(v0, v1)  v  HasRelation(v1, v2, v3)  v  HasRelation(v4, v1, v5) . //4.0hardfixed
+!HasRelation(v0, v1, v2)  v  HasResource(v3, v0)  v  HasResource(v4, v1) . //5.0hardfixed
+52000000       !ResourceType(v0, "Entity")  v !HasRelation(v0, v1, "2_1")  v !HasRelation(v0, v2, "2_2")  //6.1fixed
+52000000       !ResourceType(v0, "Class")  v !HasRelation(v0, v1, "2_1")  v !HasRelation(v0, v2, "2_2")  //6.2fixed
+52000000       !ResourceType(v0, "Entity")  v !HasRelation(v1, v0, "2_1")  v !HasRelation(v0, v2, "2_2")  //7.1fixed
+52000000       !ResourceType(v0, "Class")  v !HasRelation(v1, v0, "2_1")  v !HasRelation(v0, v2, "2_2")  //7.2fixed
+0.8513       !PriorMatchScore(v0, v1)  v  HasResource(v0, v1)  //9.0

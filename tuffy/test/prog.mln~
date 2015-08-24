@@ -1,0 +1,6 @@
+// Let's say that A(x) = exp(x)
+
+A(chiffre)
+B(chiffre)
+
+!A(a) v !B(a) v A(a) = B(a)
