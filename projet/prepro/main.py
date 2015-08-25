@@ -25,8 +25,8 @@ def question(loc="./input/donnee.xml"):
             #
             # TRAITEMENT DES REQUETES ET EXTRATION DES RESSOURCES
             #
-
-            m=re.search("PREFIX(.)*",line)
+            search=re.search
+            m=search("PREFIX(.)*",line)
             if m!=None:
                 #a.append(str(m.group(0)))
                 compteur=compteur+1
@@ -38,6 +38,25 @@ def question(loc="./input/donnee.xml"):
                     ressource=parse(str(m.group(0))).where
                     preq.write(str(ressource)+'\n')
                     gen.write(str(ressource)+'\n')
+                    
+                    for pos1,xValues in enumerate(ressource):
+                        if "http://www.w3.org/1999/02/22-rdf-syntax-ns#" in str(xValues) or search('yago',str(xValues)) :
+                            gen.write("CODE0 : ResourceType("+xValues[2][1]+",Class)\n")
+                        else:
+                            for pos2,yValues in enumerate(xValues):
+                                #On vérifie qu'il s'agisse pas d'une variable
+                                if isinstance(yValues,tuple):
+                                    # On recherche la catégorie dans laquelle la mettre
+                                    if search('ontology',yValues[0]):
+                                        if yValues[0][0]==yValues[0][0].lower():
+                                            gen.write("CODE2 : ResourceType(dbo_"+str(yValues[1]).title()+",Relation)\n")
+
+                                    elif search('resource',yValues[0]):
+                                        gen.write("CODE4 : ResourceType(dbr_"+str(yValues[1]).title()+",Entity)\n")
+                                    elif search('http://dbpedia.org/property/',str(xValues[1][0])):
+                                        gen.write('CODE0 : ResourceType(' + str(xValues[1][1].title())+ ',Class)\n')
+                                    else:
+                                        print "\nTEST : "+str(xValues)
                     
                     #
                     #  ECRITURE DES REQUETES
@@ -103,10 +122,10 @@ def question(loc="./input/donnee.xml"):
                 #a = inp.next()  // Remplacement de l'itérateur pour prendre l'element suivant 
                 #On recherche si la ligne suivante ne contient que le signe CDATA
                 var=tab[j+1]
-                m=re.search("<!\[CDATA\[$",var)
+                m=search("<!\[CDATA\[$",var)
                 #On s'apprete à extraire la ligne suivant qui est une question isolée.
                 if m:
-                    if not re.search("PREFIX(.)*",var):
+                    if not search("PREFIX(.)*",var):
                         i=i+1
                 #La ligne suivante n'est pas isolée, il s'agit d'une question entourée de marqueurs.
                 else :

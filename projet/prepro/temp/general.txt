@@ -13,6 +13,8 @@ phraseDepTag(Give,me,iobj)
 phraseDepTag(Give,cosmonauts,dobj)
 phraseDepTag(cosmonauts,all,det)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Astronaut')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Astronaut'))]
+CODE0 : ResourceType(Astronaut,Class)
+CODE0 : ResourceType(Astronaut,Class)
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Astronaut . { ?uri dbo:nationality res:Russia . } UNION { ?uri dbo:nationality res:Soviet_Union . } }
 
 
@@ -40,6 +42,8 @@ phraseDepTag(start,country,nmod:in)
 phraseDepTag(start,does,aux)
 phraseDepTag(start,Nile,nsubj)
 [(('http://dbpedia.org/resource/', 'Nile'), ('http://dbpedia.org/ontology/', 'sourceCountry'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Nile,Entity)
+CODE2 : ResourceType(dbo_Sourcecountry,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Nile dbo:sourceCountry ?uri . }
 
 
@@ -121,6 +125,12 @@ phraseDepTag(more,than,mwe)
 phraseDepTag(250000,more,advmod)
 phraseDepTag(inhabitants,250000,nummod)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Germany')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('population')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Germany')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('population'))]
+CODE2 : ResourceType(dbo_Country,Relation)
+CODE4 : ResourceType(dbr_Germany,Entity)
+CODE2 : ResourceType(dbo_Populationtotal,Relation)
+CODE2 : ResourceType(dbo_Country,Relation)
+CODE4 : ResourceType(dbr_Germany,Entity)
+CODE2 : ResourceType(dbo_Populationtotal,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { { ?uri rdf:type dbo:City . } UNION { ?uri rdf:type dbo:Town . } ?uri dbo:country res:Germany . ?uri dbo:populationTotal ?population . FILTER ( ?population > 250000 ) }
 
 
@@ -151,6 +161,8 @@ phraseDepTag(Kennedy,'s,case)
 phraseDepTag(president,Kennedy,nmod:poss)
 phraseDepTag(president,vice,compound)
 [(('http://dbpedia.org/resource/', 'John_F._Kennedy'), ('http://dbpedia.org/ontology/', 'vicePresident'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_John_F._Kennedy,Entity)
+CODE2 : ResourceType(dbo_Vicepresident,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:vicePresident ?uri . }
 
 
@@ -175,6 +187,8 @@ phraseDepTag(mayor,the,det)
 phraseDepTag(mayor,Berlin,nmod:of)
 phraseDepTag(Berlin,of,case)
 [(('http://dbpedia.org/resource/', 'Berlin'), ('http://dbpedia.org/ontology/', 'leader'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Berlin,Entity)
+CODE2 : ResourceType(dbo_Leader,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Berlin dbo:leader ?uri . }
 
 
@@ -213,6 +227,8 @@ phraseDepTag(have,students,dobj)
 phraseDepTag(have,does,aux)
 phraseDepTag(have,University,nsubj)
 [(('http://dbpedia.org/resource/', 'Vrije_Universiteit'), ('http://dbpedia.org/ontology/', 'numberOfStudents'), SparqlVar('num'))]
+CODE4 : ResourceType(dbr_Vrije_Universiteit,Entity)
+CODE2 : ResourceType(dbo_Numberofstudents,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Vrije_Universiteit dbo:numberOfStudents ?num . }
 
 
@@ -243,6 +259,8 @@ phraseDepTag(mountain,second,amod)
 phraseDepTag(mountain,highest,amod)
 phraseDepTag(Earth,on,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation'))]
+CODE0 : ResourceType(Mountain,Class)
+CODE2 : ResourceType(dbo_Elevation,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain . ?uri dbo:elevation ?elevation . } ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1
 
 
@@ -272,6 +290,10 @@ phraseDepTag(skateboarders,professional,amod)
 phraseDepTag(skateboarders,Sweden,nmod:from)
 phraseDepTag(Sweden,from,case)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'occupation'), ('http://dbpedia.org/resource/', 'Skateboarding')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'occupation'), ('http://dbpedia.org/resource/', 'Skateboarding'))]
+CODE2 : ResourceType(dbo_Occupation,Relation)
+CODE4 : ResourceType(dbr_Skateboarding,Entity)
+CODE2 : ResourceType(dbo_Occupation,Relation)
+CODE4 : ResourceType(dbr_Skateboarding,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Skateboarding . { ?uri dbo:birthPlace res:Sweden . } UNION { ?uri dbo:birthPlace ?place . ?place dbo:country res:Sweden . } }
 
 
@@ -296,6 +318,8 @@ phraseDepTag(Alberta,admitted,acl:relcl)
 phraseDepTag(admitted,province,nmod:as)
 phraseDepTag(province,as,case)
 [(('http://dbpedia.org/resource/', 'Alberta'), ('http://dbpedia.org/property/', 'admittancedate'), SparqlVar('date'))]
+CODE4 : ResourceType(dbr_Alberta,Entity)
+CODE0 : ResourceType(Admittancedate,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Alberta dbp:admittancedate ?date . }
 
 
@@ -331,6 +355,8 @@ phraseDepTag(extend,countries,nmod:to)
 phraseDepTag(extend,does,aux)
 phraseDepTag(extend,system,nsubj)
 [(('http://dbpedia.org/resource/', 'Himalayas'), ('http://dbpedia.org/property/', 'country'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Himalayas,Entity)
+CODE0 : ResourceType(Country,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Himalayas dbp:country ?uri . }
 
 
@@ -369,6 +395,10 @@ phraseDepTag(bandleaders,play,acl:relcl)
 phraseDepTag(play,that,nsubj)
 phraseDepTag(play,trumpet,dobj)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'occupation'), ('http://dbpedia.org/resource/', 'Bandleader')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'instrument'), ('http://dbpedia.org/resource/', 'Trumpet'))]
+CODE2 : ResourceType(dbo_Occupation,Relation)
+CODE4 : ResourceType(dbr_Bandleader,Entity)
+CODE2 : ResourceType(dbo_Instrument,Relation)
+CODE4 : ResourceType(dbr_Trumpet,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Bandleader . ?uri dbo:instrument res:Trumpet . }
 
 
@@ -396,6 +426,10 @@ phraseDepTag(more,than,mwe)
 phraseDepTag(ten,more,advmod)
 phraseDepTag(caves,ten,nummod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('cave'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Cave')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('cave'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Cave'))]
+CODE0 : ResourceType(Country,Class)
+CODE0 : ResourceType(Cave,Class)
+CODE0 : ResourceType(Country,Class)
+CODE0 : ResourceType(Cave,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country . ?cave rdf:type dbo:Cave . { ?cave dbo:location ?uri . } UNION { ?cave dbo:location ?loc . ?loc dbo:country ?uri . } } GROUP BY ?uri HAVING(COUNT(?cave) > 10)
 
 
@@ -443,6 +477,8 @@ phraseDepTag(serving,amount,nsubj)
 phraseDepTag(serving,FDNY,nmod:in)
 phraseDepTag(FDNY,in,case)
 [(('http://dbpedia.org/resource/', 'New_York_City_Fire_Department'), ('http://dbpedia.org/property/', 'strength'), SparqlVar('num'))]
+CODE4 : ResourceType(dbr_New_York_City_Fire_Department,Entity)
+CODE0 : ResourceType(Strength,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:New_York_City_Fire_Department dbp:strength ?num . }
 
 
@@ -458,6 +494,8 @@ phraseDepTag(Orangina,produces,root)
 phraseDepTag(produces,Who,nsubj)
 phraseDepTag(produces,Orangina,dobj)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'product'), ('http://dbpedia.org/resource/', 'Orangina'))]
+CODE2 : ResourceType(dbo_Product,Relation)
+CODE4 : ResourceType(dbr_Orangina,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:product res:Orangina . }
 
 
@@ -499,6 +537,8 @@ phraseDepTag(the,with,case)
 phraseDepTag(the,most,advmod)
 phraseDepTag(the,races,dep)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'FormulaOneRacer')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'races'), SparqlVar('x'))]
+CODE0 : ResourceType(FormulaOneRacer,Class)
+CODE2 : ResourceType(dbo_Races,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:FormulaOneRacer . ?uri dbo:races ?x . } ORDER BY DESC(?x) OFFSET 0 LIMIT 1
 
 
@@ -543,6 +583,10 @@ phraseDepTag(years,the,det)
 phraseDepTag(years,past,amod)
 phraseDepTag(years,two,nummod)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'team'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'league'), ('http://dbpedia.org/resource/', 'Premier_League')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthDate'), SparqlVar('y'))]
+CODE2 : ResourceType(dbo_Team,Relation)
+CODE2 : ResourceType(dbo_League,Relation)
+CODE4 : ResourceType(dbr_Premier_League,Entity)
+CODE2 : ResourceType(dbo_Birthdate,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:team ?x . ?x dbo:league res:Premier_League . ?uri dbo:birthDate ?y . } ORDER BY DESC(?y) OFFSET 0 LIMIT 1
 
 
@@ -567,6 +611,8 @@ phraseDepTag(members,all,det)
 phraseDepTag(members,Prodigy,nmod:of)
 phraseDepTag(Prodigy,of,case)
 [(('http://dbpedia.org/resource/', 'The_Prodigy'), ('http://dbpedia.org/ontology/', 'bandMember'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_The_Prodigy,Entity)
+CODE2 : ResourceType(dbo_Bandmember,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Prodigy dbo:bandMember ?uri . }
 
 
@@ -588,6 +634,8 @@ phraseDepTag(What,river,nsubj)
 phraseDepTag(river,the,det)
 phraseDepTag(river,longest,amod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'River')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'River'))]
+CODE0 : ResourceType(River,Class)
+CODE0 : ResourceType(River,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:River . { ?uri dbo:length ?l . } UNION { ?uri dbp:length ?l . } } ORDER BY DESC(?l) OFFSET 0 LIMIT 1
 
 
@@ -626,6 +674,14 @@ phraseDepTag(Game,than,case)
 phraseDepTag(Game,Thrones,nmod:of)
 phraseDepTag(Thrones,of,case)
 [(('http://dbpedia.org/resource/', 'Breaking_Bad'), ('http://dbpedia.org/ontology/', 'numberOfEpisodes'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Game_of_Thrones'), ('http://dbpedia.org/ontology/', 'numberOfEpisodes'), SparqlVar('y')), (('http://dbpedia.org/resource/', 'Breaking_Bad'), ('http://dbpedia.org/ontology/', 'numberOfEpisodes'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Game_of_Thrones'), ('http://dbpedia.org/ontology/', 'numberOfEpisodes'), SparqlVar('y'))]
+CODE4 : ResourceType(dbr_Breaking_Bad,Entity)
+CODE2 : ResourceType(dbo_Numberofepisodes,Relation)
+CODE4 : ResourceType(dbr_Game_Of_Thrones,Entity)
+CODE2 : ResourceType(dbo_Numberofepisodes,Relation)
+CODE4 : ResourceType(dbr_Breaking_Bad,Entity)
+CODE2 : ResourceType(dbo_Numberofepisodes,Relation)
+CODE4 : ResourceType(dbr_Game_Of_Thrones,Entity)
+CODE2 : ResourceType(dbo_Numberofepisodes,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Breaking_Bad dbo:numberOfEpisodes ?x . res:Game_of_Thrones dbo:numberOfEpisodes ?y . FILTER (?y > ?x) }
 
 
@@ -659,6 +715,8 @@ phraseDepTag(produced,are,auxpass)
 phraseDepTag(produced,Germany,nmod:in)
 phraseDepTag(Germany,in,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Automobile')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Automobile'))]
+CODE0 : ResourceType(Automobile,Class)
+CODE0 : ResourceType(Automobile,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Automobile . { ?uri dbo:assembly res:Germany . } UNION { ?uri dbp:assembly res:Germany . } UNION { { ?uri dbo:manufacturer ?x . } UNION { ?uri dbp:manufacturer ?x . } { ?x dbo:locationCountry res:Germany . } UNION { ?x dbo:location res:Germany . } } }
 
 
@@ -740,6 +798,10 @@ phraseDepTag(Vienna,in,case)
 phraseDepTag(died,Berlin,nmod:in)
 phraseDepTag(Berlin,in,case)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthPlace'), ('http://dbpedia.org/resource/', 'Vienna')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'deathPlace'), ('http://dbpedia.org/resource/', 'Berlin'))]
+CODE2 : ResourceType(dbo_Birthplace,Relation)
+CODE4 : ResourceType(dbr_Vienna,Entity)
+CODE2 : ResourceType(dbo_Deathplace,Relation)
+CODE4 : ResourceType(dbr_Berlin,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:birthPlace res:Vienna . ?uri dbo:deathPlace res:Berlin . }
 
 
@@ -758,6 +820,7 @@ phraseDepTag(protein,Is,cop)
 phraseDepTag(protein,proinsulin,nsubj)
 phraseDepTag(protein,a,det)
 [(('http://dbpedia.org/resource/', 'Proinsulin'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Protein'))]
+CODE0 : ResourceType(Protein,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { res:Proinsulin rdf:type dbo:Protein . }
 
 
@@ -779,6 +842,8 @@ phraseDepTag(is,tall,dep)
 phraseDepTag(is,Jordan,nsubj)
 phraseDepTag(Jordan,Michael,compound)
 [(('http://dbpedia.org/resource/', 'Michael_Jordan'), ('http://dbpedia.org/ontology/', 'height'), SparqlVar('num'))]
+CODE4 : ResourceType(dbr_Michael_Jordan,Entity)
+CODE2 : ResourceType(dbo_Height,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Michael_Jordan dbo:height ?num . }
 
 
@@ -803,6 +868,8 @@ phraseDepTag(capital,the,det)
 phraseDepTag(capital,Canada,nmod:of)
 phraseDepTag(Canada,of,case)
 [(('http://dbpedia.org/resource/', 'Canada'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Canada,Entity)
+CODE2 : ResourceType(dbo_Capital,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Canada dbo:capital ?uri . }
 
 
@@ -827,6 +894,8 @@ phraseDepTag(governor,the,det)
 phraseDepTag(governor,Wyoming,nmod:of)
 phraseDepTag(Wyoming,of,case)
 [(('http://dbpedia.org/resource/', 'Wyoming'), ('http://dbpedia.org/property/', 'governor'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Wyoming,Entity)
+CODE0 : ResourceType(Governor,Class)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Wyoming dbp:governor ?uri . }
 
 
@@ -865,6 +934,10 @@ phraseDepTag(have,William,nsubj)
 phraseDepTag(have,mother,dobj)
 phraseDepTag(mother,the,det)
 [('<http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge>', ('http://dbpedia.org/property/', 'mother'), SparqlVar('x')), ('<http://dbpedia.org/resource/Prince_Harry_of_Wales>', ('http://dbpedia.org/property/', 'mother'), SparqlVar('y')), ('<http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge>', ('http://dbpedia.org/property/', 'mother'), SparqlVar('x')), ('<http://dbpedia.org/resource/Prince_Harry_of_Wales>', ('http://dbpedia.org/property/', 'mother'), SparqlVar('y'))]
+CODE0 : ResourceType(Mother,Class)
+CODE0 : ResourceType(Mother,Class)
+CODE0 : ResourceType(Mother,Class)
+CODE0 : ResourceType(Mother,Class)
 PREFIX dbp: <http://dbpedia.org/property/> ASK WHERE { <http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge> dbp:mother ?x . <http://dbpedia.org/resource/Prince_Harry_of_Wales> dbp:mother ?y . FILTER (?x = ?y) }
 
 
@@ -895,6 +968,8 @@ phraseDepTag(II,of,case)
 phraseDepTag(II,Queen,compound)
 phraseDepTag(II,Elizabeth,compound)
 [(('http://dbpedia.org/resource/', 'Elizabeth_II'), ('http://dbpedia.org/property/', 'father'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Elizabeth_Ii,Entity)
+CODE0 : ResourceType(Father,Class)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Elizabeth_II dbp:father ?uri . }
 
 
@@ -922,6 +997,8 @@ phraseDepTag(admitted,has,aux)
 phraseDepTag(admitted,been,auxpass)
 phraseDepTag(admitted,latest,xcomp)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'admittancedate'), SparqlVar('x'))]
+CODE0 : ResourceType(StatesOfTheUnitedStates,Class)
+CODE0 : ResourceType(Admittancedate,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:admittancedate ?x . } ORDER BY DESC(?x) OFFSET 0 LIMIT 1
 
 
@@ -949,6 +1026,9 @@ phraseDepTag(spoken,are,auxpass)
 phraseDepTag(spoken,Turkmenistan,nmod:in)
 phraseDepTag(Turkmenistan,in,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'governor'), ('http://dbpedia.org/resource/', 'Sean_Parnell'))]
+CODE0 : ResourceType(StatesOfTheUnitedStates,Class)
+CODE0 : ResourceType(Governor,Class)
+CODE4 : ResourceType(dbr_Sean_Parnell,Entity)
 PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:governor res:Sean_Parnell . }
 
 
@@ -984,6 +1064,9 @@ phraseDepTag(Coppola,by,case)
 phraseDepTag(Coppola,Francis,compound)
 phraseDepTag(Coppola,Ford,compound)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'Francis_Ford_Coppola'))]
+CODE0 : ResourceType(Film,Class)
+CODE2 : ResourceType(dbo_Director,Relation)
+CODE4 : ResourceType(dbr_Francis_Ford_Coppola,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:director res:Francis_Ford_Coppola . }
 
 
@@ -1025,6 +1108,9 @@ phraseDepTag(directed,Shatner,nmod:by)
 phraseDepTag(Shatner,by,case)
 phraseDepTag(Shatner,William,compound)
 [(SparqlVar('x'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'William_Shatner')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'starring'), SparqlVar('uri'))]
+CODE2 : ResourceType(dbo_Director,Relation)
+CODE4 : ResourceType(dbr_William_Shatner,Entity)
+CODE2 : ResourceType(dbo_Starring,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner . ?x dbo:starring ?uri . }
 
 
@@ -1052,6 +1138,9 @@ phraseDepTag(type,a,det)
 phraseDepTag(type,amphibian,nmod:of)
 phraseDepTag(amphibian,of,case)
 [(('http://dbpedia.org/resource/', 'Hylidae'), ('http://dbpedia.org/ontology/', 'class'), ('http://dbpedia.org/resource/', 'Amphibian'))]
+CODE4 : ResourceType(dbr_Hylidae,Entity)
+CODE2 : ResourceType(dbo_Class,Relation)
+CODE4 : ResourceType(dbr_Amphibian,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Hylidae dbo:class res:Amphibian . }
 
 
@@ -1082,6 +1171,8 @@ phraseDepTag(name,Merkel,nmod:of)
 phraseDepTag(Merkel,of,case)
 phraseDepTag(Merkel,Angela,compound)
 [(('http://dbpedia.org/resource/', 'Angela_Merkel'), ('http://dbpedia.org/property/', 'birthName'), SparqlVar('string'))]
+CODE4 : ResourceType(dbr_Angela_Merkel,Entity)
+CODE0 : ResourceType(Birthname,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Angela_Merkel dbp:birthName ?string . }
 
 
@@ -1103,6 +1194,9 @@ phraseDepTag(Give,politicians,dobj)
 phraseDepTag(politicians,all,det)
 phraseDepTag(politicians,Methodist,amod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Politician')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'religion'), ('http://dbpedia.org/resource/', 'Methodism'))]
+CODE0 : ResourceType(Politician,Class)
+CODE2 : ResourceType(dbo_Religion,Relation)
+CODE4 : ResourceType(dbr_Methodism,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Politician . ?uri dbo:religion res:Methodism . }
 
 
@@ -1127,6 +1221,10 @@ phraseDepTag(marry,often,advmod)
 phraseDepTag(marry,did,aux)
 phraseDepTag(marry,Fonda,nsubj)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'type'), ('http://dbpedia.org/resource/', 'Nonprofit_organization')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'type'), ('http://dbpedia.org/resource/', 'Nonprofit_organization'))]
+CODE2 : ResourceType(dbo_Type,Relation)
+CODE4 : ResourceType(dbr_Nonprofit_Organization,Entity)
+CODE2 : ResourceType(dbo_Type,Relation)
+CODE4 : ResourceType(dbr_Nonprofit_Organization,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:type res:Nonprofit_organization . { ?uri dbo:locationCountry res:Australia . } UNION { ?uri dbo:location ?x . ?x dbo:country res:Australia . } }
 
 
@@ -1162,6 +1260,8 @@ phraseDepTag(participate,conflicts,nmod:in)
 phraseDepTag(participate,did,aux)
 phraseDepTag(participate,Lawrence,nsubj)
 [(('http://dbpedia.org/resource/', 'T._E._Lawrence'), ('http://dbpedia.org/ontology/', 'battle'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_T._E._Lawrence,Entity)
+CODE2 : ResourceType(dbo_Battle,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:T._E._Lawrence dbo:battle ?uri . }
 
 
@@ -1177,6 +1277,8 @@ phraseDepTag(Minecraft,developed,root)
 phraseDepTag(developed,Who,nsubj)
 phraseDepTag(developed,Minecraft,dobj)
 [(('http://dbpedia.org/resource/', 'Minecraft'), ('http://dbpedia.org/ontology/', 'developer'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Minecraft,Entity)
+CODE2 : ResourceType(dbo_Developer,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Minecraft dbo:developer ?uri . }
 
 
@@ -1247,6 +1349,8 @@ phraseDepTag(have,inhabitants,dobj)
 phraseDepTag(have,does,aux)
 phraseDepTag(have,Maribor,nsubj)
 [(('http://dbpedia.org/resource/', 'Maribor'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('num'))]
+CODE4 : ResourceType(dbr_Maribor,Entity)
+CODE2 : ResourceType(dbo_Populationtotal,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Maribor dbo:populationTotal ?num . }
 
 
@@ -1271,6 +1375,8 @@ phraseDepTag(companies,all,det)
 phraseDepTag(companies,Munich,nmod:in)
 phraseDepTag(Munich,in,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company'))]
+CODE0 : ResourceType(Company,Class)
+CODE0 : ResourceType(Company,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company . { ?uri dbo:location res:Munich . } UNION { ?uri dbo:headquarter res:Munich . } UNION { ?uri dbo:locationCity res:Munich . } }
 
 
@@ -1292,6 +1398,8 @@ phraseDepTag(is,tall,dep)
 phraseDepTag(is,Schiffer,nsubj)
 phraseDepTag(Schiffer,Claudia,compound)
 [(('http://dbpedia.org/resource/', 'Claudia_Schiffer'), ('http://dbpedia.org/ontology/', 'height'), SparqlVar('height'))]
+CODE4 : ResourceType(dbr_Claudia_Schiffer,Entity)
+CODE2 : ResourceType(dbo_Height,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height . }
 
 
@@ -1313,6 +1421,8 @@ phraseDepTag(List,GMT,nmod:by)
 phraseDepTag(games,all,det)
 phraseDepTag(GMT,by,case)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'publisher'), ('http://dbpedia.org/resource/', 'GMT_Games'))]
+CODE2 : ResourceType(dbo_Publisher,Relation)
+CODE4 : ResourceType(dbr_Gmt_Games,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games . }
 
 
@@ -1328,6 +1438,8 @@ phraseDepTag(Intel,founded,root)
 phraseDepTag(founded,Who,nsubj)
 phraseDepTag(founded,Intel,dobj)
 [(('http://dbpedia.org/resource/', 'Intel'), ('http://dbpedia.org/ontology/', 'foundedBy'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Intel,Entity)
+CODE2 : ResourceType(dbo_Foundedby,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Intel dbo:foundedBy ?uri . }
 
 
@@ -1355,6 +1467,8 @@ phraseDepTag(husband,Palmer,nmod:of)
 phraseDepTag(Palmer,of,case)
 phraseDepTag(Palmer,Amanda,compound)
 [(('http://dbpedia.org/resource/', 'Amanda_Palmer'), ('http://dbpedia.org/property/', 'spouse'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Amanda_Palmer,Entity)
+CODE0 : ResourceType(Spouse,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Amanda_Palmer dbp:spouse ?uri . }
 
 
@@ -1388,6 +1502,8 @@ phraseDepTag(dog,the,det)
 phraseDepTag(dog,German,amod)
 phraseDepTag(dog,Shepherd,compound)
 [(SparqlVar('uri'), ('http://dbpedia.org/property/', 'breed'), ('http://dbpedia.org/resource/', 'German_Shepherd'))]
+CODE0 : ResourceType(Breed,Class)
+CODE4 : ResourceType(dbr_German_Shepherd,Entity)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbp:breed res:German_Shepherd . }
 
 
@@ -1415,6 +1531,8 @@ phraseDepTag(does,flow,dobj)
 phraseDepTag(flow,the,det)
 phraseDepTag(flow,Weser,compound)
 [(('http://dbpedia.org/resource/', 'Weser'), ('http://dbpedia.org/ontology/', 'city'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Weser,Entity)
+CODE2 : ResourceType(dbo_City,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Weser dbo:city ?uri . }
 
 
@@ -1442,6 +1560,9 @@ phraseDepTag(connected,Rhine,nmod:agent)
 phraseDepTag(Rhine,by,case)
 phraseDepTag(Rhine,the,det)
 [(('http://dbpedia.org/resource/', 'Rhine'), ('http://dbpedia.org/property/', 'country'), SparqlVar('string')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('uri'), ('http://www.w3.org/2000/01/rdf-schema#', 'label'), SparqlVar('string'))]
+CODE4 : ResourceType(dbr_Rhine,Entity)
+CODE0 : ResourceType(Country,Class)
+CODE0 : ResourceType(Country,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Rhine dbp:country ?string . ?uri rdf:type dbo:Country . ?uri rdfs:label ?string . }
 
 
@@ -1469,6 +1590,10 @@ phraseDepTag(born,were,auxpass)
 phraseDepTag(born,Australia,nmod:in)
 phraseDepTag(Australia,in,case)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'occupation'), ('http://dbpedia.org/resource/', 'Surfing')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthPlace'), ('http://dbpedia.org/resource/', 'Australia'))]
+CODE2 : ResourceType(dbo_Occupation,Relation)
+CODE4 : ResourceType(dbr_Surfing,Entity)
+CODE2 : ResourceType(dbo_Birthplace,Relation)
+CODE4 : ResourceType(dbr_Australia,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Surfing . ?uri dbo:birthPlace res:Australia . }
 
 
@@ -1528,6 +1653,9 @@ phraseDepTag(headquarters,MI6,nmod:of)
 phraseDepTag(MI6,of,case)
 phraseDepTag(MI6,the,det)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'City')), (('http://dbpedia.org/resource/', 'Secret_Intelligence_Service'), ('http://dbpedia.org/ontology/', 'headquarter'), SparqlVar('uri'))]
+CODE0 : ResourceType(City,Class)
+CODE4 : ResourceType(dbr_Secret_Intelligence_Service,Entity)
+CODE2 : ResourceType(dbo_Headquarter,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City . res:Secret_Intelligence_Service dbo:headquarter ?uri . }
 
 
@@ -1566,6 +1694,14 @@ phraseDepTag(develop,weapons,dobj)
 phraseDepTag(develop,did,aux)
 phraseDepTag(develop,designer,nsubj)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Weapon')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Uzi'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Weapon')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Uzi'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x'))]
+CODE0 : ResourceType(Weapon,Class)
+CODE0 : ResourceType(Designer,Class)
+CODE4 : ResourceType(dbr_Uzi,Entity)
+CODE0 : ResourceType(Designer,Class)
+CODE0 : ResourceType(Weapon,Class)
+CODE0 : ResourceType(Designer,Class)
+CODE4 : ResourceType(dbr_Uzi,Entity)
+CODE0 : ResourceType(Designer,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Weapon . ?uri dbp:designer ?x . res:Uzi dbp:designer ?x . FILTER (?uri != res:Uzi) }
 
 
@@ -1581,6 +1717,8 @@ phraseDepTag(Goofy,created,root)
 phraseDepTag(created,Who,nsubj)
 phraseDepTag(created,Goofy,dobj)
 [(('http://dbpedia.org/resource/', 'Goofy'), ('http://dbpedia.org/ontology/', 'creator'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Goofy,Entity)
+CODE2 : ResourceType(dbo_Creator,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Goofy dbo:creator ?uri . }
 
 
@@ -1625,6 +1763,14 @@ phraseDepTag(Bay,Invasion,nmod:of)
 phraseDepTag(Invasion,of,case)
 phraseDepTag(Invasion,Pigs,compound)
 [(('http://dbpedia.org/resource/', 'Cuban_missile_crisis'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Bay_of_Pigs_Invasion'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('y')), (('http://dbpedia.org/resource/', 'Cuban_missile_crisis'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Bay_of_Pigs_Invasion'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('y'))]
+CODE4 : ResourceType(dbr_Cuban_Missile_Crisis,Entity)
+CODE2 : ResourceType(dbo_Date,Relation)
+CODE4 : ResourceType(dbr_Bay_Of_Pigs_Invasion,Entity)
+CODE2 : ResourceType(dbo_Date,Relation)
+CODE4 : ResourceType(dbr_Cuban_Missile_Crisis,Entity)
+CODE2 : ResourceType(dbo_Date,Relation)
+CODE4 : ResourceType(dbr_Bay_Of_Pigs_Invasion,Entity)
+CODE2 : ResourceType(dbo_Date,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Cuban_missile_crisis dbo:date ?x . res:Bay_of_Pigs_Invasion dbo:date ?y . FILTER (?x < ?y) }
 
 
@@ -1655,6 +1801,9 @@ phraseDepTag(belong,that,nsubj)
 phraseDepTag(belong,Japan,nmod:to)
 phraseDepTag(Japan,to,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Island')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Japan'))]
+CODE0 : ResourceType(Island,Class)
+CODE2 : ResourceType(dbo_Country,Relation)
+CODE4 : ResourceType(dbr_Japan,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Island . ?uri dbo:country res:Japan . }
 
 
@@ -1696,6 +1845,8 @@ phraseDepTag(party,ruling,amod)
 phraseDepTag(party,Lisbon,nmod:in)
 phraseDepTag(Lisbon,in,case)
 [(('http://dbpedia.org/resource/', 'Lisbon'), ('http://dbpedia.org/property/', 'leaderParty'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Lisbon,Entity)
+CODE0 : ResourceType(Leaderparty,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Lisbon dbp:leaderParty ?uri . }
 
 
@@ -1723,6 +1874,8 @@ phraseDepTag(nicknames,Francisco,nmod:of)
 phraseDepTag(Francisco,of,case)
 phraseDepTag(Francisco,San,compound)
 [(('http://dbpedia.org/resource/', 'San_Francisco'), ('http://dbpedia.org/property/', 'nickname'), SparqlVar('string'))]
+CODE4 : ResourceType(dbr_San_Francisco,Entity)
+CODE0 : ResourceType(Nickname,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:San_Francisco dbp:nickname ?string . }
 
 
@@ -1750,6 +1903,9 @@ phraseDepTag(dwelt,Olympus,nmod:on)
 phraseDepTag(Olympus,on,case)
 phraseDepTag(Olympus,Mount,compound)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'GreekGoddesses')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'abode'), ('http://dbpedia.org/resource/', 'Mount_Olympus'))]
+CODE0 : ResourceType(GreekGoddesses,Class)
+CODE0 : ResourceType(Abode,Class)
+CODE4 : ResourceType(dbr_Mount_Olympus,Entity)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:GreekGoddesses . ?uri dbp:abode res:Mount_Olympus . }
 
 
@@ -1774,6 +1930,8 @@ phraseDepTag(founded,When,advmod)
 phraseDepTag(founded,were,auxpass)
 phraseDepTag(founded,Angels,nsubjpass)
 [(('http://dbpedia.org/resource/', 'Hells_Angels'), ('http://dbpedia.org/property/', 'founded'), SparqlVar('date'))]
+CODE4 : ResourceType(dbr_Hells_Angels,Entity)
+CODE0 : ResourceType(Founded,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Hells_Angels dbp:founded ?date . }
 
 
@@ -1798,6 +1956,8 @@ phraseDepTag(astronauts,all,det)
 phraseDepTag(astronauts,Apollo,compound)
 phraseDepTag(astronauts,14,nummod)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'mission'), ('http://dbpedia.org/resource/', 'Apollo_14'))]
+CODE2 : ResourceType(dbo_Mission,Relation)
+CODE4 : ResourceType(dbr_Apollo_14,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 . }
 
 
@@ -1831,6 +1991,8 @@ phraseDepTag(City,of,case)
 phraseDepTag(City,Salt,compound)
 phraseDepTag(City,Lake,compound)
 [(('http://dbpedia.org/resource/', 'Salt_Lake_City'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Salt_Lake_City,Entity)
+CODE0 : ResourceType(Timezone,Class)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Salt_Lake_City dbp:timezone ?uri . }
 
 
@@ -1872,6 +2034,14 @@ phraseDepTag(zone,time,compound)
 phraseDepTag(zone,Utah,nmod:as)
 phraseDepTag(Utah,as,case)
 [(('http://dbpedia.org/resource/', 'Utah'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Utah'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x'))]
+CODE4 : ResourceType(dbr_Utah,Entity)
+CODE0 : ResourceType(Timezone,Class)
+CODE0 : ResourceType(StatesOfTheUnitedStates,Class)
+CODE0 : ResourceType(Timezone,Class)
+CODE4 : ResourceType(dbr_Utah,Entity)
+CODE0 : ResourceType(Timezone,Class)
+CODE0 : ResourceType(StatesOfTheUnitedStates,Class)
+CODE0 : ResourceType(Timezone,Class)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:timezone ?x . FILTER (?uri != res:Utah) }
 
 
@@ -1905,6 +2075,8 @@ phraseDepTag(countries,all,det)
 phraseDepTag(countries,Africa,nmod:in)
 phraseDepTag(Africa,in,case)
 [(SparqlVar('states'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'AfricanCountries')), (SparqlVar('states'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('uri'))]
+CODE0 : ResourceType(AfricanCountries,Class)
+CODE2 : ResourceType(dbo_Capital,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?states rdf:type yago:AfricanCountries . ?states dbo:capital ?uri . }
 
 
@@ -1965,6 +2137,9 @@ phraseDepTag(been,missions,nsubj)
 phraseDepTag(been,have,aux)
 phraseDepTag(been,there,advmod)
 [(('http://dbpedia.org/resource/', 'Aristotle'), ('http://dbpedia.org/ontology/', 'influencedBy'), ('http://dbpedia.org/resource/', 'Socrates'))]
+CODE4 : ResourceType(dbr_Aristotle,Entity)
+CODE2 : ResourceType(dbo_Influencedby,Relation)
+CODE4 : ResourceType(dbr_Socrates,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates . }
 
 
@@ -1986,6 +2161,9 @@ phraseDepTag(Give,films,dobj)
 phraseDepTag(films,all,det)
 phraseDepTag(films,Danish,amod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Denmark'))]
+CODE0 : ResourceType(Film,Class)
+CODE2 : ResourceType(dbo_Country,Relation)
+CODE4 : ResourceType(dbr_Denmark,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:country res:Denmark . }
 
 
@@ -2016,6 +2194,9 @@ phraseDepTag(pads,operated,acl)
 phraseDepTag(operated,NASA,nmod:by)
 phraseDepTag(NASA,by,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'LaunchPad')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'operator'), ('http://dbpedia.org/resource/', 'NASA'))]
+CODE0 : ResourceType(LaunchPad,Class)
+CODE2 : ResourceType(dbo_Operator,Relation)
+CODE4 : ResourceType(dbr_Nasa,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:LaunchPad . ?uri dbo:operator res:NASA . }
 
 
@@ -2040,6 +2221,8 @@ phraseDepTag(play,instruments,dobj)
 phraseDepTag(play,does,aux)
 phraseDepTag(play,Stevens,nsubj)
 [(('http://dbpedia.org/resource/', 'Cat_Stevens'), ('http://dbpedia.org/ontology/', 'instrument'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Cat_Stevens,Entity)
+CODE2 : ResourceType(dbo_Instrument,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Cat_Stevens dbo:instrument ?uri . }
 
 
@@ -2067,6 +2250,8 @@ phraseDepTag(called,Franklin,nmod:after)
 phraseDepTag(Franklin,after,case)
 phraseDepTag(Franklin,Benjamin,compound)
 [(SparqlVar('uri'), ('http://dbpedia.org/property/', 'shipNamesake'), ('http://dbpedia.org/resource/', 'Benjamin_Franklin'))]
+CODE0 : ResourceType(Shipnamesake,Class)
+CODE4 : ResourceType(dbr_Benjamin_Franklin,Entity)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?uri dbp:shipNamesake res:Benjamin_Franklin . }
 
 
@@ -2106,6 +2291,9 @@ phraseDepTag(wife,Carlos,nmod:of)
 phraseDepTag(Carlos,of,case)
 phraseDepTag(Carlos,Juan,compound)
 [(('http://dbpedia.org/resource/', 'Juan_Carlos_I_of_Spain'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'parent'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Juan_Carlos_I_Of_Spain,Entity)
+CODE2 : ResourceType(dbo_Spouse,Relation)
+CODE2 : ResourceType(dbo_Parent,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Juan_Carlos_I_of_Spain dbo:spouse ?x . ?x dbo:parent ?uri . }
 
 
@@ -2130,6 +2318,8 @@ phraseDepTag(have,employees,dobj)
 phraseDepTag(have,does,aux)
 phraseDepTag(have,Google,nsubj)
 [(('http://dbpedia.org/resource/', 'Google'), ('http://dbpedia.org/ontology/', 'numberOfEmployees'), SparqlVar('num'))]
+CODE4 : ResourceType(dbr_Google,Entity)
+CODE2 : ResourceType(dbo_Numberofemployees,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?num WHERE { res:Google dbo:numberOfEmployees ?num . }
 
 
@@ -2160,6 +2350,9 @@ phraseDepTag(prize,a,det)
 phraseDepTag(prize,nobel,amod)
 phraseDepTag(physics,in,case)
 [(('http://dbpedia.org/resource/', 'Nikola_Tesla'), ('http://dbpedia.org/ontology/', 'award'), ('http://dbpedia.org/resource/', 'Nobel_Prize_in_Physics'))]
+CODE4 : ResourceType(dbr_Nikola_Tesla,Entity)
+CODE2 : ResourceType(dbo_Award,Relation)
+CODE4 : ResourceType(dbr_Nobel_Prize_In_Physics,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Nikola_Tesla dbo:award res:Nobel_Prize_in_Physics . }
 
 
@@ -2204,6 +2397,14 @@ phraseDepTag(100000,more,advmod)
 phraseDepTag(inhabitants,with,case)
 phraseDepTag(inhabitants,100000,nummod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'City')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'isPartOf'), ('http://dbpedia.org/resource/', 'New_Jersey')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('inhabitants')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'City')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'isPartOf'), ('http://dbpedia.org/resource/', 'New_Jersey')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('inhabitants'))]
+CODE0 : ResourceType(City,Class)
+CODE2 : ResourceType(dbo_Ispartof,Relation)
+CODE4 : ResourceType(dbr_New_Jersey,Entity)
+CODE2 : ResourceType(dbo_Populationtotal,Relation)
+CODE0 : ResourceType(City,Class)
+CODE2 : ResourceType(dbo_Ispartof,Relation)
+CODE4 : ResourceType(dbr_New_Jersey,Entity)
+CODE2 : ResourceType(dbo_Populationtotal,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City . ?uri dbo:isPartOf res:New_Jersey . ?uri dbo:populationTotal ?inhabitants . FILTER (?inhabitants > 100000) . }
 
 
@@ -2234,6 +2435,9 @@ phraseDepTag(wife,Obama,nmod:of)
 phraseDepTag(Obama,of,case)
 phraseDepTag(Obama,Barack,compound)
 [(('http://dbpedia.org/resource/', 'Barack_Obama'), ('http://dbpedia.org/ontology/', 'spouse'), ('http://dbpedia.org/resource/', 'Michelle_Obama'))]
+CODE4 : ResourceType(dbr_Barack_Obama,Entity)
+CODE2 : ResourceType(dbo_Spouse,Relation)
+CODE4 : ResourceType(dbr_Michelle_Obama,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Barack_Obama dbo:spouse res:Michelle_Obama . }
 
 
@@ -2261,6 +2465,8 @@ phraseDepTag(built,When,advmod)
 phraseDepTag(built,was,auxpass)
 phraseDepTag(built,Statue,nsubjpass)
 [(('http://dbpedia.org/resource/', 'Statue_of_Liberty'), ('http://dbpedia.org/property/', 'beginningDate'), SparqlVar('date'))]
+CODE4 : ResourceType(dbr_Statue_Of_Liberty,Entity)
+CODE0 : ResourceType(Beginningdate,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Statue_of_Liberty dbp:beginningDate ?date . }
 
 
@@ -2291,6 +2497,10 @@ phraseDepTag(located,state,nmod:in)
 phraseDepTag(located,is,cop)
 phraseDepTag(located,Knox,nsubj)
 [(('http://dbpedia.org/resource/', 'Fort_Knox'), ('http://dbpedia.org/property/', 'location'), SparqlVar('uri')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'United_States'))]
+CODE4 : ResourceType(dbr_Fort_Knox,Entity)
+CODE0 : ResourceType(Location,Class)
+CODE2 : ResourceType(dbo_Country,Relation)
+CODE4 : ResourceType(dbr_United_States,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Fort_Knox dbp:location ?uri . ?uri dbo:country res:United_States . }
 
 
@@ -2318,6 +2528,8 @@ phraseDepTag(have,children,dobj)
 phraseDepTag(have,did,aux)
 phraseDepTag(have,Franklin,nsubj)
 [(('http://dbpedia.org/resource/', 'Michael_Jackson'), ('http://dbpedia.org/ontology/', 'deathDate'), SparqlVar('date'))]
+CODE4 : ResourceType(dbr_Michael_Jackson,Entity)
+CODE2 : ResourceType(dbo_Deathdate,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Michael_Jackson dbo:deathDate ?date . }
 
 
@@ -2362,6 +2574,12 @@ phraseDepTag(born,they,nsubjpass)
 phraseDepTag(born,were,auxpass)
 phraseDepTag(born,in,nmod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'ChessPlayer')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthPlace'), SparqlVar('x')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'deathPlace'), SparqlVar('y')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'ChessPlayer')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthPlace'), SparqlVar('x')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'deathPlace'), SparqlVar('y'))]
+CODE0 : ResourceType(ChessPlayer,Class)
+CODE2 : ResourceType(dbo_Birthplace,Relation)
+CODE2 : ResourceType(dbo_Deathplace,Relation)
+CODE0 : ResourceType(ChessPlayer,Class)
+CODE2 : ResourceType(dbo_Birthplace,Relation)
+CODE2 : ResourceType(dbo_Deathplace,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:ChessPlayer . ?uri dbo:birthPlace ?x . ?uri dbo:deathPlace ?y . FILTER (?x = ?y) . }
 
 
@@ -2386,6 +2604,8 @@ phraseDepTag(children,Thatcher,nmod:of)
 phraseDepTag(Thatcher,of,case)
 phraseDepTag(Thatcher,Margaret,compound)
 [(('http://dbpedia.org/resource/', 'Margaret_Thatcher'), ('http://dbpedia.org/ontology/', 'child'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Margaret_Thatcher,Entity)
+CODE2 : ResourceType(dbo_Child,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Margaret_Thatcher dbo:child ?uri . }
 
 
@@ -2404,6 +2624,8 @@ phraseDepTag(called,Who,nsubjpass)
 phraseDepTag(called,was,auxpass)
 phraseDepTag(called,Scarface,dobj)
 [(SparqlVar('uri'), ('http://dbpedia.org/property/', 'nickname'), ('http://dbpedia.org/resource/', 'Scarface'))]
+CODE0 : ResourceType(Nickname,Class)
+CODE4 : ResourceType(dbr_Scarface,Entity)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbp:nickname res:Scarface . }
 
 
@@ -2425,6 +2647,9 @@ phraseDepTag(chemist,Was,cop)
 phraseDepTag(chemist,Thatcher,nsubj)
 phraseDepTag(chemist,a,det)
 [(('http://dbpedia.org/resource/', 'Margaret_Thatcher'), ('http://dbpedia.org/ontology/', 'profession'), ('http://dbpedia.org/resource/', 'Chemist'))]
+CODE4 : ResourceType(dbr_Margaret_Thatcher,Entity)
+CODE2 : ResourceType(dbo_Profession,Relation)
+CODE4 : ResourceType(dbr_Chemist,Entity)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> ASK WHERE { res:Margaret_Thatcher dbo:profession res:Chemist . }
 
 
@@ -2446,6 +2671,8 @@ phraseDepTag(jew,Was,cop)
 phraseDepTag(jew,Chagall,nsubj)
 phraseDepTag(jew,a,det)
 [(('http://dbpedia.org/resource/', 'The_Scream'), ('http://dbpedia.org/ontology/', 'museum'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_The_Scream,Entity)
+CODE2 : ResourceType(dbo_Museum,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Scream dbo:museum ?uri . }
 
 
@@ -2490,6 +2717,14 @@ phraseDepTag(300,more,advmod)
 phraseDepTag(pages,with,case)
 phraseDepTag(pages,300,nummod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Book')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'author'), ('http://dbpedia.org/resource/', 'William_Goldman')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'numberOfPages'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Book')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'author'), ('http://dbpedia.org/resource/', 'William_Goldman')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'numberOfPages'), SparqlVar('x'))]
+CODE0 : ResourceType(Book,Class)
+CODE2 : ResourceType(dbo_Author,Relation)
+CODE4 : ResourceType(dbr_William_Goldman,Entity)
+CODE2 : ResourceType(dbo_Numberofpages,Relation)
+CODE0 : ResourceType(Book,Class)
+CODE2 : ResourceType(dbo_Author,Relation)
+CODE4 : ResourceType(dbr_William_Goldman,Entity)
+CODE2 : ResourceType(dbo_Numberofpages,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book . ?uri dbo:author res:William_Goldman . ?uri dbo:numberOfPages ?x . FILTER (?x > 300) }
 
 
@@ -2525,6 +2760,11 @@ phraseDepTag(published,Press,nmod:agent)
 phraseDepTag(Press,by,case)
 phraseDepTag(Press,Viking,amod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Book')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'publisher'), ('http://dbpedia.org/resource/', 'Viking_Press')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'author'), ('http://dbpedia.org/resource/', 'Jack_Kerouac'))]
+CODE0 : ResourceType(Book,Class)
+CODE2 : ResourceType(dbo_Publisher,Relation)
+CODE4 : ResourceType(dbr_Viking_Press,Entity)
+CODE2 : ResourceType(dbo_Author,Relation)
+CODE4 : ResourceType(dbr_Jack_Kerouac,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book . ?uri dbo:publisher res:Viking_Press . ?uri dbo:author res:Jack_Kerouac . }
 
 
@@ -2555,6 +2795,7 @@ phraseDepTag(inventions,of,case)
 phraseDepTag(inventions,all,det)
 phraseDepTag(inventions,American,amod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'AmericanInventions'))]
+CODE0 : ResourceType(AmericanInventions,Class)
 PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:AmericanInventions . }
 
 
@@ -2579,6 +2820,8 @@ phraseDepTag(is,Everest,nsubj)
 phraseDepTag(Everest,the,det)
 phraseDepTag(Everest,Mount,compound)
 [(('http://dbpedia.org/resource/', 'Mount_Everest'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('num'))]
+CODE4 : ResourceType(dbr_Mount_Everest,Entity)
+CODE2 : ResourceType(dbo_Elevation,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Mount_Everest dbo:elevation ?num. }
 
 
@@ -2603,6 +2846,8 @@ phraseDepTag(America,the,det)
 phraseDepTag(America,comic,amod)
 phraseDepTag(America,Captain,compound)
 [(('http://dbpedia.org/resource/', 'Captain_America'), ('http://dbpedia.org/ontology/', 'creator'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Captain_America,Entity)
+CODE2 : ResourceType(dbo_Creator,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Captain_America dbo:creator ?uri . }
 
 
@@ -2636,6 +2881,9 @@ phraseDepTag(capital,the,det)
 phraseDepTag(capital,Australia,nmod:of)
 phraseDepTag(Australia,of,case)
 [(('http://dbpedia.org/resource/', 'Australia'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('num'))]
+CODE4 : ResourceType(dbr_Australia,Entity)
+CODE2 : ResourceType(dbo_Capital,Relation)
+CODE2 : ResourceType(dbo_Populationtotal,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Australia dbo:capital ?x . ?x dbo:populationTotal ?num . }
 
 
@@ -2663,6 +2911,8 @@ phraseDepTag(city,largest,amod)
 phraseDepTag(city,Australia,nmod:in)
 phraseDepTag(Australia,in,case)
 [(('http://dbpedia.org/resource/', 'Australia'), ('http://dbpedia.org/ontology/', 'largestCity'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Australia,Entity)
+CODE2 : ResourceType(dbo_Largestcity,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Australia dbo:largestCity ?uri . }
 
 
@@ -2693,6 +2943,8 @@ phraseDepTag(music,Maude,nmod:for)
 phraseDepTag(Harold,for,case)
 phraseDepTag(Harold,and,cc)
 [(('http://dbpedia.org/resource/', 'Harold_and_Maude'), ('http://dbpedia.org/ontology/', 'musicComposer'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Harold_And_Maude,Entity)
+CODE2 : ResourceType(dbo_Musiccomposer,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri . }
 
 
@@ -2728,6 +2980,10 @@ phraseDepTag(direct,did,aux)
 phraseDepTag(direct,he,nsubj)
 phraseDepTag(direct,himself,dobj)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'Clint_Eastwood')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Clint_Eastwood'))]
+CODE2 : ResourceType(dbo_Director,Relation)
+CODE4 : ResourceType(dbr_Clint_Eastwood,Entity)
+CODE2 : ResourceType(dbo_Starring,Relation)
+CODE4 : ResourceType(dbr_Clint_Eastwood,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Clint_Eastwood . ?uri dbo:starring res:Clint_Eastwood . }
 
 
@@ -2766,6 +3022,9 @@ phraseDepTag(buried,city,nmod:in)
 phraseDepTag(buried,was,auxpass)
 phraseDepTag(buried,Juliana,nsubjpass)
 [(('http://dbpedia.org/resource/', 'Juliana_of_the_Netherlands'), ('http://dbpedia.org/ontology/', 'restingPlace'), SparqlVar('uri')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Settlement'))]
+CODE4 : ResourceType(dbr_Juliana_Of_The_Netherlands,Entity)
+CODE2 : ResourceType(dbo_Restingplace,Relation)
+CODE0 : ResourceType(Settlement,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Juliana_of_the_Netherlands dbo:restingPlace ?uri. ?uri rdf:type dbo:Settlement . }
 
 
@@ -2793,6 +3052,14 @@ phraseDepTag(city,capital,nmod)
 phraseDepTag(capital,also,advmod)
 phraseDepTag(capital,its,nmod:poss)
 [(('http://dbpedia.org/resource/', 'Egypt'), ('http://dbpedia.org/ontology/', 'largestCity'), SparqlVar('large')), (('http://dbpedia.org/resource/', 'Egypt'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('capital')), (('http://dbpedia.org/resource/', 'Egypt'), ('http://dbpedia.org/ontology/', 'largestCity'), SparqlVar('large')), (('http://dbpedia.org/resource/', 'Egypt'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('capital'))]
+CODE4 : ResourceType(dbr_Egypt,Entity)
+CODE2 : ResourceType(dbo_Largestcity,Relation)
+CODE4 : ResourceType(dbr_Egypt,Entity)
+CODE2 : ResourceType(dbo_Capital,Relation)
+CODE4 : ResourceType(dbr_Egypt,Entity)
+CODE2 : ResourceType(dbo_Largestcity,Relation)
+CODE4 : ResourceType(dbr_Egypt,Entity)
+CODE2 : ResourceType(dbo_Capital,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> ASK WHERE { res:Egypt dbo:largestCity ?large . res:Egypt dbo:capital ?capital . FILTER (?large = ?capital) }
 
 
@@ -2831,6 +3098,8 @@ phraseDepTag(minister,prime,amod)
 phraseDepTag(minister,Spain,nmod:of)
 phraseDepTag(Spain,of,case)
 [(('http://dbpedia.org/resource/', 'Prime_Minister_of_Spain'), ('http://dbpedia.org/property/', 'residence'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Prime_Minister_Of_Spain,Entity)
+CODE0 : ResourceType(Residence,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Prime_Minister_of_Spain dbp:residence ?uri . }
 
 
@@ -2858,6 +3127,13 @@ phraseDepTag(has,MN,dobj)
 phraseDepTag(MN,the,det)
 phraseDepTag(MN,abbreviation,compound)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'Akira_Kurosawa')), (('http://dbpedia.org/resource/', 'Rashomon'), ('http://dbpedia.org/ontology/', 'releaseDate'), SparqlVar('y')), (('http://dbpedia.org/resource/', 'Rashomon'), ('http://dbpedia.org/ontology/', 'releaseDate'), SparqlVar('y'))]
+CODE0 : ResourceType(Film,Class)
+CODE2 : ResourceType(dbo_Director,Relation)
+CODE4 : ResourceType(dbr_Akira_Kurosawa,Entity)
+CODE4 : ResourceType(dbr_Rashomon,Entity)
+CODE2 : ResourceType(dbo_Releasedate,Relation)
+CODE4 : ResourceType(dbr_Rashomon,Entity)
+CODE2 : ResourceType(dbo_Releasedate,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:director res:Akira_Kurosawa . { ?uri dbo:releaseDate ?x . } UNION { ?uri dbp:released ?x . } res:Rashomon dbo:releaseDate ?y . FILTER (?y > ?x) }
 
 
@@ -2902,6 +3178,9 @@ phraseDepTag(produces,that,nsubj)
 phraseDepTag(produces,Urquell,dobj)
 phraseDepTag(Urquell,Pilsner,compound)
 [(('http://dbpedia.org/resource/', 'Pilsner_Urquell'), ('http://dbpedia.org/property/', 'brewery'), SparqlVar('uri')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'foundation'), SparqlVar('num'))]
+CODE4 : ResourceType(dbr_Pilsner_Urquell,Entity)
+CODE0 : ResourceType(Brewery,Class)
+CODE0 : ResourceType(Foundation,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Pilsner_Urquell dbp:brewery ?uri . ?uri dbp:foundation ?num . }
 
 
@@ -2937,6 +3216,9 @@ phraseDepTag(anthem,the,det)
 phraseDepTag(anthem,Polish,amod)
 phraseDepTag(anthem,national,amod)
 [(('http://dbpedia.org/resource/', 'Poland'), ('http://dbpedia.org/ontology/', 'anthem'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/property/', 'author'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Poland,Entity)
+CODE2 : ResourceType(dbo_Anthem,Relation)
+CODE0 : ResourceType(Author,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Poland dbo:anthem ?x . ?x dbp:author ?uri . }
 
 
@@ -2964,6 +3246,9 @@ phraseDepTag(B-sides,Ramones,nmod:of)
 phraseDepTag(Ramones,of,case)
 phraseDepTag(Ramones,the,det)
 [(SparqlVar('x'), ('http://dbpedia.org/ontology/', 'musicalArtist'), ('http://dbpedia.org/resource/', 'Ramones')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'bSide'), SparqlVar('string'))]
+CODE2 : ResourceType(dbo_Musicalartist,Relation)
+CODE4 : ResourceType(dbr_Ramones,Entity)
+CODE2 : ResourceType(dbo_Bside,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { ?x dbo:musicalArtist res:Ramones . ?x dbo:bSide ?string . }
 
 
@@ -2997,6 +3282,8 @@ phraseDepTag(Sea,the,det)
 phraseDepTag(Sea,Galilee,nmod:of)
 phraseDepTag(Galilee,of,case)
 [(('http://dbpedia.org/resource/', 'The_Storm_on_the_Sea_of_Galilee'), ('http://dbpedia.org/ontology/', 'author'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_The_Storm_On_The_Sea_Of_Galilee,Entity)
+CODE2 : ResourceType(dbo_Author,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Storm_on_the_Sea_of_Galilee dbo:author ?uri . }
 
 
@@ -3030,6 +3317,9 @@ phraseDepTag(come,country,nmod:from)
 phraseDepTag(come,does,aux)
 phraseDepTag(come,creator,nsubj)
 [(('http://dbpedia.org/resource/', 'Miffy'), ('http://dbpedia.org/ontology/', 'creator'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'nationality'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Miffy,Entity)
+CODE2 : ResourceType(dbo_Creator,Relation)
+CODE2 : ResourceType(dbo_Nationality,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Miffy dbo:creator ?x . ?x dbo:nationality ?uri . }
 
 
@@ -3063,6 +3353,11 @@ phraseDepTag(record,album,dobj)
 phraseDepTag(album,his,nmod:poss)
 phraseDepTag(album,first,amod)
 [(SparqlVar('x'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Album')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'artist'), ('http://dbpedia.org/resource/', 'Elvis_Presley')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'releaseDate'), SparqlVar('y')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'recordLabel'), SparqlVar('uri'))]
+CODE0 : ResourceType(Album,Class)
+CODE2 : ResourceType(dbo_Artist,Relation)
+CODE4 : ResourceType(dbr_Elvis_Presley,Entity)
+CODE2 : ResourceType(dbo_Releasedate,Relation)
+CODE2 : ResourceType(dbo_Recordlabel,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?x rdf:type dbo:Album . ?x dbo:artist res:Elvis_Presley . ?x dbo:releaseDate ?y . ?x dbo:recordLabel ?uri . } ORDER BY ASC(?y) OFFSET 0 LIMIT 1
 
 
@@ -3107,6 +3402,9 @@ phraseDepTag(Charmed,the,det)
 phraseDepTag(Charmed,television,compound)
 phraseDepTag(Charmed,show,compound)
 [(('http://dbpedia.org/resource/', 'Charmed'), ('http://dbpedia.org/ontology/', 'starring'), SparqlVar('actor')), (SparqlVar('actor'), ('http://dbpedia.org/ontology/', 'birthDate'), SparqlVar('date'))]
+CODE4 : ResourceType(dbr_Charmed,Entity)
+CODE2 : ResourceType(dbo_Starring,Relation)
+CODE2 : ResourceType(dbo_Birthdate,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Charmed dbo:starring ?actor . ?actor dbo:birthDate ?date . }
 
 
@@ -3131,6 +3429,8 @@ phraseDepTag(have,employees,dobj)
 phraseDepTag(have,does,aux)
 phraseDepTag(have,IBM,nsubj)
 [(('http://dbpedia.org/resource/', 'IBM'), ('http://dbpedia.org/ontology/', 'numberOfEmployees'), SparqlVar('number'))]
+CODE4 : ResourceType(dbr_Ibm,Entity)
+CODE2 : ResourceType(dbo_Numberofemployees,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?number WHERE { res:IBM dbo:numberOfEmployees ?number . }
 
 
@@ -3149,6 +3449,8 @@ phraseDepTag(states,Which,det)
 phraseDepTag(border,states,nsubj)
 phraseDepTag(border,Illinois,dobj)
 [(('http://dbpedia.org/resource/', 'Illinois'), ('http://dbpedia.org/property/', 'borderingstates'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Illinois,Entity)
+CODE0 : ResourceType(Borderingstates,Class)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Illinois dbp:borderingstates ?uri . }
 
 
@@ -3176,6 +3478,8 @@ phraseDepTag(is,Lake,nsubj)
 phraseDepTag(Lake,the,det)
 phraseDepTag(Lake,Limerick,compound)
 [(('http://dbpedia.org/resource/', 'Limerick_Lake'), ('http://dbpedia.org/ontology/', 'country'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Limerick_Lake,Entity)
+CODE2 : ResourceType(dbo_Country,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Limerick_Lake dbo:country ?uri . }
 
 
@@ -3208,6 +3512,9 @@ phraseDepTag(created,Disney,nmod:agent)
 phraseDepTag(Disney,by,case)
 phraseDepTag(Disney,Walt,compound)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'TelevisionShow')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'creator'), ('http://dbpedia.org/resource/', 'Walt_Disney'))]
+CODE0 : ResourceType(TelevisionShow,Class)
+CODE2 : ResourceType(dbo_Creator,Relation)
+CODE4 : ResourceType(dbr_Walt_Disney,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:TelevisionShow . ?uri dbo:creator res:Walt_Disney . }
 
 
@@ -3238,6 +3545,14 @@ phraseDepTag(highest,Annapurna,nmod:after)
 phraseDepTag(Annapurna,after,case)
 phraseDepTag(Annapurna,the,det)
 [(('http://dbpedia.org/resource/', 'Annapurna'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('otherelevation')), (('http://dbpedia.org/resource/', 'Annapurna'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('otherelevation'))]
+CODE4 : ResourceType(dbr_Annapurna,Entity)
+CODE2 : ResourceType(dbo_Elevation,Relation)
+CODE0 : ResourceType(Mountain,Class)
+CODE2 : ResourceType(dbo_Elevation,Relation)
+CODE4 : ResourceType(dbr_Annapurna,Entity)
+CODE2 : ResourceType(dbo_Elevation,Relation)
+CODE0 : ResourceType(Mountain,Class)
+CODE2 : ResourceType(dbo_Elevation,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Annapurna dbo:elevation ?elevation . ?uri rdf:type dbo:Mountain . ?uri dbo:elevation ?otherelevation . FILTER (?otherelevation < ?elevation) . } ORDER BY DESC(?otherelevation) OFFSET 0 LIMIT 1
 
 
@@ -3279,6 +3594,11 @@ phraseDepTag(Roberts,was,cop)
 phraseDepTag(Roberts,Julia,compound)
 phraseDepTag(Roberts,starring,acl)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Julia_Roberts')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'Garry_Marshall'))]
+CODE0 : ResourceType(Film,Class)
+CODE2 : ResourceType(dbo_Starring,Relation)
+CODE4 : ResourceType(dbr_Julia_Roberts,Entity)
+CODE2 : ResourceType(dbo_Director,Relation)
+CODE4 : ResourceType(dbr_Garry_Marshall,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:starring res:Julia_Roberts . ?uri dbo:director res:Garry_Marshall . }
 
 
@@ -3320,6 +3640,8 @@ phraseDepTag(Bridge,as,case)
 phraseDepTag(Bridge,the,det)
 phraseDepTag(Bridge,Manhattan,compound)
 [(('http://dbpedia.org/resource/', 'Andrew_Jackson'), ('http://dbpedia.org/ontology/', 'battle'), SparqlVar('battle'))]
+CODE4 : ResourceType(dbr_Andrew_Jackson,Entity)
+CODE2 : ResourceType(dbo_Battle,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Andrew_Jackson dbo:battle ?battle . }
 
 
@@ -3341,6 +3663,8 @@ phraseDepTag(Give,countries,dobj)
 phraseDepTag(countries,all,det)
 phraseDepTag(countries,communist,amod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country'))]
+CODE0 : ResourceType(Country,Class)
+CODE0 : ResourceType(Country,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country . { ?uri dbo:governmentType res:Communism . } UNION { ?uri dbo:governmentType res:Communist_state . } }
 
 
@@ -3362,6 +3686,8 @@ phraseDepTag(win,awards,dobj)
 phraseDepTag(win,did,aux)
 phraseDepTag(win,WikiLeaks,nsubj)
 [(('http://dbpedia.org/resource/', 'WikiLeaks'), ('http://dbpedia.org/property/', 'awards'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Wikileaks,Entity)
+CODE0 : ResourceType(Awards,Class)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:WikiLeaks dbp:awards ?uri . }
 
 
@@ -3395,6 +3721,9 @@ phraseDepTag(married,is,auxpass)
 phraseDepTag(married,daughter,nsubjpass)
 phraseDepTag(married,to,xcomp)
 [(('http://dbpedia.org/resource/', 'Ingrid_Bergman'), ('http://dbpedia.org/ontology/', 'child'), SparqlVar('child')), (SparqlVar('child'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Ingrid_Bergman,Entity)
+CODE2 : ResourceType(dbo_Child,Relation)
+CODE2 : ResourceType(dbo_Spouse,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ingrid_Bergman dbo:child ?child . ?child dbo:spouse ?uri . }
 
 
@@ -3427,6 +3756,8 @@ phraseDepTag(density,the,det)
 phraseDepTag(density,highest,amod)
 phraseDepTag(density,population,compound)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'densityrank'), SparqlVar('rank'))]
+CODE0 : ResourceType(StatesOfTheUnitedStates,Class)
+CODE0 : ResourceType(Densityrank,Class)
 PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:densityrank ?rank . } ORDER BY ASC(?rank) OFFSET 0 LIMIT 1
 
 
@@ -3457,6 +3788,8 @@ phraseDepTag(Republic,of,case)
 phraseDepTag(Republic,the,det)
 phraseDepTag(Republic,Czech,compound)
 [(('http://dbpedia.org/resource/', 'Czech_Republic'), ('http://dbpedia.org/ontology/', 'currency'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Czech_Republic,Entity)
+CODE2 : ResourceType(dbo_Currency,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Czech_Republic dbo:currency ?uri . }
 
 
@@ -3478,6 +3811,8 @@ phraseDepTag(adopted,countries,nsubj)
 phraseDepTag(adopted,Euro,dobj)
 phraseDepTag(Euro,the,det)
 [(('http://dbpedia.org/resource/', 'Berlin'), ('http://dbpedia.org/ontology/', 'areaCode'), SparqlVar('string'))]
+CODE4 : ResourceType(dbr_Berlin,Entity)
+CODE2 : ResourceType(dbo_Areacode,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Berlin dbo:areaCode ?string . }
 
 
@@ -3510,6 +3845,8 @@ phraseDepTag(two,more,advmod)
 phraseDepTag(languages,two,nummod)
 phraseDepTag(languages,official,amod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'officialLanguage'), SparqlVar('language'))]
+CODE0 : ResourceType(Country,Class)
+CODE2 : ResourceType(dbo_Officiallanguage,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country . ?uri dbo:officialLanguage ?language . } GROUP BY ?uri HAVING (COUNT(?language) > 2)
 
 
@@ -3537,6 +3874,8 @@ phraseDepTag(owner,Studios,nmod:of)
 phraseDepTag(Studios,of,case)
 phraseDepTag(Studios,Universal,compound)
 [(('http://dbpedia.org/resource/', 'Universal_Studios'), ('http://dbpedia.org/ontology/', 'owner'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Universal_Studios,Entity)
+CODE2 : ResourceType(dbo_Owner,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Universal_Studios dbo:owner ?uri . }
 
 
@@ -3569,6 +3908,8 @@ phraseDepTag(flow,the,det)
 phraseDepTag(flow,Yenisei,compound)
 phraseDepTag(flow,river,compound)
 [(('http://dbpedia.org/resource/', 'Yenisei_River'), ('http://dbpedia.org/ontology/', 'country'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Yenisei_River,Entity)
+CODE2 : ResourceType(dbo_Country,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Yenisei_River dbo:country ?uri . }
 
 
@@ -3593,6 +3934,8 @@ phraseDepTag(join,Latvia,nsubj)
 phraseDepTag(join,EU,dobj)
 phraseDepTag(EU,the,det)
 [(('http://dbpedia.org/resource/', 'Latvia'), ('http://dbpedia.org/property/', 'accessioneudate'), SparqlVar('date'))]
+CODE4 : ResourceType(dbr_Latvia,Entity)
+CODE0 : ResourceType(Accessioneudate,Class)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?date WHERE { res:Latvia dbp:accessioneudate ?date . }
 
 
@@ -3620,6 +3963,10 @@ phraseDepTag(married,German,nmod:to)
 phraseDepTag(German,to,case)
 phraseDepTag(German,a,det)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Monarch')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('spouse')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Monarch')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('spouse'))]
+CODE0 : ResourceType(Monarch,Class)
+CODE2 : ResourceType(dbo_Spouse,Relation)
+CODE0 : ResourceType(Monarch,Class)
+CODE2 : ResourceType(dbo_Spouse,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Monarch . ?uri dbo:spouse ?spouse . { ?spouse dbo:birthPlace res:Germany. } UNION { ?spouse dbo:birthPlace ?p . ?p dbo:country res:Germany. } }
 
 
@@ -3644,6 +3991,8 @@ phraseDepTag(Battle,the,det)
 phraseDepTag(Battle,Gettysburg,nmod:of)
 phraseDepTag(Gettysburg,of,case)
 [(('http://dbpedia.org/resource/', 'Battle_of_Gettysburg'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('date'))]
+CODE4 : ResourceType(dbr_Battle_Of_Gettysburg,Entity)
+CODE2 : ResourceType(dbo_Date,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Battle_of_Gettysburg dbo:date ?date . }
 
 
@@ -3671,6 +4020,8 @@ phraseDepTag(cross,river,dobj)
 phraseDepTag(cross,does,aux)
 phraseDepTag(cross,Bridge,nsubj)
 [(('http://dbpedia.org/resource/', 'Brooklyn_Bridge'), ('http://dbpedia.org/ontology/', 'crosses'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Brooklyn_Bridge,Entity)
+CODE2 : ResourceType(dbo_Crosses,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbo:crosses ?uri . }
 
 
@@ -3698,6 +4049,10 @@ phraseDepTag(mountain,highest,amod)
 phraseDepTag(mountain,Australia,nmod:in)
 phraseDepTag(Australia,in,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'locatedInArea'), ('http://dbpedia.org/resource/', 'Australia')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation'))]
+CODE0 : ResourceType(Mountain,Class)
+CODE2 : ResourceType(dbo_Locatedinarea,Relation)
+CODE4 : ResourceType(dbr_Australia,Entity)
+CODE2 : ResourceType(dbo_Elevation,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain . ?uri dbo:locatedInArea res:Australia . ?uri dbo:elevation ?elevation . } ORDER BY DESC(?elevation) OFFSET 0 LIMIT 1
 
 
@@ -3725,6 +4080,8 @@ phraseDepTag(clubs,soccer,compound)
 phraseDepTag(clubs,Spain,nmod:in)
 phraseDepTag(Spain,in,case)
 [(('http://dbpedia.org/resource/', 'Suriname'), ('http://dbpedia.org/ontology/', 'officialLanguage'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Suriname,Entity)
+CODE2 : ResourceType(dbo_Officiallanguage,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Suriname dbo:officialLanguage ?uri . }
 
 
@@ -3752,6 +4109,8 @@ phraseDepTag(mayor,Aviv,nmod:of)
 phraseDepTag(Aviv,of,case)
 phraseDepTag(Aviv,Tel,compound)
 [(('http://dbpedia.org/resource/', 'Tel_Aviv'), ('http://dbpedia.org/ontology/', 'leaderName'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Tel_Aviv,Entity)
+CODE2 : ResourceType(dbo_Leadername,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Tel_Aviv dbo:leaderName ?uri . }
 
 
@@ -3773,6 +4132,8 @@ phraseDepTag(designed,Bridge,dobj)
 phraseDepTag(Bridge,the,det)
 phraseDepTag(Bridge,Brooklyn,compound)
 [(('http://dbpedia.org/resource/', 'Brooklyn_Bridge'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Brooklyn_Bridge,Entity)
+CODE0 : ResourceType(Designer,Class)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbp:designer ?uri . }
 
 
@@ -3802,6 +4163,8 @@ phraseDepTag(located,are,cop)
 phraseDepTag(located,Belgium,nmod:in)
 phraseDepTag(Belgium,in,case)
 [(('http://dbpedia.org/resource/', 'Ural_Mountains'), ('http://dbpedia.org/ontology/', 'highestPlace'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Ural_Mountains,Entity)
+CODE2 : ResourceType(dbo_Highestplace,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ural_Mountains dbo:highestPlace ?uri . }
 
 
@@ -3826,6 +4189,8 @@ phraseDepTag(editor,the,det)
 phraseDepTag(editor,Forbes,nmod:of)
 phraseDepTag(Forbes,of,case)
 [(('http://dbpedia.org/resource/', 'Forbes'), ('http://dbpedia.org/ontology/', 'editor'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Forbes,Entity)
+CODE2 : ResourceType(dbo_Editor,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Forbes dbo:editor ?uri . }
 
 
@@ -3856,6 +4221,8 @@ phraseDepTag(industry,in,case)
 phraseDepTag(industry,the,det)
 phraseDepTag(industry,advertising,compound)
 [(('http://dbpedia.org/resource/', 'Bruce_Carver'), ('http://dbpedia.org/ontology/', 'deathCause'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Bruce_Carver,Entity)
+CODE2 : ResourceType(dbo_Deathcause,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Bruce_Carver dbo:deathCause ?uri . }
 
 
@@ -3888,6 +4255,10 @@ phraseDepTag(established,earlier,advmod)
 phraseDepTag(established,1400,nmod:than)
 phraseDepTag(1400,than,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Library')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'established'), SparqlVar('year')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Library')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'established'), SparqlVar('year'))]
+CODE0 : ResourceType(Library,Class)
+CODE0 : ResourceType(Established,Class)
+CODE0 : ResourceType(Library,Class)
+CODE0 : ResourceType(Established,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Library . ?uri dbp:established ?year . FILTER (?year < 1400) }
 
 
@@ -3912,6 +4283,8 @@ phraseDepTag(born,were,auxpass)
 phraseDepTag(born,1945,nmod:in)
 phraseDepTag(1945,in,case)
 [(SparqlVar('uri'), ('http://dbpedia.org/property/', 'office'), ('http://dbpedia.org/resource/', 'Chancellor_of_Germany'))]
+CODE0 : ResourceType(Office,Class)
+CODE4 : ResourceType(dbr_Chancellor_Of_Germany,Entity)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbp:office res:Chancellor_of_Germany . }
 
 
@@ -3942,6 +4315,8 @@ phraseDepTag(Lincoln,of,case)
 phraseDepTag(Lincoln,U.S.,compound)
 phraseDepTag(Lincoln,president,compound)
 [(('http://dbpedia.org/resource/', 'Abraham_Lincoln'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Abraham_Lincoln,Entity)
+CODE2 : ResourceType(dbo_Spouse,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:spouse ?uri. }
 
 
@@ -3972,6 +4347,8 @@ phraseDepTag(World,game,compound)
 phraseDepTag(World,Warcraft,nmod:of)
 phraseDepTag(Warcraft,of,case)
 [(('http://dbpedia.org/resource/', 'World_of_Warcraft'), ('http://dbpedia.org/ontology/', 'developer'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_World_Of_Warcraft,Entity)
+CODE2 : ResourceType(dbo_Developer,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:World_of_Warcraft dbo:developer ?uri . }
 
 
@@ -4002,6 +4379,8 @@ phraseDepTag(website,Cruise,nmod:of)
 phraseDepTag(Cruise,of,case)
 phraseDepTag(Cruise,Tom,compound)
 [(('http://dbpedia.org/resource/', 'Tom_Cruise'), ('http://dbpedia.org/property/', 'website'), SparqlVar('string'))]
+CODE4 : ResourceType(dbr_Tom_Cruise,Entity)
+CODE0 : ResourceType(Website,Class)
 PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Tom_Cruise dbp:website ?string . }
 
 
@@ -4052,6 +4431,9 @@ phraseDepTag(series,television,compound)
 phraseDepTag(Sopranos,episodes,nsubj)
 phraseDepTag(Sopranos,The,det)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'series'), ('http://dbpedia.org/resource/', 'The_Sopranos')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'seasonNumber'), '1')]
+CODE2 : ResourceType(dbo_Series,Relation)
+CODE4 : ResourceType(dbr_The_Sopranos,Entity)
+CODE2 : ResourceType(dbo_Seasonnumber,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:The_Sopranos . ?uri dbo:seasonNumber 1 . }
 
 
@@ -4073,6 +4455,9 @@ phraseDepTag(produced,most,advmod)
 phraseDepTag(produced,films,dobj)
 phraseDepTag(most,the,det)
 [(('http://dbpedia.org/resource/', 'John_F._Kennedy'), ('http://dbpedia.org/ontology/', 'deathPlace'), SparqlVar('uri')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'City'))]
+CODE4 : ResourceType(dbr_John_F._Kennedy,Entity)
+CODE2 : ResourceType(dbo_Deathplace,Relation)
+CODE0 : ResourceType(City,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:deathPlace ?uri . ?uri rdf:type dbo:City . }
 
 
@@ -4103,6 +4488,15 @@ phraseDepTag(game,called,acl)
 phraseDepTag(called,Chess,dobj)
 phraseDepTag(Chess,Battle,compound)
 [(('http://dbpedia.org/resource/', 'Nanga_Parbat'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (('http://dbpedia.org/resource/', 'Nanga_Parbat'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (('http://dbpedia.org/resource/', 'Nanga_Parbat'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain'))]
+CODE4 : ResourceType(dbr_Nanga_Parbat,Entity)
+CODE2 : ResourceType(dbo_Elevation,Relation)
+CODE0 : ResourceType(Mountain,Class)
+CODE4 : ResourceType(dbr_Nanga_Parbat,Entity)
+CODE2 : ResourceType(dbo_Elevation,Relation)
+CODE0 : ResourceType(Mountain,Class)
+CODE4 : ResourceType(dbr_Nanga_Parbat,Entity)
+CODE2 : ResourceType(dbo_Elevation,Relation)
+CODE0 : ResourceType(Mountain,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Nanga_Parbat dbo:elevation ?elevation . ?uri rdf:type dbo:Mountain . { ?uri dbo:elevation ?otherelevation . } UNION { ?uri dbp:elevationM ?otherelevation . } FILTER (?otherelevation > ?elevation) . }
 
 
@@ -4118,6 +4512,8 @@ phraseDepTag(Wikipedia,created,root)
 phraseDepTag(created,Who,nsubj)
 phraseDepTag(created,Wikipedia,dobj)
 [(('http://dbpedia.org/resource/', 'Wikipedia'), ('http://dbpedia.org/ontology/', 'author'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Wikipedia,Entity)
+CODE2 : ResourceType(dbo_Author,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Wikipedia dbo:author ?uri . }
 
 
@@ -4151,6 +4547,8 @@ phraseDepTag(Hero,in,case)
 phraseDepTag(Hero,Last,amod)
 phraseDepTag(Hero,Action,compound)
 [(('http://dbpedia.org/resource/', 'Last_Action_Hero'), ('http://dbpedia.org/ontology/', 'starring'), SparqlVar('uri'))]
+CODE4 : ResourceType(dbr_Last_Action_Hero,Entity)
+CODE2 : ResourceType(dbo_Starring,Relation)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Last_Action_Hero dbo:starring ?uri . }
 
 
@@ -4189,6 +4587,12 @@ phraseDepTag(organizations,founded,acl)
 phraseDepTag(founded,California,nmod:in)
 phraseDepTag(California,in,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Software')), (SparqlVar('company'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'developer'), SparqlVar('company')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Software')), (SparqlVar('company'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'developer'), SparqlVar('company'))]
+CODE0 : ResourceType(Software,Class)
+CODE0 : ResourceType(Company,Class)
+CODE2 : ResourceType(dbo_Developer,Relation)
+CODE0 : ResourceType(Software,Class)
+CODE0 : ResourceType(Company,Class)
+CODE2 : ResourceType(dbo_Developer,Relation)
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Software . ?company rdf:type dbo:Company . ?uri dbo:developer ?company . { ?company dbo:foundationPlace res:California . } UNION { ?company dbp:foundation res:California . } }
 
 
@@ -4233,6 +4637,11 @@ phraseDepTag(industry,the,det)
 phraseDepTag(industry,aerospace,compound)
 phraseDepTag(as,well,mwe)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'industry'), ('http://dbpedia.org/resource/', 'Aerospace')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'industry'), ('http://dbpedia.org/resource/', 'Medicine'))]
+CODE0 : ResourceType(Company,Class)
+CODE2 : ResourceType(dbo_Industry,Relation)
+CODE4 : ResourceType(dbr_Aerospace,Entity)
+CODE2 : ResourceType(dbo_Industry,Relation)
+CODE4 : ResourceType(dbr_Medicine,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company . ?uri dbo:industry res:Aerospace . ?uri dbo:industry res:Medicine . }
 
 
@@ -4260,6 +4669,9 @@ phraseDepTag(starring,Goldmine,nmod:in)
 phraseDepTag(Goldmine,in,case)
 phraseDepTag(Goldmine,Velvet,compound)
 [(('http://dbpedia.org/resource/', 'Velvet_Goldmine'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Christian_Bale'))]
+CODE4 : ResourceType(dbr_Velvet_Goldmine,Entity)
+CODE2 : ResourceType(dbo_Starring,Relation)
+CODE4 : ResourceType(dbr_Christian_Bale,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Velvet_Goldmine dbo:starring res:Christian_Bale . }
 
 
@@ -4301,6 +4713,9 @@ phraseDepTag(500000,more,advmod)
 phraseDepTag(employees,with,case)
 phraseDepTag(employees,500000,nummod)
 [(SparqlVar('c'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('c'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('c'), ('http://dbpedia.org/property/', 'homepage'), SparqlVar('string'))]
+CODE0 : ResourceType(Company,Class)
+CODE0 : ResourceType(Company,Class)
+CODE0 : ResourceType(Homepage,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT DISTINCT ?string WHERE { ?c rdf:type dbo:Company . { ?c dbo:numberOfEmployees ?employees . } UNION { ?c dbp:numEmployees ?employees . } FILTER( xsd:integer(?employees) > 500000 ) . ?c dbp:homepage ?string . }
 
 
@@ -4325,6 +4740,8 @@ phraseDepTag(born,were,auxpass)
 phraseDepTag(born,Germany,nmod:in)
 phraseDepTag(Germany,in,case)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Actor')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Actor'))]
+CODE0 : ResourceType(Actor,Class)
+CODE0 : ResourceType(Actor,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Actor . { ?uri dbo:birthPlace res:Germany . } UNION { ?uri dbo:birthPlace ?place . ?place dbo:country res:Germany . } }
 
 
@@ -4352,6 +4769,10 @@ phraseDepTag(more,than,mwe)
 phraseDepTag(3,more,advmod)
 phraseDepTag(entrances,3,nummod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Cave')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'entranceCount'), SparqlVar('entrance')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Cave')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'entranceCount'), SparqlVar('entrance'))]
+CODE0 : ResourceType(Cave,Class)
+CODE0 : ResourceType(Entrancecount,Class)
+CODE0 : ResourceType(Cave,Class)
+CODE0 : ResourceType(Entrancecount,Class)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Cave . ?uri dbp:entranceCount ?entrance . FILTER (?entrance > 3) . }
 
 
@@ -4382,6 +4803,9 @@ phraseDepTag(Obama,president,dep)
 phraseDepTag(Obama,called,acl:relcl)
 phraseDepTag(called,Michelle,dobj)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'producer'), ('http://dbpedia.org/resource/', 'Hal_Roach'))]
+CODE0 : ResourceType(Film,Class)
+CODE2 : ResourceType(dbo_Producer,Relation)
+CODE4 : ResourceType(dbr_Hal_Roach,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:producer res:Hal_Roach . }
 
 
@@ -4420,6 +4844,9 @@ phraseDepTag(Software,by,case)
 phraseDepTag(Software,Mean,compound)
 phraseDepTag(Software,Hamster,compound)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'VideoGame')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'publisher'), ('http://dbpedia.org/resource/', 'Mean_Hamster_Software'))]
+CODE0 : ResourceType(VideoGame,Class)
+CODE2 : ResourceType(dbo_Publisher,Relation)
+CODE4 : ResourceType(dbr_Mean_Hamster_Software,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:VideoGame . ?uri dbo:publisher res:Mean_Hamster_Software . }
 
 
@@ -4444,6 +4871,8 @@ phraseDepTag(spoken,are,auxpass)
 phraseDepTag(spoken,Estonia,nmod:in)
 phraseDepTag(Estonia,in,case)
 [(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'spokenIn'), ('http://dbpedia.org/resource/', 'Estonia'))]
+CODE2 : ResourceType(dbo_Spokenin,Relation)
+CODE4 : ResourceType(dbr_Estonia,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:spokenIn res:Estonia . }
 
 
@@ -4468,6 +4897,8 @@ phraseDepTag(Aldi,stores,dep)
 phraseDepTag(are,Aldi,nsubj)
 phraseDepTag(are,there,expl)
 [(('http://dbpedia.org/resource/', 'Aldi'), ('http://dbpedia.org/ontology/', 'numberOfLocations'), SparqlVar('number'))]
+CODE4 : ResourceType(dbr_Aldi,Entity)
+CODE2 : ResourceType(dbo_Numberoflocations,Relation)
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?number WHERE { res:Aldi dbo:numberOfLocations ?number . }
 
 
@@ -4512,6 +4943,8 @@ phraseDepTag(games,the,det)
 phraseDepTag(games,summer,compound)
 phraseDepTag(games,olympic,amod)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'CapitalsInEurope')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'HostCitiesOfTheSummerOlympicGames'))]
+CODE0 : ResourceType(CapitalsInEurope,Class)
+CODE0 : ResourceType(HostCitiesOfTheSummerOlympicGames,Class)
 PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:CapitalsInEurope . ?uri rdf:type yago:HostCitiesOfTheSummerOlympicGames . }
 
 
@@ -4545,6 +4978,9 @@ phraseDepTag(States,of,case)
 phraseDepTag(States,the,det)
 phraseDepTag(States,United,compound)
 [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Book')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'author'), ('http://dbpedia.org/resource/', 'Danielle_Steel'))]
+CODE0 : ResourceType(Book,Class)
+CODE2 : ResourceType(dbo_Author,Relation)
+CODE4 : ResourceType(dbr_Danielle_Steel,Entity)
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book . ?uri dbo:author res:Danielle_Steel . }
 
 
