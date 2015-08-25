@@ -37,11 +37,11 @@ def question(loc="./input/donnee.xml"):
                     #
                     ressource=parse(str(m.group(0))).where
                     preq.write(str(ressource)+'\n')
-                    gen.write(str(ressource)+'\n')
+                    gen.write('//'+str(ressource)+'\n')
                     
                     for pos1,xValues in enumerate(ressource):
                         if "http://www.w3.org/1999/02/22-rdf-syntax-ns#" in str(xValues) or search('yago',str(xValues)) :
-                            gen.write("CODE0 : ResourceType("+xValues[2][1]+",Class)\n")
+                            gen.write("ResourceType("+xValues[2][1]+",Class)\n")
                         else:
                             for pos2,yValues in enumerate(xValues):
                                 #On vérifie qu'il s'agisse pas d'une variable
@@ -49,12 +49,12 @@ def question(loc="./input/donnee.xml"):
                                     # On recherche la catégorie dans laquelle la mettre
                                     if search('ontology',yValues[0]):
                                         if yValues[0][0]==yValues[0][0].lower():
-                                            gen.write("CODE2 : ResourceType(dbo_"+str(yValues[1]).title()+",Relation)\n")
+                                            gen.write("ResourceType(dbo_"+str(yValues[1]).title()+",Relation)\n")
 
                                     elif search('resource',yValues[0]):
-                                        gen.write("CODE4 : ResourceType(dbr_"+str(yValues[1]).title()+",Entity)\n")
+                                        gen.write("ResourceType(dbr_"+str(yValues[1]).title()+",Entity)\n")
                                     elif search('http://dbpedia.org/property/',str(xValues[1][0])):
-                                        gen.write('CODE0 : ResourceType(' + str(xValues[1][1].title())+ ',Class)\n')
+                                        gen.write('ResourceType(' + str(xValues[1][1].title())+ ',Class)\n')
                                     else:
                                         print "\nTEST : "+str(xValues)
                     
@@ -64,7 +64,7 @@ def question(loc="./input/donnee.xml"):
                     
                     
                     req.write(m.group(0)+"\n")
-                    gen.write(m.group(0)+'\n'+'\n'+'\n')
+                    gen.write('//'+m.group(0)+'\n'+'\n'+'\n')
 
 
             #
@@ -85,11 +85,11 @@ def question(loc="./input/donnee.xml"):
                          if token not in stopwords:
                              tableau.append(token)
                              gen.write("PhraseIndex("+token.title()+','+str(l+1)+','+str(l+1)+')\n')
-                    gen.write('\n'+str(tableau)+'\n')
+                    gen.write('\n//'+str(tableau)+'\n')
                     #tok.write(tableau)
 
                     out.write(var)
-                    gen.write(var+"\t La ligne est isolée \n")
+                    gen.write('//'+var+"\t //La ligne est isolée \n")
                     for token in tableau:
                         cpt2=0
                         #On crée la feature PosTag
@@ -134,9 +134,9 @@ def question(loc="./input/donnee.xml"):
                     elmt=proc.parse_doc(temp)
                     if compteur not in g:
                         out.write(temp)
-                        gen.write(temp+'\n')
+                        gen.write('//'+temp+'\n')
                         #tok.write(str(proc.parse_doc(temp)['sentences'][0]['tokens'])+'\n')
-                        gen.write(str(elmt['sentences'][0]['tokens'])+'\n')
+                        gen.write('//'+str(elmt['sentences'][0]['tokens'])+'\n')
                         #
                         #  EXTRACTION DES DÉPENDANCES SYNTAXIQUES
                         #
@@ -159,7 +159,7 @@ def question(loc="./input/donnee.xml"):
                         deptag=elmt['sentences'][0]['deps_cc']
                         for cpt in range(len(deptag)):
                             if cpt < len(tableau):
-                                a= "phraseDepTag("+tableau[deptag[cpt][1]]+","+tableau[deptag[cpt][2]]+","+deptag[cpt][0]+")\n"
+                                a= "PhraseDepTag("+tableau[deptag[cpt][1]]+","+tableau[deptag[cpt][2]]+","+deptag[cpt][0]+")\n"
                                 #print a
                                 gen.write(a)
                             
