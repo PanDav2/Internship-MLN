@@ -3,8 +3,10 @@
 import re
 from fyzz import parse
 from stanford_corenlp_pywrapper import CoreNLP
+import random
 tempq='./temp/question.txt'
 
+r=random.random
 # g est la liste des questions posant problème au parseur SPARQL
 java= "../stanford-corenlp-full-2015-04-20/*"
 def question(loc="./input/donnee.xml"):
@@ -17,7 +19,7 @@ def question(loc="./input/donnee.xml"):
             tab.append(line)
         compteur=0
         for j,line in enumerate(tab):
-            flag=0
+            stock_ressources=[]
             #if j ==0:
                 #print j
             g=[16, 30, 37, 65, 78, 84, 98, 99, 114, 121, 131, 135, 136, 139, 140, 143, 149, 150, 152, 162, 168, 169, 170, 173, 175, 182, 186]
@@ -42,19 +44,23 @@ def question(loc="./input/donnee.xml"):
                     for pos1,xValues in enumerate(ressource):
                         if "http://www.w3.org/1999/02/22-rdf-syntax-ns#" in str(xValues) or search('yago',str(xValues)) :
                             gen.write("ResourceType("+xValues[2][1]+",Class)\n")
+                            stock_ressources.append(xValues[2][1])
                         else:
                             for pos2,yValues in enumerate(xValues):
-                                #On vérifie qu'il s'agisse pas d'une variable
+                                #On vérifie qu'il ne s'agisse pas d'une variable
                                 if isinstance(yValues,tuple):
                                     # On recherche la catégorie dans laquelle la mettre
                                     if search('ontology',yValues[0]):
                                         if yValues[0][0]==yValues[0][0].lower():
                                             gen.write("ResourceType(dbo_"+str(yValues[1]).title()+",Relation)\n")
+                                            stock_ressources.append(yValues[1])
 
                                     elif search('resource',yValues[0]):
                                         gen.write("ResourceType(dbr_"+str(yValues[1]).title()+",Entity)\n")
+                                        stock_ressources.append(yValues[1])
                                     elif search('http://dbpedia.org/property/',str(xValues[1][0])):
                                         gen.write('ResourceType(' + str(xValues[1][1].title())+ ',Class)\n')
+                                        stock_ressources.append(xValues[1][1])
                                     else:
                                         print "\nTEST : "+str(xValues)
                     
@@ -62,7 +68,7 @@ def question(loc="./input/donnee.xml"):
                     #  ECRITURE DES REQUETES
                     #
                     
-                    
+
                     req.write(m.group(0)+"\n")
                     gen.write('//'+m.group(0)+'\n'+'\n'+'\n')
 
@@ -70,7 +76,7 @@ def question(loc="./input/donnee.xml"):
             #
             #  EXTRACTION ET ECRITURE DES QUESTIONS
             #
-
+            print "CODE4 : " + str(stock_ressources)
             stopwords = ["?",",",".","!"]
             cpt1=0
             #Cas o`u la ligne de questions est isolée
@@ -82,14 +88,16 @@ def question(loc="./input/donnee.xml"):
                     tableau=[]
                     # On stock l'ensemble des tokens dans un tableau
                     for l,token in enumerate(elmt['sentences'][0]['tokens']):
-                         if token not in stopwords:
-                             tableau.append(token)
-                             gen.write("PhraseIndex("+token.title()+','+str(l+1)+','+str(l+1)+')\n')
+                        if token not in stopwords:
+                            tableau.append(token)
+                            gen.write("PhraseIndex("+token.title()+','+str(l+1)+','+str(l+1)+')\n')
+                            for truc in stock_ressources:
+                                print "CODE2 : "+str(r()) + " PriorMatchScore("+truc+','+token+')\n'
                     gen.write('\n//'+str(tableau)+'\n')
                     #tok.write(tableau)
 
                     out.write(var)
-                    gen.write('//'+var+"\t //La ligne est isolée \n")
+                    gen.write('//'+var+"\n//La ligne est isolée \n")
                     for token in tableau:
                         cpt2=0
                         #On crée la feature PosTag
@@ -146,6 +154,9 @@ def question(loc="./input/donnee.xml"):
                             if token not in stopwords:
                                 tableau.append(token)
                                 gen.write("PhraseIndex("+token.title()+','+str(l+1)+','+str(l+1)+')\n')
+                                for resc in stock_ressources:
+                                    print "CODE2 : "+str(r()) + " PriorMatchScore("+truc+','+token+')\n'
+
                         for token in tableau:
                             cpt2=0
                             #On crée la feature PosTag
