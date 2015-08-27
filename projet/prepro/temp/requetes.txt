@@ -145,8 +145,6 @@ PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resou
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:spokenIn res:Estonia . }
 PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?number WHERE { res:Aldi dbo:numberOfLocations ?number . }
 PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:CapitalsInEurope . ?uri rdf:type yago:HostCitiesOfTheSummerOlympicGames . }
-PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book . ?uri dbo:author res:Danielle_Steel . }
-}
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Airport . { ?uri dbo:location res:California . } UNION { ?uri dbo:city res:California . } UNION { ?uri dbo:city ?city . ?city dbo:isPartOf res:California . } UNION { ?uri dbo:operator res:California . } }
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:RecordLabel . ?uri dbo:genre res:Grunge . ?uri dbo:country res:Canada . }
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:GIMP dbo:programmingLanguage ?uri . }
@@ -160,6 +158,9 @@ PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbo: <http://dbpedia.org/on
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Capcom dbo:foundingDate ?date . }
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain . ?uri dbo:elevation ?elevation . } ORDER BY DESC(?elevation) OFFSET 0 LIMIT 1
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Natalie_Portman dbo:birthPlace ?city . ?city dbo:country res:United_States . }
+levation . } ORDER BY DESC(?elevation) OFFSET 0 LIMIT 1
+PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Natalie_Portman dbo:birthPlace ?city . ?city dbo:country res:United_States . }
+}
 PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Natalie_Portman dbo:birthPlace ?city . ?city dbo:country res:United_States . }
 # <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Cave . ?uri dbp:entranceCount ?entrance . FILTER (?entrance > 3) . }
 #PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> ASK WHERE { res:Barack_Obama dbo:spouse ?spouse . ?spouse rdfs:label ?name . FILTER(regex(?name,'Michelle')) }

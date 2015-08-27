@@ -4,29 +4,38 @@ import re
 from fyzz import parse
 from stanford_corenlp_pywrapper import CoreNLP
 import random
+import numpy
+import difflib
 tempq='./temp/question.txt'
 
 r=random.random
 # g est la liste des questions posant problème au parseur SPARQL
 java= "../stanford-corenlp-full-2015-04-20/*"
-def question(loc="./input/donnee.xml"):
+def question(loc="./input/donnee.xml",MatchCriterium=0.5):
     i=0
     res=[] # // L'ensemble des ressources que l'on utilisera avec notre logiciel
     proc = CoreNLP('nerparse',corenlp_jars=[java])
     with open(loc,'r') as inp, open(tempq,'w') as out,open("./temp/requetes.txt","r+") as req, open("./temp/general.txt","w") as gen, open("./temp/parsed-req.txt","w") as preq, open('./temp/tok.txt','w') as tok:
+        # TAB CONTIENT L'ENSEMBLE DES LIGNES DU DOCUMENT DE DONNES (XML)
+        tableau=[]
         tab=[]
         for line in inp:
             tab.append(line)
         compteur=0
+        simi=difflib.SequenceMatcher
+
         for j,line in enumerate(tab):
             stock_ressources=[]
             #if j ==0:
                 #print j
-            g=[16, 30, 37, 65, 78, 84, 98, 99, 114, 121, 131, 135, 136, 139, 140, 143, 149, 150, 152, 162, 168, 169, 170, 173, 175, 182, 186]
+            g=[16, 30, 37, 65, 78, 84, 98, 99, 114, 121, 131, 135, 136, 139, 140, 143, 149, 150, 152, 162, 168, 169, 170,171, 173, 175, 182, 186]
 
             #
             # TRAITEMENT DES REQUETES ET EXTRATION DES RESSOURCES
             #
+            
+            
+            
             search=re.search
             m=search("PREFIX(.)*",line)
             if m!=None:
@@ -40,11 +49,15 @@ def question(loc="./input/donnee.xml"):
                     ressource=parse(str(m.group(0))).where
                     preq.write(str(ressource)+'\n')
                     gen.write('//'+str(ressource)+'\n')
-                    
+                    #print "Tableau de la question "+ str(compteur)+" " + str(tableau)
                     for pos1,xValues in enumerate(ressource):
                         if "http://www.w3.org/1999/02/22-rdf-syntax-ns#" in str(xValues) or search('yago',str(xValues)) :
-                            gen.write("ResourceType("+xValues[2][1]+",Class)\n")
+                            gen.write("\nResourceType("+xValues[2][1]+",Class)\n")
                             stock_ressources.append(xValues[2][1])
+                            for phrase in tableau:
+                                res=simi(None,str(xValues[2][1]),str(phrase.title()),None).ratio()
+                                if  res > MatchCriterium:
+                                    gen.write(str(res)[0:4]+" PriorMatchScore("+str(xValues[2][1])+","+str(phrase.title())+")\n\n")
                         else:
                             for pos2,yValues in enumerate(xValues):
                                 #On vérifie qu'il ne s'agisse pas d'une variable
@@ -52,23 +65,35 @@ def question(loc="./input/donnee.xml"):
                                     # On recherche la catégorie dans laquelle la mettre
                                     if search('ontology',yValues[0]):
                                         if yValues[0][0]==yValues[0][0].lower():
-                                            gen.write("ResourceType(dbo_"+str(yValues[1]).title()+",Relation)\n")
+                                            gen.write("\nResourceType(Dbo_"+str(yValues[1]).title()+",Relation)\n")
                                             stock_ressources.append(yValues[1])
+                                            for phrase in tableau:
+                                                res=simi(None,str(yValues[1]),str(phrase.title()),None).ratio()
+                                                if  res> MatchCriterium :
+                                                    gen.write(str(res)[0:4]+" PriorMatchScore("+str(yValues[1]).title()+","+str(phrase.title())+")\n\n")
 
                                     elif search('resource',yValues[0]):
-                                        gen.write("ResourceType(dbr_"+str(yValues[1]).title()+",Entity)\n")
+                                        gen.write("\nResourceType(Dbr_"+str(yValues[1]).title()+",Entity)\n")
                                         stock_ressources.append(yValues[1])
+                                        for phrase in tableau:
+                                            res=simi(None,str(yValues[1]),str(phrase.title()),None).ratio()
+                                            if  res >MatchCriterium:
+                                                gen.write(str(res)[0:4]+" PriorMatchScore("+str(yValues[1].title())+","+str(phrase.title())+")\n\n")
+
                                     elif search('http://dbpedia.org/property/',str(xValues[1][0])):
-                                        gen.write('ResourceType(' + str(xValues[1][1].title())+ ',Class)\n')
-                                        stock_ressources.append(xValues[1][1])
+                                        gen.write('\nResourceType(' + str(xValues[1][1].title())+ ',Class)\n')
+                                        stock_ressources.append(xValues[1][1].title())
+                                        for phrase in tableau:
+                                            res=simi(None,str(xValues[1][1]),str(phrase.title()),None).ratio()
+                                            if  res > MatchCriterium:
+                                                gen.write(str(res)[0:4]+" PriorMatchScore("+str(xValues[1][1].title())+","+str(phrase.title())+")\n\n")
                                     else:
-                                        print "\nTEST : "+str(xValues)
+                                        #print "\nTEST : "+str(xValues)
+                                        pass
                     
                     #
                     #  ECRITURE DES REQUETES
-                    #
-                    
-
+                    # 
                     req.write(m.group(0)+"\n")
                     gen.write('//'+m.group(0)+'\n'+'\n'+'\n')
 
@@ -76,23 +101,23 @@ def question(loc="./input/donnee.xml"):
             #
             #  EXTRACTION ET ECRITURE DES QUESTIONS
             #
-            print "CODE4 : " + str(stock_ressources)
+            #print "CODE4 : " + str(stock_ressources)
             stopwords = ["?",",",".","!"]
             cpt1=0
             #Cas o`u la ligne de questions est isolée
             if i!=0:
                 #gen.write("")
                 var=tab[j+1]
-                if compteur not in g:
+                #if compteur not in g:
+                if True:
                     elmt=proc.parse_doc(var)
-                    tableau=[]
                     # On stock l'ensemble des tokens dans un tableau
+                    tableau=[]
                     for l,token in enumerate(elmt['sentences'][0]['tokens']):
                         if token not in stopwords:
-                            tableau.append(token)
+                            tableau.append(token.title())
                             gen.write("PhraseIndex("+token.title()+','+str(l+1)+','+str(l+1)+')\n')
-                            for truc in stock_ressources:
-                                print "CODE2 : "+str(r()) + " PriorMatchScore("+truc+','+token+')\n'
+
                     gen.write('\n//'+str(tableau)+'\n')
                     #tok.write(tableau)
 
@@ -123,9 +148,10 @@ def question(loc="./input/donnee.xml"):
                     #
 
                 else:
-                    print "discarded question : "+ var
+                    #print "discarded question : "+ var
+                    pass
                 i=i-1
-            #Cas général, on détecte les questions en anglais
+            # ON REPERE LES LIGNES DE QUESTIONS ICI
             elif "<string lang=\"en" in line:
                 #a = inp.next()  // Remplacement de l'itérateur pour prendre l'element suivant 
                 #On recherche si la ligne suivante ne contient que le signe CDATA
@@ -133,6 +159,7 @@ def question(loc="./input/donnee.xml"):
                 m=search("<!\[CDATA\[$",var)
                 #On s'apprete à extraire la ligne suivant qui est une question isolée.
                 if m:
+                    # SI IL NE S'AGIT PAS D'UNE REQUETE ALORS LA LIGNE SUIVANTE EST UNE QUESTION
                     if not search("PREFIX(.)*",var):
                         i=i+1
                 #La ligne suivante n'est pas isolée, il s'agit d'une question entourée de marqueurs.
@@ -152,10 +179,8 @@ def question(loc="./input/donnee.xml"):
                         tableau=[]
                         for l,token in enumerate(elmt['sentences'][0]['tokens']):
                             if token not in stopwords:
-                                tableau.append(token)
-                                gen.write("PhraseIndex("+token.title()+','+str(l+1)+','+str(l+1)+')\n')
-                                for resc in stock_ressources:
-                                    print "CODE2 : "+str(r()) + " PriorMatchScore("+truc+','+token+')\n'
+                                tableau.append(token.title())
+                                gen.write("PhraseIndex("+token+','+str(l+1)+','+str(l+1)+')\n')
 
                         for token in tableau:
                             cpt2=0
