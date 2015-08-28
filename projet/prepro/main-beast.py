@@ -16,7 +16,7 @@ def question(loc="./input/donnee.xml",MatchCriterium=0.5):
     quest=1
     res=[] # // L'ensemble des ressources que l'on utilisera avec notre logiciel
     proc = CoreNLP('nerparse',corenlp_jars=[java])
-    with open(loc,'r') as inp, open(tempq,'w') as out,open("./temp/requetes.txt","r+") as req, open("./temp/general.txt","w") as gen, open("./temp/parsed-req.txt","w") as preq, open('./temp/tok.txt','w') as tok:
+    with open(loc,'r') as inp, open(tempq,'w') as out,open("./beast/requetes.txt","r+") as req, open("./beast/general.txt","w") as gen, open("./beast/parsed-req.txt","w") as preq, open('./beast/tok.txt','w') as tok:
         # TAB CONTIENT L'ENSEMBLE DES LIGNES DU DOCUMENT DE DONNES (XML)
         tableau=[]
         tab=[]
