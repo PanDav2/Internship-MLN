@@ -1,0 +1,31 @@
+
+// Nous avons les différents types utilisés par le système
+
+type Phrase:...; 
+type Resource:...;
+type Relation:...; 
+type PosTag:...; 
+type DepTag:...; 
+type Type: "Entity", "Class", "Relation";
+
+predicate resourceType: Resource x Type TODO
+
+predicate priorMatchScore: Phrase x Resource x Int;
+predicate hasRelatedness: Resource x Resource x Int;
+predicate isTypeCompatible: Resource x Resource x Relation;
+predicate hasQueryResults: Resource x Resource x Resource x Relation;
+
+/* On définit ici l'ensemble des prédicats locaux de thebeast */
+
+predicate phraseIndex: Phrase x Int x Int;
+predicate phrasePosTag: Phrase x PosTag;
+predicate phraseDepTag: Phrase x Phrase x DepTag;
+predicate phraseDepOne: Phrase x Phrase;
+predicate hasMeanWord: Phrase x Phrase;
+predicate hasPhrase: Phrase;
+predicate hasResource: Phrase x Resource;
+predicate hasRelation: Resource x Resource x Relation;
+//predicate overlap: Int x Int x Int x Int;
+// On liste les prédicats qu'il faudra prédire plus tard.
+hidden : hasPhrase, hasResource, hasRelation;
+

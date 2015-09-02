@@ -1,0 +1,11 @@
+Nous avons fait le choix de mettre les prédicats :
+
+resourceType
+priorMatchScore
+hasRelatedness
+isTypeCompatible
+hasQueryResults
+
+en global, car ils dépendent de la base de connaissances et non de la phrase analysée elle même.
+
+Les prédicats cachés de notre problème sont les prédicats  : hasPhrase, hasResource et hasRelation.

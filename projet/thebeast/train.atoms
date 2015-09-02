@@ -1,0 +1,285 @@
+
+>> 
+
+>phrasePosTag
+Give  VB
+Me  PRP
+All  DT
+Cosmonauts  NNS
+
+>phraseDepTag
+Cosmonauts  Give  Root
+Give  Me  Iobj
+Give  Cosmonauts  Dobj
+Cosmonauts  All  Det
+
+>resourceType
+Astronaut  Class
+>hasPhrase
+Cosmonauts
+
+>priorMatchScore
+Astronaut  Cosmonauts  63
+
+>resourceType
+Astronaut  Class
+>hasPhrase
+Cosmonauts
+
+>priorMatchScore
+Astronaut  Cosmonauts  63
+>> 
+
+>phrasePosTag
+In  IN
+Which  WDT
+Country  NN
+Does  VBZ
+The  DT
+Nile  NNP
+Start  VB
+
+>phraseDepTag
+Start  Start  Root
+Country  In  Case
+Country  Which  Det
+Nile  The  Det
+Start  Country  Nmod:In
+Start  Does  Aux
+Start  Nile  Nsubj
+
+>resourceType
+Nile   Entity
+>hasPhrase
+Nile
+
+>priorMatchScore
+Dbr_Nile  Nile  10
+
+>resourceType
+sourceCountry  Relation
+>hasPhrase
+Country
+
+>priorMatchScore
+Dbo_Sourcecountry  Country  70
+>> 
+>phraseIndex
+1  When
+2  Is
+3  The
+4  Movie
+5  Worst
+6  Case
+7  Scenario
+8  Going
+9  To
+10  Be
+11  In
+12  Cinemas
+13  In
+14  The
+15  Netherlands
+
+>phraseDepTag
+Netherlands  Going  Root
+Movie  The  Det
+Movie  Scenario  Dep
+Scenario  Worst  Amod
+Scenario  Case  Compound
+Going  When  Advmod
+Going  Is  Aux
+Going  Movie  Nsubj
+Going  Cinemas  Xcomp
+Cinemas  To  Mark
+Cinemas  Be  Cop
+Cinemas  In  Case
+Cinemas  Netherlands  Nmod:In
+Netherlands  In  Case
+Netherlands  The  Det
+>> 
+>phraseIndex
+1  Which
+2  German
+3  Cities
+4  Have
+5  More
+6  Than
+7  250000
+8  Inhabitants
+
+>phraseDepTag
+Inhabitants  Have  Root
+Cities  Which  Det
+Cities  German  Amod
+Have  Cities  Nsubj
+Have  Inhabitants  Dobj
+More  Than  Mwe
+250000  More  Advmod
+Inhabitants  250000  Nummod
+
+>resourceType
+country  Relation
+
+>resourceType
+Germany   Entity
+>hasPhrase
+German
+
+>priorMatchScore
+Dbr_Germany  German  92
+
+>resourceType
+populationTotal  Relation
+
+>resourceType
+country  Relation
+
+>resourceType
+Germany   Entity
+>hasPhrase
+German
+
+>priorMatchScore
+Dbr_Germany  German  92
+
+>resourceType
+populationTotal  Relation
+>> 
+
+>phrasePosTag
+Who  WP
+Was  VBD
+John  NNP
+F.  NNP
+Kennedy  NNP
+'S  POS
+Vice  NN
+President  NN
+
+>phraseDepTag
+President  Who  Root
+Who  Was  Cop
+Who  President  Nsubj
+Kennedy  John  Compound
+Kennedy  F.  Compound
+Kennedy  'S  Case
+President  Kennedy  Nmod:Poss
+President  Vice  Compound
+
+>resourceType
+John_F._Kennedy   Entity
+>hasPhrase
+Kennedy
+
+>priorMatchScore
+Dbr_John_F._Kennedy  Kennedy  63
+
+>resourceType
+vicePresident  Relation
+>hasPhrase
+President
+
+>priorMatchScore
+Dbo_Vicepresident  President  81
+>> 
+
+>phrasePosTag
+Who  WP
+Is  VBZ
+The  DT
+Mayor  NN
+Of  IN
+Berlin  NNP
+
+>phraseDepTag
+Berlin  Who  Root
+Who  Is  Cop
+Who  Mayor  Nsubj
+Mayor  The  Det
+Mayor  Berlin  Nmod:Of
+Berlin  Of  Case
+
+>resourceType
+Berlin   Entity
+>hasPhrase
+Berlin
+
+>priorMatchScore
+Dbr_Berlin  Berlin  10
+
+>resourceType
+leader  Relation
+>> 
+>phraseIndex
+1  How
+2  Many
+3  Students
+4  Does
+5  The
+6  Free
+7  University
+8  In
+9  Amsterdam
+10  Have
+
+>phraseDepTag
+Have  Have  Root
+Many  How  Advmod
+Students  Many  Amod
+University  The  Det
+University  Free  Compound
+University  Amsterdam  Nmod:In
+Amsterdam  In  Case
+Have  Students  Dobj
+Have  Does  Aux
+Have  University  Nsubj
+
+>resourceType
+Vrije_Universiteit   Entity
+>hasPhrase
+University
+
+>priorMatchScore
+Dbr_Vrije_Universiteit  University  64
+
+>resourceType
+numberOfStudents  Relation
+>hasPhrase
+Students
+
+>priorMatchScore
+Dbo_Numberofstudents  Students  66
+>> 
+
+>phrasePosTag
+What  WP
+Is  VBZ
+The  DT
+Second  JJ
+Highest  JJS
+Mountain  NN
+On  IN
+Earth  NNP
+
+>phraseDepTag
+Earth  What  Root
+What  Is  Cop
+What  Mountain  Nsubj
+What  Earth  Dep
+Mountain  The  Det
+Mountain  Second  Amod
+Mountain  Highest  Amod
+Earth  On  Case
+
+>resourceType
+Mountain  Class
+>hasPhrase
+Mountain
+
+>priorMatchScore
+Mountain  Mountain  10
+
+>resourceType
+elevation  Relation
+orest  Teutoburg  Compound

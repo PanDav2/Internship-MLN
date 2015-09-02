@@ -1,0 +1,604 @@
+>>
+>priorMatchScore
+Astronaut  Cosmonauts  63
+>priorMatchScore
+Astronaut  Cosmonauts  63
+>>
+Dbr_Nile  Nile  10
+Dbo_Sourcecountry  Country  70
+>>
+Dbr_Germany  German  92
+Dbr_Germany  German  92
+>>
+Dbr_John_F._Kennedy  Kennedy  63
+Dbo_Vicepresident  President  81
+>>
+Dbr_Berlin  Berlin  10
+>>
+Dbr_Vrije_Universiteit  University  64
+Dbo_Numberofstudents  Students  66
+>>
+>priorMatchScore
+Mountain  Mountain  10
+>>
+Dbr_Skateboarding  Skateboarders  76
+Dbr_Skateboarding  Skateboarders  76
+>>
+Dbr_Alberta  Alberta  10
+admittancedate  Admitted  63
+>>
+Dbr_Himalayas  Himalayan  88
+country  Countries  62
+country  Mountain  53
+>>
+Dbr_Bandleader  Bandleaders  95
+Dbo_Instrument  Trumpet  58
+Dbr_Trumpet  Trumpet  10
+>>
+>priorMatchScore
+Country  Countries  75
+>priorMatchScore
+Cave  Have  75
+>priorMatchScore
+Cave  Caves  88
+>priorMatchScore
+Country  Countries  75
+>priorMatchScore
+Cave  Have  75
+>priorMatchScore
+Cave  Caves  88
+>>
+>>
+Dbo_Product  Produces  66
+Dbr_Orangina  Orangina  10
+>>
+>priorMatchScore
+FormulaOneRacer  Formula  63
+Dbo_Races  Race  66
+Dbo_Races  Races  80
+>>
+Dbo_League  Heritage  57
+>>
+Dbr_The_Prodigy  Prodigy  77
+Dbo_Bandmember  Members  70
+>>
+>priorMatchScore
+River  River  10
+>priorMatchScore
+River  River  10
+>>
+Dbr_Breaking_Bad  Breaking  80
+Dbo_Numberofepisodes  Episodes  66
+Dbr_Game_Of_Thrones  Thrones  63
+Dbo_Numberofepisodes  Episodes  66
+Dbr_Breaking_Bad  Breaking  80
+Dbo_Numberofepisodes  Episodes  66
+Dbr_Game_Of_Thrones  Thrones  63
+Dbo_Numberofepisodes  Episodes  66
+>>
+>>
+Dbr_Vienna  Vienna  10
+Dbr_Berlin  Born  60
+Dbr_Berlin  Berlin  10
+>>
+>priorMatchScore
+Protein  Proinsulin  58
+>priorMatchScore
+Protein  Protein  10
+>>
+Dbr_Michael_Jordan  Michael  66
+Dbr_Michael_Jordan  Jordan  60
+>>
+Dbr_Canada  Canada  10
+Dbo_Capital  Capital  85
+>>
+Dbr_Wyoming  Wyoming  10
+governor  Governor  87
+>>
+mother  Mother  83
+mother  Mother  83
+mother  Mother  83
+mother  Mother  83
+>>
+Dbr_Elizabeth_Ii  Elizabeth  85
+father  Father  83
+>>
+admittancedate  Admitted  63
+>>
+>>
+Dbo_Director  Directed  62
+Dbr_Francis_Ford_Coppola  Francis  51
+Dbr_Francis_Ford_Coppola  Coppola  51
+>>
+Dbo_Director  Actors  57
+Dbo_Director  Directed  62
+Dbr_William_Shatner  William  63
+Dbr_William_Shatner  Shatner  63
+Dbo_Starring  Starring  87
+>>
+Dbr_Amphibian  Amphibian  10
+>>
+Dbr_Angela_Merkel  Angela  63
+Dbr_Angela_Merkel  Merkel  63
+birthName  Birth  57
+birthName  Name  61
+>>
+>priorMatchScore
+Politician  Politicians  95
+Dbr_Methodism  Methodist  88
+>>
+>>
+Dbr_T._E._Lawrence  Lawrence  72
+>>
+Dbr_Minecraft  Minecraft  10
+Dbo_Developer  Developed  77
+>>
+Dbr_Maribor  Maribor  10
+>>
+>priorMatchScore
+Company  Companies  75
+>priorMatchScore
+Company  Companies  75
+>>
+Dbr_Claudia_Schiffer  Claudia  60
+Dbr_Claudia_Schiffer  Schiffer  66
+>>
+Dbr_Gmt_Games  Games  71
+>>
+Dbr_Intel  Intel  10
+Dbo_Foundedby  Founded  75
+>>
+Dbr_Amanda_Palmer  Amanda  63
+Dbr_Amanda_Palmer  Palmer  63
+>>
+breed  Breeds  72
+Dbr_German_Shepherd  German  57
+Dbr_German_Shepherd  Shepherd  69
+>>
+Dbr_Weser  Weser  10
+>>
+Dbr_Rhine  Rhine  10
+country  Countries  62
+>priorMatchScore
+Country  Countries  75
+>>
+Dbr_Surfing  Surfers  57
+Dbr_Australia  Australia  10
+>>
+>priorMatchScore
+City  City  10
+Dbo_Headquarter  Headquarters  86
+>>
+>priorMatchScore
+Weapon  Weapons  92
+designer  Designer  87
+Dbr_Uzi  Uzi  10
+designer  Designer  87
+>priorMatchScore
+Weapon  Weapons  92
+designer  Designer  87
+Dbr_Uzi  Uzi  10
+designer  Designer  87
+>>
+Dbr_Goofy  Goofy  10
+Dbo_Creator  Created  57
+>>
+Dbr_Bay_Of_Pigs_Invasion  Invasion  57
+Dbr_Bay_Of_Pigs_Invasion  Invasion  57
+>>
+>priorMatchScore
+Island  Islands  92
+Dbr_Japan  Japan  10
+>>
+Dbr_Lisbon  Lisbon  10
+leaderParty  Party  62
+>>
+Dbr_San_Francisco  Francisco  81
+nickname  Nicknames  82
+>>
+>priorMatchScore
+GreekGoddesses  Greek  52
+>priorMatchScore
+GreekGoddesses  Goddesses  78
+Dbr_Mount_Olympus  Mount  55
+Dbr_Mount_Olympus  Olympus  70
+>>
+Dbr_Hells_Angels  Hells  58
+Dbr_Hells_Angels  Angels  66
+founded  Founded  85
+>>
+Dbr_Apollo_14  Apollo  80
+>>
+>>
+Dbr_Utah  Utah  10
+Dbr_Utah  Utah  10
+>>
+>priorMatchScore
+AfricanCountries  Countries  72
+>priorMatchScore
+AfricanCountries  Africa  54
+Dbo_Capital  Capitals  80
+>>
+>>
+>>
+>priorMatchScore
+Film  Films  88
+>>
+>priorMatchScore
+LaunchPad  Launch  80
+Dbo_Operator  Operated  62
+>>
+Dbr_Cat_Stevens  Stevens  77
+Dbo_Instrument  Instruments  85
+>>
+Dbr_Benjamin_Franklin  Benjamin  64
+Dbr_Benjamin_Franklin  Franklin  64
+>>
+Dbo_Parent  Parents  76
+>>
+Dbr_Google  Google  10
+Dbo_Numberofemployees  Employees  69
+>>
+Dbr_Nikola_Tesla  Tesla  58
+>>
+>priorMatchScore
+City  Cities  60
+Dbr_New_Jersey  Jersey  75
+>priorMatchScore
+City  Cities  60
+Dbr_New_Jersey  Jersey  75
+>>
+Dbr_Barack_Obama  Obama  58
+Dbr_Barack_Obama  Barack  66
+Dbr_Barack_Obama  Obama  58
+Dbr_Michelle_Obama  Michelle  72
+Dbr_Michelle_Obama  Obama  52
+Dbr_Michelle_Obama  Obama  52
+>>
+Dbr_Statue_Of_Liberty  Statue  52
+Dbr_Statue_Of_Liberty  Liberty  58
+>>
+Dbr_Fort_Knox  Fort  61
+Dbr_Fort_Knox  Knox  61
+location  Located  53
+Dbr_United_States  State  55
+>>
+>>
+>priorMatchScore
+ChessPlayer  Chess  62
+>priorMatchScore
+ChessPlayer  Players  66
+Dbo_Birthplace  Place  66
+Dbo_Deathplace  Place  66
+>priorMatchScore
+ChessPlayer  Chess  62
+>priorMatchScore
+ChessPlayer  Players  66
+Dbo_Birthplace  Place  66
+Dbo_Deathplace  Place  66
+>>
+Dbr_Margaret_Thatcher  Margaret  64
+Dbr_Margaret_Thatcher  Thatcher  64
+Dbo_Child  Children  61
+>>
+Dbr_Scarface  Scarface  10
+>>
+Dbr_Margaret_Thatcher  Margaret  64
+Dbr_Margaret_Thatcher  Thatcher  64
+Dbr_Chemist  Chemist  10
+>>
+>>
+>priorMatchScore
+Book  Books  88
+Dbr_William_Goldman  William  63
+Dbr_William_Goldman  Goldman  63
+Dbo_Numberofpages  Pages  55
+>priorMatchScore
+Book  Books  88
+Dbr_William_Goldman  William  63
+Dbr_William_Goldman  Goldman  63
+Dbo_Numberofpages  Pages  55
+>>
+>priorMatchScore
+Book  Books  88
+Dbo_Publisher  Published  77
+Dbr_Viking_Press  Viking  66
+Dbr_Viking_Press  Press  58
+Dbr_Jack_Kerouac  Kerouac  73
+>>
+>priorMatchScore
+AmericanInventions  American  61
+>priorMatchScore
+AmericanInventions  Inventions  71
+>>
+Dbr_Mount_Everest  Mount  55
+Dbr_Mount_Everest  Everest  70
+>>
+Dbr_Captain_America  Captain  63
+Dbr_Captain_America  America  63
+Dbo_Creator  Created  57
+>>
+Dbr_Australia  Australia  10
+Dbo_Capital  Capital  85
+>>
+Dbr_Australia  Australia  10
+Dbo_Largestcity  Largest  66
+Dbo_Largestcity  City  53
+>>
+Dbr_Harold_And_Maude  Harold  54
+Dbo_Musiccomposer  Composed  66
+>>
+Dbo_Director  Direct  71
+Dbr_Clint_Eastwood  Clint  52
+Dbr_Clint_Eastwood  Eastwood  72
+Dbo_Starring  Starring  87
+Dbr_Clint_Eastwood  Clint  52
+Dbr_Clint_Eastwood  Eastwood  72
+>>
+>>
+Dbr_Egypt  Egypts  90
+Dbo_Largestcity  Largest  66
+Dbo_Largestcity  City  53
+Dbr_Egypt  Egypts  90
+Dbo_Capital  Capital  85
+Dbr_Egypt  Egypts  90
+Dbo_Largestcity  Largest  66
+Dbo_Largestcity  City  53
+Dbr_Egypt  Egypts  90
+Dbo_Capital  Capital  85
+>>
+Dbr_Prime_Minister_Of_Spain  Minister  51
+residence  Residence  88
+>>
+>>
+Dbr_Pilsner_Urquell  Pilsner  63
+Dbr_Pilsner_Urquell  Urquell  63
+brewery  Brewery  85
+foundation  Founding  66
+>>
+Dbo_Anthem  Anthem  83
+>>
+Dbr_Ramones  Ramones  10
+Dbo_Bside  B-Sides  66
+>>
+Dbo_Author  Storm  54
+>>
+Dbr_Miffy  Miffy  10
+Dbo_Creator  Creator  85
+>>
+>priorMatchScore
+Album  Album  10
+Dbo_Artist  First  54
+Dbr_Elvis_Presley  Elvis  55
+Dbo_Recordlabel  Label  62
+Dbo_Recordlabel  Record  58
+>>
+Dbr_Charmed  Charmed  10
+Dbo_Birthdate  Birthdays  55
+>>
+Dbo_Numberofemployees  Employees  69
+>>
+Dbr_Illinois  Illinois  10
+>>
+Dbr_Limerick_Lake  Limerick  76
+Dbo_Country  Country  85
+>>
+>priorMatchScore
+TelevisionShow  Television  83
+Dbo_Creator  Created  57
+Dbr_Walt_Disney  Walt  53
+Dbr_Walt_Disney  Disney  70
+>>
+Dbr_Annapurna  Annapurna  10
+>priorMatchScore
+Mountain  Mountain  10
+Dbr_Annapurna  Annapurna  10
+>priorMatchScore
+Mountain  Mountain  10
+>>
+>priorMatchScore
+Film  Films  88
+Dbo_Starring  Starring  87
+Dbr_Julia_Roberts  Julia  55
+Dbr_Julia_Roberts  Roberts  70
+Dbo_Director  Directed  62
+Dbr_Garry_Marshall  Garry  52
+Dbr_Garry_Marshall  Marshall  72
+>>
+>>
+>priorMatchScore
+Country  Communist  62
+>priorMatchScore
+Country  Countries  75
+>priorMatchScore
+Country  Communist  62
+>priorMatchScore
+Country  Countries  75
+>>
+Dbr_Wikileaks  Wikileaks  88
+awards  Awards  83
+>>
+Dbr_Ingrid_Bergman  Ingrid  60
+Dbr_Ingrid_Bergman  Bergman  66
+>>
+densityrank  Density  66
+>>
+Dbr_Czech_Republic  Czech  52
+Dbr_Czech_Republic  Republic  72
+Dbo_Currency  Currency  87
+>>
+>>
+>priorMatchScore
+Country  Countries  75
+Dbo_Officiallanguage  Official  58
+Dbo_Officiallanguage  Languages  64
+>>
+Dbr_Universal_Studios  Universal  69
+Dbr_Universal_Studios  Studios  58
+Dbo_Owner  Owner  80
+>>
+Dbr_Yenisei_River  Yenisei  70
+Dbr_Yenisei_River  River  55
+Dbo_Country  Countries  62
+>>
+Dbr_Latvia  Latvia  10
+>>
+>priorMatchScore
+Monarch  Monarchs  93
+>priorMatchScore
+Monarch  Monarchs  93
+>>
+Dbr_Battle_Of_Gettysburg  Gettysburg  66
+Dbo_Date  Battle  60
+>>
+Dbr_Brooklyn_Bridge  Brooklyn  69
+Dbr_Brooklyn_Bridge  Bridge  57
+Dbo_Crosses  Does  54
+Dbo_Crosses  Cross  66
+>>
+>priorMatchScore
+Mountain  Mountain  10
+Dbr_Australia  Australia  10
+>>
+>>
+Dbr_Tel_Aviv  Tel  54
+Dbr_Tel_Aviv  Aviv  66
+>>
+Dbr_Brooklyn_Bridge  Brooklyn  69
+Dbr_Brooklyn_Bridge  Bridge  57
+designer  Designed  75
+>>
+>>
+Dbr_Forbes  Forbes  10
+Dbo_Editor  Editor  83
+>>
+>>
+>priorMatchScore
+Library  Libraries  75
+established  Established  90
+>priorMatchScore
+Library  Libraries  75
+established  Established  90
+>>
+>>
+Dbr_Abraham_Lincoln  Lincoln  63
+>>
+Dbr_World_Of_Warcraft  Warcraft  64
+Dbo_Developer  Developed  77
+>>
+Dbr_Tom_Cruise  Cruise  75
+website  Website  85
+>>
+Dbo_Series  Series  83
+Dbr_The_Sopranos  Sopranos  80
+Dbo_Seasonnumber  Season  55
+>>
+>>
+>>
+Dbr_Wikipedia  Wikipedia  10
+>>
+Dbr_Last_Action_Hero  Action  54
+Dbo_Starring  Starring  87
+>>
+>priorMatchScore
+Software  Software  10
+Dbo_Developer  Developed  77
+>priorMatchScore
+Software  Software  10
+Dbo_Developer  Developed  77
+>>
+>priorMatchScore
+Company  Companies  75
+Dbo_Industry  Industry  87
+Dbr_Aerospace  Aerospace  10
+Dbo_Industry  Industry  87
+Dbr_Medicine  Medicine  10
+>>
+Dbr_Velvet_Goldmine  Velvet  57
+Dbr_Velvet_Goldmine  Goldmine  69
+Dbo_Starring  Starring  87
+Dbr_Christian_Bale  Christian  78
+>>
+>priorMatchScore
+Company  Companies  75
+>priorMatchScore
+Company  Companies  75
+homepage  Companies  58
+>>
+>priorMatchScore
+Actor  Actors  90
+>priorMatchScore
+Actor  Actors  90
+>>
+>priorMatchScore
+Cave  Caves  88
+>priorMatchScore
+Cave  Have  75
+entranceCount  Entrances  63
+>priorMatchScore
+Cave  Caves  88
+>priorMatchScore
+Cave  Have  75
+entranceCount  Entrances  63
+>>
+>>
+>priorMatchScore
+VideoGame  Video  71
+>priorMatchScore
+VideoGame  Games  57
+Dbo_Publisher  Published  77
+Dbr_Mean_Hamster_Software  Software  55
+>>
+Dbo_Spokenin  Spoken  71
+Dbr_Estonia  Estonia  10
+>>
+Dbr_Aldi  Aldi  10
+>>
+>priorMatchScore
+CapitalsInEurope  Capitals  66
+>priorMatchScore
+CapitalsInEurope  Europe  54
+>>
+>>
+Dbr_Grunge  Governed  57
+>>
+Dbo_Programminglanguage  Languages  57
+>>
+>priorMatchScore
+Film  Films  88
+Dbo_Starring  Starring  87
+Dbr_Natalie_Portman  Natalie  63
+Dbr_Natalie_Portman  Portman  63
+Dbo_Producer  Produced  75
+>>
+Dbr_Tom_Cruise  Cruise  75
+>>
+>priorMatchScore
+Film  Films  88
+Dbr_Julia_Roberts  Julia  55
+Dbr_Julia_Roberts  Roberts  70
+Dbr_Richard_Gere  Richard  73
+>>
+>priorMatchScore
+GivenName  Give  61
+>priorMatchScore
+GivenName  Given  71
+>priorMatchScore
+GivenName  Names  57
+Dbr_Female  Female  10
+>>
+Dbo_Author  Earth  54
+>>
+>>
+Dbr_Mount_Mckinley  Mount  52
+Dbr_Mount_Mckinley  Mckinley  63
+Dbo_Locatedinarea  Located  60
+>>
+Dbr_Capcom  Capcom  10
+Dbo_Foundingdate  Founded  52
+>>
+>>
+Dbr_Natalie_Portman  Natalie  63
+Dbr_Natalie_Portman  Portman  63
+Dbr_United_States  United  63
+Dbr_United_States  States  63
