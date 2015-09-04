@@ -1,0 +1,23 @@
+>>
+>hasPhrase
+Cosmonauts 
+>hasRelation
+>hasResource
+Cosmonauts Truc       
+>phraseDepTag
+Cosmonauts Give       Root       
+Give       Me         Iobj       
+Give       Cosmonauts Dobj       
+Cosmonauts All        Det        
+>phraseIndex
+>phrasePosTag
+Give       VB         
+Me         PRP        
+All        DT         
+Cosmonauts NNS        
+>priorMatchScore
+Cosmonauts Astronaut  0.63       
+Cosmonauts Truc       0.8        
+>resourceType
+Astronaut  Class      
+Truc       Class      

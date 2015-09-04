@@ -18,16 +18,20 @@ Astronaut  Class
 >hasPhrase
 Cosmonauts
 
+
 >priorMatchScore
-Astronaut  Cosmonauts  63
+Cosmonauts  Astronaut  63
 
 >resourceType
 Astronaut  Class
 >hasPhrase
 Cosmonauts
 
+>hasResource
+Cosmonauts  Astronaut
+
 >priorMatchScore
-Astronaut  Cosmonauts  63
+Cosmonauts  Astronaut  63
 >> 
 
 >phrasePosTag
@@ -44,7 +48,7 @@ Start  Start  Root
 Country  In  Case
 Country  Which  Det
 Nile  The  Det
-Start  Country  Nmod:In
+Start  Country  NmodIn
 Start  Does  Aux
 Start  Nile  Nsubj
 
@@ -54,15 +58,18 @@ Nile   Entity
 Nile
 
 >priorMatchScore
-Dbr_Nile  Nile  10
+Nile  Dbr_Nile  100
 
 >resourceType
-sourceCountry  Relation
+Sourcecountry  Relation
+
+>hasResource
+Country  Sourcecountry
 >hasPhrase
 Country
 
 >priorMatchScore
-Dbo_Sourcecountry  Country  70
+Country  Dbo_Sourcecountry  70
 >> 
 >phraseIndex
 1  When
@@ -94,7 +101,7 @@ Going  Cinemas  Xcomp
 Cinemas  To  Mark
 Cinemas  Be  Cop
 Cinemas  In  Case
-Cinemas  Netherlands  Nmod:In
+Cinemas  Netherlands  NmodIn
 Netherlands  In  Case
 Netherlands  The  Det
 >> 
@@ -105,7 +112,7 @@ Netherlands  The  Det
 4  Have
 5  More
 6  Than
-7  250000
+7  "250000"
 8  Inhabitants
 
 >phraseDepTag
@@ -115,25 +122,11 @@ Cities  German  Amod
 Have  Cities  Nsubj
 Have  Inhabitants  Dobj
 More  Than  Mwe
-250000  More  Advmod
-Inhabitants  250000  Nummod
+"250000"  More  Advmod
+Inhabitants  "250000"  Nummod
 
 >resourceType
-country  Relation
-
->resourceType
-Germany   Entity
->hasPhrase
-German
-
->priorMatchScore
-Dbr_Germany  German  92
-
->resourceType
-populationTotal  Relation
-
->resourceType
-country  Relation
+Country  Relation
 
 >resourceType
 Germany   Entity
@@ -141,19 +134,33 @@ Germany   Entity
 German
 
 >priorMatchScore
-Dbr_Germany  German  92
+German  Dbr_Germany  92
 
 >resourceType
-populationTotal  Relation
+Populationtotal  Relation
+
+>resourceType
+Country  Relation
+
+>resourceType
+Germany   Entity
+>hasPhrase
+German
+
+>priorMatchScore
+German  Dbr_Germany  92
+
+>resourceType
+Populationtotal  Relation
 >> 
 
 >phrasePosTag
 Who  WP
 Was  VBD
 John  NNP
-F.  NNP
+F  NNP
 Kennedy  NNP
-'S  POS
+S  POS
 Vice  NN
 President  NN
 
@@ -162,26 +169,29 @@ President  Who  Root
 Who  Was  Cop
 Who  President  Nsubj
 Kennedy  John  Compound
-Kennedy  F.  Compound
-Kennedy  'S  Case
-President  Kennedy  Nmod:Poss
+Kennedy  F  Compound
+Kennedy  S  Case
+President  Kennedy  NmodPoss
 President  Vice  Compound
 
 >resourceType
-John_F._Kennedy   Entity
+John_F_Kennedy   Entity
 >hasPhrase
 Kennedy
 
 >priorMatchScore
-Dbr_John_F._Kennedy  Kennedy  63
+Kennedy  Dbr_John_F_Kennedy  63
 
 >resourceType
-vicePresident  Relation
+Vicepresident  Relation
+
+>hasResource
+President  Vicepresident
 >hasPhrase
 President
 
 >priorMatchScore
-Dbo_Vicepresident  President  81
+President  Dbo_Vicepresident  81
 >> 
 
 >phrasePosTag
@@ -197,7 +207,7 @@ Berlin  Who  Root
 Who  Is  Cop
 Who  Mayor  Nsubj
 Mayor  The  Det
-Mayor  Berlin  Nmod:Of
+Mayor  Berlin  NmodOf
 Berlin  Of  Case
 
 >resourceType
@@ -206,10 +216,10 @@ Berlin   Entity
 Berlin
 
 >priorMatchScore
-Dbr_Berlin  Berlin  10
+Berlin  Dbr_Berlin  100
 
 >resourceType
-leader  Relation
+Leader  Relation
 >> 
 >phraseIndex
 1  How
@@ -229,7 +239,7 @@ Many  How  Advmod
 Students  Many  Amod
 University  The  Det
 University  Free  Compound
-University  Amsterdam  Nmod:In
+University  Amsterdam  NmodIn
 Amsterdam  In  Case
 Have  Students  Dobj
 Have  Does  Aux
@@ -241,15 +251,18 @@ Vrije_Universiteit   Entity
 University
 
 >priorMatchScore
-Dbr_Vrije_Universiteit  University  64
+University  Dbr_Vrije_Universiteit  64
 
 >resourceType
-numberOfStudents  Relation
+Numberofstudents  Relation
+
+>hasResource
+Students  Numberofstudents
 >hasPhrase
 Students
 
 >priorMatchScore
-Dbo_Numberofstudents  Students  66
+Students  Dbo_Numberofstudents  66
 >> 
 
 >phrasePosTag
@@ -277,9 +290,11 @@ Mountain  Class
 >hasPhrase
 Mountain
 
+>hasResource
+Mountain  Mountain
+
 >priorMatchScore
-Mountain  Mountain  10
+Mountain  Mountain  100
 
 >resourceType
-elevation  Relation
-orest  Teutoburg  Compound
+Elevation  Relation

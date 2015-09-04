@@ -1,0 +1,82 @@
+
+>> 
+
+>phrasePosTag
+Give  VB
+Me  PRP
+All  DT
+Cosmonauts  NNS
+
+>phraseDepTag
+Cosmonauts  Give  Root
+Give  Me  Iobj
+Give  Cosmonauts  Dobj
+Cosmonauts  All  Det
+
+>resourceType
+Astronaut  Class
+Truc Class
+
+>hasPhrase
+Cosmonauts
+
+>priorMatchScore
+Cosmonauts Truc 1
+
+>hasResource
+Cosmonauts Astronaut
+
+
+>> 
+
+>phrasePosTag
+Give  VB
+Me  PRP
+All  DT
+Cosmonauts  NNS
+
+>phraseDepTag
+Cosmonauts  Give  Root
+Give  Me  Iobj
+Give  Cosmonauts  Dobj
+Cosmonauts  All  Det
+
+>resourceType
+Astronaut  Class
+Truc Class
+
+>hasPhrase
+Cosmonauts
+
+>priorMatchScore
+Cosmonauts  Astronaut  0.8
+
+>hasResource
+
+
+>> 
+
+>phrasePosTag
+Give  VB
+Me  PRP
+All  DT
+Cosmonauts  NNS
+
+>phraseDepTag
+Cosmonauts  Give  Root
+Give  Me  Iobj
+Give  Cosmonauts  Dobj
+Cosmonauts  All  Det
+
+>resourceType
+Astronaut  Class
+Truc Class
+
+>hasPhrase
+Cosmonauts
+
+>priorMatchScore
+Cosmonauts  Astronaut  0.8
+
+>hasResource
+Cosmonauts Astronaut

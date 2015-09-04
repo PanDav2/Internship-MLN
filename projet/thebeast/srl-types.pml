@@ -6,4 +6,3 @@ type Relation:...;
 type PosTag:...; 
 type DepTag:...; 
 type Type:...; 
-

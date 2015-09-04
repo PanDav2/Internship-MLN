@@ -1,19 +1,20 @@
-/* 
-Des règles dur de notre système de MLN.
 
-L'avantage c'est que l'on peut gérer les contraintes de cardinalité de manière plus transparente et directe.
+/* Load the types we generated based on the training corpus */
+include "types.pml";
 
+/* Load the SRL mln */
+include "srl.pml";
 
-//hf1
-factor : for Phrase p, Resource r if hasPhrase(p) add [hasResource(p,r)];
-//hf2
-factor: for Phrase p if hasResource(p,_): hasPhrase(p);
-//hf3
-factor: for Phrase p: |Role r: hasResource(p,r)|<=1;*/
-//hf4
-type Phrase: "J'aime", "le", "chocolat";
-type Resource: "Amour", "Moi", "Lindt", "Ferrero";
+/* Load the weights we allowed to be nonzero in the collection step (init.pml) */
+load weights from dump "srl.weights";
 
-predicate hasResource: Phrase x Resource;
-predicate hasPhrase: Phrase;
-factor: for Phrase p, Resource r if !hasPhrase(p) : hasResource(p,r);
+/* Load a test corpus */
+load corpus from "test.atoms";
+
+print atoms;
+
+/* Now we want to apply our MLN to all worlds in the test corpus
+   and write out the result. Note that this will also print out
+   some statistics. */
+test to "system.atoms";
+

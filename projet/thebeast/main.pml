@@ -34,5 +34,3 @@ save weights to dump "srl.weights";
 
 //On charge un corpus de tes 
 
-
-// [TODO]

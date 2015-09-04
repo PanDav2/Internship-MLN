@@ -107,5 +107,5 @@ factor : for Resource r1, Resource r2, Relation rr, Int s
 //sf8
 weight w_sf8: Resource x Resource x Resource x Relation x Relation -> Double+; 
 /*factor : for Resource r1, Resource r2, Resource r3, Relation rr1, Relation rr2
-	add [hasQueryResult(r1,r2,r3,rr1,rr2)=> hasRelation(r1,r2,rr1) & hasRelation(r2,r3,rr2)]*w_sf8(r1,r2,r3,rr1,rr2);
+//	add [hasQueryResult(r1,r2,r3,rr1,rr2)=> hasRelation(r1,r2,rr1) & hasRelation(r2,r3,rr2)]*w_sf8(r1,r2,r3,rr1,rr2);
 */

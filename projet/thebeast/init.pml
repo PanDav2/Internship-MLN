@@ -8,7 +8,7 @@ include "srl.pml";
 //load global from "global.atoms";
 
 /* Load a collection of possible worlds for training */
-load corpus from "train.atoms";
+load corpus from "1question.atoms";
 
 /* Collect the weights that are allowed to be nonzero */
 collect;
@@ -25,3 +25,5 @@ types to "types.pml";
    because some preprocessing is done to speed up training later. You can also
    reuse this in later sessions. */
 save corpus to instances "srl.instances";
+
+
