@@ -144,7 +144,6 @@ def ressourcesType():
                                 file.write("ResourceType("+temp.title()+","+X[:1]+")\n")
     print "\t\t #### Création de la feature RessourceType à partir du fichier terminéé.  ####"
 
-
 def Pclean():
     with open("./output/phrases.txt","r") as inp:
         with open("./output/clean-p.txt",'w') as out:
