@@ -8,7 +8,7 @@ include "srl.pml";
 //load global from "global.atoms";
 
 /* Load a collection of possible worlds for training */
-load corpus from "1question.atoms";
+load corpus from "allquestion.atoms";
 
 /* Collect the weights that are allowed to be nonzero */
 collect;

@@ -1,23 +1,6226 @@
 >>
 >hasPhrase
-Cosmonauts 
+"Cosmonauts." 
 >hasRelation
 >hasResource
-Cosmonauts Truc       
+"Cosmonauts." "Astronaut" 
 >phraseDepTag
-Cosmonauts Give       Root       
-Give       Me         Iobj       
-Give       Cosmonauts Dobj       
-Cosmonauts All        Det        
+"cosmonauts" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "cosmonauts" "Dobj"     
+"cosmonauts" "all"      "Det"      
 >phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Cosmonauts" 
 >phrasePosTag
-Give       VB         
-Me         PRP        
-All        DT         
-Cosmonauts NNS        
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"cosmonauts" "NNS"      
 >priorMatchScore
-Cosmonauts Astronaut  0.63       
-Cosmonauts Truc       0.8        
+"Cosmonauts." "Astronaut" 0.545      
 >resourceType
-Astronaut  Class      
-Truc       Class      
+"Astronaut" Class      
+>>
+>hasPhrase
+"Country"  
+>hasRelation
+>hasResource
+"Country"  "dbo-Sourcecountry" 
+>phraseDepTag
+"start"    "start"    "Root"     
+"country"  "In"       "Case"     
+"country"  "which"    "Det"      
+"Nile"     "the"      "Det"      
+"start"    "country"  "Nmod:In"  
+"start"    "does"     "Aux"      
+"start"    "Nile"     "Nsubj"    
+>phraseIndex
+1          "In"       
+2          "Which"    
+3          "Country"  
+4          "Does"     
+5          "The"      
+6          "Nile"     
+7          "Start"    
+>phrasePosTag
+"In"       "IN"       
+"which"    "WDT"      
+"country"  "NN"       
+"does"     "VBZ"      
+"the"      "DT"       
+"Nile"     "NNP"      
+"start"    "VB"       
+>priorMatchScore
+"Country"  "dbo-Sourcecountry" 0.636      
+>resourceType
+"dbo-Sourcecountry" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Netherlands" "going"    "Root"     
+"movie"    "the"      "Det"      
+"movie"    "Scenario" "Dep"      
+"Scenario" "Worst"    "Amod"     
+"Scenario" "Case"     "Compound" 
+"going"    "When"     "Advmod"   
+"going"    "is"       "Aux"      
+"going"    "movie"    "Nsubj"    
+"going"    "cinemas"  "Xcomp"    
+"cinemas"  "to"       "Mark"     
+"cinemas"  "be"       "Cop"      
+"cinemas"  "in"       "Case"     
+"cinemas"  "Netherlands" "Nmod:In"  
+"Netherlands" "in"       "Case"     
+"Netherlands" "the"      "Det"      
+>phraseIndex
+1          "When"     
+2          "Is"       
+3          "The"      
+4          "Movie"    
+5          "Worst"    
+6          "Case"     
+7          "Scenario" 
+8          "Going"    
+9          "To"       
+10         "Be"       
+11         "In"       
+12         "Cinemas"  
+13         "In"       
+14         "The"      
+15         "Netherlands" 
+>phrasePosTag
+"When"     "WRB"      
+"is"       "VBZ"      
+"the"      "DT"       
+"movie"    "NN"       
+"Worst"    "JJS"      
+"Case"     "NN"       
+"Scenario" "NN"       
+"going"    "VBG"      
+"to"       "TO"       
+"be"       "VB"       
+"in"       "IN"       
+"cinemas"  "NNS"      
+"Netherlands" "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"German"   
+>hasRelation
+>hasResource
+"German"   "dbr-Germany" 
+>phraseDepTag
+"inhabitants" "have"     "Root"     
+"cities"   "Which"    "Det"      
+"cities"   "German"   "Amod"     
+"have"     "cities"   "Nsubj"    
+"have"     "inhabitants" "Dobj"     
+"more"     "than"     "Mwe"      
+"250000"   "more"     "Advmod"   
+"inhabitants" "250000"   "Nummod"   
+>phraseIndex
+1          "Which"    
+2          "German"   
+3          "Cities"   
+4          "Have"     
+5          "More"     
+6          "Than"     
+7          "250000"   
+8          "Inhabitants" 
+>phrasePosTag
+"Which"    "WDT"      
+"German"   "JJ"       
+"cities"   "NNS"      
+"have"     "VBP"      
+"more"     "JJR"      
+"than"     "IN"       
+"250000"   "CD"       
+"inhabitants" "NNS"      
+>priorMatchScore
+"German"   "dbr-Germany" 0.8        
+>resourceType
+"dbo-Populationtotal" Relation   
+>>
+>hasPhrase
+"President?" 
+>hasRelation
+>hasResource
+"President?" "dbo-Vicepresident" 
+>phraseDepTag
+"president" "Who"      "Root"     
+"Who"      "was"      "Cop"      
+"Who"      "president" "Nsubj"    
+"Kennedy"  "John"     "Compound" 
+"Kennedy"  "F."       "Compound" 
+"Kennedy"  "'s"       "Case"     
+"president" "Kennedy"  "Nmod:Poss" 
+"president" "vice"     "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Was"      
+3          "John"     
+4          "F."       
+5          "Kennedy"  
+6          "'S"       
+7          "Vice"     
+8          "President" 
+>phrasePosTag
+"Who"      "WP"       
+"was"      "VBD"      
+"John"     "NNP"      
+"F."       "NNP"      
+"Kennedy"  "NNP"      
+"'s"       "POS"      
+"vice"     "NN"       
+"president" "NN"       
+>priorMatchScore
+"President?" "dbo-Vicepresident" 0.64       
+>resourceType
+"dbo-Vicepresident" Relation   
+>>
+>hasPhrase
+"Berlin?"  
+>hasRelation
+>hasResource
+"Berlin?"  "dbr-Berlin" 
+>phraseDepTag
+"Berlin"   "Who"      "Root"     
+"Who"      "is"       "Cop"      
+"Who"      "mayor"    "Nsubj"    
+"mayor"    "the"      "Det"      
+"mayor"    "Berlin"   "Nmod:Of"  
+"Berlin"   "of"       "Case"     
+>phraseIndex
+1          "Who"      
+2          "Is"       
+3          "The"      
+4          "Mayor"    
+5          "Of"       
+6          "Berlin"   
+>phrasePosTag
+"Who"      "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"mayor"    "NN"       
+"of"       "IN"       
+"Berlin"   "NNP"      
+>priorMatchScore
+"Berlin?"  "dbr-Berlin" 0.8        
+>resourceType
+"dbo-Leader" Relation   
+>>
+>hasPhrase
+"Students" 
+>hasRelation
+>hasResource
+"Students" "dbo-Numberofstudents" 
+>phraseDepTag
+"have"     "have"     "Root"     
+"many"     "How"      "Advmod"   
+"students" "many"     "Amod"     
+"University" "the"      "Det"      
+"University" "Free"     "Compound" 
+"University" "Amsterdam" "Nmod:In"  
+"Amsterdam" "in"       "Case"     
+"have"     "students" "Dobj"     
+"have"     "does"     "Aux"      
+"have"     "University" "Nsubj"    
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Students" 
+4          "Does"     
+5          "The"      
+6          "Free"     
+7          "University" 
+8          "In"       
+9          "Amsterdam" 
+10         "Have"     
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"students" "NNS"      
+"does"     "VBZ"      
+"the"      "DT"       
+"Free"     "NNP"      
+"University" "NNP"      
+"in"       "IN"       
+"Amsterdam" "NNP"      
+"have"     "VB"       
+>priorMatchScore
+"Students" "dbo-Numberofstudents" 0.538      
+>resourceType
+"dbo-Numberofstudents" Relation   
+>>
+>hasPhrase
+"Mountain" 
+>hasRelation
+>hasResource
+"Mountain" "Mountain" 
+>phraseDepTag
+"Earth"    "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "mountain" "Nsubj"    
+"What"     "Earth"    "Dep"      
+"mountain" "the"      "Det"      
+"mountain" "second"   "Amod"     
+"mountain" "highest"  "Amod"     
+"Earth"    "on"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Second"   
+5          "Highest"  
+6          "Mountain" 
+7          "On"       
+8          "Earth"    
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"second"   "JJ"       
+"highest"  "JJS"      
+"mountain" "NN"       
+"on"       "IN"       
+"Earth"    "NNP"      
+>priorMatchScore
+"Mountain" "Mountain" 0.777      
+>resourceType
+"dbo-Elevation" Relation   
+>>
+>hasPhrase
+"Skateboarders" 
+>hasRelation
+>hasResource
+"Skateboarders" "dbr-Skateboarding" 
+>phraseDepTag
+"Sweden"   "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "skateboarders" "Dobj"     
+"skateboarders" "all"      "Det"      
+"skateboarders" "professional" "Amod"     
+"skateboarders" "Sweden"   "Nmod:From" 
+"Sweden"   "from"     "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Professional" 
+5          "Skateboarders" 
+6          "From"     
+7          "Sweden"   
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"professional" "JJ"       
+"skateboarders" "NNS"      
+"from"     "IN"       
+"Sweden"   "NNP"      
+>priorMatchScore
+"Skateboarders" "dbr-Skateboarding" 0.642      
+>resourceType
+"dbr-Skateboarding" Entity     
+>>
+>hasPhrase
+"Admitted" 
+>hasRelation
+>hasResource
+"Admitted" "Admittancedate" 
+>phraseDepTag
+"province" "was"      "Root"     
+"was"      "When"     "Advmod"   
+"was"      "Alberta"  "Nsubj"    
+"Alberta"  "admitted" "Acl:Relcl" 
+"admitted" "province" "Nmod:As"  
+"province" "as"       "Case"     
+>phraseIndex
+1          "When"     
+2          "Was"      
+3          "Alberta"  
+4          "Admitted" 
+5          "As"       
+6          "Province" 
+>phrasePosTag
+"When"     "WRB"      
+"was"      "VBD"      
+"Alberta"  "NNP"      
+"admitted" "VBD"      
+"as"       "IN"       
+"province" "NN"       
+>priorMatchScore
+"Admitted" "Admittancedate" 0.583      
+>resourceType
+"Admittancedate" Class      
+>>
+>hasPhrase
+"Countries" 
+>hasRelation
+>hasResource
+"Countries" "Country"  
+>phraseDepTag
+"extend"   "extend"   "Root"     
+"countries" "To"       "Case"     
+"countries" "which"    "Det"      
+"system"   "the"      "Det"      
+"system"   "Himalayan" "Amod"     
+"system"   "mountain" "Compound" 
+"extend"   "countries" "Nmod:To"  
+"extend"   "does"     "Aux"      
+"extend"   "system"   "Nsubj"    
+>phraseIndex
+1          "To"       
+2          "Which"    
+3          "Countries" 
+4          "Does"     
+5          "The"      
+6          "Himalayan" 
+7          "Mountain" 
+8          "System"   
+9          "Extend"   
+>phrasePosTag
+"To"       "TO"       
+"which"    "WDT"      
+"countries" "NNS"      
+"does"     "VBZ"      
+"the"      "DT"       
+"Himalayan" "JJ"       
+"mountain" "NN"       
+"system"   "NN"       
+"extend"   "VB"       
+>priorMatchScore
+"Countries" "Country"  0.555      
+>resourceType
+"Country"  Class      
+>>
+>hasPhrase
+"Trumpet." 
+>hasRelation
+>hasResource
+"Trumpet." "dbr-Trumpet" 
+>phraseDepTag
+"trumpet"  "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "list"     "Dobj"     
+"list"     "a"        "Det"      
+"list"     "bandleaders" "Nmod:Of"  
+"bandleaders" "of"       "Case"     
+"bandleaders" "all"      "Det"      
+"bandleaders" "play"     "Acl:Relcl" 
+"play"     "that"     "Nsubj"    
+"play"     "trumpet"  "Dobj"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "A"        
+4          "List"     
+5          "Of"       
+6          "All"      
+7          "Bandleaders" 
+8          "That"     
+9          "Play"     
+10         "Trumpet"  
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"a"        "DT"       
+"list"     "NN"       
+"of"       "IN"       
+"all"      "DT"       
+"bandleaders" "NNS"      
+"that"     "WDT"      
+"play"     "VBP"      
+"trumpet"  "NN"       
+>priorMatchScore
+"Trumpet." "dbr-Trumpet" 0.705      
+>resourceType
+"dbr-Trumpet" Entity     
+>>
+>hasPhrase
+"Have"     
+>hasRelation
+>hasResource
+"Have"     "Cave"     
+>phraseDepTag
+"caves"    "have"     "Root"     
+"countries" "Which"    "Det"      
+"have"     "countries" "Nsubj"    
+"have"     "caves"    "Dobj"     
+"more"     "than"     "Mwe"      
+"ten"      "more"     "Advmod"   
+"caves"    "ten"      "Nummod"   
+>phraseIndex
+1          "Which"    
+2          "Countries" 
+3          "Have"     
+4          "More"     
+5          "Than"     
+6          "Ten"      
+7          "Caves"    
+>phrasePosTag
+"Which"    "WDT"      
+"countries" "NNS"      
+"have"     "VBP"      
+"more"     "JJR"      
+"than"     "IN"       
+"ten"      "CD"       
+"caves"    "NNS"      
+>priorMatchScore
+"Have"     "Cave"     0.6        
+>resourceType
+"Cave"     Class      
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"FDNY"     "serving"  "Root"     
+"amount"   "the"      "Det"      
+"amount"   "total"    "Amod"     
+"amount"   "men"      "Nmod:Of"  
+"amount"   "women"    "Nmod:Of"  
+"men"      "of"       "Case"     
+"men"      "and"      "Cc"       
+"men"      "women"    "Conj:And" 
+"serving"  "What"     "Dobj"     
+"serving"  "is"       "Aux"      
+"serving"  "amount"   "Nsubj"    
+"serving"  "FDNY"     "Nmod:In"  
+"FDNY"     "in"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Total"    
+5          "Amount"   
+6          "Of"       
+7          "Men"      
+8          "And"      
+9          "Women"    
+10         "Serving"  
+11         "In"       
+12         "The"      
+13         "Fdny"     
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"total"    "JJ"       
+"amount"   "NN"       
+"of"       "IN"       
+"men"      "NNS"      
+"and"      "CC"       
+"women"    "NNS"      
+"serving"  "VBG"      
+"in"       "IN"       
+"FDNY"     "NNP"      
+>priorMatchScore
+>resourceType
+"Strength" Class      
+>>
+>hasPhrase
+"Orangina?" 
+>hasRelation
+>hasResource
+"Orangina?" "dbr-Orangina" 
+>phraseDepTag
+"Orangina" "produces" "Root"     
+"produces" "Who"      "Nsubj"    
+"produces" "Orangina" "Dobj"     
+>phraseIndex
+1          "Who"      
+2          "Produces" 
+3          "Orangina" 
+>phrasePosTag
+"Who"      "WP"       
+"produces" "VBZ"      
+"Orangina" "NNP"      
+>priorMatchScore
+"Orangina?" "dbr-Orangina" 0.842      
+>resourceType
+"dbr-Orangina" Entity     
+>>
+>hasPhrase
+"Races?"   
+>hasRelation
+>hasResource
+"Races?"   "dbo-Races" 
+>phraseDepTag
+"races"    "Who"      "Root"     
+"Who"      "is"       "Cop"      
+"Who"      "driver"   "Nsubj"    
+"driver"   "the"      "Det"      
+"driver"   "Formula"  "Compound" 
+"driver"   "1"        "Nummod"   
+"driver"   "race"     "Compound" 
+"driver"   "the"      "Nmod:With" 
+"the"      "with"     "Case"     
+"the"      "most"     "Advmod"   
+"the"      "races"    "Dep"      
+>phraseIndex
+1          "Who"      
+2          "Is"       
+3          "The"      
+4          "Formula"  
+5          "1"        
+6          "Race"     
+7          "Driver"   
+8          "With"     
+9          "The"      
+10         "Most"     
+11         "Races"    
+>phrasePosTag
+"Who"      "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"Formula"  "NN"       
+"1"        "CD"       
+"race"     "NN"       
+"driver"   "NN"       
+"with"     "IN"       
+"most"     "RBS"      
+"races"    "NNS"      
+>priorMatchScore
+"Races?"   "dbo-Races" 0.769      
+>resourceType
+"dbo-Races" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"years"    "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "sites"    "Dobj"     
+"sites"    "all"      "Det"      
+"sites"    "world"    "Compound" 
+"sites"    "heritage" "Compound" 
+"sites"    "designated" "Acl"      
+"designated" "years"    "Nmod:Within" 
+"years"    "within"   "Case"     
+"years"    "the"      "Det"      
+"years"    "past"     "Amod"     
+"years"    "two"      "Nummod"   
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "World"    
+5          "Heritage" 
+6          "Sites"    
+7          "Designated" 
+8          "Within"   
+9          "The"      
+10         "Past"     
+11         "Two"      
+12         "Years"    
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"world"    "NN"       
+"heritage" "NN"       
+"sites"    "NNS"      
+"designated" "VBN"      
+"within"   "IN"       
+"the"      "DT"       
+"past"     "JJ"       
+"two"      "CD"       
+"years"    "NNS"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"League?"  
+>hasRelation
+>hasResource
+"League?"  "dbr-Premier_League" 
+>phraseDepTag
+"League"   "Who"      "Root"     
+"Who"      "is"       "Cop"      
+"Who"      "player"   "Nsubj"    
+"player"   "the"      "Det"      
+"player"   "youngest" "Amod"     
+"player"   "League"   "Nmod:In"  
+"League"   "in"       "Case"     
+"League"   "the"      "Det"      
+"League"   "Premier"  "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Is"       
+3          "The"      
+4          "Youngest" 
+5          "Player"   
+6          "In"       
+7          "The"      
+8          "Premier"  
+9          "League"   
+>phrasePosTag
+"Who"      "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"youngest" "JJS"      
+"player"   "NN"       
+"in"       "IN"       
+"Premier"  "NNP"      
+"League"   "NNP"      
+>priorMatchScore
+"League?"  "dbr-Premier_League" 0.521      
+>resourceType
+"dbo-Birthdate" Relation   
+>>
+>hasPhrase
+"Members"  
+>hasRelation
+>hasResource
+"Members"  "dbo-Bandmember" 
+>phraseDepTag
+"Prodigy"  "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "members"  "Dobj"     
+"members"  "all"      "Det"      
+"members"  "Prodigy"  "Nmod:Of"  
+"Prodigy"  "of"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Members"  
+5          "Of"       
+6          "Prodigy"  
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"members"  "NNS"      
+"of"       "IN"       
+"Prodigy"  "NNP"      
+>priorMatchScore
+"Members"  "dbo-Bandmember" 0.526      
+>resourceType
+"dbo-Bandmember" Relation   
+>>
+>hasPhrase
+"River?"   
+>hasRelation
+>hasResource
+"River?"   "River"    
+>phraseDepTag
+"river"    "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "river"    "Nsubj"    
+"river"    "the"      "Det"      
+"river"    "longest"  "Amod"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Longest"  
+5          "River"    
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"longest"  "JJS"      
+"river"    "NN"       
+>priorMatchScore
+"River?"   "River"    0.615      
+>resourceType
+"River"    Class      
+>>
+>hasPhrase
+"Episodes" 
+>hasRelation
+>hasResource
+"Episodes" "dbo-Numberofepisodes" 
+>phraseDepTag
+"Thrones"  "have"     "Root"     
+"Does"     "Breaking" "Xcomp"    
+"Breaking" "Bad"      "Xcomp"    
+"have"     "Does"     "Csubj"    
+"have"     "episodes" "Dobj"     
+"have"     "Game"     "Nmod:Than" 
+"episodes" "more"     "Amod"     
+"Game"     "than"     "Case"     
+"Game"     "Thrones"  "Nmod:Of"  
+"Thrones"  "of"       "Case"     
+>phraseIndex
+1          "Does"     
+2          "Breaking" 
+3          "Bad"      
+4          "Have"     
+5          "More"     
+6          "Episodes" 
+7          "Than"     
+8          "Game"     
+9          "Of"       
+10         "Thrones"  
+>phrasePosTag
+"Does"     "VBZ"      
+"Breaking" "VBG"      
+"Bad"      "JJ"       
+"have"     "VBP"      
+"more"     "JJR"      
+"episodes" "NNS"      
+"than"     "IN"       
+"Game"     "NN"       
+"of"       "IN"       
+"Thrones"  "NNPS"     
+>priorMatchScore
+"Episodes" "dbo-Numberofepisodes" 0.615      
+>resourceType
+"dbo-Numberofepisodes" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Germany"  "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "cars"     "Dobj"     
+"cars"     "all"      "Det"      
+"cars"     "produced" "Acl:Relcl" 
+"produced" "that"     "Nsubjpass" 
+"produced" "are"      "Auxpass"  
+"produced" "Germany"  "Nmod:In"  
+"Germany"  "in"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Cars"     
+5          "That"     
+6          "Are"      
+7          "Produced" 
+8          "In"       
+9          "Germany"  
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"cars"     "NNS"      
+"that"     "WDT"      
+"are"      "VBP"      
+"produced" "VBN"      
+"in"       "IN"       
+"Germany"  "NNP"      
+>priorMatchScore
+>resourceType
+"Automobile" Class      
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Curiosity" "What"     "Root"     
+"What"     "were"     "Cop"      
+"What"     "discoveries" "Nsubj"    
+"discoveries" "the"      "Det"      
+"discoveries" "main"     "Amod"     
+"discoveries" "Curiosity" "Nmod:Of"  
+"Curiosity" "of"       "Case"     
+"Curiosity" "the"      "Det"      
+"Curiosity" "Mars"     "Compound" 
+"Curiosity" "rover"    "Compound" 
+>phraseIndex
+1          "What"     
+2          "Were"     
+3          "The"      
+4          "Main"     
+5          "Discoveries" 
+6          "Of"       
+7          "The"      
+8          "Mars"     
+9          "Rover"    
+10         "Curiosity" 
+>phrasePosTag
+"What"     "WP"       
+"were"     "VBD"      
+"the"      "DT"       
+"main"     "JJ"       
+"discoveries" "NNS"      
+"of"       "IN"       
+"Mars"     "NNP"      
+"rover"    "NN"       
+"Curiosity" "NN"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Berlin."  
+>hasRelation
+>hasResource
+"Berlin."  "dbr-Berlin" 
+>phraseDepTag
+"Berlin"   "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "people"   "Dobj"     
+"Give"     "and"      "Cc"       
+"Give"     "died"     "Conj:And" 
+"people"   "all"      "Det"      
+"people"   "born"     "Acl:Relcl" 
+"born"     "that"     "Nsubjpass" 
+"born"     "were"     "Auxpass"  
+"born"     "Vienna"   "Nmod:In"  
+"Vienna"   "in"       "Case"     
+"died"     "Berlin"   "Nmod:In"  
+"Berlin"   "in"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "People"   
+5          "That"     
+6          "Were"     
+7          "Born"     
+8          "In"       
+9          "Vienna"   
+10         "And"      
+11         "Died"     
+12         "In"       
+13         "Berlin"   
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"people"   "NNS"      
+"that"     "WDT"      
+"were"     "VBD"      
+"born"     "VBN"      
+"in"       "IN"       
+"Vienna"   "NNP"      
+"and"      "CC"       
+"died"     "VBD"      
+"Berlin"   "NNP"      
+>priorMatchScore
+"Berlin."  "dbr-Berlin" 0.8        
+>resourceType
+"dbr-Berlin" Entity     
+>>
+>hasPhrase
+"Protein?" 
+>hasRelation
+>hasResource
+"Protein?" "Protein"  
+>phraseDepTag
+"protein"  "protein"  "Root"     
+"protein"  "Is"       "Cop"      
+"protein"  "proinsulin" "Nsubj"    
+"protein"  "a"        "Det"      
+>phraseIndex
+1          "Is"       
+2          "Proinsulin" 
+3          "A"        
+4          "Protein"  
+>phrasePosTag
+"Is"       "VBZ"      
+"proinsulin" "NN"       
+"a"        "DT"       
+"protein"  "NN"       
+>priorMatchScore
+"Protein?" "Protein"  0.705      
+>resourceType
+"Protein"  Class      
+>>
+>hasPhrase
+"Jordan?"  
+>hasRelation
+>hasResource
+"Jordan?"  "dbr-Michael_Jordan" 
+>phraseDepTag
+"Jordan"   "is"       "Root"     
+"tall"     "How"      "Advmod"   
+"is"       "tall"     "Dep"      
+"is"       "Jordan"   "Nsubj"    
+"Jordan"   "Michael"  "Compound" 
+>phraseIndex
+1          "How"      
+2          "Tall"     
+3          "Is"       
+4          "Michael"  
+5          "Jordan"   
+>phrasePosTag
+"How"      "WRB"      
+"tall"     "JJ"       
+"is"       "VBZ"      
+"Michael"  "NNP"      
+"Jordan"   "NNP"      
+>priorMatchScore
+"Jordan?"  "dbr-Michael_Jordan" 0.521      
+>resourceType
+"dbo-Height" Relation   
+>>
+>hasPhrase
+"Capital"  
+>hasRelation
+>hasResource
+"Capital"  "dbo-Capital" 
+>phraseDepTag
+"Canada"   "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "capital"  "Nsubj"    
+"capital"  "the"      "Det"      
+"capital"  "Canada"   "Nmod:Of"  
+"Canada"   "of"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Capital"  
+5          "Of"       
+6          "Canada"   
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"capital"  "NN"       
+"of"       "IN"       
+"Canada"   "NNP"      
+>priorMatchScore
+"Capital"  "dbo-Capital" 0.875      
+>resourceType
+"dbo-Capital" Relation   
+>>
+>hasPhrase
+"Governor" 
+>hasRelation
+>hasResource
+"Governor" "Governor" 
+>phraseDepTag
+"Wyoming"  "Who"      "Root"     
+"Who"      "is"       "Cop"      
+"Who"      "governor" "Nsubj"    
+"governor" "the"      "Det"      
+"governor" "Wyoming"  "Nmod:Of"  
+"Wyoming"  "of"       "Case"     
+>phraseIndex
+1          "Who"      
+2          "Is"       
+3          "The"      
+4          "Governor" 
+5          "Of"       
+6          "Wyoming"  
+>phrasePosTag
+"Who"      "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"governor" "NN"       
+"of"       "IN"       
+"Wyoming"  "NNP"      
+>priorMatchScore
+"Governor" "Governor" 0.777      
+>resourceType
+"Governor" Class      
+>>
+>hasPhrase
+"Mother?"  
+>hasRelation
+>hasResource
+"Mother?"  "Mother"   
+>phraseDepTag
+"mother"   "Do"       "Root"     
+"Do"       "have"     "Ccomp"    
+"Harry"    "Prince"   "Compound" 
+"Harry"    "and"      "Cc"       
+"Harry"    "William"  "Conj:And" 
+"William"  "Prince"   "Compound" 
+"have"     "Harry"    "Nsubj"    
+"have"     "William"  "Nsubj"    
+"have"     "mother"   "Dobj"     
+"mother"   "the"      "Det"      
+>phraseIndex
+1          "Do"       
+2          "Prince"   
+3          "Harry"    
+4          "And"      
+5          "Prince"   
+6          "William"  
+7          "Have"     
+8          "The"      
+9          "Same"     
+10         "Mother"   
+>phrasePosTag
+"Do"       "VB"       
+"Prince"   "NNP"      
+"Harry"    "NNP"      
+"and"      "CC"       
+"William"  "NNP"      
+"have"     "VBP"      
+"the"      "DT"       
+"same"     "JJ"       
+"mother"   "NN"       
+>priorMatchScore
+"Mother?"  "Mother"   0.666      
+>resourceType
+"Mother"   Class      
+>>
+>hasPhrase
+"Father"   
+>hasRelation
+>hasResource
+"Father"   "Father"   
+>phraseDepTag
+"II"       "Who"      "Root"     
+"Who"      "was"      "Cop"      
+"Who"      "father"   "Nsubj"    
+"father"   "the"      "Det"      
+"father"   "II"       "Nmod:Of"  
+"II"       "of"       "Case"     
+"II"       "Queen"    "Compound" 
+"II"       "Elizabeth" "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Was"      
+3          "The"      
+4          "Father"   
+5          "Of"       
+6          "Queen"    
+7          "Elizabeth" 
+8          "Ii"       
+>phrasePosTag
+"Who"      "WP"       
+"was"      "VBD"      
+"the"      "DT"       
+"father"   "NN"       
+"of"       "IN"       
+"Queen"    "NNP"      
+"Elizabeth" "NNP"      
+"II"       "NNP"      
+>priorMatchScore
+"Father"   "Father"   0.714      
+>resourceType
+"Father"   Class      
+>>
+>hasPhrase
+"Admitted" 
+>hasRelation
+>hasResource
+"Admitted" "Admittancedate" 
+>phraseDepTag
+"latest"   "admitted" "Root"     
+"state"    "Which"    "Det"      
+"state"    "U.S."     "Compound" 
+"admitted" "state"    "Nsubjpass" 
+"admitted" "has"      "Aux"      
+"admitted" "been"     "Auxpass"  
+"admitted" "latest"   "Xcomp"    
+>phraseIndex
+1          "Which"    
+2          "U.S."     
+3          "State"    
+4          "Has"      
+5          "Been"     
+6          "Admitted" 
+7          "Latest"   
+>phrasePosTag
+"Which"    "WDT"      
+"U.S."     "NNP"      
+"state"    "NN"       
+"has"      "VBZ"      
+"been"     "VBN"      
+"admitted" "VBN"      
+"latest"   "JJS"      
+>priorMatchScore
+"Admitted" "Admittancedate" 0.583      
+>resourceType
+"Admittancedate" Class      
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Turkmenistan" "spoken"   "Root"     
+"many"     "How"      "Advmod"   
+"languages" "many"     "Amod"     
+"spoken"   "languages" "Nsubjpass" 
+"spoken"   "are"      "Auxpass"  
+"spoken"   "Turkmenistan" "Nmod:In"  
+"Turkmenistan" "in"       "Case"     
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Languages" 
+4          "Are"      
+5          "Spoken"   
+6          "In"       
+7          "Turkmenistan" 
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"languages" "NNS"      
+"are"      "VBP"      
+"spoken"   "VBN"      
+"in"       "IN"       
+"Turkmenistan" "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Parnell"  
+>hasRelation
+>hasResource
+"Parnell"  "dbr-Sean_Parnell" 
+>phraseDepTag
+"state"    "governor" "Root"     
+"Parnell"  "Sean"     "Compound" 
+"governor" "Parnell"  "Nsubj"    
+"governor" "is"       "Cop"      
+"governor" "the"      "Det"      
+"governor" "state"    "Nmod:Of"  
+"state"    "of"       "Case"     
+"state"    "which"    "Det"      
+"state"    "U.S."     "Compound" 
+>phraseIndex
+1          "Sean"     
+2          "Parnell"  
+3          "Is"       
+4          "The"      
+5          "Governor" 
+6          "Of"       
+7          "Which"    
+8          "U.S."     
+9          "State"    
+>phrasePosTag
+"Sean"     "NNP"      
+"Parnell"  "NNP"      
+"is"       "VBZ"      
+"the"      "DT"       
+"governor" "NN"       
+"of"       "IN"       
+"which"    "WDT"      
+"U.S."     "NNP"      
+"state"    "NN"       
+>priorMatchScore
+"Parnell"  "dbr-Sean_Parnell" 0.666      
+>resourceType
+"dbr-Sean_Parnell" Entity     
+>>
+>hasPhrase
+"Directed" 
+>hasRelation
+>hasResource
+"Directed" "dbo-Director" 
+>phraseDepTag
+"Coppola"  "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "movies"   "Dobj"     
+"movies"   "all"      "Det"      
+"movies"   "directed" "Acl"      
+"directed" "Coppola"  "Nmod:By"  
+"Coppola"  "by"       "Case"     
+"Coppola"  "Francis"  "Compound" 
+"Coppola"  "Ford"     "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Movies"   
+5          "Directed" 
+6          "By"       
+7          "Francis"  
+8          "Ford"     
+9          "Coppola"  
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"movies"   "NNS"      
+"directed" "VBN"      
+"by"       "IN"       
+"Francis"  "NNP"      
+"Ford"     "NNP"      
+"Coppola"  "NNP"      
+>priorMatchScore
+"Directed" "dbo-Director" 0.666      
+>resourceType
+"dbr-Francis_Ford_Coppola" Entity     
+>>
+>hasPhrase
+"Starring" 
+>hasRelation
+>hasResource
+"Starring" "dbo-Starring" 
+>phraseDepTag
+"Shatner"  "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "actors"   "Dobj"     
+"actors"   "all"      "Det"      
+"actors"   "starring" "Acl"      
+"starring" "movies"   "Nmod:In"  
+"movies"   "in"       "Case"     
+"movies"   "directed" "Acl"      
+"directed" "Shatner"  "Nmod:By"  
+"Shatner"  "by"       "Case"     
+"Shatner"  "William"  "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Actors"   
+5          "Starring" 
+6          "In"       
+7          "Movies"   
+8          "Directed" 
+9          "By"       
+10         "William"  
+11         "Shatner"  
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"actors"   "NNS"      
+"starring" "VBG"      
+"in"       "IN"       
+"movies"   "NNS"      
+"directed" "VBN"      
+"by"       "IN"       
+"William"  "NNP"      
+"Shatner"  "NNP"      
+>priorMatchScore
+"Starring" "dbo-Starring" 0.888      
+>resourceType
+"dbo-Starring" Relation   
+>>
+>hasPhrase
+"Amphibian?" 
+>hasRelation
+>hasResource
+"Amphibian?" "dbr-Amphibian" 
+>phraseDepTag
+"amphibian" "Are"      "Root"     
+"Are"      "frogs"    "Nsubj"    
+"Are"      "type"     "Nmod"     
+"frogs"    "tree"     "Compound" 
+"type"     "a"        "Det"      
+"type"     "amphibian" "Nmod:Of"  
+"amphibian" "of"       "Case"     
+>phraseIndex
+1          "Are"      
+2          "Tree"     
+3          "Frogs"    
+4          "A"        
+5          "Type"     
+6          "Of"       
+7          "Amphibian" 
+>phrasePosTag
+"Are"      "VBP"      
+"tree"     "NN"       
+"frogs"    "NNS"      
+"a"        "DT"       
+"type"     "NN"       
+"of"       "IN"       
+"amphibian" "NN"       
+>priorMatchScore
+"Amphibian?" "dbr-Amphibian" 0.761      
+>resourceType
+"dbr-Amphibian" Entity     
+>>
+>hasPhrase
+"Name"     
+>hasRelation
+>hasResource
+"Name"     "Birthname" 
+>phraseDepTag
+"Merkel"   "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "name"     "Nsubj"    
+"name"     "the"      "Det"      
+"name"     "birth"    "Compound" 
+"name"     "Merkel"   "Nmod:Of"  
+"Merkel"   "of"       "Case"     
+"Merkel"   "Angela"   "Compound" 
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Birth"    
+5          "Name"     
+6          "Of"       
+7          "Angela"   
+8          "Merkel"   
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"birth"    "NN"       
+"name"     "NN"       
+"of"       "IN"       
+"Angela"   "NNP"      
+"Merkel"   "NNP"      
+>priorMatchScore
+"Name"     "Birthname" 0.533      
+>resourceType
+"Birthname" Class      
+>>
+>hasPhrase
+"Methodist" 
+>hasRelation
+>hasResource
+"Methodist" "dbr-Methodism" 
+>phraseDepTag
+"politicians" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "politicians" "Dobj"     
+"politicians" "all"      "Det"      
+"politicians" "Methodist" "Amod"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Methodist" 
+5          "Politicians" 
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"Methodist" "JJ"       
+"politicians" "NNS"      
+>priorMatchScore
+"Methodist" "dbr-Methodism" 0.8        
+>resourceType
+"dbr-Methodism" Entity     
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"marry"    "marry"    "Root"     
+"often"    "How"      "Advmod"   
+"Fonda"    "Jane"     "Compound" 
+"marry"    "often"    "Advmod"   
+"marry"    "did"      "Aux"      
+"marry"    "Fonda"    "Nsubj"    
+>phraseIndex
+1          "How"      
+2          "Often"    
+3          "Did"      
+4          "Jane"     
+5          "Fonda"    
+6          "Marry"    
+>phrasePosTag
+"How"      "WRB"      
+"often"    "RB"       
+"did"      "VBD"      
+"Jane"     "NNP"      
+"Fonda"    "NNP"      
+"marry"    "VB"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Organizations." 
+>hasRelation
+>hasResource
+"Organizations." "dbr-Nonprofit_Organization" 
+>phraseDepTag
+"organizations" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "organizations" "Dobj"     
+"organizations" "all"      "Det"      
+"organizations" "Australian" "Amod"     
+"organizations" "nonprofit" "Amod"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Australian" 
+5          "Nonprofit" 
+6          "Organizations" 
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"Australian" "JJ"       
+"nonprofit" "JJ"       
+"organizations" "NNS"      
+>priorMatchScore
+"Organizations." "dbr-Nonprofit_Organization" 0.631      
+>resourceType
+"dbr-Nonprofit_Organization" Entity     
+>>
+>hasPhrase
+"Lawrence" 
+>hasRelation
+>hasResource
+"Lawrence" "dbr-T._E._Lawrence" 
+>phraseDepTag
+"participate" "participate" "Root"     
+"conflicts" "In"       "Case"     
+"conflicts" "which"    "Det"      
+"conflicts" "military" "Amod"     
+"Lawrence" "Arabia"   "Nmod:Of"  
+"Arabia"   "of"       "Case"     
+"participate" "conflicts" "Nmod:In"  
+"participate" "did"      "Aux"      
+"participate" "Lawrence" "Nsubj"    
+>phraseIndex
+1          "In"       
+2          "Which"    
+3          "Military" 
+4          "Conflicts" 
+5          "Did"      
+6          "Lawrence" 
+7          "Of"       
+8          "Arabia"   
+9          "Participate" 
+>phrasePosTag
+"In"       "IN"       
+"which"    "WDT"      
+"military" "JJ"       
+"conflicts" "NNS"      
+"did"      "VBD"      
+"Lawrence" "NNP"      
+"of"       "IN"       
+"Arabia"   "NNP"      
+"participate" "VB"       
+>priorMatchScore
+"Lawrence" "dbr-T._E._Lawrence" 0.666      
+>resourceType
+"dbo-Battle" Relation   
+>>
+>hasPhrase
+"Developed" 
+>hasRelation
+>hasResource
+"Developed" "dbo-Developer" 
+>phraseDepTag
+"Minecraft" "developed" "Root"     
+"developed" "Who"      "Nsubj"    
+"developed" "Minecraft" "Dobj"     
+>phraseIndex
+1          "Who"      
+2          "Developed" 
+3          "Minecraft" 
+>phrasePosTag
+"Who"      "WP"       
+"developed" "VBD"      
+"Minecraft" "NNP"      
+>priorMatchScore
+"Developed" "dbo-Developer" 0.8        
+>resourceType
+"dbo-Developer" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"copper"   "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "point"    "Nsubj"    
+"point"    "the"      "Det"      
+"point"    "melting"  "Amod"     
+"point"    "copper"   "Nmod:Of"  
+"copper"   "of"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Melting"  
+5          "Point"    
+6          "Of"       
+7          "Copper"   
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"melting"  "JJ"       
+"point"    "NN"       
+"of"       "IN"       
+"copper"   "NN"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Brno"     "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "cities"   "Dobj"     
+"cities"   "all"      "Det"      
+"cities"   "sister"   "Compound" 
+"cities"   "Brno"     "Nmod:Of"  
+"Brno"     "of"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Sister"   
+5          "Cities"   
+6          "Of"       
+7          "Brno"     
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"sister"   "NN"       
+"cities"   "NNS"      
+"of"       "IN"       
+"Brno"     "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Maribor"  
+>hasRelation
+>hasResource
+"Maribor"  "dbr-Maribor" 
+>phraseDepTag
+"have"     "have"     "Root"     
+"many"     "How"      "Advmod"   
+"inhabitants" "many"     "Amod"     
+"have"     "inhabitants" "Dobj"     
+"have"     "does"     "Aux"      
+"have"     "Maribor"  "Nsubj"    
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Inhabitants" 
+4          "Does"     
+5          "Maribor"  
+6          "Have"     
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"inhabitants" "NNS"      
+"does"     "VBZ"      
+"Maribor"  "NNP"      
+"have"     "VB"       
+>priorMatchScore
+"Maribor"  "dbr-Maribor" 0.875      
+>resourceType
+"dbo-Populationtotal" Relation   
+>>
+>hasPhrase
+"Companies" 
+>hasRelation
+>hasResource
+"Companies" "Company"  
+>phraseDepTag
+"Munich"   "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "companies" "Dobj"     
+"companies" "all"      "Det"      
+"companies" "Munich"   "Nmod:In"  
+"Munich"   "in"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Companies" 
+5          "In"       
+6          "Munich"   
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"companies" "NNS"      
+"in"       "IN"       
+"Munich"   "NNP"      
+>priorMatchScore
+"Companies" "Company"  0.555      
+>resourceType
+"Company"  Class      
+>>
+>hasPhrase
+"Schiffer?" 
+>hasRelation
+>hasResource
+"Schiffer?" "dbr-Claudia_Schiffer" 
+>phraseDepTag
+"Schiffer" "is"       "Root"     
+"tall"     "How"      "Advmod"   
+"is"       "tall"     "Dep"      
+"is"       "Schiffer" "Nsubj"    
+"Schiffer" "Claudia"  "Compound" 
+>phraseIndex
+1          "How"      
+2          "Tall"     
+3          "Is"       
+4          "Claudia"  
+5          "Schiffer" 
+>phrasePosTag
+"How"      "WRB"      
+"tall"     "JJ"       
+"is"       "VBZ"      
+"Claudia"  "NNP"      
+"Schiffer" "NNP"      
+>priorMatchScore
+"Schiffer?" "dbr-Claudia_Schiffer" 0.592      
+>resourceType
+"dbo-Height" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"GMT"      "List"     "Root"     
+"List"     "games"    "Dobj"     
+"List"     "GMT"      "Nmod:By"  
+"games"    "all"      "Det"      
+"GMT"      "by"       "Case"     
+>phraseIndex
+1          "List"     
+2          "All"      
+3          "Games"    
+4          "By"       
+5          "Gmt"      
+>phrasePosTag
+"List"     "VB"       
+"all"      "DT"       
+"games"    "NNS"      
+"by"       "IN"       
+"GMT"      "NNP"      
+>priorMatchScore
+>resourceType
+"dbr-Gmt_Games" Entity     
+>>
+>hasPhrase
+"Founded"  
+>hasRelation
+>hasResource
+"Founded"  "dbo-Foundedby" 
+>phraseDepTag
+"Intel"    "founded"  "Root"     
+"founded"  "Who"      "Nsubj"    
+"founded"  "Intel"    "Dobj"     
+>phraseIndex
+1          "Who"      
+2          "Founded"  
+3          "Intel"    
+>phrasePosTag
+"Who"      "WP"       
+"founded"  "VBD"      
+"Intel"    "NNP"      
+>priorMatchScore
+"Founded"  "dbo-Foundedby" 0.777      
+>resourceType
+"dbo-Foundedby" Relation   
+>>
+>hasPhrase
+"Palmer?"  
+>hasRelation
+>hasResource
+"Palmer?"  "dbr-Amanda_Palmer" 
+>phraseDepTag
+"Palmer"   "Who"      "Root"     
+"Who"      "is"       "Cop"      
+"Who"      "husband"  "Nsubj"    
+"husband"  "the"      "Det"      
+"husband"  "Palmer"   "Nmod:Of"  
+"Palmer"   "of"       "Case"     
+"Palmer"   "Amanda"   "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Is"       
+3          "The"      
+4          "Husband"  
+5          "Of"       
+6          "Amanda"   
+7          "Palmer"   
+>phrasePosTag
+"Who"      "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"husband"  "NN"       
+"of"       "IN"       
+"Amanda"   "NNP"      
+"Palmer"   "NNP"      
+>priorMatchScore
+"Palmer?"  "dbr-Amanda_Palmer" 0.545      
+>resourceType
+"Spouse"   Class      
+>>
+>hasPhrase
+"Shepherd" 
+>hasRelation
+>hasResource
+"Shepherd" "dbr-German_Shepherd" 
+>phraseDepTag
+"dog"      "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "breeds"   "Dobj"     
+"breeds"   "all"      "Det"      
+"breeds"   "dog"      "Nmod:Of"  
+"dog"      "of"       "Case"     
+"dog"      "the"      "Det"      
+"dog"      "German"   "Amod"     
+"dog"      "Shepherd" "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Breeds"   
+5          "Of"       
+6          "The"      
+7          "German"   
+8          "Shepherd" 
+9          "Dog"      
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"breeds"   "NNS"      
+"of"       "IN"       
+"the"      "DT"       
+"German"   "JJ"       
+"Shepherd" "NNP"      
+"dog"      "NN"       
+>priorMatchScore
+"Shepherd" "dbr-German_Shepherd" 0.64       
+>resourceType
+"dbr-German_Shepherd" Entity     
+>>
+>hasPhrase
+"Weser"    
+>hasRelation
+>hasResource
+"Weser"    "dbr-Weser" 
+>phraseDepTag
+"through"  "does"     "Root"     
+"cities"   "Which"    "Det"      
+"cities"   "through"  "Case"     
+"does"     "cities"   "Nmod:Through" 
+"does"     "flow"     "Dobj"     
+"flow"     "the"      "Det"      
+"flow"     "Weser"    "Compound" 
+>phraseIndex
+1          "Which"    
+2          "Cities"   
+3          "Does"     
+4          "The"      
+5          "Weser"    
+6          "Flow"     
+7          "Through"  
+>phrasePosTag
+"Which"    "WDT"      
+"cities"   "NNS"      
+"does"     "VBZ"      
+"the"      "DT"       
+"Weser"    "NNP"      
+"flow"     "NN"       
+"through"  "IN"       
+>priorMatchScore
+"Weser"    "dbr-Weser" 0.833      
+>resourceType
+"dbo-City" Relation   
+>>
+>hasPhrase
+"Countries" 
+>hasRelation
+>hasResource
+"Countries" "Country"  
+>phraseDepTag
+"Rhine"    "connected" "Root"     
+"countries" "Which"    "Det"      
+"connected" "countries" "Nsubjpass" 
+"connected" "are"      "Auxpass"  
+"connected" "Rhine"    "Nmod:Agent" 
+"Rhine"    "by"       "Case"     
+"Rhine"    "the"      "Det"      
+>phraseIndex
+1          "Which"    
+2          "Countries" 
+3          "Are"      
+4          "Connected" 
+5          "By"       
+6          "The"      
+7          "Rhine"    
+>phrasePosTag
+"Which"    "WDT"      
+"countries" "NNS"      
+"are"      "VBP"      
+"connected" "VBN"      
+"by"       "IN"       
+"the"      "DT"       
+"Rhine"    "NNP"      
+>priorMatchScore
+"Countries" "Country"  0.555      
+>resourceType
+"Country"  Class      
+>>
+>hasPhrase
+"Australia?" 
+>hasRelation
+>hasResource
+"Australia?" "dbr-Australia" 
+>phraseDepTag
+"Australia" "born"     "Root"     
+"surfers"  "Which"    "Det"      
+"surfers"  "professional" "Amod"     
+"born"     "surfers"  "Nsubjpass" 
+"born"     "were"     "Auxpass"  
+"born"     "Australia" "Nmod:In"  
+"Australia" "in"       "Case"     
+>phraseIndex
+1          "Which"    
+2          "Professional" 
+3          "Surfers"  
+4          "Were"     
+5          "Born"     
+6          "In"       
+7          "Australia" 
+>phrasePosTag
+"Which"    "WDT"      
+"professional" "JJ"       
+"surfers"  "NNS"      
+"were"     "VBD"      
+"born"     "VBN"      
+"in"       "IN"       
+"Australia" "NNP"      
+>priorMatchScore
+"Australia?" "dbr-Australia" 0.857      
+>resourceType
+"dbr-Australia" Entity     
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Hawaii"   "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "temperature" "Nsubj"    
+"temperature" "the"      "Det"      
+"temperature" "average"  "Amod"     
+"temperature" "Hawaii"   "Nmod:On"  
+"Hawaii"   "on"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Average"  
+5          "Temperature" 
+6          "On"       
+7          "Hawaii"   
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"average"  "JJ"       
+"temperature" "NN"       
+"on"       "IN"       
+"Hawaii"   "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Headquarters" 
+>hasRelation
+>hasResource
+"Headquarters" "dbo-Headquarter" 
+>phraseDepTag
+"MI6"      "are"      "Root"     
+"city"     "In"       "Case"     
+"city"     "which"    "Det"      
+"city"     "UK"       "Compound" 
+"are"      "city"     "Nmod:In"  
+"are"      "headquarters" "Nsubj"    
+"headquarters" "the"      "Det"      
+"headquarters" "MI6"      "Nmod:Of"  
+"MI6"      "of"       "Case"     
+"MI6"      "the"      "Det"      
+>phraseIndex
+1          "In"       
+2          "Which"    
+3          "Uk"       
+4          "City"     
+5          "Are"      
+6          "The"      
+7          "Headquarters" 
+8          "Of"       
+9          "The"      
+10         "Mi6"      
+>phrasePosTag
+"In"       "IN"       
+"which"    "WDT"      
+"UK"       "NNP"      
+"city"     "NN"       
+"are"      "VBP"      
+"the"      "DT"       
+"headquarters" "NN"       
+"of"       "IN"       
+"MI6"      "NN"       
+>priorMatchScore
+"Headquarters" "dbo-Headquarter" 0.88       
+>resourceType
+"dbo-Headquarter" Relation   
+>>
+>hasPhrase
+"Designer" 
+>hasRelation
+>hasResource
+"Designer" "Designer" 
+>phraseDepTag
+"develop"  "develop"  "Root"     
+"weapons"  "Which"    "Det"      
+"weapons"  "other"    "Amod"     
+"designer" "the"      "Det"      
+"designer" "Uzi"      "Nmod:Of"  
+"Uzi"      "of"       "Case"     
+"Uzi"      "the"      "Det"      
+"develop"  "weapons"  "Dobj"     
+"develop"  "did"      "Aux"      
+"develop"  "designer" "Nsubj"    
+>phraseIndex
+1          "Which"    
+2          "Other"    
+3          "Weapons"  
+4          "Did"      
+5          "The"      
+6          "Designer" 
+7          "Of"       
+8          "The"      
+9          "Uzi"      
+10         "Develop"  
+>phrasePosTag
+"Which"    "WDT"      
+"other"    "JJ"       
+"weapons"  "NNS"      
+"did"      "VBD"      
+"the"      "DT"       
+"designer" "NN"       
+"of"       "IN"       
+"Uzi"      "NNP"      
+"develop"  "VB"       
+>priorMatchScore
+"Designer" "Designer" 0.777      
+>resourceType
+"Designer" Class      
+>>
+>hasPhrase
+"Created"  
+>hasRelation
+>hasResource
+"Created"  "dbo-Creator" 
+>phraseDepTag
+"Goofy"    "created"  "Root"     
+"created"  "Who"      "Nsubj"    
+"created"  "Goofy"    "Dobj"     
+>phraseIndex
+1          "Who"      
+2          "Created"  
+3          "Goofy"    
+>phrasePosTag
+"Who"      "WP"       
+"created"  "VBD"      
+"Goofy"    "NNP"      
+>priorMatchScore
+"Created"  "dbo-Creator" 0.625      
+>resourceType
+"dbo-Creator" Relation   
+>>
+>hasPhrase
+"Invasion?" 
+>hasRelation
+>hasResource
+"Invasion?" "dbr-Bay_Of_Pigs_Invasion" 
+>phraseDepTag
+"Invasion" "earlier"  "Root"     
+"Crisis"   "the"      "Det"      
+"Crisis"   "Cuban"    "Amod"     
+"Crisis"   "Missile"  "Compound" 
+"earlier"  "Was"      "Cop"      
+"earlier"  "Crisis"   "Nsubj"    
+"earlier"  "Bay"      "Nmod:Than" 
+"Bay"      "than"     "Case"     
+"Bay"      "the"      "Det"      
+"Bay"      "Invasion" "Nmod:Of"  
+"Invasion" "of"       "Case"     
+"Invasion" "Pigs"     "Compound" 
+>phraseIndex
+1          "Was"      
+2          "The"      
+3          "Cuban"    
+4          "Missile"  
+5          "Crisis"   
+6          "Earlier"  
+7          "Than"     
+8          "The"      
+9          "Bay"      
+10         "Of"       
+11         "Pigs"     
+12         "Invasion" 
+>phrasePosTag
+"Was"      "VBD"      
+"the"      "DT"       
+"Cuban"    "JJ"       
+"Missile"  "NNP"      
+"Crisis"   "NNP"      
+"earlier"  "JJR"      
+"than"     "IN"       
+"Bay"      "NNP"      
+"of"       "IN"       
+"Pigs"     "NNP"      
+"Invasion" "NNP"      
+>priorMatchScore
+"Invasion?" "dbr-Bay_Of_Pigs_Invasion" 0.516      
+>resourceType
+"dbo-Date" Relation   
+>>
+>hasPhrase
+"Japan."   
+>hasRelation
+>hasResource
+"Japan."   "dbr-Japan" 
+>phraseDepTag
+"Japan"    "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "islands"  "Dobj"     
+"islands"  "all"      "Det"      
+"islands"  "belong"   "Acl:Relcl" 
+"belong"   "that"     "Nsubj"    
+"belong"   "Japan"    "Nmod:To"  
+"Japan"    "to"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Islands"  
+5          "That"     
+6          "Belong"   
+7          "To"       
+8          "Japan"    
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"islands"  "NNS"      
+"that"     "WDT"      
+"belong"   "VBP"      
+"to"       "TO"       
+"Japan"    "NNP"      
+>priorMatchScore
+"Japan."   "dbr-Japan" 0.769      
+>resourceType
+"dbr-Japan" Entity     
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"zipper"   "invented" "Root"     
+"invented" "Who"      "Nsubj"    
+"invented" "zipper"   "Dobj"     
+"zipper"   "the"      "Det"      
+>phraseIndex
+1          "Who"      
+2          "Invented" 
+3          "The"      
+4          "Zipper"   
+>phrasePosTag
+"Who"      "WP"       
+"invented" "VBD"      
+"the"      "DT"       
+"zipper"   "NN"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Party"    
+>hasRelation
+>hasResource
+"Party"    "Leaderparty" 
+>phraseDepTag
+"Lisbon"   "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "party"    "Nsubj"    
+"party"    "the"      "Det"      
+"party"    "ruling"   "Amod"     
+"party"    "Lisbon"   "Nmod:In"  
+"Lisbon"   "in"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Ruling"   
+5          "Party"    
+6          "In"       
+7          "Lisbon"   
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"ruling"   "VBG"      
+"party"    "NN"       
+"in"       "IN"       
+"Lisbon"   "NNP"      
+>priorMatchScore
+"Party"    "Leaderparty" 0.555      
+>resourceType
+"Leaderparty" Class      
+>>
+>hasPhrase
+"Nicknames" 
+>hasRelation
+>hasResource
+"Nicknames" "Nickname" 
+>phraseDepTag
+"Francisco" "What"     "Root"     
+"What"     "are"      "Cop"      
+"What"     "nicknames" "Nsubj"    
+"nicknames" "the"      "Det"      
+"nicknames" "Francisco" "Nmod:Of"  
+"Francisco" "of"       "Case"     
+"Francisco" "San"      "Compound" 
+>phraseIndex
+1          "What"     
+2          "Are"      
+3          "The"      
+4          "Nicknames" 
+5          "Of"       
+6          "San"      
+7          "Francisco" 
+>phrasePosTag
+"What"     "WP"       
+"are"      "VBP"      
+"the"      "DT"       
+"nicknames" "NNS"      
+"of"       "IN"       
+"San"      "NNP"      
+"Francisco" "NNP"      
+>priorMatchScore
+"Nicknames" "Nickname" 0.736      
+>resourceType
+"Nickname" Class      
+>>
+>hasPhrase
+"Olympus?" 
+>hasRelation
+>hasResource
+"Olympus?" "dbr-Mount_Olympus" 
+>phraseDepTag
+"Olympus"  "dwelt"    "Root"     
+"goddesses" "Which"    "Det"      
+"goddesses" "Greek"    "Amod"     
+"dwelt"    "goddesses" "Nsubj"    
+"dwelt"    "Olympus"  "Nmod:On"  
+"Olympus"  "on"       "Case"     
+"Olympus"  "Mount"    "Compound" 
+>phraseIndex
+1          "Which"    
+2          "Greek"    
+3          "Goddesses" 
+4          "Dwelt"    
+5          "On"       
+6          "Mount"    
+7          "Olympus"  
+>phrasePosTag
+"Which"    "WDT"      
+"Greek"    "JJ"       
+"goddesses" "NNS"      
+"dwelt"    "VBP"      
+"on"       "IN"       
+"Mount"    "NNP"      
+"Olympus"  "NNP"      
+>priorMatchScore
+"Olympus?" "dbr-Mount_Olympus" 0.608      
+>resourceType
+"dbr-Mount_Olympus" Entity     
+>>
+>hasPhrase
+"Founded?" 
+>hasRelation
+>hasResource
+"Founded?" "Founded"  
+>phraseDepTag
+"founded"  "founded"  "Root"     
+"Angels"   "the"      "Det"      
+"Angels"   "Hells"    "Compound" 
+"founded"  "When"     "Advmod"   
+"founded"  "were"     "Auxpass"  
+"founded"  "Angels"   "Nsubjpass" 
+>phraseIndex
+1          "When"     
+2          "Were"     
+3          "The"      
+4          "Hells"    
+5          "Angels"   
+6          "Founded"  
+>phrasePosTag
+"When"     "WRB"      
+"were"     "VBD"      
+"the"      "DT"       
+"Hells"    "NNP"      
+"Angels"   "NNPS"     
+"founded"  "VBN"      
+>priorMatchScore
+"Founded?" "Founded"  0.705      
+>resourceType
+"Founded"  Class      
+>>
+>hasPhrase
+"Apollo"   
+>hasRelation
+>hasResource
+"Apollo"   "dbr-Apollo_14" 
+>phraseDepTag
+"astronauts" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "astronauts" "Dobj"     
+"astronauts" "all"      "Det"      
+"astronauts" "Apollo"   "Compound" 
+"astronauts" "14"       "Nummod"   
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Apollo"   
+5          "14"       
+6          "Astronauts" 
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"Apollo"   "NNP"      
+"14"       "CD"       
+"astronauts" "NNS"      
+>priorMatchScore
+"Apollo"   "dbr-Apollo_14" 0.705      
+>resourceType
+"dbr-Apollo_14" Entity     
+>>
+>hasPhrase
+"Zone"     
+>hasRelation
+>hasResource
+"Zone"     "Timezone" 
+>phraseDepTag
+"City"     "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "zone"     "Nsubj"    
+"zone"     "the"      "Det"      
+"zone"     "time"     "Compound" 
+"zone"     "City"     "Nmod:Of"  
+"City"     "of"       "Case"     
+"City"     "Salt"     "Compound" 
+"City"     "Lake"     "Compound" 
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Time"     
+5          "Zone"     
+6          "Of"       
+7          "Salt"     
+8          "Lake"     
+9          "City"     
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"time"     "NN"       
+"zone"     "NN"       
+"of"       "IN"       
+"Salt"     "NNP"      
+"Lake"     "NNP"      
+"City"     "NNP"      
+>priorMatchScore
+"Zone"     "Timezone" 0.571      
+>resourceType
+"Timezone" Class      
+>>
+>hasPhrase
+"Zone"     
+>hasRelation
+>hasResource
+"Zone"     "Timezone" 
+>phraseDepTag
+"Utah"     "are"      "Root"     
+"states"   "Which"    "Det"      
+"states"   "U.S."     "Compound" 
+"are"      "states"   "Nsubj"    
+"are"      "zone"     "Nmod:In"  
+"zone"     "in"       "Case"     
+"zone"     "the"      "Det"      
+"zone"     "same"     "Amod"     
+"zone"     "time"     "Compound" 
+"zone"     "Utah"     "Nmod:As"  
+"Utah"     "as"       "Case"     
+>phraseIndex
+1          "Which"    
+2          "U.S."     
+3          "States"   
+4          "Are"      
+5          "In"       
+6          "The"      
+7          "Same"     
+8          "Time"     
+9          "Zone"     
+10         "As"       
+11         "Utah"     
+>phrasePosTag
+"Which"    "WDT"      
+"U.S."     "NNP"      
+"states"   "NNS"      
+"are"      "VBP"      
+"in"       "IN"       
+"the"      "DT"       
+"same"     "JJ"       
+"time"     "NN"       
+"zone"     "NN"       
+"as"       "IN"       
+"Utah"     "NNP"      
+>priorMatchScore
+"Zone"     "Timezone" 0.571      
+>resourceType
+"Timezone" Class      
+>>
+>hasPhrase
+"Capitals" 
+>hasRelation
+>hasResource
+"Capitals" "dbo-Capital" 
+>phraseDepTag
+"Africa"   "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "capitals" "Dobj"     
+"capitals" "the"      "Det"      
+"capitals" "countries" "Nmod:Of"  
+"countries" "of"       "Case"     
+"countries" "all"      "Det"      
+"countries" "Africa"   "Nmod:In"  
+"Africa"   "in"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "The"      
+4          "Capitals" 
+5          "Of"       
+6          "All"      
+7          "Countries" 
+8          "In"       
+9          "Africa"   
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"the"      "DT"       
+"capitals" "NNS"      
+"of"       "IN"       
+"all"      "DT"       
+"countries" "NNS"      
+"in"       "IN"       
+"Africa"   "NNP"      
+>priorMatchScore
+"Capitals" "dbo-Capital" 0.823      
+>resourceType
+"dbo-Capital" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Denmark"  "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "list"     "Dobj"     
+"list"     "a"        "Det"      
+"list"     "lakes"    "Nmod:Of"  
+"lakes"    "of"       "Case"     
+"lakes"    "all"      "Det"      
+"lakes"    "Denmark"  "Nmod:In"  
+"Denmark"  "in"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "A"        
+4          "List"     
+5          "Of"       
+6          "All"      
+7          "Lakes"    
+8          "In"       
+9          "Denmark"  
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"a"        "DT"       
+"list"     "NN"       
+"of"       "IN"       
+"all"      "DT"       
+"lakes"    "NNS"      
+"in"       "IN"       
+"Denmark"  "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"been"     "been"     "Root"     
+"many"     "How"      "Advmod"   
+"missions" "many"     "Amod"     
+"missions" "space"    "Compound" 
+"been"     "missions" "Nsubj"    
+"been"     "have"     "Aux"      
+"been"     "there"    "Advmod"   
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Space"    
+4          "Missions" 
+5          "Have"     
+6          "There"    
+7          "Been"     
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"space"    "NN"       
+"missions" "NNS"      
+"have"     "VBP"      
+"there"    "RB"       
+"been"     "VBN"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Socrates" 
+>hasRelation
+>hasResource
+"Socrates" "dbr-Socrates" 
+>phraseDepTag
+"Aristotle" "influence" "Root"     
+"influence" "Did"      "Aux"      
+"influence" "Socrates" "Nsubj"    
+"influence" "Aristotle" "Dobj"     
+>phraseIndex
+1          "Did"      
+2          "Socrates" 
+3          "Influence" 
+4          "Aristotle" 
+>phrasePosTag
+"Did"      "VBD"      
+"Socrates" "NNP"      
+"influence" "VB"       
+"Aristotle" "NNP"      
+>priorMatchScore
+"Socrates" "dbr-Socrates" 0.888      
+>resourceType
+"dbr-Socrates" Entity     
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"films"    "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "films"    "Dobj"     
+"films"    "all"      "Det"      
+"films"    "Danish"   "Amod"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Danish"   
+5          "Films"    
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"Danish"   "JJ"       
+"films"    "NNS"      
+>priorMatchScore
+>resourceType
+"dbr-Denmark" Entity     
+>>
+>hasPhrase
+"Nasa."    
+>hasRelation
+>hasResource
+"Nasa."    "dbr-Nasa" 
+>phraseDepTag
+"NASA"     "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "pads"     "Dobj"     
+"pads"     "all"      "Det"      
+"pads"     "launch"   "Compound" 
+"pads"     "operated" "Acl"      
+"operated" "NASA"     "Nmod:By"  
+"NASA"     "by"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Launch"   
+5          "Pads"     
+6          "Operated" 
+7          "By"       
+8          "Nasa"     
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"launch"   "NN"       
+"pads"     "NNS"      
+"operated" "VBN"      
+"by"       "IN"       
+"NASA"     "NNP"      
+>priorMatchScore
+"Nasa."    "dbr-Nasa" 0.727      
+>resourceType
+"dbr-Nasa" Entity     
+>>
+>hasPhrase
+"Instruments" 
+>hasRelation
+>hasResource
+"Instruments" "dbo-Instrument" 
+>phraseDepTag
+"play"     "play"     "Root"     
+"instruments" "Which"    "Det"      
+"Stevens"  "Cat"      "Compound" 
+"play"     "instruments" "Dobj"     
+"play"     "does"     "Aux"      
+"play"     "Stevens"  "Nsubj"    
+>phraseIndex
+1          "Which"    
+2          "Instruments" 
+3          "Does"     
+4          "Cat"      
+5          "Stevens"  
+6          "Play"     
+>phrasePosTag
+"Which"    "WDT"      
+"instruments" "NNS"      
+"does"     "VBZ"      
+"Cat"      "NNP"      
+"Stevens"  "NNP"      
+"play"     "VB"       
+>priorMatchScore
+"Instruments" "dbo-Instrument" 0.869      
+>resourceType
+"dbo-Instrument" Relation   
+>>
+>hasPhrase
+"Franklin?" 
+>hasRelation
+>hasResource
+"Franklin?" "dbr-Benjamin_Franklin" 
+>phraseDepTag
+"Franklin" "called"   "Root"     
+"ships"    "Which"    "Det"      
+"called"   "ships"    "Nsubjpass" 
+"called"   "were"     "Auxpass"  
+"called"   "Franklin" "Nmod:After" 
+"Franklin" "after"    "Case"     
+"Franklin" "Benjamin" "Compound" 
+>phraseIndex
+1          "Which"    
+2          "Ships"    
+3          "Were"     
+4          "Called"   
+5          "After"    
+6          "Benjamin" 
+7          "Franklin" 
+>phrasePosTag
+"Which"    "WDT"      
+"ships"    "NNS"      
+"were"     "VBD"      
+"called"   "VBN"      
+"after"    "IN"       
+"Benjamin" "NNP"      
+"Franklin" "NNP"      
+>priorMatchScore
+"Franklin?" "dbr-Benjamin_Franklin" 0.571      
+>resourceType
+"dbr-Benjamin_Franklin" Entity     
+>>
+>hasPhrase
+"Parents"  
+>hasRelation
+>hasResource
+"Parents"  "dbo-Parent" 
+>phraseDepTag
+"I"        "Who"      "Root"     
+"Who"      "are"      "Cop"      
+"Who"      "parents"  "Nsubj"    
+"Who"      "I"        "Nsubj"    
+"parents"  "the"      "Det"      
+"parents"  "wife"     "Nmod:Of"  
+"wife"     "of"       "Case"     
+"wife"     "the"      "Det"      
+"wife"     "Carlos"   "Nmod:Of"  
+"Carlos"   "of"       "Case"     
+"Carlos"   "Juan"     "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Are"      
+3          "The"      
+4          "Parents"  
+5          "Of"       
+6          "The"      
+7          "Wife"     
+8          "Of"       
+9          "Juan"     
+10         "Carlos"   
+11         "I"        
+>phrasePosTag
+"Who"      "WP"       
+"are"      "VBP"      
+"the"      "DT"       
+"parents"  "NNS"      
+"of"       "IN"       
+"wife"     "NN"       
+"Juan"     "NNP"      
+"Carlos"   "NNP"      
+"I"        "PRP"      
+>priorMatchScore
+"Parents"  "dbo-Parent" 0.8        
+>resourceType
+"dbo-Parent" Relation   
+>>
+>hasPhrase
+"Employees" 
+>hasRelation
+>hasResource
+"Employees" "dbo-Numberofemployees" 
+>phraseDepTag
+"have"     "have"     "Root"     
+"many"     "How"      "Advmod"   
+"employees" "many"     "Amod"     
+"have"     "employees" "Dobj"     
+"have"     "does"     "Aux"      
+"have"     "Google"   "Nsubj"    
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Employees" 
+4          "Does"     
+5          "Google"   
+6          "Have"     
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"employees" "NNS"      
+"does"     "VBZ"      
+"Google"   "NNP"      
+"have"     "VB"       
+>priorMatchScore
+"Employees" "dbo-Numberofemployees" 0.642      
+>resourceType
+"dbo-Numberofemployees" Relation   
+>>
+>hasPhrase
+"Tesla"    
+>hasRelation
+>hasResource
+"Tesla"    "dbr-Nikola_Tesla" 
+>phraseDepTag
+"physics"  "win"      "Root"     
+"win"      "Did"      "Aux"      
+"win"      "Tesla"    "Nsubj"    
+"win"      "prize"    "Dobj"     
+"win"      "physics"  "Nmod:In"  
+"prize"    "a"        "Det"      
+"prize"    "nobel"    "Amod"     
+"physics"  "in"       "Case"     
+>phraseIndex
+1          "Did"      
+2          "Tesla"    
+3          "Win"      
+4          "A"        
+5          "Nobel"    
+6          "Prize"    
+7          "In"       
+8          "Physics"  
+>phrasePosTag
+"Did"      "VBD"      
+"Tesla"    "NNP"      
+"win"      "VB"       
+"a"        "DT"       
+"nobel"    "JJ"       
+"prize"    "NN"       
+"in"       "IN"       
+"physics"  "NNS"      
+>priorMatchScore
+"Tesla"    "dbr-Nikola_Tesla" 0.526      
+>resourceType
+"dbr-Nobel_Prize_In_Physics" Entity     
+>>
+>hasPhrase
+"Jersey"   
+>hasRelation
+>hasResource
+"Jersey"   "dbr-New_Jersey" 
+>phraseDepTag
+"inhabitants" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "cities"   "Dobj"     
+"cities"   "all"      "Det"      
+"cities"   "Jersey"   "Nmod:In"  
+"Jersey"   "in"       "Case"     
+"Jersey"   "New"      "Compound" 
+"Jersey"   "inhabitants" "Nmod:With" 
+"more"     "than"     "Mwe"      
+"100000"   "more"     "Advmod"   
+"inhabitants" "with"     "Case"     
+"inhabitants" "100000"   "Nummod"   
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Cities"   
+5          "In"       
+6          "New"      
+7          "Jersey"   
+8          "With"     
+9          "More"     
+10         "Than"     
+11         "100000"   
+12         "Inhabitants" 
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"cities"   "NNS"      
+"in"       "IN"       
+"New"      "NNP"      
+"Jersey"   "NNP"      
+"with"     "IN"       
+"more"     "JJR"      
+"than"     "IN"       
+"100000"   "CD"       
+"inhabitants" "NNS"      
+>priorMatchScore
+"Jersey"   "dbr-New_Jersey" 0.666      
+>resourceType
+"dbo-Populationtotal" Relation   
+>>
+>hasPhrase
+"Michelle" 
+>hasRelation
+>hasResource
+"Michelle" "dbr-Michelle_Obama" 
+>phraseDepTag
+"Obama"    "wife"     "Root"     
+"Obama"    "Michelle" "Compound" 
+"wife"     "Is"       "Cop"      
+"wife"     "Obama"    "Nsubj"    
+"wife"     "the"      "Det"      
+"wife"     "Obama"    "Nmod:Of"  
+"Obama"    "of"       "Case"     
+"Obama"    "Barack"   "Compound" 
+>phraseIndex
+1          "Is"       
+2          "Michelle" 
+3          "Obama"    
+4          "The"      
+5          "Wife"     
+6          "Of"       
+7          "Barack"   
+8          "Obama"    
+>phrasePosTag
+"Is"       "VBZ"      
+"Michelle" "NNP"      
+"Obama"    "NNP"      
+"the"      "DT"       
+"wife"     "NN"       
+"of"       "IN"       
+"Barack"   "NNP"      
+>priorMatchScore
+"Michelle" "dbr-Michelle_Obama" 0.666      
+>resourceType
+"dbr-Michelle_Obama" Entity     
+>>
+>hasPhrase
+"Liberty"  
+>hasRelation
+>hasResource
+"Liberty"  "dbr-Statue_Of_Liberty" 
+>phraseDepTag
+"built"    "built"    "Root"     
+"Statue"   "the"      "Det"      
+"Statue"   "Liberty"  "Nmod:Of"  
+"Liberty"  "of"       "Case"     
+"built"    "When"     "Advmod"   
+"built"    "was"      "Auxpass"  
+"built"    "Statue"   "Nsubjpass" 
+>phraseIndex
+1          "When"     
+2          "Was"      
+3          "The"      
+4          "Statue"   
+5          "Of"       
+6          "Liberty"  
+7          "Built"    
+>phrasePosTag
+"When"     "WRB"      
+"was"      "VBD"      
+"the"      "DT"       
+"Statue"   "NNP"      
+"of"       "IN"       
+"Liberty"  "NNP"      
+"built"    "VBN"      
+>priorMatchScore
+"Liberty"  "dbr-Statue_Of_Liberty" 0.538      
+>resourceType
+"Beginningdate" Class      
+>>
+>hasPhrase
+"Knox"     
+>hasRelation
+>hasResource
+"Knox"     "dbr-Fort_Knox" 
+>phraseDepTag
+"located"  "located"  "Root"     
+"state"    "In"       "Case"     
+"state"    "which"    "Det"      
+"state"    "U.S."     "Compound" 
+"Knox"     "Fort"     "Compound" 
+"located"  "state"    "Nmod:In"  
+"located"  "is"       "Cop"      
+"located"  "Knox"     "Nsubj"    
+>phraseIndex
+1          "In"       
+2          "Which"    
+3          "U.S."     
+4          "State"    
+5          "Is"       
+6          "Fort"     
+7          "Knox"     
+8          "Located"  
+>phrasePosTag
+"In"       "IN"       
+"which"    "WDT"      
+"U.S."     "NNP"      
+"state"    "NN"       
+"is"       "VBZ"      
+"Fort"     "NNP"      
+"Knox"     "NNP"      
+"located"  "JJ"       
+>priorMatchScore
+"Knox"     "dbr-Fort_Knox" 0.533      
+>resourceType
+"dbr-United_States" Entity     
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"have"     "have"     "Root"     
+"many"     "How"      "Advmod"   
+"children" "many"     "Amod"     
+"Franklin" "Benjamin" "Compound" 
+"have"     "children" "Dobj"     
+"have"     "did"      "Aux"      
+"have"     "Franklin" "Nsubj"    
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Children" 
+4          "Did"      
+5          "Benjamin" 
+6          "Franklin" 
+7          "Have"     
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"children" "NNS"      
+"did"      "VBD"      
+"Benjamin" "NNP"      
+"Franklin" "NNP"      
+"have"     "VB"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Jackson"  
+>hasRelation
+>hasResource
+"Jackson"  "dbr-Michael_Jackson" 
+>phraseDepTag
+"die"      "die"      "Root"     
+"Jackson"  "Michael"  "Compound" 
+"die"      "When"     "Advmod"   
+"die"      "did"      "Aux"      
+"die"      "Jackson"  "Nsubj"    
+>phraseIndex
+1          "When"     
+2          "Did"      
+3          "Michael"  
+4          "Jackson"  
+5          "Die"      
+>phrasePosTag
+"When"     "WRB"      
+"did"      "VBD"      
+"Michael"  "NNP"      
+"Jackson"  "NNP"      
+"die"      "VB"       
+>priorMatchScore
+"Jackson"  "dbr-Michael_Jackson" 0.583      
+>resourceType
+"dbo-Deathdate" Relation   
+>>
+>hasPhrase
+"Chess"    
+>hasRelation
+>hasResource
+"Chess"    "Chessplayer" 
+>phraseDepTag
+"in"       "born"     "Root"     
+"players"  "Chess"    "Compound" 
+"died"     "Which"    "Dobj"     
+"died"     "players"  "Nsubj"    
+"died"     "place"    "Nmod:In"  
+"place"    "in"       "Case"     
+"place"    "the"      "Det"      
+"place"    "same"     "Amod"     
+"born"     "died"     "Advcl"    
+"born"     "they"     "Nsubjpass" 
+"born"     "were"     "Auxpass"  
+"born"     "in"       "Nmod"     
+>phraseIndex
+1          "Which"    
+2          "Chess"    
+3          "Players"  
+4          "Died"     
+5          "In"       
+6          "The"      
+7          "Same"     
+8          "Place"    
+9          "They"     
+10         "Were"     
+11         "Born"     
+12         "In"       
+>phrasePosTag
+"Which"    "WDT"      
+"Chess"    "NN"       
+"players"  "NNS"      
+"died"     "VBD"      
+"in"       "IN"       
+"the"      "DT"       
+"same"     "JJ"       
+"place"    "NN"       
+"they"     "PRP"      
+"were"     "VBD"      
+"born"     "VBN"      
+>priorMatchScore
+"Chess"    "Chessplayer" 0.555      
+>resourceType
+"dbo-Deathplace" Relation   
+>>
+>hasPhrase
+"Children" 
+>hasRelation
+>hasResource
+"Children" "dbo-Child" 
+>phraseDepTag
+"Thatcher" "List"     "Root"     
+"List"     "children" "Dobj"     
+"children" "the"      "Det"      
+"children" "Thatcher" "Nmod:Of"  
+"Thatcher" "of"       "Case"     
+"Thatcher" "Margaret" "Compound" 
+>phraseIndex
+1          "List"     
+2          "The"      
+3          "Children" 
+4          "Of"       
+5          "Margaret" 
+6          "Thatcher" 
+>phrasePosTag
+"List"     "VB"       
+"the"      "DT"       
+"children" "NNS"      
+"of"       "IN"       
+"Margaret" "NNP"      
+"Thatcher" "NNP"      
+>priorMatchScore
+"Children" "dbo-Child" 0.666      
+>resourceType
+"dbo-Child" Relation   
+>>
+>hasPhrase
+"Scarface?" 
+>hasRelation
+>hasResource
+"Scarface?" "dbr-Scarface" 
+>phraseDepTag
+"Scarface" "called"   "Root"     
+"called"   "Who"      "Nsubjpass" 
+"called"   "was"      "Auxpass"  
+"called"   "Scarface" "Dobj"     
+>phraseIndex
+1          "Who"      
+2          "Was"      
+3          "Called"   
+4          "Scarface" 
+>phrasePosTag
+"Who"      "WP"       
+"was"      "VBD"      
+"called"   "VBN"      
+"Scarface" "NNP"      
+>priorMatchScore
+"Scarface?" "dbr-Scarface" 0.842      
+>resourceType
+"dbr-Scarface" Entity     
+>>
+>hasPhrase
+"Chemist?" 
+>hasRelation
+>hasResource
+"Chemist?" "dbr-Chemist" 
+>phraseDepTag
+"chemist"  "chemist"  "Root"     
+"Thatcher" "Margaret" "Compound" 
+"chemist"  "Was"      "Cop"      
+"chemist"  "Thatcher" "Nsubj"    
+"chemist"  "a"        "Det"      
+>phraseIndex
+1          "Was"      
+2          "Margaret" 
+3          "Thatcher" 
+4          "A"        
+5          "Chemist"  
+>phrasePosTag
+"Was"      "VBD"      
+"Margaret" "NNP"      
+"Thatcher" "NNP"      
+"a"        "DT"       
+"chemist"  "NN"       
+>priorMatchScore
+"Chemist?" "dbr-Chemist" 0.705      
+>resourceType
+"dbr-Chemist" Entity     
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"jew"      "jew"      "Root"     
+"Chagall"  "Marc"     "Compound" 
+"jew"      "Was"      "Cop"      
+"jew"      "Chagall"  "Nsubj"    
+"jew"      "a"        "Det"      
+>phraseIndex
+1          "Was"      
+2          "Marc"     
+3          "Chagall"  
+4          "A"        
+5          "Jew"      
+>phrasePosTag
+"Was"      "VBD"      
+"Marc"     "NNP"      
+"Chagall"  "NNP"      
+"a"        "DT"       
+"jew"      "NN"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Museum"   
+>hasRelation
+>hasResource
+"Museum"   "dbo-Museum" 
+>phraseDepTag
+"Munch"    "exhibits" "Root"     
+"museum"   "Which"    "Det"      
+"exhibits" "museum"   "Nsubj"    
+"exhibits" "Scream"   "Dobj"     
+"exhibits" "Munch"    "Nmod:By"  
+"Scream"   "The"      "Det"      
+"Munch"    "by"       "Case"     
+>phraseIndex
+1          "Which"    
+2          "Museum"   
+3          "Exhibits" 
+4          "The"      
+5          "Scream"   
+6          "By"       
+7          "Munch"    
+>phrasePosTag
+"Which"    "WDT"      
+"museum"   "NN"       
+"exhibits" "VBZ"      
+"The"      "DT"       
+"Scream"   "NN"       
+"by"       "IN"       
+"Munch"    "NNP"      
+>priorMatchScore
+"Museum"   "dbo-Museum" 0.857      
+>resourceType
+"dbo-Museum" Relation   
+>>
+>hasPhrase
+"Goldman"  
+>hasRelation
+>hasResource
+"Goldman"  "dbr-William_Goldman" 
+>phraseDepTag
+"pages"    "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "books"    "Dobj"     
+"Give"     "Goldman"  "Nmod:By"  
+"books"    "all"      "Det"      
+"Goldman"  "by"       "Case"     
+"Goldman"  "William"  "Compound" 
+"Goldman"  "pages"    "Nmod:With" 
+"more"     "than"     "Mwe"      
+"300"      "more"     "Advmod"   
+"pages"    "with"     "Case"     
+"pages"    "300"      "Nummod"   
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Books"    
+5          "By"       
+6          "William"  
+7          "Goldman"  
+8          "With"     
+9          "More"     
+10         "Than"     
+11         "300"      
+12         "Pages"    
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"books"    "NNS"      
+"by"       "IN"       
+"William"  "NNP"      
+"Goldman"  "NNP"      
+"with"     "IN"       
+"more"     "JJR"      
+"than"     "IN"       
+"300"      "CD"       
+"pages"    "NNS"      
+>priorMatchScore
+"Goldman"  "dbr-William_Goldman" 0.583      
+>resourceType
+"dbo-Numberofpages" Relation   
+>>
+>hasPhrase
+"Kerouac"  
+>hasRelation
+>hasResource
+"Kerouac"  "dbr-Jack_Kerouac" 
+>phraseDepTag
+"Press"    "published" "Root"     
+"books"    "Which"    "Det"      
+"books"    "Kerouac"  "Nmod:By"  
+"Kerouac"  "by"       "Case"     
+"published" "books"    "Nsubjpass" 
+"published" "were"     "Auxpass"  
+"published" "Press"    "Nmod:Agent" 
+"Press"    "by"       "Case"     
+"Press"    "Viking"   "Amod"     
+>phraseIndex
+1          "Which"    
+2          "Books"    
+3          "By"       
+4          "Kerouac"  
+5          "Were"     
+6          "Published" 
+7          "By"       
+8          "Viking"   
+9          "Press"    
+>phrasePosTag
+"Which"    "WDT"      
+"books"    "NNS"      
+"by"       "IN"       
+"Kerouac"  "NNP"      
+"were"     "VBD"      
+"published" "VBN"      
+"Viking"   "JJ"       
+"Press"    "NNP"      
+>priorMatchScore
+"Kerouac"  "dbr-Jack_Kerouac" 0.666      
+>resourceType
+"dbr-Jack_Kerouac" Entity     
+>>
+>hasPhrase
+"Inventions." 
+>hasRelation
+>hasResource
+"Inventions." "Americaninventions" 
+>phraseDepTag
+"inventions" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "list"     "Dobj"     
+"list"     "a"        "Det"      
+"list"     "inventions" "Nmod:Of"  
+"inventions" "of"       "Case"     
+"inventions" "all"      "Det"      
+"inventions" "American" "Amod"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "A"        
+4          "List"     
+5          "Of"       
+6          "All"      
+7          "American" 
+8          "Inventions" 
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"a"        "DT"       
+"list"     "NN"       
+"of"       "IN"       
+"all"      "DT"       
+"American" "JJ"       
+"inventions" "NNS"      
+>priorMatchScore
+"Inventions." "Americaninventions" 0.645      
+>resourceType
+"Americaninventions" Class      
+>>
+>hasPhrase
+"Everest?" 
+>hasRelation
+>hasResource
+"Everest?" "dbr-Mount_Everest" 
+>phraseDepTag
+"Everest"  "is"       "Root"     
+"high"     "How"      "Advmod"   
+"is"       "high"     "Dep"      
+"is"       "Everest"  "Nsubj"    
+"Everest"  "the"      "Det"      
+"Everest"  "Mount"    "Compound" 
+>phraseIndex
+1          "How"      
+2          "High"     
+3          "Is"       
+4          "The"      
+5          "Mount"    
+6          "Everest"  
+>phrasePosTag
+"How"      "WRB"      
+"high"     "JJ"       
+"is"       "VBZ"      
+"the"      "DT"       
+"Mount"    "NNP"      
+"Everest"  "NNP"      
+>priorMatchScore
+"Everest?" "dbr-Mount_Everest" 0.608      
+>resourceType
+"dbo-Elevation" Relation   
+>>
+>hasPhrase
+"Created"  
+>hasRelation
+>hasResource
+"Created"  "dbo-Creator" 
+>phraseDepTag
+"America"  "created"  "Root"     
+"created"  "Who"      "Nsubj"    
+"created"  "America"  "Dobj"     
+"America"  "the"      "Det"      
+"America"  "comic"    "Amod"     
+"America"  "Captain"  "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Created"  
+3          "The"      
+4          "Comic"    
+5          "Captain"  
+6          "America"  
+>phrasePosTag
+"Who"      "WP"       
+"created"  "VBD"      
+"the"      "DT"       
+"comic"    "JJ"       
+"Captain"  "NNP"      
+"America"  "NNP"      
+>priorMatchScore
+"Created"  "dbo-Creator" 0.625      
+>resourceType
+"dbo-Creator" Relation   
+>>
+>hasPhrase
+"Capital"  
+>hasRelation
+>hasResource
+"Capital"  "dbo-Capital" 
+>phraseDepTag
+"Australia" "live"     "Root"     
+"many"     "How"      "Advmod"   
+"people"   "many"     "Amod"     
+"live"     "people"   "Nsubj"    
+"live"     "capital"  "Nmod:In"  
+"capital"  "in"       "Case"     
+"capital"  "the"      "Det"      
+"capital"  "Australia" "Nmod:Of"  
+"Australia" "of"       "Case"     
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "People"   
+4          "Live"     
+5          "In"       
+6          "The"      
+7          "Capital"  
+8          "Of"       
+9          "Australia" 
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"people"   "NNS"      
+"live"     "VBP"      
+"in"       "IN"       
+"the"      "DT"       
+"capital"  "NN"       
+"of"       "IN"       
+"Australia" "NNP"      
+>priorMatchScore
+"Capital"  "dbo-Capital" 0.875      
+>resourceType
+"dbo-Populationtotal" Relation   
+>>
+>hasPhrase
+"Largest"  
+>hasRelation
+>hasResource
+"Largest"  "dbo-Largestcity" 
+>phraseDepTag
+"Australia" "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "city"     "Nsubj"    
+"city"     "the"      "Det"      
+"city"     "largest"  "Amod"     
+"city"     "Australia" "Nmod:In"  
+"Australia" "in"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Largest"  
+5          "City"     
+6          "In"       
+7          "Australia" 
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"largest"  "JJS"      
+"city"     "NN"       
+"in"       "IN"       
+"Australia" "NNP"      
+>priorMatchScore
+"Largest"  "dbo-Largestcity" 0.7        
+>resourceType
+"dbo-Largestcity" Relation   
+>>
+>hasPhrase
+"Composed" 
+>hasRelation
+>hasResource
+"Composed" "dbo-Musiccomposer" 
+>phraseDepTag
+"Maude"    "composed" "Root"     
+"composed" "Who"      "Nsubj"    
+"composed" "music"    "Dobj"     
+"music"    "the"      "Det"      
+"music"    "Harold"   "Nmod:For" 
+"music"    "Maude"    "Nmod:For" 
+"Harold"   "for"      "Case"     
+"Harold"   "and"      "Cc"       
+>phraseIndex
+1          "Who"      
+2          "Composed" 
+3          "The"      
+4          "Music"    
+5          "For"      
+6          "Harold"   
+7          "And"      
+8          "Maude"    
+>phrasePosTag
+"Who"      "WP"       
+"composed" "VBN"      
+"the"      "DT"       
+"music"    "NN"       
+"for"      "IN"       
+"Harold"   "NNP"      
+"and"      "CC"       
+"Maude"    "NNP"      
+>priorMatchScore
+"Composed" "dbo-Musiccomposer" 0.608      
+>resourceType
+"dbo-Musiccomposer" Relation   
+>>
+>hasPhrase
+"Eastwood" 
+>hasRelation
+>hasResource
+"Eastwood" "dbr-Clint_Eastwood" 
+>phraseDepTag
+"himself"  "direct"   "Root"     
+"films"    "Which"    "Det"      
+"films"    "Eastwood" "Nmod:Starring" 
+"Eastwood" "starring" "Case"     
+"Eastwood" "Clint"    "Compound" 
+"direct"   "films"    "Dep"      
+"direct"   "did"      "Aux"      
+"direct"   "he"       "Nsubj"    
+"direct"   "himself"  "Dobj"     
+>phraseIndex
+1          "Which"    
+2          "Films"    
+3          "Starring" 
+4          "Clint"    
+5          "Eastwood" 
+6          "Did"      
+7          "He"       
+8          "Direct"   
+9          "Himself"  
+>phrasePosTag
+"Which"    "WDT"      
+"films"    "NNS"      
+"starring" "VBG"      
+"Clint"    "NNP"      
+"Eastwood" "NNP"      
+"did"      "VBD"      
+"he"       "PRP"      
+"direct"   "VB"       
+"himself"  "PRP"      
+>priorMatchScore
+"Eastwood" "dbr-Clint_Eastwood" 0.666      
+>resourceType
+"dbr-Clint_Eastwood" Entity     
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"buried"   "buried"   "Root"     
+"city"     "In"       "Case"     
+"city"     "which"    "Det"      
+"Juliana"  "the"      "Det"      
+"Juliana"  "former"   "Amod"     
+"Juliana"  "Dutch"    "Compound" 
+"Juliana"  "queen"    "Compound" 
+"buried"   "city"     "Nmod:In"  
+"buried"   "was"      "Auxpass"  
+"buried"   "Juliana"  "Nsubjpass" 
+>phraseIndex
+1          "In"       
+2          "Which"    
+3          "City"     
+4          "Was"      
+5          "The"      
+6          "Former"   
+7          "Dutch"    
+8          "Queen"    
+9          "Juliana"  
+10         "Buried"   
+>phrasePosTag
+"In"       "IN"       
+"which"    "WDT"      
+"city"     "NN"       
+"was"      "VBD"      
+"the"      "DT"       
+"former"   "JJ"       
+"Dutch"    "NNP"      
+"queen"    "NN"       
+"Juliana"  "NNP"      
+"buried"   "VBN"      
+>priorMatchScore
+>resourceType
+"Settlement" Class      
+>>
+>hasPhrase
+"Capital?" 
+>hasRelation
+>hasResource
+"Capital?" "dbo-Capital" 
+>phraseDepTag
+"capital"  "city"     "Root"     
+"largest"  "Egypts"   "Advmod"   
+"city"     "Is"       "Cop"      
+"city"     "largest"  "Amod"     
+"city"     "capital"  "Nmod"     
+"capital"  "also"     "Advmod"   
+"capital"  "its"      "Nmod:Poss" 
+>phraseIndex
+1          "Is"       
+2          "Egypts"   
+3          "Largest"  
+4          "City"     
+5          "Also"     
+6          "Its"      
+7          "Capital"  
+>phrasePosTag
+"Is"       "VBZ"      
+"Egypts"   "RB"       
+"largest"  "JJS"      
+"city"     "NN"       
+"also"     "RB"       
+"its"      "PRP$"     
+"capital"  "NN"       
+>priorMatchScore
+"Capital?" "dbo-Capital" 0.823      
+>resourceType
+"dbo-Capital" Relation   
+>>
+>hasPhrase
+"Residence" 
+>hasRelation
+>hasResource
+"Residence" "Residence" 
+>phraseDepTag
+"Spain"    "is"       "Root"     
+"is"       "Where"    "Advmod"   
+"is"       "residence" "Nsubj"    
+"residence" "the"      "Det"      
+"residence" "minister" "Nmod:Of"  
+"minister" "of"       "Case"     
+"minister" "the"      "Det"      
+"minister" "prime"    "Amod"     
+"minister" "Spain"    "Nmod:Of"  
+"Spain"    "of"       "Case"     
+>phraseIndex
+1          "Where"    
+2          "Is"       
+3          "The"      
+4          "Residence" 
+5          "Of"       
+6          "The"      
+7          "Prime"    
+8          "Minister" 
+9          "Of"       
+10         "Spain"    
+>phrasePosTag
+"Where"    "WRB"      
+"is"       "VBZ"      
+"the"      "DT"       
+"residence" "NN"       
+"of"       "IN"       
+"prime"    "JJ"       
+"minister" "NN"       
+"Spain"    "NNP"      
+>priorMatchScore
+"Residence" "Residence" 0.8        
+>resourceType
+"Residence" Class      
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"MN"       "has"      "Root"     
+"state"    "Which"    "Det"      
+"state"    "U.S."     "Compound" 
+"has"      "state"    "Nsubj"    
+"has"      "MN"       "Dobj"     
+"MN"       "the"      "Det"      
+"MN"       "abbreviation" "Compound" 
+>phraseIndex
+1          "Which"    
+2          "U.S."     
+3          "State"    
+4          "Has"      
+5          "The"      
+6          "Abbreviation" 
+7          "Mn"       
+>phrasePosTag
+"Which"    "WDT"      
+"U.S."     "NNP"      
+"state"    "NN"       
+"has"      "VBZ"      
+"the"      "DT"       
+"abbreviation" "NN"       
+"MN"       "NN"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"1990"     "released" "Root"     
+"Show"     "me"       "Dep"      
+"Show"     "songs"    "Dep"      
+"songs"    "all"      "Det"      
+"songs"    "Springsteen" "Nmod:From" 
+"Springsteen" "from"     "Case"     
+"Springsteen" "Bruce"    "Compound" 
+"released" "Show"     "Nsubj"    
+"released" "1980"     "Nmod:Between" 
+"released" "1990"     "Nmod:Between" 
+"1980"     "between"  "Case"     
+"1980"     "and"      "Cc"       
+>phraseIndex
+1          "Show"     
+2          "Me"       
+3          "All"      
+4          "Songs"    
+5          "From"     
+6          "Bruce"    
+7          "Springsteen" 
+8          "Released" 
+9          "Between"  
+10         "1980"     
+11         "And"      
+12         "1990"     
+>phrasePosTag
+"Show"     "NN"       
+"me"       "PRP"      
+"all"      "DT"       
+"songs"    "NNS"      
+"from"     "IN"       
+"Bruce"    "NNP"      
+"Springsteen" "NNP"      
+"released" "VBD"      
+"between"  "IN"       
+"1980"     "CD"       
+"and"      "CC"       
+"1990"     "CD"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Rashomon?" 
+>hasRelation
+>hasResource
+"Rashomon?" "dbr-Rashomon" 
+>phraseDepTag
+"Rashomon" "direct"   "Root"     
+"movies"   "Which"    "Det"      
+"direct"   "movies"   "Dobj"     
+"direct"   "did"      "Aux"      
+"direct"   "Kurosawa" "Nsubj"    
+"direct"   "Rashomon" "Nmod:After" 
+"Rashomon" "after"    "Case"     
+>phraseIndex
+1          "Which"    
+2          "Movies"   
+3          "Did"      
+4          "Kurosawa" 
+5          "Direct"   
+6          "After"    
+7          "Rashomon" 
+>phrasePosTag
+"Which"    "WDT"      
+"movies"   "NNS"      
+"did"      "VBD"      
+"Kurosawa" "NNP"      
+"direct"   "VB"       
+"after"    "IN"       
+"Rashomon" "NNP"      
+>priorMatchScore
+"Rashomon?" "dbr-Rashomon" 0.842      
+>resourceType
+"dbo-Releasedate" Relation   
+>>
+>hasPhrase
+"Founding" 
+>hasRelation
+>hasResource
+"Founding" "Foundation" 
+>phraseDepTag
+"Urquell"  "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "year"     "Nsubj"    
+"year"     "the"      "Det"      
+"year"     "founding" "Compound" 
+"year"     "brewery"  "Nmod:Of"  
+"brewery"  "of"       "Case"     
+"brewery"  "the"      "Det"      
+"brewery"  "produces" "Acl:Relcl" 
+"produces" "that"     "Nsubj"    
+"produces" "Urquell"  "Dobj"     
+"Urquell"  "Pilsner"  "Compound" 
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Founding" 
+5          "Year"     
+6          "Of"       
+7          "The"      
+8          "Brewery"  
+9          "That"     
+10         "Produces" 
+11         "Pilsner"  
+12         "Urquell"  
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"founding" "NN"       
+"year"     "NN"       
+"of"       "IN"       
+"brewery"  "NN"       
+"that"     "WDT"      
+"produces" "VBZ"      
+"Pilsner"  "NNP"      
+"Urquell"  "NNP"      
+>priorMatchScore
+"Founding" "Foundation" 0.6        
+>resourceType
+"Foundation" Class      
+>>
+>hasPhrase
+"Anthem?"  
+>hasRelation
+>hasResource
+"Anthem?"  "dbo-Anthem" 
+>phraseDepTag
+"anthem"   "wrote"    "Root"     
+"wrote"    "Who"      "Nsubj"    
+"wrote"    "lyrics"   "Dobj"     
+"wrote"    "anthem"   "Nmod:For" 
+"lyrics"   "the"      "Det"      
+"anthem"   "for"      "Case"     
+"anthem"   "the"      "Det"      
+"anthem"   "Polish"   "Amod"     
+"anthem"   "national" "Amod"     
+>phraseIndex
+1          "Who"      
+2          "Wrote"    
+3          "The"      
+4          "Lyrics"   
+5          "For"      
+6          "The"      
+7          "Polish"   
+8          "National" 
+9          "Anthem"   
+>phrasePosTag
+"Who"      "WP"       
+"wrote"    "VBD"      
+"the"      "DT"       
+"lyrics"   "NNS"      
+"for"      "IN"       
+"Polish"   "JJ"       
+"national" "JJ"       
+"anthem"   "NN"       
+>priorMatchScore
+"Anthem?"  "dbo-Anthem" 0.8        
+>resourceType
+"Author"   Class      
+>>
+>hasPhrase
+"Ramones." 
+>hasRelation
+>hasResource
+"Ramones." "dbr-Ramones" 
+>phraseDepTag
+"Ramones"  "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "B-sides"  "Dobj"     
+"B-sides"  "all"      "Det"      
+"B-sides"  "Ramones"  "Nmod:Of"  
+"Ramones"  "of"       "Case"     
+"Ramones"  "the"      "Det"      
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "B-Sides"  
+5          "Of"       
+6          "The"      
+7          "Ramones"  
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"B-sides"  "NNS"      
+"of"       "IN"       
+"the"      "DT"       
+"Ramones"  "NNPS"     
+>priorMatchScore
+"Ramones." "dbr-Ramones" 0.823      
+>resourceType
+"dbo-Bside" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Galilee"  "painted"  "Root"     
+"painted"  "Who"      "Nsubj"    
+"painted"  "Storm"    "Dobj"     
+"painted"  "Sea"      "Nmod:On"  
+"Storm"    "The"      "Det"      
+"Sea"      "on"       "Case"     
+"Sea"      "the"      "Det"      
+"Sea"      "Galilee"  "Nmod:Of"  
+"Galilee"  "of"       "Case"     
+>phraseIndex
+1          "Who"      
+2          "Painted"  
+3          "The"      
+4          "Storm"    
+5          "On"       
+6          "The"      
+7          "Sea"      
+8          "Of"       
+9          "Galilee"  
+>phrasePosTag
+"Who"      "WP"       
+"painted"  "VBD"      
+"The"      "DT"       
+"Storm"    "NN"       
+"on"       "IN"       
+"the"      "DT"       
+"Sea"      "NN"       
+"of"       "IN"       
+"Galilee"  "NNP"      
+>priorMatchScore
+>resourceType
+"dbo-Author" Relation   
+>>
+>hasPhrase
+"Creator"  
+>hasRelation
+>hasResource
+"Creator"  "dbo-Creator" 
+>phraseDepTag
+"from"     "come"     "Root"     
+"country"  "Which"    "Det"      
+"country"  "from"     "Case"     
+"creator"  "the"      "Det"      
+"creator"  "Miffy"    "Nmod:Of"  
+"Miffy"    "of"       "Case"     
+"come"     "country"  "Nmod:From" 
+"come"     "does"     "Aux"      
+"come"     "creator"  "Nsubj"    
+>phraseIndex
+1          "Which"    
+2          "Country"  
+3          "Does"     
+4          "The"      
+5          "Creator"  
+6          "Of"       
+7          "Miffy"    
+8          "Come"     
+9          "From"     
+>phrasePosTag
+"Which"    "WDT"      
+"country"  "NN"       
+"does"     "VBZ"      
+"the"      "DT"       
+"creator"  "NN"       
+"of"       "IN"       
+"Miffy"    "NNP"      
+"come"     "VB"       
+"from"     "IN"       
+>priorMatchScore
+"Creator"  "dbo-Creator" 0.875      
+>resourceType
+"dbo-Nationality" Relation   
+>>
+>hasPhrase
+"Record"   
+>hasRelation
+>hasResource
+"Record"   "dbo-Recordlabel" 
+>phraseDepTag
+"album"    "record"   "Root"     
+"label"    "For"      "Case"     
+"label"    "which"    "Det"      
+"record"   "label"    "Nmod:For" 
+"record"   "did"      "Aux"      
+"record"   "Elvis"    "Nsubj"    
+"record"   "album"    "Dobj"     
+"album"    "his"      "Nmod:Poss" 
+"album"    "first"    "Amod"     
+>phraseIndex
+1          "For"      
+2          "Which"    
+3          "Label"    
+4          "Did"      
+5          "Elvis"    
+6          "Record"   
+7          "His"      
+8          "First"    
+9          "Album"    
+>phrasePosTag
+"For"      "IN"       
+"which"    "WDT"      
+"label"    "NN"       
+"did"      "VBD"      
+"Elvis"    "NNP"      
+"record"   "VB"       
+"his"      "PRP$"     
+"first"    "JJ"       
+"album"    "NN"       
+>priorMatchScore
+"Record"   "dbo-Recordlabel" 0.631      
+>resourceType
+"dbo-Recordlabel" Relation   
+>>
+>hasPhrase
+"Birthdays" 
+>hasRelation
+>hasResource
+"Birthdays" "dbo-Birthdate" 
+>phraseDepTag
+"Charmed"  "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "birthdays" "Dobj"     
+"birthdays" "the"      "Det"      
+"birthdays" "actors"   "Nmod:Of"  
+"actors"   "of"       "Case"     
+"actors"   "all"      "Det"      
+"actors"   "Charmed"  "Nmod:Of"  
+"Charmed"  "of"       "Case"     
+"Charmed"  "the"      "Det"      
+"Charmed"  "television" "Compound" 
+"Charmed"  "show"     "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "The"      
+4          "Birthdays" 
+5          "Of"       
+6          "All"      
+7          "Actors"   
+8          "Of"       
+9          "The"      
+10         "Television" 
+11         "Show"     
+12         "Charmed"  
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"the"      "DT"       
+"birthdays" "NNS"      
+"of"       "IN"       
+"all"      "DT"       
+"actors"   "NNS"      
+"television" "NN"       
+"show"     "NN"       
+"Charmed"  "NNP"      
+>priorMatchScore
+"Birthdays" "dbo-Birthdate" 0.6        
+>resourceType
+"dbo-Birthdate" Relation   
+>>
+>hasPhrase
+"Employees" 
+>hasRelation
+>hasResource
+"Employees" "dbo-Numberofemployees" 
+>phraseDepTag
+"have"     "have"     "Root"     
+"many"     "How"      "Advmod"   
+"employees" "many"     "Amod"     
+"have"     "employees" "Dobj"     
+"have"     "does"     "Aux"      
+"have"     "IBM"      "Nsubj"    
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Employees" 
+4          "Does"     
+5          "Ibm"      
+6          "Have"     
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"employees" "NNS"      
+"does"     "VBZ"      
+"IBM"      "NNP"      
+"have"     "VB"       
+>priorMatchScore
+"Employees" "dbo-Numberofemployees" 0.642      
+>resourceType
+"dbo-Numberofemployees" Relation   
+>>
+>hasPhrase
+"States"   
+>hasRelation
+>hasResource
+"States"   "Borderingstates" 
+>phraseDepTag
+"Illinois" "border"   "Root"     
+"states"   "Which"    "Det"      
+"border"   "states"   "Nsubj"    
+"border"   "Illinois" "Dobj"     
+>phraseIndex
+1          "Which"    
+2          "States"   
+3          "Border"   
+4          "Illinois" 
+>phrasePosTag
+"Which"    "WDT"      
+"states"   "NNS"      
+"border"   "VBP"      
+"Illinois" "NNP"      
+>priorMatchScore
+"States"   "Borderingstates" 0.521      
+>resourceType
+"Borderingstates" Class      
+>>
+>hasPhrase
+"Country"  
+>hasRelation
+>hasResource
+"Country"  "dbo-Country" 
+>phraseDepTag
+"Lake"     "is"       "Root"     
+"country"  "In"       "Case"     
+"country"  "which"    "Det"      
+"is"       "country"  "Nmod:In"  
+"is"       "Lake"     "Nsubj"    
+"Lake"     "the"      "Det"      
+"Lake"     "Limerick" "Compound" 
+>phraseIndex
+1          "In"       
+2          "Which"    
+3          "Country"  
+4          "Is"       
+5          "The"      
+6          "Limerick" 
+7          "Lake"     
+>phrasePosTag
+"In"       "IN"       
+"which"    "WDT"      
+"country"  "NN"       
+"is"       "VBZ"      
+"the"      "DT"       
+"Limerick" "NNP"      
+"Lake"     "NNP"      
+>priorMatchScore
+"Country"  "dbo-Country" 0.875      
+>resourceType
+"dbo-Country" Relation   
+>>
+>hasPhrase
+"Disney?"  
+>hasRelation
+>hasResource
+"Disney?"  "dbr-Walt_Disney" 
+>phraseDepTag
+"Disney"   "created"  "Root"     
+"television" "Which"    "Det"      
+"television" "shows"    "Dep"      
+"created"  "television" "Nsubjpass" 
+"created"  "were"     "Auxpass"  
+"created"  "Disney"   "Nmod:Agent" 
+"Disney"   "by"       "Case"     
+"Disney"   "Walt"     "Compound" 
+>phraseIndex
+1          "Which"    
+2          "Television" 
+3          "Shows"    
+4          "Were"     
+5          "Created"  
+6          "By"       
+7          "Walt"     
+8          "Disney"   
+>phrasePosTag
+"Which"    "WDT"      
+"television" "NN"       
+"shows"    "NNS"      
+"were"     "VBD"      
+"created"  "VBN"      
+"by"       "IN"       
+"Walt"     "NNP"      
+"Disney"   "NNP"      
+>priorMatchScore
+"Disney?"  "dbr-Walt_Disney" 0.6        
+>resourceType
+"dbr-Walt_Disney" Entity     
+>>
+>hasPhrase
+"Mountain" 
+>hasRelation
+>hasResource
+"Mountain" "Mountain" 
+>phraseDepTag
+"Annapurna" "is"       "Root"     
+"mountain" "Which"    "Det"      
+"is"       "mountain" "Dep"      
+"is"       "highest"  "Nsubj"    
+"highest"  "the"      "Det"      
+"highest"  "Annapurna" "Nmod:After" 
+"Annapurna" "after"    "Case"     
+"Annapurna" "the"      "Det"      
+>phraseIndex
+1          "Which"    
+2          "Mountain" 
+3          "Is"       
+4          "The"      
+5          "Highest"  
+6          "After"    
+7          "The"      
+8          "Annapurna" 
+>phrasePosTag
+"Which"    "WDT"      
+"mountain" "NN"       
+"is"       "VBZ"      
+"the"      "DT"       
+"highest"  "JJS"      
+"after"    "IN"       
+"Annapurna" "NNP"      
+>priorMatchScore
+"Mountain" "Mountain" 0.777      
+>resourceType
+"dbo-Elevation" Relation   
+>>
+>hasPhrase
+"Marshall" 
+>hasRelation
+>hasResource
+"Marshall" "dbr-Garry_Marshall" 
+>phraseDepTag
+"starring" "directed" "Root"     
+"films"    "In"       "Case"     
+"films"    "which"    "Det"      
+"directed" "films"    "Nmod:In"  
+"directed" "Marshall" "Nmod:By"  
+"Marshall" "by"       "Case"     
+"Marshall" "Garry"    "Compound" 
+"Marshall" "Roberts"  "Acl:Relcl" 
+"Roberts"  "was"      "Cop"      
+"Roberts"  "Julia"    "Compound" 
+"Roberts"  "starring" "Acl"      
+>phraseIndex
+1          "In"       
+2          "Which"    
+3          "Films"    
+4          "Directed" 
+5          "By"       
+6          "Garry"    
+7          "Marshall" 
+8          "Was"      
+9          "Julia"    
+10         "Roberts"  
+11         "Starring" 
+>phrasePosTag
+"In"       "IN"       
+"which"    "WDT"      
+"films"    "NNS"      
+"directed" "VBN"      
+"by"       "IN"       
+"Garry"    "NNP"      
+"Marshall" "NNP"      
+"was"      "VBD"      
+"Julia"    "NNP"      
+"Roberts"  "NNP"      
+"starring" "VBG"      
+>priorMatchScore
+"Marshall" "dbr-Garry_Marshall" 0.666      
+>resourceType
+"dbr-Garry_Marshall" Entity     
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Bridge"   "are"      "Root"     
+"bridges"  "Which"    "Det"      
+"are"      "bridges"  "Nsubj"    
+"are"      "type"     "Nmod:Of"  
+"type"     "of"       "Case"     
+"type"     "the"      "Det"      
+"type"     "same"     "Amod"     
+"type"     "Bridge"   "Nmod:As"  
+"Bridge"   "as"       "Case"     
+"Bridge"   "the"      "Det"      
+"Bridge"   "Manhattan" "Compound" 
+>phraseIndex
+1          "Which"    
+2          "Bridges"  
+3          "Are"      
+4          "Of"       
+5          "The"      
+6          "Same"     
+7          "Type"     
+8          "As"       
+9          "The"      
+10         "Manhattan" 
+11         "Bridge"   
+>phrasePosTag
+"Which"    "WDT"      
+"bridges"  "NNS"      
+"are"      "VBP"      
+"of"       "IN"       
+"the"      "DT"       
+"same"     "JJ"       
+"type"     "NN"       
+"as"       "IN"       
+"Manhattan" "NNP"      
+"Bridge"   "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Jackson"  
+>hasRelation
+>hasResource
+"Jackson"  "dbr-Andrew_Jackson" 
+>phraseDepTag
+"war"      "involved" "Root"     
+"president" "U.S."     "Compound" 
+"involved" "Was"      "Auxpass"  
+"involved" "president" "Nsubjpass" 
+"involved" "Jackson"  "Dobj"     
+"involved" "war"      "Nmod:In"  
+"war"      "in"       "Case"     
+"war"      "a"        "Det"      
+>phraseIndex
+1          "Was"      
+2          "U.S."     
+3          "President" 
+4          "Jackson"  
+5          "Involved" 
+6          "In"       
+7          "A"        
+8          "War"      
+>phrasePosTag
+"Was"      "VBD"      
+"U.S."     "NNP"      
+"president" "NN"       
+"Jackson"  "NNP"      
+"involved" "VBN"      
+"in"       "IN"       
+"a"        "DT"       
+"war"      "NN"       
+>priorMatchScore
+"Jackson"  "dbr-Andrew_Jackson" 0.608      
+>resourceType
+"dbo-Battle" Relation   
+>>
+>hasPhrase
+"Countries." 
+>hasRelation
+>hasResource
+"Countries." "Country"  
+>phraseDepTag
+"countries" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "countries" "Dobj"     
+"countries" "all"      "Det"      
+"countries" "communist" "Amod"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Communist" 
+5          "Countries" 
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"communist" "JJ"       
+"countries" "NNS"      
+>priorMatchScore
+"Countries." "Country"  0.526      
+>resourceType
+"Country"  Class      
+>>
+>hasPhrase
+"Awards"   
+>hasRelation
+>hasResource
+"Awards"   "Awards"   
+>phraseDepTag
+"win"      "win"      "Root"     
+"awards"   "Which"    "Det"      
+"win"      "awards"   "Dobj"     
+"win"      "did"      "Aux"      
+"win"      "WikiLeaks" "Nsubj"    
+>phraseIndex
+1          "Which"    
+2          "Awards"   
+3          "Did"      
+4          "Wikileaks" 
+5          "Win"      
+>phrasePosTag
+"Which"    "WDT"      
+"awards"   "NNS"      
+"did"      "VBD"      
+"WikiLeaks" "NNP"      
+"win"      "VB"       
+>priorMatchScore
+"Awards"   "Awards"   0.714      
+>resourceType
+"Awards"   Class      
+>>
+>hasPhrase
+"Bergman"  
+>hasRelation
+>hasResource
+"Bergman"  "dbr-Ingrid_Bergman" 
+>phraseDepTag
+"to"       "married"  "Root"     
+"daughter" "the"      "Det"      
+"daughter" "Bergman"  "Nmod:Of"  
+"Bergman"  "of"       "Case"     
+"Bergman"  "Ingrid"   "Compound" 
+"married"  "Who"      "Dep"      
+"married"  "is"       "Auxpass"  
+"married"  "daughter" "Nsubjpass" 
+"married"  "to"       "Xcomp"    
+>phraseIndex
+1          "Who"      
+2          "Is"       
+3          "The"      
+4          "Daughter" 
+5          "Of"       
+6          "Ingrid"   
+7          "Bergman"  
+8          "Married"  
+9          "To"       
+>phrasePosTag
+"Who"      "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"daughter" "NN"       
+"of"       "IN"       
+"Ingrid"   "NNP"      
+"Bergman"  "NNP"      
+"married"  "VBN"      
+"to"       "TO"       
+>priorMatchScore
+"Bergman"  "dbr-Ingrid_Bergman" 0.608      
+>resourceType
+"dbo-Spouse" Relation   
+>>
+>hasPhrase
+"Density?" 
+>hasRelation
+>hasResource
+"Density?" "Densityrank" 
+>phraseDepTag
+"density"  "has"      "Root"     
+"state"    "Which"    "Det"      
+"state"    "U.S."     "Compound" 
+"has"      "state"    "Nsubj"    
+"has"      "density"  "Dobj"     
+"density"  "the"      "Det"      
+"density"  "highest"  "Amod"     
+"density"  "population" "Compound" 
+>phraseIndex
+1          "Which"    
+2          "U.S."     
+3          "State"    
+4          "Has"      
+5          "The"      
+6          "Highest"  
+7          "Population" 
+8          "Density"  
+>phrasePosTag
+"Which"    "WDT"      
+"U.S."     "NNP"      
+"state"    "NN"       
+"has"      "VBZ"      
+"the"      "DT"       
+"highest"  "JJS"      
+"population" "NN"       
+"density"  "NN"       
+>priorMatchScore
+"Density?" "Densityrank" 0.571      
+>resourceType
+"Densityrank" Class      
+>>
+>hasPhrase
+"Currency" 
+>hasRelation
+>hasResource
+"Currency" "dbo-Currency" 
+>phraseDepTag
+"Republic" "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "currency" "Nsubj"    
+"currency" "the"      "Det"      
+"currency" "Republic" "Nmod:Of"  
+"Republic" "of"       "Case"     
+"Republic" "the"      "Det"      
+"Republic" "Czech"    "Compound" 
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Currency" 
+5          "Of"       
+6          "The"      
+7          "Czech"    
+8          "Republic" 
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"currency" "NN"       
+"of"       "IN"       
+"Czech"    "NNP"      
+"Republic" "NNP"      
+>priorMatchScore
+"Currency" "dbo-Currency" 0.888      
+>resourceType
+"dbo-Currency" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Euro"     "adopted"  "Root"     
+"countries" "Which"    "Det"      
+"adopted"  "countries" "Nsubj"    
+"adopted"  "Euro"     "Dobj"     
+"Euro"     "the"      "Det"      
+>phraseIndex
+1          "Which"    
+2          "Countries" 
+3          "Adopted"  
+4          "The"      
+5          "Euro"     
+>phrasePosTag
+"Which"    "WDT"      
+"countries" "NNS"      
+"adopted"  "VBD"      
+"the"      "DT"       
+"Euro"     "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Area"     
+>hasRelation
+>hasResource
+"Area"     "dbo-Areacode" 
+>phraseDepTag
+"Berlin"   "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "code"     "Nsubj"    
+"code"     "the"      "Det"      
+"code"     "area"     "Compound" 
+"code"     "Berlin"   "Nmod:Of"  
+"Berlin"   "of"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Area"     
+5          "Code"     
+6          "Of"       
+7          "Berlin"   
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"area"     "NN"       
+"code"     "NN"       
+"of"       "IN"       
+"Berlin"   "NNP"      
+>priorMatchScore
+"Area"     "dbo-Areacode" 0.571      
+>resourceType
+"dbo-Areacode" Relation   
+>>
+>hasPhrase
+"Languages?" 
+>hasRelation
+>hasResource
+"Languages?" "dbo-Officiallanguage" 
+>phraseDepTag
+"languages" "have"     "Root"     
+"countries" "Which"    "Det"      
+"have"     "countries" "Nsubj"    
+"have"     "languages" "Dobj"     
+"more"     "than"     "Mwe"      
+"two"      "more"     "Advmod"   
+"languages" "two"      "Nummod"   
+"languages" "official" "Amod"     
+>phraseIndex
+1          "Which"    
+2          "Countries" 
+3          "Have"     
+4          "More"     
+5          "Than"     
+6          "Two"      
+7          "Official" 
+8          "Languages" 
+>phrasePosTag
+"Which"    "WDT"      
+"countries" "NNS"      
+"have"     "VBP"      
+"more"     "JJR"      
+"than"     "IN"       
+"two"      "CD"       
+"official" "JJ"       
+"languages" "NNS"      
+>priorMatchScore
+"Languages?" "dbo-Officiallanguage" 0.571      
+>resourceType
+"dbo-Officiallanguage" Relation   
+>>
+>hasPhrase
+"Owner"    
+>hasRelation
+>hasResource
+"Owner"    "dbo-Owner" 
+>phraseDepTag
+"Studios"  "Who"      "Root"     
+"Who"      "is"       "Cop"      
+"Who"      "owner"    "Nsubj"    
+"owner"    "the"      "Det"      
+"owner"    "Studios"  "Nmod:Of"  
+"Studios"  "of"       "Case"     
+"Studios"  "Universal" "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Is"       
+3          "The"      
+4          "Owner"    
+5          "Of"       
+6          "Universal" 
+7          "Studios"  
+>phrasePosTag
+"Who"      "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"owner"    "NN"       
+"of"       "IN"       
+"Universal" "NNP"      
+"Studios"  "NNP"      
+>priorMatchScore
+"Owner"    "dbo-Owner" 0.833      
+>resourceType
+"dbo-Owner" Relation   
+>>
+>hasPhrase
+"Countries" 
+>hasRelation
+>hasResource
+"Countries" "dbo-Country" 
+>phraseDepTag
+"flow"     "does"     "Root"     
+"which"    "Through"  "Case"     
+"does"     "which"    "Nmod:Through" 
+"does"     "countries" "Nsubj"    
+"does"     "flow"     "Dobj"     
+"flow"     "the"      "Det"      
+"flow"     "Yenisei"  "Compound" 
+"flow"     "river"    "Compound" 
+>phraseIndex
+1          "Through"  
+2          "Which"    
+3          "Countries" 
+4          "Does"     
+5          "The"      
+6          "Yenisei"  
+7          "River"    
+8          "Flow"     
+>phrasePosTag
+"Through"  "IN"       
+"which"    "WDT"      
+"countries" "NNS"      
+"does"     "VBZ"      
+"the"      "DT"       
+"Yenisei"  "NNP"      
+"river"    "NN"       
+"flow"     "NN"       
+>priorMatchScore
+"Countries" "dbo-Country" 0.666      
+>resourceType
+"dbo-Country" Relation   
+>>
+>hasPhrase
+"Latvia"   
+>hasRelation
+>hasResource
+"Latvia"   "dbr-Latvia" 
+>phraseDepTag
+"EU"       "join"     "Root"     
+"join"     "When"     "Advmod"   
+"join"     "did"      "Aux"      
+"join"     "Latvia"   "Nsubj"    
+"join"     "EU"       "Dobj"     
+"EU"       "the"      "Det"      
+>phraseIndex
+1          "When"     
+2          "Did"      
+3          "Latvia"   
+4          "Join"     
+5          "The"      
+6          "Eu"       
+>phrasePosTag
+"When"     "WRB"      
+"did"      "VBD"      
+"Latvia"   "NNP"      
+"join"     "VB"       
+"the"      "DT"       
+"EU"       "NNP"      
+>priorMatchScore
+"Latvia"   "dbr-Latvia" 0.857      
+>resourceType
+"Accessioneudate" Class      
+>>
+>hasPhrase
+"Monarchs" 
+>hasRelation
+>hasResource
+"Monarchs" "Monarch"  
+>phraseDepTag
+"German"   "married"  "Root"     
+"monarchs" "Which"    "Det"      
+"married"  "monarchs" "Nsubjpass" 
+"married"  "were"     "Auxpass"  
+"married"  "German"   "Nmod:To"  
+"German"   "to"       "Case"     
+"German"   "a"        "Det"      
+>phraseIndex
+1          "Which"    
+2          "Monarchs" 
+3          "Were"     
+4          "Married"  
+5          "To"       
+6          "A"        
+7          "German"   
+>phrasePosTag
+"Which"    "WDT"      
+"monarchs" "NNS"      
+"were"     "VBD"      
+"married"  "VBN"      
+"to"       "TO"       
+"a"        "DT"       
+"German"   "JJ"       
+>priorMatchScore
+"Monarchs" "Monarch"  0.705      
+>resourceType
+"dbo-Spouse" Relation   
+>>
+>hasPhrase
+"Gettysburg?" 
+>hasRelation
+>hasResource
+"Gettysburg?" "dbr-Battle_Of_Gettysburg" 
+>phraseDepTag
+"Gettysburg" "was"      "Root"     
+"was"      "When"     "Advmod"   
+"was"      "Battle"   "Nsubj"    
+"Battle"   "the"      "Det"      
+"Battle"   "Gettysburg" "Nmod:Of"  
+"Gettysburg" "of"       "Case"     
+>phraseIndex
+1          "When"     
+2          "Was"      
+3          "The"      
+4          "Battle"   
+5          "Of"       
+6          "Gettysburg" 
+>phrasePosTag
+"When"     "WRB"      
+"was"      "VBD"      
+"the"      "DT"       
+"Battle"   "NN"       
+"of"       "IN"       
+"Gettysburg" "NNP"      
+>priorMatchScore
+"Gettysburg?" "dbr-Battle_Of_Gettysburg" 0.606      
+>resourceType
+"dbo-Date" Relation   
+>>
+>hasPhrase
+"Cross?"   
+>hasRelation
+>hasResource
+"Cross?"   "dbo-Crosses" 
+>phraseDepTag
+"cross"    "cross"    "Root"     
+"river"    "Which"    "Det"      
+"Bridge"   "the"      "Det"      
+"Bridge"   "Brooklyn" "Compound" 
+"cross"    "river"    "Dobj"     
+"cross"    "does"     "Aux"      
+"cross"    "Bridge"   "Nsubj"    
+>phraseIndex
+1          "Which"    
+2          "River"    
+3          "Does"     
+4          "The"      
+5          "Brooklyn" 
+6          "Bridge"   
+7          "Cross"    
+>phrasePosTag
+"Which"    "WDT"      
+"river"    "NN"       
+"does"     "VBZ"      
+"the"      "DT"       
+"Brooklyn" "NNP"      
+"Bridge"   "NNP"      
+"cross"    "VB"       
+>priorMatchScore
+"Cross?"   "dbo-Crosses" 0.666      
+>resourceType
+"dbo-Crosses" Relation   
+>>
+>hasPhrase
+"Australia?" 
+>hasRelation
+>hasResource
+"Australia?" "dbr-Australia" 
+>phraseDepTag
+"Australia" "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "mountain" "Nsubj"    
+"mountain" "the"      "Det"      
+"mountain" "highest"  "Amod"     
+"mountain" "Australia" "Nmod:In"  
+"Australia" "in"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Highest"  
+5          "Mountain" 
+6          "In"       
+7          "Australia" 
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"highest"  "JJS"      
+"mountain" "NN"       
+"in"       "IN"       
+"Australia" "NNP"      
+>priorMatchScore
+"Australia?" "dbr-Australia" 0.857      
+>resourceType
+"dbo-Elevation" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Spain"    "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "clubs"    "Dobj"     
+"clubs"    "all"      "Det"      
+"clubs"    "soccer"   "Compound" 
+"clubs"    "Spain"    "Nmod:In"  
+"Spain"    "in"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Soccer"   
+5          "Clubs"    
+6          "In"       
+7          "Spain"    
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"soccer"   "NN"       
+"clubs"    "NNS"      
+"in"       "IN"       
+"Spain"    "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Language" 
+>hasRelation
+>hasResource
+"Language" "dbo-Officiallanguage" 
+>phraseDepTag
+"Suriname" "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "language" "Nsubj"    
+"language" "the"      "Det"      
+"language" "official" "Amod"     
+"language" "Suriname" "Nmod:Of"  
+"Suriname" "of"       "Case"     
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Official" 
+5          "Language" 
+6          "Of"       
+7          "Suriname" 
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"official" "JJ"       
+"language" "NN"       
+"of"       "IN"       
+"Suriname" "NNP"      
+>priorMatchScore
+"Language" "dbo-Officiallanguage" 0.615      
+>resourceType
+"dbo-Officiallanguage" Relation   
+>>
+>hasPhrase
+"Aviv?"    
+>hasRelation
+>hasResource
+"Aviv?"    "dbr-Tel_Aviv" 
+>phraseDepTag
+"Aviv"     "Who"      "Root"     
+"Who"      "is"       "Cop"      
+"Who"      "mayor"    "Nsubj"    
+"mayor"    "the"      "Det"      
+"mayor"    "Aviv"     "Nmod:Of"  
+"Aviv"     "of"       "Case"     
+"Aviv"     "Tel"      "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Is"       
+3          "The"      
+4          "Mayor"    
+5          "Of"       
+6          "Tel"      
+7          "Aviv"     
+>phrasePosTag
+"Who"      "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"mayor"    "NN"       
+"of"       "IN"       
+"Tel"      "NNP"      
+"Aviv"     "NNP"      
+>priorMatchScore
+"Aviv?"    "dbr-Tel_Aviv" 0.533      
+>resourceType
+"dbo-Leadername" Relation   
+>>
+>hasPhrase
+"Designed" 
+>hasRelation
+>hasResource
+"Designed" "Designer" 
+>phraseDepTag
+"Bridge"   "designed" "Root"     
+"designed" "Who"      "Nsubj"    
+"designed" "Bridge"   "Dobj"     
+"Bridge"   "the"      "Det"      
+"Bridge"   "Brooklyn" "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Designed" 
+3          "The"      
+4          "Brooklyn" 
+5          "Bridge"   
+>phrasePosTag
+"Who"      "WP"       
+"designed" "VBD"      
+"the"      "DT"       
+"Brooklyn" "NNP"      
+"Bridge"   "NNP"      
+>priorMatchScore
+"Designed" "Designer" 0.666      
+>resourceType
+"Designer" Class      
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Belgium"  "located"  "Root"     
+"telecommunications" "Which"    "Det"      
+"telecommunications" "organizations" "Dep"      
+"located"  "telecommunications" "Nsubj"    
+"located"  "are"      "Cop"      
+"located"  "Belgium"  "Nmod:In"  
+"Belgium"  "in"       "Case"     
+>phraseIndex
+1          "Which"    
+2          "Telecommunications" 
+3          "Organizations" 
+4          "Are"      
+5          "Located"  
+6          "In"       
+7          "Belgium"  
+>phrasePosTag
+"Which"    "WDT"      
+"telecommunications" "NNS"      
+"organizations" "NNS"      
+"are"      "VBP"      
+"located"  "JJ"       
+"in"       "IN"       
+"Belgium"  "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"alive"    "alive"    "Root"     
+"Herbert"  "Frank"    "Compound" 
+"alive"    "Is"       "Cop"      
+"alive"    "Herbert"  "Nsubj"    
+"alive"    "still"    "Advmod"   
+>phraseIndex
+1          "Is"       
+2          "Frank"    
+3          "Herbert"  
+4          "Still"    
+5          "Alive"    
+>phrasePosTag
+"Is"       "VBZ"      
+"Frank"    "NNP"      
+"Herbert"  "NNP"      
+"still"    "RB"       
+"alive"    "JJ"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Highest"  
+>hasRelation
+>hasResource
+"Highest"  "dbo-Highestplace" 
+>phraseDepTag
+"Urals"    "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "place"    "Nsubj"    
+"place"    "the"      "Det"      
+"place"    "highest"  "Amod"     
+"place"    "Urals"    "Nmod:Of"  
+"Urals"    "of"       "Case"     
+"Urals"    "the"      "Det"      
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Highest"  
+5          "Place"    
+6          "Of"       
+7          "The"      
+8          "Urals"    
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"highest"  "JJS"      
+"place"    "NN"       
+"of"       "IN"       
+"Urals"    "NNS"      
+>priorMatchScore
+"Highest"  "dbo-Highestplace" 0.666      
+>resourceType
+"dbo-Highestplace" Relation   
+>>
+>hasPhrase
+"Editor"   
+>hasRelation
+>hasResource
+"Editor"   "dbo-Editor" 
+>phraseDepTag
+"Forbes"   "Who"      "Root"     
+"Who"      "is"       "Cop"      
+"Who"      "editor"   "Nsubj"    
+"editor"   "the"      "Det"      
+"editor"   "Forbes"   "Nmod:Of"  
+"Forbes"   "of"       "Case"     
+>phraseIndex
+1          "Who"      
+2          "Is"       
+3          "The"      
+4          "Editor"   
+5          "Of"       
+6          "Forbes"   
+>phrasePosTag
+"Who"      "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"editor"   "NN"       
+"of"       "IN"       
+"Forbes"   "NNP"      
+>priorMatchScore
+"Editor"   "dbo-Editor" 0.857      
+>resourceType
+"dbo-Editor" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"industry" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "companies" "Dobj"     
+"companies" "all"      "Det"      
+"companies" "industry" "Nmod:In"  
+"industry" "in"       "Case"     
+"industry" "the"      "Det"      
+"industry" "advertising" "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Companies" 
+5          "In"       
+6          "The"      
+7          "Advertising" 
+8          "Industry" 
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"companies" "NNS"      
+"in"       "IN"       
+"the"      "DT"       
+"advertising" "NN"       
+"industry" "NN"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Europe"   "are"      "Root"     
+"many"     "How"      "Advmod"   
+"countries" "many"     "Amod"     
+"are"      "countries" "Nsubj"    
+"are"      "there"    "Expl"     
+"are"      "Europe"   "Nmod:In"  
+"Europe"   "in"       "Case"     
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Countries" 
+4          "Are"      
+5          "There"    
+6          "In"       
+7          "Europe"   
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"countries" "NNS"      
+"are"      "VBP"      
+"there"    "EX"       
+"in"       "IN"       
+"Europe"   "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Carver"   
+>hasRelation
+>hasResource
+"Carver"   "dbr-Bruce_Carver" 
+>phraseDepTag
+"from"     "die"      "Root"     
+"What"     "from"     "Case"     
+"Carver"   "Bruce"    "Compound" 
+"die"      "What"     "Nmod:From" 
+"die"      "did"      "Aux"      
+"die"      "Carver"   "Nsubj"    
+>phraseIndex
+1          "What"     
+2          "Did"      
+3          "Bruce"    
+4          "Carver"   
+5          "Die"      
+6          "From"     
+>phrasePosTag
+"What"     "WP"       
+"did"      "VBD"      
+"Bruce"    "NNP"      
+"Carver"   "NNP"      
+"die"      "VB"       
+"from"     "IN"       
+>priorMatchScore
+"Carver"   "dbr-Bruce_Carver" 0.6        
+>resourceType
+"dbo-Deathcause" Relation   
+>>
+>hasPhrase
+"Established" 
+>hasRelation
+>hasResource
+"Established" "Established" 
+>phraseDepTag
+"1400"     "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "libraries" "Dobj"     
+"libraries" "all"      "Det"      
+"libraries" "established" "Acl"      
+"established" "earlier"  "Advmod"   
+"established" "1400"     "Nmod:Than" 
+"1400"     "than"     "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Libraries" 
+5          "Established" 
+6          "Earlier"  
+7          "Than"     
+8          "1400"     
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"libraries" "NNS"      
+"established" "VBN"      
+"earlier"  "JJR"      
+"than"     "IN"       
+"1400"     "CD"       
+>priorMatchScore
+"Established" "Established" 0.833      
+>resourceType
+"Established" Class      
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"1945"     "born"     "Root"     
+"presidents" "Which"    "Det"      
+"born"     "presidents" "Nsubjpass" 
+"born"     "were"     "Auxpass"  
+"born"     "1945"     "Nmod:In"  
+"1945"     "in"       "Case"     
+>phraseIndex
+1          "Which"    
+2          "Presidents" 
+3          "Were"     
+4          "Born"     
+5          "In"       
+6          "1945"     
+>phrasePosTag
+"Which"    "WDT"      
+"presidents" "NNS"      
+"were"     "VBD"      
+"born"     "VBN"      
+"in"       "IN"       
+"1945"     "CD"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Chancellors" 
+>hasRelation
+>hasResource
+"Chancellors" "dbr-Chancellor_Of_Germany" 
+>phraseDepTag
+"Germany"  "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "chancellors" "Dobj"     
+"chancellors" "all"      "Det"      
+"chancellors" "federal"  "Amod"     
+"chancellors" "Germany"  "Nmod:Of"  
+"Germany"  "of"       "Case"     
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Federal"  
+5          "Chancellors" 
+6          "Of"       
+7          "Germany"  
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"federal"  "JJ"       
+"chancellors" "NNS"      
+"of"       "IN"       
+"Germany"  "NNP"      
+>priorMatchScore
+"Chancellors" "dbr-Chancellor_Of_Germany" 0.529      
+>resourceType
+"dbr-Chancellor_Of_Germany" Entity     
+>>
+>hasPhrase
+"Lincoln?" 
+>hasRelation
+>hasResource
+"Lincoln?" "dbr-Abraham_Lincoln" 
+>phraseDepTag
+"Lincoln"  "Who"      "Root"     
+"Who"      "was"      "Cop"      
+"Who"      "wife"     "Nsubj"    
+"wife"     "the"      "Det"      
+"wife"     "Lincoln"  "Nmod:Of"  
+"Lincoln"  "of"       "Case"     
+"Lincoln"  "U.S."     "Compound" 
+"Lincoln"  "president" "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Was"      
+3          "The"      
+4          "Wife"     
+5          "Of"       
+6          "U.S."     
+7          "President" 
+8          "Lincoln"  
+>phrasePosTag
+"Who"      "WP"       
+"was"      "VBD"      
+"the"      "DT"       
+"wife"     "NN"       
+"of"       "IN"       
+"U.S."     "NNP"      
+"president" "NN"       
+"Lincoln"  "NNP"      
+>priorMatchScore
+"Lincoln?" "dbr-Abraham_Lincoln" 0.56       
+>resourceType
+"dbo-Spouse" Relation   
+>>
+>hasPhrase
+"Developed" 
+>hasRelation
+>hasResource
+"Developed" "dbo-Developer" 
+>phraseDepTag
+"Warcraft" "developed" "Root"     
+"developed" "Who"      "Nsubj"    
+"developed" "World"    "Dobj"     
+"World"    "the"      "Det"      
+"World"    "video"    "Compound" 
+"World"    "game"     "Compound" 
+"World"    "Warcraft" "Nmod:Of"  
+"Warcraft" "of"       "Case"     
+>phraseIndex
+1          "Who"      
+2          "Developed" 
+3          "The"      
+4          "Video"    
+5          "Game"     
+6          "World"    
+7          "Of"       
+8          "Warcraft" 
+>phrasePosTag
+"Who"      "WP"       
+"developed" "VBD"      
+"the"      "DT"       
+"video"    "NN"       
+"game"     "NN"       
+"World"    "NN"       
+"of"       "IN"       
+"Warcraft" "NNP"      
+>priorMatchScore
+"Developed" "dbo-Developer" 0.8        
+>resourceType
+"dbo-Developer" Relation   
+>>
+>hasPhrase
+"Website"  
+>hasRelation
+>hasResource
+"Website"  "Website"  
+>phraseDepTag
+"Cruise"   "What"     "Root"     
+"What"     "is"       "Cop"      
+"What"     "website"  "Nsubj"    
+"website"  "the"      "Det"      
+"website"  "official" "Amod"     
+"website"  "Cruise"   "Nmod:Of"  
+"Cruise"   "of"       "Case"     
+"Cruise"   "Tom"      "Compound" 
+>phraseIndex
+1          "What"     
+2          "Is"       
+3          "The"      
+4          "Official" 
+5          "Website"  
+6          "Of"       
+7          "Tom"      
+8          "Cruise"   
+>phrasePosTag
+"What"     "WP"       
+"is"       "VBZ"      
+"the"      "DT"       
+"official" "JJ"       
+"website"  "NN"       
+"of"       "IN"       
+"Tom"      "NNP"      
+"Cruise"   "NNP"      
+>priorMatchScore
+"Website"  "Website"  0.75       
+>resourceType
+"Website"  Class      
+>>
+>hasPhrase
+"Season"   
+>hasRelation
+>hasResource
+"Season"   "dbo-Seasonnumber" 
+>phraseDepTag
+"Sopranos" "List"     "Root"     
+"List"     "Sopranos" "Xcomp"    
+"episodes" "all"      "Det"      
+"episodes" "season"   "Nmod:Of"  
+"season"   "of"       "Case"     
+"season"   "the"      "Det"      
+"season"   "first"    "Amod"     
+"season"   "series"   "Nmod:Of"  
+"series"   "of"       "Case"     
+"series"   "the"      "Det"      
+"series"   "HBO"      "Compound" 
+"series"   "television" "Compound" 
+"Sopranos" "episodes" "Nsubj"    
+"Sopranos" "The"      "Det"      
+>phraseIndex
+1          "List"     
+2          "All"      
+3          "Episodes" 
+4          "Of"       
+5          "The"      
+6          "First"    
+7          "Season"   
+8          "Of"       
+9          "The"      
+10         "Hbo"      
+11         "Television" 
+12         "Series"   
+13         "The"      
+14         "Sopranos" 
+>phrasePosTag
+"List"     "VB"       
+"all"      "DT"       
+"episodes" "NNS"      
+"of"       "IN"       
+"the"      "DT"       
+"first"    "JJ"       
+"season"   "NN"       
+"HBO"      "NNP"      
+"television" "NN"       
+"series"   "NN"       
+"The"      "DT"       
+"Sopranos" "NNPS"     
+>priorMatchScore
+"Season"   "dbo-Seasonnumber" 0.6        
+>resourceType
+"dbo-Seasonnumber" Relation   
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"films"    "produced" "Root"     
+"produced" "Who"      "Nsubj"    
+"produced" "most"     "Advmod"   
+"produced" "films"    "Dobj"     
+"most"     "the"      "Det"      
+>phraseIndex
+1          "Who"      
+2          "Produced" 
+3          "The"      
+4          "Most"     
+5          "Films"    
+>phrasePosTag
+"Who"      "WP"       
+"produced" "VBD"      
+"the"      "DT"       
+"most"     "RBS"      
+"films"    "NNS"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Jimmy"    "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "people"   "Dobj"     
+"people"   "all"      "Det"      
+"people"   "Jimmy"    "Nmod:With" 
+"Jimmy"    "with"     "Case"     
+"Jimmy"    "first"    "Amod"     
+"Jimmy"    "name"     "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "People"   
+5          "With"     
+6          "First"    
+7          "Name"     
+8          "Jimmy"    
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"people"   "NNS"      
+"with"     "IN"       
+"first"    "JJ"       
+"name"     "NN"       
+"Jimmy"    "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"City"     
+>hasRelation
+>hasResource
+"City"     "City"     
+>phraseDepTag
+"die"      "die"      "Root"     
+"city"     "In"       "Case"     
+"city"     "which"    "Det"      
+"Kennedy"  "John"     "Compound" 
+"Kennedy"  "F."       "Compound" 
+"die"      "city"     "Nmod:In"  
+"die"      "did"      "Aux"      
+"die"      "Kennedy"  "Nsubj"    
+>phraseIndex
+1          "In"       
+2          "Which"    
+3          "City"     
+4          "Did"      
+5          "John"     
+6          "F."       
+7          "Kennedy"  
+8          "Die"      
+>phrasePosTag
+"In"       "IN"       
+"which"    "WDT"      
+"city"     "NN"       
+"did"      "VBD"      
+"John"     "NNP"      
+"F."       "NNP"      
+"Kennedy"  "NNP"      
+"die"      "VB"       
+>priorMatchScore
+"City"     "City"     0.6        
+>resourceType
+"City"     Class      
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Chess"    "Is"       "Root"     
+"Is"       "there"    "Expl"     
+"Is"       "game"     "Nsubj"    
+"game"     "a"        "Det"      
+"game"     "video"    "Compound" 
+"game"     "called"   "Acl"      
+"called"   "Chess"    "Dobj"     
+"Chess"    "Battle"   "Compound" 
+>phraseIndex
+1          "Is"       
+2          "There"    
+3          "A"        
+4          "Video"    
+5          "Game"     
+6          "Called"   
+7          "Battle"   
+8          "Chess"    
+>phrasePosTag
+"Is"       "VBZ"      
+"there"    "EX"       
+"a"        "DT"       
+"video"    "NN"       
+"game"     "NN"       
+"called"   "VBN"      
+"Battle"   "NNP"      
+"Chess"    "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Mountains" 
+>hasRelation
+>hasResource
+"Mountains" "Mountain" 
+>phraseDepTag
+"Parbat"   "are"      "Root"     
+"mountains" "Which"    "Det"      
+"are"      "mountains" "Dep"      
+"are"      "higher"   "Nsubj"    
+"higher"   "Parbat"   "Nmod:Than" 
+"Parbat"   "than"     "Case"     
+"Parbat"   "the"      "Det"      
+"Parbat"   "Nanga"    "Compound" 
+>phraseIndex
+1          "Which"    
+2          "Mountains" 
+3          "Are"      
+4          "Higher"   
+5          "Than"     
+6          "The"      
+7          "Nanga"    
+8          "Parbat"   
+>phrasePosTag
+"Which"    "WDT"      
+"mountains" "NNS"      
+"are"      "VBP"      
+"higher"   "JJR"      
+"than"     "IN"       
+"the"      "DT"       
+"Nanga"    "NNP"      
+"Parbat"   "NNP"      
+>priorMatchScore
+"Mountains" "Mountain" 0.736      
+>resourceType
+"Mountain" Class      
+>>
+>hasPhrase
+"Wikipedia?" 
+>hasRelation
+>hasResource
+"Wikipedia?" "dbr-Wikipedia" 
+>phraseDepTag
+"Wikipedia" "created"  "Root"     
+"created"  "Who"      "Nsubj"    
+"created"  "Wikipedia" "Dobj"     
+>phraseIndex
+1          "Who"      
+2          "Created"  
+3          "Wikipedia" 
+>phrasePosTag
+"Who"      "WP"       
+"created"  "VBD"      
+"Wikipedia" "NNP"      
+>priorMatchScore
+"Wikipedia?" "dbr-Wikipedia" 0.857      
+>resourceType
+"dbo-Author" Relation   
+>>
+>hasPhrase
+"Starring" 
+>hasRelation
+>hasResource
+"Starring" "dbo-Starring" 
+>phraseDepTag
+"Hero"     "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "actors"   "Dobj"     
+"actors"   "all"      "Det"      
+"actors"   "starring" "Acl"      
+"starring" "Hero"     "Nmod:In"  
+"Hero"     "in"       "Case"     
+"Hero"     "Last"     "Amod"     
+"Hero"     "Action"   "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Actors"   
+5          "Starring" 
+6          "In"       
+7          "Last"     
+8          "Action"   
+9          "Hero"     
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"actors"   "NNS"      
+"starring" "VBG"      
+"in"       "IN"       
+"Last"     "JJ"       
+"Action"   "NNP"      
+"Hero"     "NNP"      
+>priorMatchScore
+"Starring" "dbo-Starring" 0.888      
+>resourceType
+"dbo-Starring" Relation   
+>>
+>hasPhrase
+"Developed" 
+>hasRelation
+>hasResource
+"Developed" "dbo-Developer" 
+>phraseDepTag
+"California" "developed" "Root"     
+"software" "Which"    "Det"      
+"developed" "software" "Nsubjpass" 
+"developed" "has"      "Aux"      
+"developed" "been"     "Auxpass"  
+"developed" "organizations" "Nmod:Agent" 
+"organizations" "by"       "Case"     
+"organizations" "founded"  "Acl"      
+"founded"  "California" "Nmod:In"  
+"California" "in"       "Case"     
+>phraseIndex
+1          "Which"    
+2          "Software" 
+3          "Has"      
+4          "Been"     
+5          "Developed" 
+6          "By"       
+7          "Organizations" 
+8          "Founded"  
+9          "In"       
+10         "California" 
+>phrasePosTag
+"Which"    "WDT"      
+"software" "NN"       
+"has"      "VBZ"      
+"been"     "VBN"      
+"developed" "VBN"      
+"by"       "IN"       
+"organizations" "NNS"      
+"founded"  "VBN"      
+"in"       "IN"       
+"California" "NNP"      
+>priorMatchScore
+"Developed" "dbo-Developer" 0.8        
+>resourceType
+"dbo-Developer" Relation   
+>>
+>hasPhrase
+"Medicine?" 
+>hasRelation
+>hasResource
+"Medicine?" "dbr-Medicine" 
+>phraseDepTag
+"medicine" "work"     "Root"     
+"work"     "Which"    "Dobj"     
+"work"     "companies" "Nsubj"    
+"work"     "work"     "Conj:And" 
+"work"     "industry" "Nmod:In"  
+"work"     "as"       "Cc"       
+"work"     "medicine" "Nmod:In"  
+"industry" "in"       "Case"     
+"industry" "the"      "Det"      
+"industry" "aerospace" "Compound" 
+"as"       "well"     "Mwe"      
+>phraseIndex
+1          "Which"    
+2          "Companies" 
+3          "Work"     
+4          "In"       
+5          "The"      
+6          "Aerospace" 
+7          "Industry" 
+8          "As"       
+9          "Well"     
+10         "As"       
+11         "In"       
+12         "Medicine" 
+>phrasePosTag
+"Which"    "WDT"      
+"companies" "NNS"      
+"work"     "VBP"      
+"in"       "IN"       
+"the"      "DT"       
+"aerospace" "NN"       
+"industry" "NN"       
+"as"       "RB"       
+"well"     "RB"       
+"as"       "IN"       
+"medicine" "NN"       
+>priorMatchScore
+"Medicine?" "dbr-Medicine" 0.736      
+>resourceType
+"dbr-Medicine" Entity     
+>>
+>hasPhrase
+"Christian" 
+>hasRelation
+>hasResource
+"Christian" "dbr-Christian_Bale" 
+>phraseDepTag
+"Goldmine" "starring" "Root"     
+"Bale"     "Christian" "Compound" 
+"starring" "Is"       "Aux"      
+"starring" "Bale"     "Nsubj"    
+"starring" "Goldmine" "Nmod:In"  
+"Goldmine" "in"       "Case"     
+"Goldmine" "Velvet"   "Compound" 
+>phraseIndex
+1          "Is"       
+2          "Christian" 
+3          "Bale"     
+4          "Starring" 
+5          "In"       
+6          "Velvet"   
+7          "Goldmine" 
+>phrasePosTag
+"Is"       "VBZ"      
+"Christian" "NNP"      
+"Bale"     "NNP"      
+"starring" "VBG"      
+"in"       "IN"       
+"Velvet"   "NNP"      
+"Goldmine" "NNP"      
+>priorMatchScore
+"Christian" "dbr-Christian_Bale" 0.72       
+>resourceType
+"dbr-Christian_Bale" Entity     
+>>
+>hasPhrase
+"Companies" 
+>hasRelation
+>hasResource
+"Companies" "Homepage" 
+>phraseDepTag
+"employees" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "websites" "Dobj"     
+"websites" "the"      "Det"      
+"websites" "companies" "Nmod:Of"  
+"companies" "of"       "Case"     
+"companies" "employees" "Nmod:With" 
+"more"     "than"     "Mwe"      
+"500000"   "more"     "Advmod"   
+"employees" "with"     "Case"     
+"employees" "500000"   "Nummod"   
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "The"      
+4          "Websites" 
+5          "Of"       
+6          "Companies" 
+7          "With"     
+8          "More"     
+9          "Than"     
+10         "500000"   
+11         "Employees" 
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"the"      "DT"       
+"websites" "NNS"      
+"of"       "IN"       
+"companies" "NNS"      
+"with"     "IN"       
+"more"     "JJR"      
+"than"     "IN"       
+"500000"   "CD"       
+"employees" "NNS"      
+>priorMatchScore
+"Companies" "Homepage" 0.526      
+>resourceType
+"Homepage" Class      
+>>
+>hasPhrase
+"Actors"   
+>hasRelation
+>hasResource
+"Actors"   "Actor"    
+>phraseDepTag
+"Germany"  "born"     "Root"     
+"actors"   "Which"    "Det"      
+"born"     "actors"   "Nsubjpass" 
+"born"     "were"     "Auxpass"  
+"born"     "Germany"  "Nmod:In"  
+"Germany"  "in"       "Case"     
+>phraseIndex
+1          "Which"    
+2          "Actors"   
+3          "Were"     
+4          "Born"     
+5          "In"       
+6          "Germany"  
+>phrasePosTag
+"Which"    "WDT"      
+"actors"   "NNS"      
+"were"     "VBD"      
+"born"     "VBN"      
+"in"       "IN"       
+"Germany"  "NNP"      
+>priorMatchScore
+"Actors"   "Actor"    0.615      
+>resourceType
+"Actor"    Class      
+>>
+>hasPhrase
+"Entrances?" 
+>hasRelation
+>hasResource
+"Entrances?" "Entrancecount" 
+>phraseDepTag
+"entrances" "have"     "Root"     
+"caves"    "Which"    "Det"      
+"have"     "caves"    "Nsubj"    
+"have"     "entrances" "Dobj"     
+"more"     "than"     "Mwe"      
+"3"        "more"     "Advmod"   
+"entrances" "3"        "Nummod"   
+>phraseIndex
+1          "Which"    
+2          "Caves"    
+3          "Have"     
+4          "More"     
+5          "Than"     
+6          "3"        
+7          "Entrances" 
+>phrasePosTag
+"Which"    "WDT"      
+"caves"    "NNS"      
+"have"     "VBP"      
+"more"     "JJR"      
+"than"     "IN"       
+"3"        "CD"       
+"entrances" "NNS"      
+>priorMatchScore
+"Entrances?" "Entrancecount" 0.56       
+>resourceType
+"Entrancecount" Class      
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Michelle" "Obama"    "Root"     
+"wife"     "the"      "Det"      
+"Obama"    "Is"       "Cop"      
+"Obama"    "wife"     "Nsubj"    
+"Obama"    "of"       "Advmod"   
+"Obama"    "president" "Dep"      
+"Obama"    "called"   "Acl:Relcl" 
+"called"   "Michelle" "Dobj"     
+>phraseIndex
+1          "Is"       
+2          "The"      
+3          "Wife"     
+4          "Of"       
+5          "President" 
+6          "Obama"    
+7          "Called"   
+8          "Michelle" 
+>phrasePosTag
+"Is"       "VBZ"      
+"the"      "DT"       
+"wife"     "NN"       
+"of"       "IN"       
+"president" "NN"       
+"Obama"    "NNP"      
+"called"   "VBD"      
+"Michelle" "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+"Roach."   
+>hasRelation
+>hasResource
+"Roach."   "dbr-Hal_Roach" 
+>phraseDepTag
+"Roach"    "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "films"    "Dobj"     
+"films"    "all"      "Det"      
+"films"    "produced" "Acl"      
+"produced" "Roach"    "Nmod:By"  
+"Roach"    "by"       "Case"     
+"Roach"    "Hal"      "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Films"    
+5          "Produced" 
+6          "By"       
+7          "Hal"      
+8          "Roach"    
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"films"    "NNS"      
+"produced" "VBN"      
+"by"       "IN"       
+"Hal"      "NNP"      
+"Roach"    "NNP"      
+>priorMatchScore
+"Roach."   "dbr-Hal_Roach" 0.588      
+>resourceType
+"dbr-Hal_Roach" Entity     
+>>
+>hasPhrase
+"Published" 
+>hasRelation
+>hasResource
+"Published" "dbo-Publisher" 
+>phraseDepTag
+"Software" "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "games"    "Dobj"     
+"games"    "all"      "Det"      
+"games"    "video"    "Compound" 
+"games"    "published" "Acl"      
+"published" "Software" "Nmod:By"  
+"Software" "by"       "Case"     
+"Software" "Mean"     "Compound" 
+"Software" "Hamster"  "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Video"    
+5          "Games"    
+6          "Published" 
+7          "By"       
+8          "Mean"     
+9          "Hamster"  
+10         "Software" 
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"video"    "NN"       
+"games"    "NNS"      
+"published" "VBN"      
+"by"       "IN"       
+"Mean"     "NN"       
+"Hamster"  "NNP"      
+"Software" "NNP"      
+>priorMatchScore
+"Published" "dbo-Publisher" 0.8        
+>resourceType
+"dbr-Mean_Hamster_Software" Entity     
+>>
+>hasPhrase
+"Estonia?" 
+>hasRelation
+>hasResource
+"Estonia?" "dbr-Estonia" 
+>phraseDepTag
+"Estonia"  "spoken"   "Root"     
+"languages" "Which"    "Det"      
+"spoken"   "languages" "Nsubjpass" 
+"spoken"   "are"      "Auxpass"  
+"spoken"   "Estonia"  "Nmod:In"  
+"Estonia"  "in"       "Case"     
+>phraseIndex
+1          "Which"    
+2          "Languages" 
+3          "Are"      
+4          "Spoken"   
+5          "In"       
+6          "Estonia"  
+>phrasePosTag
+"Which"    "WDT"      
+"languages" "NNS"      
+"are"      "VBP"      
+"spoken"   "VBN"      
+"in"       "IN"       
+"Estonia"  "NNP"      
+>priorMatchScore
+"Estonia?" "dbr-Estonia" 0.823      
+>resourceType
+"dbr-Estonia" Entity     
+>>
+>hasPhrase
+"Aldi"     
+>hasRelation
+>hasResource
+"Aldi"     "dbr-Aldi" 
+>phraseDepTag
+"there"    "are"      "Root"     
+"many"     "How"      "Advmod"   
+"Aldi"     "many"     "Amod"     
+"Aldi"     "stores"   "Dep"      
+"are"      "Aldi"     "Nsubj"    
+"are"      "there"    "Expl"     
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Aldi"     
+4          "Stores"   
+5          "Are"      
+6          "There"    
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"Aldi"     "NNP"      
+"stores"   "NNS"      
+"are"      "VBP"      
+"there"    "EX"       
+>priorMatchScore
+"Aldi"     "dbr-Aldi" 0.8        
+>resourceType
+"dbo-Numberoflocations" Relation   
+>>
+>hasPhrase
+"Capitals" 
+>hasRelation
+>hasResource
+"Capitals" "Capitalsineurope" 
+>phraseDepTag
+"games"    "were"     "Root"     
+"capitals" "Which"    "Det"      
+"capitals" "Europe"   "Nmod:In"  
+"Europe"   "in"       "Case"     
+"were"     "capitals" "Dep"      
+"were"     "cities"   "Nsubj"    
+"cities"   "host"     "Compound" 
+"cities"   "games"    "Nmod:Of"  
+"games"    "of"       "Case"     
+"games"    "the"      "Det"      
+"games"    "summer"   "Compound" 
+"games"    "olympic"  "Amod"     
+>phraseIndex
+1          "Which"    
+2          "Capitals" 
+3          "In"       
+4          "Europe"   
+5          "Were"     
+6          "Host"     
+7          "Cities"   
+8          "Of"       
+9          "The"      
+10         "Summer"   
+11         "Olympic"  
+12         "Games"    
+>phrasePosTag
+"Which"    "WDT"      
+"capitals" "NNS"      
+"in"       "IN"       
+"Europe"   "NNP"      
+"were"     "VBD"      
+"host"     "NN"       
+"cities"   "NNS"      
+"of"       "IN"       
+"the"      "DT"       
+"summer"   "NN"       
+"olympic"  "JJ"       
+"games"    "NNS"      
+>priorMatchScore
+"Capitals" "Capitalsineurope" 0.538      
+>resourceType
+"Hostcitiesofthesummerolympicgames" Class      
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"States"   "Who"      "Root"     
+"Who"      "was"      "Cop"      
+"Who"      "president" "Nsubj"    
+"president" "the"      "Det"      
+"president" "first"    "Amod"     
+"president" "States"   "Nmod:Of"  
+"States"   "of"       "Case"     
+"States"   "the"      "Det"      
+"States"   "United"   "Compound" 
+>phraseIndex
+1          "Who"      
+2          "Was"      
+3          "The"      
+4          "First"    
+5          "President" 
+6          "Of"       
+7          "The"      
+8          "United"   
+9          "States"   
+>phrasePosTag
+"Who"      "WP"       
+"was"      "VBD"      
+"the"      "DT"       
+"first"    "JJ"       
+"president" "NN"       
+"of"       "IN"       
+"United"   "NNP"      
+"States"   "NNPS"     
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"produce"  "produce"  "Root"     
+"many"     "How"      "Advmod"   
+"films"    "many"     "Amod"     
+"Roach"    "Hal"      "Compound" 
+"produce"  "films"    "Dobj"     
+"produce"  "did"      "Aux"      
+"produce"  "Roach"    "Nsubj"    
+>phraseIndex
+1          "How"      
+2          "Many"     
+3          "Films"    
+4          "Did"      
+5          "Hal"      
+6          "Roach"    
+7          "Produce"  
+>phrasePosTag
+"How"      "WRB"      
+"many"     "JJ"       
+"films"    "NNS"      
+"did"      "VBD"      
+"Hal"      "NNP"      
+"Roach"    "NNP"      
+"produce"  "VB"       
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Christmas" "contain"  "Root"     
+"albums"   "Which"    "Det"      
+"albums"   "music"    "Compound" 
+"contain"  "albums"   "Nsubj"    
+"contain"  "song"     "Dobj"     
+"song"     "the"      "Det"      
+"song"     "Christmas" "Nmod:Tmod" 
+"Christmas" "Last"     "Amod"     
+>phraseIndex
+1          "Which"    
+2          "Music"    
+3          "Albums"   
+4          "Contain"  
+5          "The"      
+6          "Song"     
+7          "Last"     
+8          "Christmas" 
+>phrasePosTag
+"Which"    "WDT"      
+"music"    "NN"       
+"albums"   "NNS"      
+"contain"  "VBP"      
+"the"      "DT"       
+"song"     "NN"       
+"Last"     "JJ"       
+"Christmas" "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"Steel"    "Give"     "Root"     
+"Give"     "me"       "Iobj"     
+"Give"     "books"    "Dobj"     
+"books"    "all"      "Det"      
+"books"    "written"  "Acl"      
+"written"  "Steel"    "Nmod:By"  
+"Steel"    "by"       "Case"     
+"Steel"    "Danielle" "Compound" 
+>phraseIndex
+1          "Give"     
+2          "Me"       
+3          "All"      
+4          "Books"    
+5          "Written"  
+6          "By"       
+7          "Danielle" 
+8          "Steel"    
+>phrasePosTag
+"Give"     "VB"       
+"me"       "PRP"      
+"all"      "DT"       
+"books"    "NNS"      
+"written"  "VBN"      
+"by"       "IN"       
+"Danielle" "NNP"      
+"Steel"    "NNP"      
+>priorMatchScore
+>resourceType
+>>
+>hasPhrase
+>hasRelation
+>hasResource
+>phraseDepTag
+"USA"      "located"  "Root"     
+"airports" "Which"    "Det"      
+"located"  "airports" "Nsubj"    
+"located"  "are"      "Cop"      
+>phraseIndex
+1          "Which"    
+2          "Airports" 
+3          "Are"      
+4          "Located"  
+5          "In"       
+6          "California" 
+8          "Usa"      
+>phrasePosTag
+"Which"    "WDT"      
+"airports" "NNS"      
+"are"      "VBP"      
+"located"  "JJ"       
+"in"       "IN"       
+"California" "NNP"      
+"USA"      ","        
+>priorMatchScore
+>resourceType

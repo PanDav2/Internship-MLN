@@ -17,9 +17,9 @@ weight w_sf31: PosTag x Type -> Double;
 factor :for Resource r, PosTag pT, Phrase p, Type rT
 	if phrasePosTag(p,pT) & resourceType(r,rT) add [hasResource(p,r)]*w_sf31(pT,rT);
 
-//weight w_sf3 : PosTag -> Double;
-//factor :for Phrase p, PosTag pT
-//	if phrasePosTag(p,pT) add [hasPhrase(p)]*w_sf3(pT);
+weight w_sf3 : PosTag -> Double;
+factor :for Phrase p, PosTag pT
+	if phrasePosTag(p,pT) add [hasPhrase(p)]*w_sf3(pT);
 //sf4
 /*weight w_sf41: DepTag -> Double+;
 weight w_sf42: Relation -> Double+;
