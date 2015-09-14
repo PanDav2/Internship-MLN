@@ -45,13 +45,13 @@
 "Kennedy"  "dbr_John_F._Kennedy"  0.583
 
 >resourceType
-"dbo_vicePresident"   Relation
+"dbo_successor"   Relation
 
 >hasPhrase
-"president"
+"successor"
 
 >priorMatchScore
-"president"  "dbo_vicePresident"  0.666
+"successor"  "dbo_successor"  0.9
 
 >hasPhrase
 "Berlin"
@@ -93,6 +93,9 @@
 "dbo_instrument"   Relation
 
 >resourceType
+"dbo_location"   Relation
+
+>resourceType
 "dbo_product"   Relation
 
 >hasPhrase
@@ -117,10 +120,37 @@
 "produces"  "dbo_races"  0.533
 
 >resourceType
+"dbo_races"   Relation
+
+>hasPhrase
+"produces"
+
+>priorMatchScore
+"produces"  "dbo_races"  0.533
+
+>resourceType
 "dbo_team"   Relation
 
 >resourceType
 "dbo_league"   Relation
+
+>hasPhrase
+"League"
+
+>priorMatchScore
+"League"  "dbo_league"  0.714
+
+>hasPhrase
+"Premier"
+
+>priorMatchScore
+"Premier"  "dbr_Premier_League"  0.608
+
+>hasPhrase
+"League"
+
+>priorMatchScore
+"League"  "dbr_Premier_League"  0.545
 
 >resourceType
 "dbo_birthDate"   Relation
@@ -139,6 +169,12 @@
 
 >priorMatchScore
 "members"  "dbo_bandMember"  0.526
+
+>hasPhrase
+"longest"
+
+>priorMatchScore
+"longest"  "length"  0.533
 
 >resourceType
 "dbo_numberOfEpisodes"   Relation
@@ -248,6 +284,24 @@
 >priorMatchScore
 "admitted"  "admittancedate"  0.666
 
+>hasPhrase
+"admitted"
+
+>priorMatchScore
+"admitted"  "admittancedate"  0.666
+
+>hasPhrase
+"governor"
+
+>priorMatchScore
+"governor"  "governor"  0.888
+
+>hasPhrase
+"Parnell"
+
+>priorMatchScore
+"Parnell"  "dbr_Sean_Parnell"  0.666
+
 >resourceType
 "dbo_director"   Relation
 
@@ -258,13 +312,16 @@
 "dbo_starring"   Relation
 
 >resourceType
-"dbo_class"   Relation
+"dbo_director"   Relation
+
+>resourceType
+"dbo_starring"   Relation
 
 >hasPhrase
-"amphibian"
+"classis"
 
 >priorMatchScore
-"amphibian"  "dbr_Amphibian"  0.8
+"classis"  "classis"  0.875
 
 >hasPhrase
 "Angela"
@@ -284,9 +341,6 @@
 >priorMatchScore
 "birth"  "birthName"  0.625
 
->resourceType
-"dbo_religion"   Relation
-
 >hasPhrase
 "Methodist"
 
@@ -296,8 +350,20 @@
 >resourceType
 "dbo_type"   Relation
 
+>hasPhrase
+"organizations"
+
+>priorMatchScore
+"organizations"  "dbr_Nonprofit_organization"  0.648
+
 >resourceType
 "dbo_type"   Relation
+
+>hasPhrase
+"organizations"
+
+>priorMatchScore
+"organizations"  "dbr_Nonprofit_organization"  0.648
 
 >resourceType
 "dbo_battle"   Relation
@@ -404,23 +470,20 @@
 >priorMatchScore
 "Rhine"  "dbr_Rhine"  0.833
 
+>resourceType
+"dbo_country"   Relation
+
 >hasPhrase
 "countries"
 
 >priorMatchScore
-"countries"  "country"  0.666
+"countries"  "dbo_country"  0.666
 
 >resourceType
 "dbo_occupation"   Relation
 
 >resourceType
 "dbo_birthPlace"   Relation
-
->hasPhrase
-"Australia"
-
->priorMatchScore
-"Australia"  "dbr_Australia"  0.9
 
 >resourceType
 "dbo_headquarter"   Relation
@@ -430,6 +493,9 @@
 
 >priorMatchScore
 "headquarters"  "dbo_headquarter"  0.88
+
+>resourceType
+"dbo_country"   Relation
 
 >hasPhrase
 "Goofy"
@@ -460,12 +526,6 @@
 
 >resourceType
 "dbo_country"   Relation
-
->hasPhrase
-"Japan"
-
->priorMatchScore
-"Japan"  "dbr_Japan"  0.833
 
 >hasPhrase
 "Lisbon"
@@ -587,11 +647,29 @@
 >priorMatchScore
 "capitals"  "dbo_capital"  0.823
 
+>hasPhrase
+"Aristotle"
+
+>priorMatchScore
+"Aristotle"  "dbr_Aristotle"  0.9
+
 >resourceType
 "dbo_influencedBy"   Relation
 
+>hasPhrase
+"influence"
+
+>priorMatchScore
+"influence"  "dbo_influencedBy"  0.782
+
+>hasPhrase
+"Socrates"
+
+>priorMatchScore
+"Socrates"  "dbr_Socrates"  0.888
+
 >resourceType
-"dbo_country"   Relation
+"dbo_influencedBy"   Relation
 
 >resourceType
 "dbo_operator"   Relation
@@ -609,10 +687,10 @@
 "NASA"  "dbr_NASA"  0.8
 
 >hasPhrase
-"Stevens"
+"Lennon"
 
 >priorMatchScore
-"Stevens"  "dbr_Cat_Stevens"  0.7
+"Lennon"  "dbr_John_Lennon"  0.631
 
 >resourceType
 "dbo_instrument"   Relation
@@ -687,13 +765,7 @@
 "dbo_isPartOf"   Relation
 
 >resourceType
-"dbo_populationTotal"   Relation
-
->resourceType
 "dbo_isPartOf"   Relation
-
->resourceType
-"dbo_populationTotal"   Relation
 
 >hasPhrase
 "Obama"
@@ -748,6 +820,21 @@
 
 >resourceType
 "dbo_country"   Relation
+
+>resourceType
+"dbo_country"   Relation
+
+>hasPhrase
+"Michael"
+
+>priorMatchScore
+"Michael"  "dbr_Michael_Jackson"  0.583
+
+>hasPhrase
+"Jackson"
+
+>priorMatchScore
+"Jackson"  "dbr_Michael_Jackson"  0.583
 
 >resourceType
 "dbo_deathDate"   Relation
@@ -813,7 +900,19 @@
 "chemist"  "dbr_Chemist"  0.75
 
 >resourceType
-"dbo_museum"   Relation
+"dbo_profession"   Relation
+
+>hasPhrase
+"Scream"
+
+>priorMatchScore
+"Scream"  "dbr_The_Scream"  0.666
+
+>hasPhrase
+"museum"
+
+>priorMatchScore
+"museum"  "museum"  0.857
 
 >resourceType
 "dbo_author"   Relation
@@ -975,22 +1074,7 @@
 "capital"  "dbo_capital"  0.875
 
 >resourceType
-"dbo_director"   Relation
-
->resourceType
-"dbo_releaseDate"   Relation
-
->resourceType
-"dbo_releaseDate"   Relation
-
->resourceType
 "dbo_anthem"   Relation
-
->hasPhrase
-"the"
-
->priorMatchScore
-"the"  "dbo_anthem"  0.545
 
 >resourceType
 "dbo_musicalArtist"   Relation
@@ -1000,12 +1084,6 @@
 
 >priorMatchScore
 "Ramones"  "dbr_Ramones"  0.875
-
->resourceType
-"dbo_bSide"   Relation
-
->resourceType
-"dbo_author"   Relation
 
 >hasPhrase
 "Miffy"
@@ -1128,7 +1206,22 @@
 "dbo_director"   Relation
 
 >resourceType
+"dbo_starring"   Relation
+
+>resourceType
+"dbo_director"   Relation
+
+>hasPhrase
+"Jackson"
+
+>priorMatchScore
+"Jackson"  "dbr_Andrew_Jackson"  0.608
+
+>resourceType
 "dbo_battle"   Relation
+
+>resourceType
+"dbo_governmentType"   Relation
 
 >hasPhrase
 "WikiLeaks"
@@ -1175,8 +1268,35 @@
 >priorMatchScore
 "currency"  "dbo_currency"  0.888
 
+>hasPhrase
+"Republic"
+
+>priorMatchScore
+"Republic"  "dbr_Czech_Republic"  0.666
+
+>resourceType
+"dbo_currency"   Relation
+
+>hasPhrase
+"currency"
+
+>priorMatchScore
+"currency"  "dbo_currency"  0.888
+
+>hasPhrase
+"Berlin"
+
+>priorMatchScore
+"Berlin"  "dbr_Berlin"  0.857
+
 >resourceType
 "dbo_areaCode"   Relation
+
+>hasPhrase
+"area"
+
+>priorMatchScore
+"area"  "dbo_areaCode"  0.571
 
 >resourceType
 "dbo_officialLanguage"   Relation
@@ -1202,9 +1322,6 @@
 >priorMatchScore
 "owner"  "dbo_owner"  0.833
 
->resourceType
-"dbo_country"   Relation
-
 >hasPhrase
 "Latvia"
 
@@ -1215,7 +1332,7 @@
 "dbo_spouse"   Relation
 
 >resourceType
-"dbo_spouse"   Relation
+"dbo_birthPlace"   Relation
 
 >hasPhrase
 "Gettysburg"
@@ -1260,13 +1377,13 @@
 "dbo_elevation"   Relation
 
 >resourceType
+"dbo_locatedInArea"   Relation
+
+>resourceType
+"dbo_elevation"   Relation
+
+>resourceType
 "dbo_officialLanguage"   Relation
-
->hasPhrase
-"Aviv"
-
->priorMatchScore
-"Aviv"  "dbr_Tel_Aviv"  0.571
 
 >resourceType
 "dbo_leaderName"   Relation
@@ -1289,8 +1406,38 @@
 >priorMatchScore
 "designed"  "designer"  0.777
 
+>hasPhrase
+"Brooklyn"
+
+>priorMatchScore
+"Brooklyn"  "dbr_Brooklyn_Bridge"  0.64
+
+>hasPhrase
+"Bridge"
+
+>priorMatchScore
+"Bridge"  "dbr_Brooklyn_Bridge"  0.521
+
+>hasPhrase
+"designed"
+
+>priorMatchScore
+"designed"  "designer"  0.777
+
+>hasPhrase
+"Karakoram"
+
+>priorMatchScore
+"Karakoram"  "dbr_Karakoram"  0.9
+
 >resourceType
 "dbo_highestPlace"   Relation
+
+>hasPhrase
+"highest"
+
+>priorMatchScore
+"highest"  "dbo_highestPlace"  0.666
 
 >hasPhrase
 "Forbes"
@@ -1298,14 +1445,17 @@
 >priorMatchScore
 "Forbes"  "dbr_Forbes"  0.857
 
->resourceType
-"dbo_editor"   Relation
-
 >hasPhrase
-"editor"
+"Bruce"
 
 >priorMatchScore
-"editor"  "dbo_editor"  0.857
+"Bruce"  "dbr_Bruce_Carver"  0.526
+
+>hasPhrase
+"Carver"
+
+>priorMatchScore
+"Carver"  "dbr_Bruce_Carver"  0.6
 
 >resourceType
 "dbo_deathCause"   Relation
@@ -1340,11 +1490,11 @@
 >priorMatchScore
 "Cruise"  "dbr_Tom_Cruise"  0.666
 
->hasPhrase
-"website"
+>resourceType
+"dbo_series"   Relation
 
->priorMatchScore
-"website"  "website"  0.875
+>resourceType
+"dbo_seasonNumber"   Relation
 
 >resourceType
 "dbo_series"   Relation
@@ -1353,16 +1503,46 @@
 "dbo_seasonNumber"   Relation
 
 >resourceType
+"dbo_series"   Relation
+
+>resourceType
+"dbo_seasonNumber"   Relation
+
+>hasPhrase
+"Kennedy"
+
+>priorMatchScore
+"Kennedy"  "dbr_John_F._Kennedy"  0.583
+
+>resourceType
 "dbo_deathPlace"   Relation
 
 >resourceType
-"dbo_elevation"   Relation
+"dbo_deathPlace"   Relation
 
->resourceType
-"dbo_elevation"   Relation
+>hasPhrase
+"Nanga"
 
->resourceType
-"dbo_elevation"   Relation
+>priorMatchScore
+"Nanga"  "dbr_Nanga_Parbat"  0.526
+
+>hasPhrase
+"Parbat"
+
+>priorMatchScore
+"Parbat"  "dbr_Nanga_Parbat"  0.6
+
+>hasPhrase
+"Nanga"
+
+>priorMatchScore
+"Nanga"  "dbr_Nanga_Parbat"  0.526
+
+>hasPhrase
+"Parbat"
+
+>priorMatchScore
+"Parbat"  "dbr_Nanga_Parbat"  0.6
 
 >hasPhrase
 "Wikipedia"
@@ -1373,38 +1553,26 @@
 >resourceType
 "dbo_author"   Relation
 
->resourceType
-"dbo_starring"   Relation
-
 >hasPhrase
 "starring"
 
 >priorMatchScore
-"starring"  "dbo_starring"  0.888
+"starring"  "starring"  0.888
 
 >resourceType
-"dbo_developer"   Relation
-
->resourceType
-"dbo_developer"   Relation
-
->resourceType
-"dbo_industry"   Relation
-
->resourceType
-"dbo_industry"   Relation
+"dbo_foundationPlace"   Relation
 
 >hasPhrase
-"Velvet"
+"Batman"
 
 >priorMatchScore
-"Velvet"  "dbr_Velvet_Goldmine"  0.521
+"Batman"  "dbr_Batman_Begins"  0.571
 
 >hasPhrase
-"Goldmine"
+"Begins"
 
 >priorMatchScore
-"Goldmine"  "dbr_Velvet_Goldmine"  0.64
+"Begins"  "dbr_Batman_Begins"  0.571
 
 >resourceType
 "dbo_starring"   Relation
@@ -1436,23 +1604,32 @@
 >resourceType
 "dbo_producer"   Relation
 
->resourceType
-"dbo_publisher"   Relation
-
->resourceType
-"dbo_spokenIn"   Relation
-
 >hasPhrase
-"spoken"
+"produced"
 
 >priorMatchScore
-"spoken"  "dbo_spokenIn"  0.75
+"produced"  "dbo_producer"  0.777
 
 >hasPhrase
-"Estonia"
+"Roach"
 
 >priorMatchScore
-"Estonia"  "dbr_Estonia"  0.875
+"Roach"  "dbr_Hal_Roach"  0.625
+
+>resourceType
+"dbo_producer"   Relation
+
+>hasPhrase
+"produced"
+
+>priorMatchScore
+"produced"  "dbo_producer"  0.777
+
+>hasPhrase
+"Roach"
+
+>priorMatchScore
+"Roach"  "dbr_Hal_Roach"  0.625
 
 >hasPhrase
 "Aldi"
@@ -1461,7 +1638,34 @@
 "Aldi"  "dbr_Aldi"  0.8
 
 >resourceType
-"dbo_numberOfLocations"   Relation
+"dbo_keyPerson"   Relation
+
+>resourceType
+"dbo_author"   Relation
+
+>hasPhrase
+"Danielle"
+
+>priorMatchScore
+"Danielle"  "dbr_Danielle_Steel"  0.666
+
+>resourceType
+"dbo_genre"   Relation
+
+>hasPhrase
+"Grunge"
+
+>priorMatchScore
+"Grunge"  "dbr_Grunge"  0.857
+
+>resourceType
+"dbo_country"   Relation
+
+>hasPhrase
+"Canadian"
+
+>priorMatchScore
+"Canadian"  "dbr_Canada"  0.75
 
 >resourceType
 "dbo_genre"   Relation
@@ -1469,8 +1673,26 @@
 >resourceType
 "dbo_country"   Relation
 
+>hasPhrase
+"country"
+
+>priorMatchScore
+"country"  "dbo_country"  0.875
+
+>hasPhrase
+"GIMP"
+
+>priorMatchScore
+"GIMP"  "dbr_GIMP"  0.8
+
 >resourceType
 "dbo_programmingLanguage"   Relation
+
+>hasPhrase
+"programming"
+
+>priorMatchScore
+"programming"  "dbo_programmingLanguage"  0.687
 
 >resourceType
 "dbo_starring"   Relation
@@ -1517,14 +1739,14 @@
 >resourceType
 "dbo_starring"   Relation
 
->resourceType
-"dbo_gender"   Relation
-
 >hasPhrase
-"female"
+"chancellors"
 
 >priorMatchScore
-"female"  "dbr_Female"  0.714
+"chancellors"  "dbr_Chancellor_of_Germany"  0.529
+
+>resourceType
+"dbo_author"   Relation
 
 >resourceType
 "dbo_author"   Relation
@@ -1533,19 +1755,25 @@
 "dbo_league"   Relation
 
 >hasPhrase
-"McKinley"
+"League"
 
 >priorMatchScore
-"McKinley"  "dbr_Mount_McKinley"  0.666
-
->resourceType
-"dbo_locatedInArea"   Relation
+"League"  "dbo_league"  0.714
 
 >hasPhrase
-"located"
+"Premier"
 
 >priorMatchScore
-"located"  "dbo_locatedInArea"  0.636
+"Premier"  "dbr_Premier_League"  0.608
+
+>hasPhrase
+"League"
+
+>priorMatchScore
+"League"  "dbr_Premier_League"  0.545
+
+>resourceType
+"dbo_league"   Relation
 
 >hasPhrase
 "Capcom"
@@ -1553,14 +1781,23 @@
 >priorMatchScore
 "Capcom"  "dbr_Capcom"  0.857
 
->resourceType
-"dbo_foundingDate"   Relation
+>hasPhrase
+"founded"
+
+>priorMatchScore
+"founded"  "foundation"  0.526
+
+>hasPhrase
+"organizations"
+
+>priorMatchScore
+"organizations"  "foundation"  0.56
 
 >hasPhrase
 "founded"
 
 >priorMatchScore
-"founded"  "dbo_foundingDate"  0.571
+"founded"  "foundation"  0.526
 
 >resourceType
 "dbo_elevation"   Relation

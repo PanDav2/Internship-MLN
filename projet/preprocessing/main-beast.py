@@ -1,4 +1,5 @@
 #-*-coding: utf-8 -*-
+import sys
 import pickle
 import re
 from fyzz import parse
@@ -235,7 +236,7 @@ def Dep_Pos_Extraction(tokenizer,files,debug=False):
     deptag=tokenizer['deps_cc']
     structure_multifile("\n>phraseDepTag\n",files)
     for cpt in range(len(deptag)):
-        if cpt < len(tableau):
+        if deptag[cpt][1] < len(tableau) and deptag[cpt][2] < len(tableau):
             s=''
             intoDico(str(tableau[deptag[cpt][1]]),str(tableau[deptag[cpt][2]]),dico_Mots)
             temp=[toQuote(tableau[deptag[cpt][1]]),space,toQuote(tableau[deptag[cpt][2]]),space,toQuote(deptag[cpt][0].title()),'\n']
@@ -257,7 +258,7 @@ def main(loc="./input/donnee.xml",MatchCriterium=0.5,debug=False):
     #pickle.dump(proc,  open( "save.p", "wb" ) )
     res=[] # // L'ensemble des ressources que l'on utilisera avec notre logiciel
 
-    with open(loc,'r') as inp, open("./output-beast/output_beast.pml","w") as gen, open("./output-beast/priorMatchScore","w") as pms:
+    with open(loc,'r') as inp, open("./output-beast/trai.atoms","w") as gen, open("./output-beast/priorMatchScore","w") as pms:
         # TAB CONTIENT L'ENSEMBLE DES LIGNES DU DOCUMENT DE DONNES (XML)
         tab=[]
         for line in inp:
@@ -277,56 +278,59 @@ def main(loc="./input/donnee.xml",MatchCriterium=0.5,debug=False):
                 m=search("<!\[CDATA\[$",var)
                 if "<string lang=\"en" in line:
                     compteur_q=compteur_q+1
-                    if compteur not in g:
-                        if m:
-                            question=str(extractQuestion(tab[j+2],"cas2")) +'\n'
-                        else:
-                            question=str(extractQuestion(tab[j+1],"cas1")) + '\n'
-                            print "question n° "+ str(compteur_q)+'\n'
-                            structure_multifile(">>\n",gen)
-                            (tokenizer,tableau)=treatQuestion(proc,question)
-                            Dep_Pos_Extraction(tokenizer,gen)
+                    if m:
+                        question=str(extractQuestion(tab[j+2],"cas2")) +'\n'
+                    else:
+                        question=str(extractQuestion(tab[j+1],"cas1")) + '\n'
+                        print "question n° "+ str(compteur_q)+'\n'
+                        structure_multifile(">>\n",gen)
+                        (tokenizer,tableau)=treatQuestion(proc,question)
+                        Dep_Pos_Extraction(tokenizer,gen)
             #
             # TRAITEMENT DES REQUETES ET EXTRATION DES RESSOURCES
             #
             m=search("PREFIX(.)*",line)
             if m :
                 compteur=compteur+1
-                if compteur not in g:
+                #if compteur not in g:
                     #
                     #  EXTRACTION ET ECRITURE DES RESSOURCES 
                     #
+                try:
                     ressource=parse(str(m.group(0))).where
-                    for pos1,xValues in enumerate(ressource):
-                        if "http://www.w3.org/1999/02/22-rdf-syntax-ns#" in str(xValues) or search('yago',str(xValues)) :
-                            stock_ressources.append(xValues[2][1])
-                            resourceType('Class',xValues[2][1],[gen])
-                            priorMatchScore(tableau,xValues[2][1],[gen],MatchCriterium,"Class")
-                        else:
-                            print line
-                            # En cours d'implémentation hasRelation(xValues)                            
-                            for pos2,yValues in enumerate(xValues):
-                                #On vérifie qu'il ne s'agisse pas d'une variable
-                                if isinstance(yValues,tuple):
-                                    # On recherche la catégorie dans laquelle la mettre
-                                    if search('ontology',yValues[0]):
-                                        if yValues[0][0]==yValues[0][0]:
-                                            resourceType('Relation',yValues[1],[gen,pms])                                            
-                                            stock_ressources.append(yValues[1])
-
-                                            priorMatchScore(tableau,yValues[1],[gen,pms],MatchCriterium,"Relation")
-                                    elif search('resource',yValues[0]):
-                                        resourceType('Entity',yValues[1],[gen])
+                except Exception:
+                    pass
+                for pos1,xValues in enumerate(ressource):
+                    if "http://www.w3.org/1999/02/22-rdf-syntax-ns#" in str(xValues) or search('yago',str(xValues)) :
+                        stock_ressources.append(xValues[2][1])
+                        resourceType('Class',xValues[2][1],[gen])
+                        priorMatchScore(tableau,xValues[2][1],[gen],MatchCriterium,"Class")
+                    else:
+                        print line
+                        # En cours d'implémentation hasRelation(xValues)                            
+                        for pos2,yValues in enumerate(xValues):
+                            #On vérifie qu'il ne s'agisse pas d'une variable
+                            if isinstance(yValues,tuple):
+                                # On recherche la catégorie dans laquelle la mettre
+                                if search('ontology',yValues[0]):
+                                    if yValues[0][0]==yValues[0][0]:
+                                        resourceType('Relation',yValues[1],[gen,pms])                                            
                                         stock_ressources.append(yValues[1])
-                                        priorMatchScore(tableau,yValues[1],[gen,pms],MatchCriterium,"Entity")
-
-                                    elif search('http://dbpedia.org/property/',str(xValues[1][0])):
-
-                                        stock_ressources.append(xValues[1][1])
-                                        resourceType('Class',xValues[1][1],[gen])
-                                        priorMatchScore(tableau,xValues[1][1],[gen,pms],MatchCriterium,"Class")
+                                        
+                                        priorMatchScore(tableau,yValues[1],[gen,pms],MatchCriterium,"Relation")
+                                elif search('resource',yValues[0]):
+                                    resourceType('Entity',yValues[1],[gen])
+                                    stock_ressources.append(yValues[1])
+                                    priorMatchScore(tableau,yValues[1],[gen,pms],MatchCriterium,"Entity")
+                                elif search('http://dbpedia.org/property/',str(xValues[1][0])):
+                                    stock_ressources.append(xValues[1][1])
+                                    resourceType('Class',xValues[1][1],[gen])
+                                    priorMatchScore(tableau,xValues[1][1],[gen,pms],MatchCriterium,"Class")
 
 
 
 #init()
-main()
+if len(sys.argv)!=1:
+    main(loc=sys.argv[1])
+else:
+    main()

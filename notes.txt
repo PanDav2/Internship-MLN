@@ -1,0 +1,56 @@
+IMPLEMENTATIONS MLN
+
+THEBEAST
+
+"I have developed markov thebeast, a Markov Logic engine used in research institutes around the world. It has helped developers to create state-of-the-art probabilistic models—without the need of a post-graduate degree in Machine Learning."
+
+SOURCE :
+https://github.com/riedelcastro/thebeast
+
+NOTES :
+Les librairies suivantes sont présentes en version 32bits et doivent être récupérées en version 64 afin que thebeast fonctionne.
+
+libcolamd.so.2.7.1
+liblpsolve55j.so
+liblpsolve55.so
+liblpsolve55j.jnilib / Récupéré sur https://code.google.com/p/thebeast/wiki/Installation
+
+L'implémentation thebeast est celle ayant la mieux marché pendant mon mois de stage. L'ensemble des données implémentées se trouvent dans le répertoire /projet/thebeast.
+
+tuffy
+
+Tuffy est actuellement l'implémentation de référence permettant une scalabilité et un gain de temps important principalement par rapport  à Alchemy.
+Cependant, lors de nos essais, cette dernière a montré une difficulté à s'adapter à nos règles, notamment lors de l'instanciation des variables (phase de grounding). Nous suspectons un problème de domaine de variable, et de définition, rendant cette tâche intraitable. Nous sommes donc passés à thebeast pour des questions de temps.
+L'ensemble de nos ressources sont cependant disponibles dans le dossier : ./tuffy/
+
+alchemy
+Je ne me suis pas servi d'alchemy pendant mon mois de stage. Cette implémentation est d'après les différents écrits, dépassée par les implémentations tuffy et thebeast, en plus de ne plus être maintenue.
+
+
+UTILISATION
+
+J'ai développé deux scripts durant mon stage qui prennent des fichiers des compétitions quald en entrée et retourne les différentes features que prends le système décrit dans le papier de He.
+À ce jour, les features extraites sont :
+
+PhraseIndex
+PhraseDepTag
+PhraseDepOne
+HasMeanWord
+ResourceType
+HasResource (en partie)
+HasPhrase (en partie)
+
+Il est à noter que les prédicats HasResource et HasPhrase dépendent de la base connaissance et donc ne peuvent pas être considérés comme totalement implémentés.
+
+Pour des raisons de temps et d'intérêt de l'implémentation proposée par l'article de He, je n'ai pas implémenté la génération du prédicat HasRelatedness, celui-ci nécessitant la connexion à une base de connaissance. Il pourrait être intéressant d'implémenter cette dernière.
+
+Les scripts python : /projet/preprocessing/main-tuffy.py et ./projet/preprocessing/main-beast.py génèrent tous deux les bases de connaissances dont se serviront les implémentations respectivent afin de déterminer le poids des réseaux de Markov. Ils peuvent soit prendre un fichier en argument (xml) ou alors ils iront chercher le fichier à parser dans le dossier ./input/ relativement à leur répertoire courant.
+
+RESTE À FAIRE
+
+Le reste à faire concernant mon travail réalisé serait d'implémenter la détermination des HasRelation afin que le reste des règles puissent être prises en considération et évaluées.
+Un interfaçage avec de vraies bases de connaissances permettrait également d'implémenter les prédicats HasQueryResults et isTypeCompatible.
+                                                                                                                                                    
+
+
+
