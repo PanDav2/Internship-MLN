@@ -1,0 +1,1209 @@
+//What is the birth name of Angela Merkel? 
+//[u'What', u'is', u'the', u'birth', u'name', u'of', u'Angela', u'Merkel', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(is,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(birth,4,4)
+PhraseIndex(name,5,5)
+PhraseIndex(of,6,6)
+PhraseIndex(Angela,7,7)
+PhraseIndex(Merkel,8,8)
+PhrasePosTag(What,WP)
+PhrasePosTag(Is,VBZ)
+PhrasePosTag(The,DT)
+PhrasePosTag(Birth,NN)
+PhrasePosTag(Name,NN)
+PhrasePosTag(Of,IN)
+PhrasePosTag(Angela,NNP)
+PhrasePosTag(Merkel,NNP)
+PhraseDepTag(Merkel,What,root)
+PhraseDepTag(What,Is,cop)
+PhraseDepTag(What,Name,nsubj)
+PhraseDepTag(Name,The,det)
+PhraseDepTag(Name,Birth,compound)
+PhraseDepTag(Name,Merkel,nmod:of)
+PhraseDepTag(Merkel,Of,case)
+PhraseDepTag(Merkel,Angela,compound)
+//[(('http://dbpedia.org/resource/', 'Angela_Merkel'), ('http://dbpedia.org/property/', 'birthName'), SparqlVar('string'))]
+
+ResourceType(Dbr_Angela_Merkel,Entity)
+0.63 PriorMatchScore(Dbr_Angela_Merkel,Angela)
+
+0.63 PriorMatchScore(Dbr_Angela_Merkel,Merkel)
+
+
+ResourceType(Birthname,Class)
+0.57 PriorMatchScore(Birthname,Birth)
+
+0.61 PriorMatchScore(Birthname,Name)
+
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Angela_Merkel dbp:birthName ?string . }
+
+
+//Give me all Methodist politicians. 
+//[u'Give', u'me', u'all', u'Methodist', u'politicians', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(me,2,2)
+PhraseIndex(all,3,3)
+PhraseIndex(Methodist,4,4)
+PhraseIndex(politicians,5,5)
+PhrasePosTag(Give,VB)
+PhrasePosTag(Me,PRP)
+PhrasePosTag(All,DT)
+PhrasePosTag(Methodist,JJ)
+PhrasePosTag(Politicians,NNS)
+PhraseDepTag(Politicians,Give,root)
+PhraseDepTag(Give,Me,iobj)
+PhraseDepTag(Give,Politicians,dobj)
+PhraseDepTag(Politicians,All,det)
+PhraseDepTag(Politicians,Methodist,amod)
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Politician')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'religion'), ('http://dbpedia.org/resource/', 'Methodism'))]
+
+ResourceType(Politician,Class)
+0.95 PriorMatchScore(Politician,Politicians)
+
+
+ResourceType(Dbo_Religion,Relation)
+
+ResourceType(Dbr_Methodism,Entity)
+0.88 PriorMatchScore(Dbr_Methodism,Methodist)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Politician . ?uri dbo:religion res:Methodism . }
+
+
+//How often did Jane Fonda marry? 
+//[u'How', u'often', u'did', u'Jane', u'Fonda', u'marry', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(often,2,2)
+PhraseIndex(did,3,3)
+PhraseIndex(Jane,4,4)
+PhraseIndex(Fonda,5,5)
+PhraseIndex(marry,6,6)
+PhrasePosTag(How,WRB)
+PhrasePosTag(Often,RB)
+PhrasePosTag(Did,VBD)
+PhrasePosTag(Jane,NNP)
+PhrasePosTag(Fonda,NNP)
+PhrasePosTag(Marry,VB)
+PhraseDepTag(Marry,Marry,root)
+PhraseDepTag(Often,How,advmod)
+PhraseDepTag(Fonda,Jane,compound)
+PhraseDepTag(Marry,Often,advmod)
+PhraseDepTag(Marry,Did,aux)
+PhraseDepTag(Marry,Fonda,nsubj)
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'type'), ('http://dbpedia.org/resource/', 'Nonprofit_organization')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'type'), ('http://dbpedia.org/resource/', 'Nonprofit_organization'))]
+
+ResourceType(Dbo_Type,Relation)
+
+ResourceType(Dbr_Nonprofit_Organization,Entity)
+
+ResourceType(Dbo_Type,Relation)
+
+ResourceType(Dbr_Nonprofit_Organization,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:type res:Nonprofit_organization . { ?uri dbo:locationCountry res:Australia . } UNION { ?uri dbo:location ?x . ?x dbo:country res:Australia . } }
+
+
+PhraseIndex(In,1,1)
+PhraseIndex(Which,2,2)
+PhraseIndex(Military,3,3)
+PhraseIndex(Conflicts,4,4)
+PhraseIndex(Did,5,5)
+PhraseIndex(Lawrence,6,6)
+PhraseIndex(Of,7,7)
+PhraseIndex(Arabia,8,8)
+PhraseIndex(Participate,9,9)
+
+//[u'In', u'Which', u'Military', u'Conflicts', u'Did', u'Lawrence', u'Of', u'Arabia', u'Participate']
+//In which military conflicts did Lawrence of Arabia participate?
+
+//La ligne est isolée 
+PhrasePosTag(In,IN)
+PhrasePosTag(Which,WDT)
+PhrasePosTag(Military,JJ)
+PhrasePosTag(Conflicts,NNS)
+PhrasePosTag(Did,VBD)
+PhrasePosTag(Lawrence,NNP)
+PhrasePosTag(Of,IN)
+PhrasePosTag(Arabia,NNP)
+PhrasePosTag(Participate,VB)
+phraseDepTag(Participate,Participate,root)
+phraseDepTag(Conflicts,In,case)
+phraseDepTag(Conflicts,Which,det)
+phraseDepTag(Conflicts,Military,amod)
+phraseDepTag(Lawrence,Arabia,nmod:of)
+phraseDepTag(Arabia,Of,case)
+phraseDepTag(Participate,Conflicts,nmod:in)
+phraseDepTag(Participate,Did,aux)
+phraseDepTag(Participate,Lawrence,nsubj)
+//[(('http://dbpedia.org/resource/', 'T._E._Lawrence'), ('http://dbpedia.org/ontology/', 'battle'), SparqlVar('uri'))]
+
+ResourceType(Dbr_T._E._Lawrence,Entity)
+0.72 PriorMatchScore(Dbr_T._E._Lawrence,Lawrence)
+
+
+ResourceType(Dbo_Battle,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:T._E._Lawrence dbo:battle ?uri . }
+
+
+//Who developed Minecraft? 
+//[u'Who', u'developed', u'Minecraft', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(developed,2,2)
+PhraseIndex(Minecraft,3,3)
+PhrasePosTag(Who,WP)
+PhrasePosTag(Developed,VBD)
+PhrasePosTag(Minecraft,NNP)
+PhraseDepTag(Minecraft,Developed,root)
+PhraseDepTag(Developed,Who,nsubj)
+PhraseDepTag(Developed,Minecraft,dobj)
+//[(('http://dbpedia.org/resource/', 'Minecraft'), ('http://dbpedia.org/ontology/', 'developer'), SparqlVar('uri'))]
+
+ResourceType(Dbr_Minecraft,Entity)
+1.0 PriorMatchScore(Dbr_Minecraft,Minecraft)
+
+
+ResourceType(Dbo_Developer,Relation)
+0.77 PriorMatchScore(Dbo_Developer,Developed)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Minecraft dbo:developer ?uri . }
+
+
+//What is the melting point of copper? 
+//[u'What', u'is', u'the', u'melting', u'point', u'of', u'copper', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(is,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(melting,4,4)
+PhraseIndex(point,5,5)
+PhraseIndex(of,6,6)
+PhraseIndex(copper,7,7)
+PhrasePosTag(What,WP)
+PhrasePosTag(Is,VBZ)
+PhrasePosTag(The,DT)
+PhrasePosTag(Melting,JJ)
+PhrasePosTag(Point,NN)
+PhrasePosTag(Of,IN)
+PhrasePosTag(Copper,NN)
+PhraseDepTag(Copper,What,root)
+PhraseDepTag(What,Is,cop)
+PhraseDepTag(What,Point,nsubj)
+PhraseDepTag(Point,The,det)
+PhraseDepTag(Point,Melting,amod)
+PhraseDepTag(Point,Copper,nmod:of)
+PhraseDepTag(Copper,Of,case)
+//Give me all sister cities of Brno. 
+//[u'Give', u'me', u'all', u'sister', u'cities', u'of', u'Brno', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(me,2,2)
+PhraseIndex(all,3,3)
+PhraseIndex(sister,4,4)
+PhraseIndex(cities,5,5)
+PhraseIndex(of,6,6)
+PhraseIndex(Brno,7,7)
+PhrasePosTag(Give,VB)
+PhrasePosTag(Me,PRP)
+PhrasePosTag(All,DT)
+PhrasePosTag(Sister,NN)
+PhrasePosTag(Cities,NNS)
+PhrasePosTag(Of,IN)
+PhrasePosTag(Brno,NNP)
+PhraseDepTag(Brno,Give,root)
+PhraseDepTag(Give,Me,iobj)
+PhraseDepTag(Give,Cities,dobj)
+PhraseDepTag(Cities,All,det)
+PhraseDepTag(Cities,Sister,compound)
+PhraseDepTag(Cities,Brno,nmod:of)
+PhraseDepTag(Brno,Of,case)
+//How many inhabitants does Maribor have? 
+//[u'How', u'many', u'inhabitants', u'does', u'Maribor', u'have', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(many,2,2)
+PhraseIndex(inhabitants,3,3)
+PhraseIndex(does,4,4)
+PhraseIndex(Maribor,5,5)
+PhraseIndex(have,6,6)
+PhrasePosTag(How,WRB)
+PhrasePosTag(Many,JJ)
+PhrasePosTag(Inhabitants,NNS)
+PhrasePosTag(Does,VBZ)
+PhrasePosTag(Maribor,NNP)
+PhrasePosTag(Have,VB)
+PhraseDepTag(Have,Have,root)
+PhraseDepTag(Many,How,advmod)
+PhraseDepTag(Inhabitants,Many,amod)
+PhraseDepTag(Have,Inhabitants,dobj)
+PhraseDepTag(Have,Does,aux)
+PhraseDepTag(Have,Maribor,nsubj)
+//[(('http://dbpedia.org/resource/', 'Maribor'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('num'))]
+
+ResourceType(Dbr_Maribor,Entity)
+1.0 PriorMatchScore(Dbr_Maribor,Maribor)
+
+
+ResourceType(Dbo_Populationtotal,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Maribor dbo:populationTotal ?num . }
+
+
+//Give me all companies in Munich. 
+//[u'Give', u'me', u'all', u'companies', u'in', u'Munich', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(me,2,2)
+PhraseIndex(all,3,3)
+PhraseIndex(companies,4,4)
+PhraseIndex(in,5,5)
+PhraseIndex(Munich,6,6)
+PhrasePosTag(Give,VB)
+PhrasePosTag(Me,PRP)
+PhrasePosTag(All,DT)
+PhrasePosTag(Companies,NNS)
+PhrasePosTag(In,IN)
+PhrasePosTag(Munich,NNP)
+PhraseDepTag(Munich,Give,root)
+PhraseDepTag(Give,Me,iobj)
+PhraseDepTag(Give,Companies,dobj)
+PhraseDepTag(Companies,All,det)
+PhraseDepTag(Companies,Munich,nmod:in)
+PhraseDepTag(Munich,In,case)
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company'))]
+
+ResourceType(Company,Class)
+0.75 PriorMatchScore(Company,Companies)
+
+
+ResourceType(Company,Class)
+0.75 PriorMatchScore(Company,Companies)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company . { ?uri dbo:location res:Munich . } UNION { ?uri dbo:headquarter res:Munich . } UNION { ?uri dbo:locationCity res:Munich . } }
+
+
+//How tall is Claudia Schiffer? 
+//[u'How', u'tall', u'is', u'Claudia', u'Schiffer', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(tall,2,2)
+PhraseIndex(is,3,3)
+PhraseIndex(Claudia,4,4)
+PhraseIndex(Schiffer,5,5)
+PhrasePosTag(How,WRB)
+PhrasePosTag(Tall,JJ)
+PhrasePosTag(Is,VBZ)
+PhrasePosTag(Claudia,NNP)
+PhrasePosTag(Schiffer,NNP)
+PhraseDepTag(Schiffer,Is,root)
+PhraseDepTag(Tall,How,advmod)
+PhraseDepTag(Is,Tall,dep)
+PhraseDepTag(Is,Schiffer,nsubj)
+PhraseDepTag(Schiffer,Claudia,compound)
+//[(('http://dbpedia.org/resource/', 'Claudia_Schiffer'), ('http://dbpedia.org/ontology/', 'height'), SparqlVar('height'))]
+
+ResourceType(Dbr_Claudia_Schiffer,Entity)
+0.60 PriorMatchScore(Dbr_Claudia_Schiffer,Claudia)
+
+0.66 PriorMatchScore(Dbr_Claudia_Schiffer,Schiffer)
+
+
+ResourceType(Dbo_Height,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height . }
+
+
+//List all games by GMT. 
+//[u'List', u'all', u'games', u'by', u'GMT', u'.']
+PhraseIndex(List,1,1)
+PhraseIndex(all,2,2)
+PhraseIndex(games,3,3)
+PhraseIndex(by,4,4)
+PhraseIndex(GMT,5,5)
+PhrasePosTag(List,VB)
+PhrasePosTag(All,DT)
+PhrasePosTag(Games,NNS)
+PhrasePosTag(By,IN)
+PhrasePosTag(Gmt,NNP)
+PhraseDepTag(Gmt,List,root)
+PhraseDepTag(List,Games,dobj)
+PhraseDepTag(List,Gmt,nmod:by)
+PhraseDepTag(Games,All,det)
+PhraseDepTag(Gmt,By,case)
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'publisher'), ('http://dbpedia.org/resource/', 'GMT_Games'))]
+
+ResourceType(Dbo_Publisher,Relation)
+
+ResourceType(Dbr_Gmt_Games,Entity)
+0.71 PriorMatchScore(Dbr_Gmt_Games,Games)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games . }
+
+
+//Who founded Intel? 
+//[u'Who', u'founded', u'Intel', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(founded,2,2)
+PhraseIndex(Intel,3,3)
+PhrasePosTag(Who,WP)
+PhrasePosTag(Founded,VBD)
+PhrasePosTag(Intel,NNP)
+PhraseDepTag(Intel,Founded,root)
+PhraseDepTag(Founded,Who,nsubj)
+PhraseDepTag(Founded,Intel,dobj)
+//[(('http://dbpedia.org/resource/', 'Intel'), ('http://dbpedia.org/ontology/', 'foundedBy'), SparqlVar('uri'))]
+
+ResourceType(Dbr_Intel,Entity)
+1.0 PriorMatchScore(Dbr_Intel,Intel)
+
+
+ResourceType(Dbo_Foundedby,Relation)
+0.75 PriorMatchScore(Dbo_Foundedby,Founded)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Intel dbo:foundedBy ?uri . }
+
+
+//Who is the husband of Amanda Palmer? 
+//[u'Who', u'is', u'the', u'husband', u'of', u'Amanda', u'Palmer', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(is,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(husband,4,4)
+PhraseIndex(of,5,5)
+PhraseIndex(Amanda,6,6)
+PhraseIndex(Palmer,7,7)
+PhrasePosTag(Who,WP)
+PhrasePosTag(Is,VBZ)
+PhrasePosTag(The,DT)
+PhrasePosTag(Husband,NN)
+PhrasePosTag(Of,IN)
+PhrasePosTag(Amanda,NNP)
+PhrasePosTag(Palmer,NNP)
+PhraseDepTag(Palmer,Who,root)
+PhraseDepTag(Who,Is,cop)
+PhraseDepTag(Who,Husband,nsubj)
+PhraseDepTag(Husband,The,det)
+PhraseDepTag(Husband,Palmer,nmod:of)
+PhraseDepTag(Palmer,Of,case)
+PhraseDepTag(Palmer,Amanda,compound)
+//[(('http://dbpedia.org/resource/', 'Amanda_Palmer'), ('http://dbpedia.org/property/', 'spouse'), SparqlVar('uri'))]
+
+ResourceType(Dbr_Amanda_Palmer,Entity)
+0.63 PriorMatchScore(Dbr_Amanda_Palmer,Amanda)
+
+0.63 PriorMatchScore(Dbr_Amanda_Palmer,Palmer)
+
+
+ResourceType(Spouse,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Amanda_Palmer dbp:spouse ?uri . }
+
+
+//Give me all breeds of the German Shepherd dog. 
+//[u'Give', u'me', u'all', u'breeds', u'of', u'the', u'German', u'Shepherd', u'dog', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(me,2,2)
+PhraseIndex(all,3,3)
+PhraseIndex(breeds,4,4)
+PhraseIndex(of,5,5)
+PhraseIndex(the,6,6)
+PhraseIndex(German,7,7)
+PhraseIndex(Shepherd,8,8)
+PhraseIndex(dog,9,9)
+PhrasePosTag(Give,VB)
+PhrasePosTag(Me,PRP)
+PhrasePosTag(All,DT)
+PhrasePosTag(Breeds,NNS)
+PhrasePosTag(Of,IN)
+PhrasePosTag(The,DT)
+PhrasePosTag(German,JJ)
+PhrasePosTag(Shepherd,NNP)
+PhrasePosTag(Dog,NN)
+PhraseDepTag(Dog,Give,root)
+PhraseDepTag(Give,Me,iobj)
+PhraseDepTag(Give,Breeds,dobj)
+PhraseDepTag(Breeds,All,det)
+PhraseDepTag(Breeds,Dog,nmod:of)
+PhraseDepTag(Dog,Of,case)
+PhraseDepTag(Dog,The,det)
+PhraseDepTag(Dog,German,amod)
+PhraseDepTag(Dog,Shepherd,compound)
+//[(SparqlVar('uri'), ('http://dbpedia.org/property/', 'breed'), ('http://dbpedia.org/resource/', 'German_Shepherd'))]
+
+ResourceType(Breed,Class)
+0.72 PriorMatchScore(Breed,Breeds)
+
+
+ResourceType(Dbr_German_Shepherd,Entity)
+0.57 PriorMatchScore(Dbr_German_Shepherd,German)
+
+0.69 PriorMatchScore(Dbr_German_Shepherd,Shepherd)
+
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbp:breed res:German_Shepherd . }
+
+
+//Which cities does the Weser flow through? 
+//[u'Which', u'cities', u'does', u'the', u'Weser', u'flow', u'through', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(cities,2,2)
+PhraseIndex(does,3,3)
+PhraseIndex(the,4,4)
+PhraseIndex(Weser,5,5)
+PhraseIndex(flow,6,6)
+PhraseIndex(through,7,7)
+PhrasePosTag(Which,WDT)
+PhrasePosTag(Cities,NNS)
+PhrasePosTag(Does,VBZ)
+PhrasePosTag(The,DT)
+PhrasePosTag(Weser,NNP)
+PhrasePosTag(Flow,NN)
+PhrasePosTag(Through,IN)
+PhraseDepTag(Through,Does,root)
+PhraseDepTag(Cities,Which,det)
+PhraseDepTag(Cities,Through,case)
+PhraseDepTag(Does,Cities,nmod:through)
+PhraseDepTag(Does,Flow,dobj)
+PhraseDepTag(Flow,The,det)
+PhraseDepTag(Flow,Weser,compound)
+//[(('http://dbpedia.org/resource/', 'Weser'), ('http://dbpedia.org/ontology/', 'city'), SparqlVar('uri'))]
+
+ResourceType(Dbr_Weser,Entity)
+1.0 PriorMatchScore(Dbr_Weser,Weser)
+
+
+ResourceType(Dbo_City,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Weser dbo:city ?uri . }
+
+
+//Which countries are connected by the Rhine? 
+//[u'Which', u'countries', u'are', u'connected', u'by', u'the', u'Rhine', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(countries,2,2)
+PhraseIndex(are,3,3)
+PhraseIndex(connected,4,4)
+PhraseIndex(by,5,5)
+PhraseIndex(the,6,6)
+PhraseIndex(Rhine,7,7)
+PhrasePosTag(Which,WDT)
+PhrasePosTag(Countries,NNS)
+PhrasePosTag(Are,VBP)
+PhrasePosTag(Connected,VBN)
+PhrasePosTag(By,IN)
+PhrasePosTag(The,DT)
+PhrasePosTag(Rhine,NNP)
+PhraseDepTag(Rhine,Connected,root)
+PhraseDepTag(Countries,Which,det)
+PhraseDepTag(Connected,Countries,nsubjpass)
+PhraseDepTag(Connected,Are,auxpass)
+PhraseDepTag(Connected,Rhine,nmod:agent)
+PhraseDepTag(Rhine,By,case)
+PhraseDepTag(Rhine,The,det)
+//[(('http://dbpedia.org/resource/', 'Rhine'), ('http://dbpedia.org/property/', 'country'), SparqlVar('string')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('uri'), ('http://www.w3.org/2000/01/rdf-schema#', 'label'), SparqlVar('string'))]
+
+ResourceType(Dbr_Rhine,Entity)
+1.0 PriorMatchScore(Dbr_Rhine,Rhine)
+
+
+ResourceType(Country,Class)
+0.62 PriorMatchScore(Country,Countries)
+
+
+ResourceType(Country,Class)
+0.75 PriorMatchScore(Country,Countries)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Rhine dbp:country ?string . ?uri rdf:type dbo:Country . ?uri rdfs:label ?string . }
+
+
+//Which professional surfers were born in Australia? 
+//[u'Which', u'professional', u'surfers', u'were', u'born', u'in', u'Australia', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(professional,2,2)
+PhraseIndex(surfers,3,3)
+PhraseIndex(were,4,4)
+PhraseIndex(born,5,5)
+PhraseIndex(in,6,6)
+PhraseIndex(Australia,7,7)
+PhrasePosTag(Which,WDT)
+PhrasePosTag(Professional,JJ)
+PhrasePosTag(Surfers,NNS)
+PhrasePosTag(Were,VBD)
+PhrasePosTag(Born,VBN)
+PhrasePosTag(In,IN)
+PhrasePosTag(Australia,NNP)
+PhraseDepTag(Australia,Born,root)
+PhraseDepTag(Surfers,Which,det)
+PhraseDepTag(Surfers,Professional,amod)
+PhraseDepTag(Born,Surfers,nsubjpass)
+PhraseDepTag(Born,Were,auxpass)
+PhraseDepTag(Born,Australia,nmod:in)
+PhraseDepTag(Australia,In,case)
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'occupation'), ('http://dbpedia.org/resource/', 'Surfing')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthPlace'), ('http://dbpedia.org/resource/', 'Australia'))]
+
+ResourceType(Dbo_Occupation,Relation)
+
+ResourceType(Dbr_Surfing,Entity)
+0.57 PriorMatchScore(Dbr_Surfing,Surfers)
+
+
+ResourceType(Dbo_Birthplace,Relation)
+
+ResourceType(Dbr_Australia,Entity)
+1.0 PriorMatchScore(Dbr_Australia,Australia)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Surfing . ?uri dbo:birthPlace res:Australia . }
+
+
+//What is the average temperature on Hawaii? 
+//[u'What', u'is', u'the', u'average', u'temperature', u'on', u'Hawaii', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(is,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(average,4,4)
+PhraseIndex(temperature,5,5)
+PhraseIndex(on,6,6)
+PhraseIndex(Hawaii,7,7)
+PhrasePosTag(What,WP)
+PhrasePosTag(Is,VBZ)
+PhrasePosTag(The,DT)
+PhrasePosTag(Average,JJ)
+PhrasePosTag(Temperature,NN)
+PhrasePosTag(On,IN)
+PhrasePosTag(Hawaii,NNP)
+PhraseDepTag(Hawaii,What,root)
+PhraseDepTag(What,Is,cop)
+PhraseDepTag(What,Temperature,nsubj)
+PhraseDepTag(Temperature,The,det)
+PhraseDepTag(Temperature,Average,amod)
+PhraseDepTag(Temperature,Hawaii,nmod:on)
+PhraseDepTag(Hawaii,On,case)
+//In which UK city are the headquarters of the MI6? 
+//[u'In', u'which', u'UK', u'city', u'are', u'the', u'headquarters', u'of', u'the', u'MI6', u'?']
+PhraseIndex(In,1,1)
+PhraseIndex(which,2,2)
+PhraseIndex(UK,3,3)
+PhraseIndex(city,4,4)
+PhraseIndex(are,5,5)
+PhraseIndex(the,6,6)
+PhraseIndex(headquarters,7,7)
+PhraseIndex(of,8,8)
+PhraseIndex(the,9,9)
+PhraseIndex(MI6,10,10)
+PhrasePosTag(In,IN)
+PhrasePosTag(Which,WDT)
+PhrasePosTag(Uk,NNP)
+PhrasePosTag(City,NN)
+PhrasePosTag(Are,VBP)
+PhrasePosTag(The,DT)
+PhrasePosTag(Headquarters,NN)
+PhrasePosTag(Of,IN)
+PhrasePosTag(The,DT)
+PhrasePosTag(Mi6,NN)
+PhraseDepTag(Mi6,Are,root)
+PhraseDepTag(City,In,case)
+PhraseDepTag(City,Which,det)
+PhraseDepTag(City,Uk,compound)
+PhraseDepTag(Are,City,nmod:in)
+PhraseDepTag(Are,Headquarters,nsubj)
+PhraseDepTag(Headquarters,The,det)
+PhraseDepTag(Headquarters,Mi6,nmod:of)
+PhraseDepTag(Mi6,Of,case)
+PhraseDepTag(Mi6,The,det)
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'City')), (('http://dbpedia.org/resource/', 'Secret_Intelligence_Service'), ('http://dbpedia.org/ontology/', 'headquarter'), SparqlVar('uri'))]
+
+ResourceType(City,Class)
+1.0 PriorMatchScore(City,City)
+
+
+ResourceType(Dbr_Secret_Intelligence_Service,Entity)
+
+ResourceType(Dbo_Headquarter,Relation)
+0.86 PriorMatchScore(Dbo_Headquarter,Headquarters)
+
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City . res:Secret_Intelligence_Service dbo:headquarter ?uri . }
+
+
+PhraseIndex(Which,1,1)
+PhraseIndex(Other,2,2)
+PhraseIndex(Weapons,3,3)
+PhraseIndex(Did,4,4)
+PhraseIndex(The,5,5)
+PhraseIndex(Designer,6,6)
+PhraseIndex(Of,7,7)
+PhraseIndex(The,8,8)
+PhraseIndex(Uzi,9,9)
+PhraseIndex(Develop,10,10)
+
+//[u'Which', u'Other', u'Weapons', u'Did', u'The', u'Designer', u'Of', u'The', u'Uzi', u'Develop']
+//Which other weapons did the designer of the Uzi develop?
+
+//La ligne est isolée 
+PhrasePosTag(Which,WDT)
+PhrasePosTag(Other,JJ)
+PhrasePosTag(Weapons,NNS)
+PhrasePosTag(Did,VBD)
+PhrasePosTag(The,DT)
+PhrasePosTag(Designer,NN)
+PhrasePosTag(Of,IN)
+PhrasePosTag(The,DT)
+PhrasePosTag(Uzi,NNP)
+PhrasePosTag(Develop,VB)
+phraseDepTag(Develop,Develop,root)
+phraseDepTag(Weapons,Which,det)
+phraseDepTag(Weapons,Other,amod)
+phraseDepTag(Designer,The,det)
+phraseDepTag(Designer,Uzi,nmod:of)
+phraseDepTag(Uzi,Of,case)
+phraseDepTag(Uzi,The,det)
+phraseDepTag(Develop,Weapons,dobj)
+phraseDepTag(Develop,Did,aux)
+phraseDepTag(Develop,Designer,nsubj)
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Weapon')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Uzi'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Weapon')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Uzi'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x'))]
+
+ResourceType(Weapon,Class)
+0.92 PriorMatchScore(Weapon,Weapons)
+
+
+ResourceType(Designer,Class)
+0.87 PriorMatchScore(Designer,Designer)
+
+
+ResourceType(Dbr_Uzi,Entity)
+1.0 PriorMatchScore(Dbr_Uzi,Uzi)
+
+
+ResourceType(Designer,Class)
+0.87 PriorMatchScore(Designer,Designer)
+
+
+ResourceType(Weapon,Class)
+0.92 PriorMatchScore(Weapon,Weapons)
+
+
+ResourceType(Designer,Class)
+0.87 PriorMatchScore(Designer,Designer)
+
+
+ResourceType(Dbr_Uzi,Entity)
+1.0 PriorMatchScore(Dbr_Uzi,Uzi)
+
+
+ResourceType(Designer,Class)
+0.87 PriorMatchScore(Designer,Designer)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Weapon . ?uri dbp:designer ?x . res:Uzi dbp:designer ?x . FILTER (?uri != res:Uzi) }
+
+
+//Who created Goofy? 
+//[u'Who', u'created', u'Goofy', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(created,2,2)
+PhraseIndex(Goofy,3,3)
+PhrasePosTag(Who,WP)
+PhrasePosTag(Created,VBD)
+PhrasePosTag(Goofy,NNP)
+PhraseDepTag(Goofy,Created,root)
+PhraseDepTag(Created,Who,nsubj)
+PhraseDepTag(Created,Goofy,dobj)
+//[(('http://dbpedia.org/resource/', 'Goofy'), ('http://dbpedia.org/ontology/', 'creator'), SparqlVar('uri'))]
+
+ResourceType(Dbr_Goofy,Entity)
+1.0 PriorMatchScore(Dbr_Goofy,Goofy)
+
+
+ResourceType(Dbo_Creator,Relation)
+0.57 PriorMatchScore(Dbo_Creator,Created)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Goofy dbo:creator ?uri . }
+
+
+PhraseIndex(Was,1,1)
+PhraseIndex(The,2,2)
+PhraseIndex(Cuban,3,3)
+PhraseIndex(Missile,4,4)
+PhraseIndex(Crisis,5,5)
+PhraseIndex(Earlier,6,6)
+PhraseIndex(Than,7,7)
+PhraseIndex(The,8,8)
+PhraseIndex(Bay,9,9)
+PhraseIndex(Of,10,10)
+PhraseIndex(Pigs,11,11)
+PhraseIndex(Invasion,12,12)
+
+//[u'Was', u'The', u'Cuban', u'Missile', u'Crisis', u'Earlier', u'Than', u'The', u'Bay', u'Of', u'Pigs', u'Invasion']
+//Was the Cuban Missile Crisis earlier than the Bay of Pigs Invasion?
+
+//La ligne est isolée 
+PhrasePosTag(Was,VBD)
+PhrasePosTag(The,DT)
+PhrasePosTag(Cuban,JJ)
+PhrasePosTag(Missile,NNP)
+PhrasePosTag(Crisis,NNP)
+PhrasePosTag(Earlier,JJR)
+PhrasePosTag(Than,IN)
+PhrasePosTag(The,DT)
+PhrasePosTag(Bay,NNP)
+PhrasePosTag(Of,IN)
+PhrasePosTag(Pigs,NNP)
+PhrasePosTag(Invasion,NNP)
+phraseDepTag(Invasion,Earlier,root)
+phraseDepTag(Crisis,The,det)
+phraseDepTag(Crisis,Cuban,amod)
+phraseDepTag(Crisis,Missile,compound)
+phraseDepTag(Earlier,Was,cop)
+phraseDepTag(Earlier,Crisis,nsubj)
+phraseDepTag(Earlier,Bay,nmod:than)
+phraseDepTag(Bay,Than,case)
+phraseDepTag(Bay,The,det)
+phraseDepTag(Bay,Invasion,nmod:of)
+phraseDepTag(Invasion,Of,case)
+phraseDepTag(Invasion,Pigs,compound)
+//[(('http://dbpedia.org/resource/', 'Cuban_missile_crisis'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Bay_of_Pigs_Invasion'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('y')), (('http://dbpedia.org/resource/', 'Cuban_missile_crisis'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Bay_of_Pigs_Invasion'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('y'))]
+
+ResourceType(Dbr_Cuban_Missile_Crisis,Entity)
+
+ResourceType(Dbo_Date,Relation)
+
+ResourceType(Dbr_Bay_Of_Pigs_Invasion,Entity)
+0.57 PriorMatchScore(Dbr_Bay_Of_Pigs_Invasion,Invasion)
+
+
+ResourceType(Dbo_Date,Relation)
+
+ResourceType(Dbr_Cuban_Missile_Crisis,Entity)
+
+ResourceType(Dbo_Date,Relation)
+
+ResourceType(Dbr_Bay_Of_Pigs_Invasion,Entity)
+0.57 PriorMatchScore(Dbr_Bay_Of_Pigs_Invasion,Invasion)
+
+
+ResourceType(Dbo_Date,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Cuban_missile_crisis dbo:date ?x . res:Bay_of_Pigs_Invasion dbo:date ?y . FILTER (?x < ?y) }
+
+
+//Give me all islands that belong to Japan. 
+//[u'Give', u'me', u'all', u'islands', u'that', u'belong', u'to', u'Japan', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(me,2,2)
+PhraseIndex(all,3,3)
+PhraseIndex(islands,4,4)
+PhraseIndex(that,5,5)
+PhraseIndex(belong,6,6)
+PhraseIndex(to,7,7)
+PhraseIndex(Japan,8,8)
+PhrasePosTag(Give,VB)
+PhrasePosTag(Me,PRP)
+PhrasePosTag(All,DT)
+PhrasePosTag(Islands,NNS)
+PhrasePosTag(That,WDT)
+PhrasePosTag(Belong,VBP)
+PhrasePosTag(To,TO)
+PhrasePosTag(Japan,NNP)
+PhraseDepTag(Japan,Give,root)
+PhraseDepTag(Give,Me,iobj)
+PhraseDepTag(Give,Islands,dobj)
+PhraseDepTag(Islands,All,det)
+PhraseDepTag(Islands,Belong,acl:relcl)
+PhraseDepTag(Belong,That,nsubj)
+PhraseDepTag(Belong,Japan,nmod:to)
+PhraseDepTag(Japan,To,case)
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Island')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Japan'))]
+
+ResourceType(Island,Class)
+0.92 PriorMatchScore(Island,Islands)
+
+
+ResourceType(Dbo_Country,Relation)
+
+ResourceType(Dbr_Japan,Entity)
+1.0 PriorMatchScore(Dbr_Japan,Japan)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Island . ?uri dbo:country res:Japan . }
+
+
+//Who invented the zipper? 
+//[u'Who', u'invented', u'the', u'zipper', u'?']
+PhraseIndex(Who,1,1)
+PhraseIndex(invented,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(zipper,4,4)
+PhrasePosTag(Who,WP)
+PhrasePosTag(Invented,VBD)
+PhrasePosTag(The,DT)
+PhrasePosTag(Zipper,NN)
+PhraseDepTag(Zipper,Invented,root)
+PhraseDepTag(Invented,Who,nsubj)
+PhraseDepTag(Invented,Zipper,dobj)
+PhraseDepTag(Zipper,The,det)
+//What is the ruling party in Lisbon? 
+//[u'What', u'is', u'the', u'ruling', u'party', u'in', u'Lisbon', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(is,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(ruling,4,4)
+PhraseIndex(party,5,5)
+PhraseIndex(in,6,6)
+PhraseIndex(Lisbon,7,7)
+PhrasePosTag(What,WP)
+PhrasePosTag(Is,VBZ)
+PhrasePosTag(The,DT)
+PhrasePosTag(Ruling,VBG)
+PhrasePosTag(Party,NN)
+PhrasePosTag(In,IN)
+PhrasePosTag(Lisbon,NNP)
+PhraseDepTag(Lisbon,What,root)
+PhraseDepTag(What,Is,cop)
+PhraseDepTag(What,Party,nsubj)
+PhraseDepTag(Party,The,det)
+PhraseDepTag(Party,Ruling,amod)
+PhraseDepTag(Party,Lisbon,nmod:in)
+PhraseDepTag(Lisbon,In,case)
+//[(('http://dbpedia.org/resource/', 'Lisbon'), ('http://dbpedia.org/property/', 'leaderParty'), SparqlVar('uri'))]
+
+ResourceType(Dbr_Lisbon,Entity)
+1.0 PriorMatchScore(Dbr_Lisbon,Lisbon)
+
+
+ResourceType(Leaderparty,Class)
+0.62 PriorMatchScore(Leaderparty,Party)
+
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Lisbon dbp:leaderParty ?uri . }
+
+
+//What are the nicknames of San Francisco? 
+//[u'What', u'are', u'the', u'nicknames', u'of', u'San', u'Francisco', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(are,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(nicknames,4,4)
+PhraseIndex(of,5,5)
+PhraseIndex(San,6,6)
+PhraseIndex(Francisco,7,7)
+PhrasePosTag(What,WP)
+PhrasePosTag(Are,VBP)
+PhrasePosTag(The,DT)
+PhrasePosTag(Nicknames,NNS)
+PhrasePosTag(Of,IN)
+PhrasePosTag(San,NNP)
+PhrasePosTag(Francisco,NNP)
+PhraseDepTag(Francisco,What,root)
+PhraseDepTag(What,Are,cop)
+PhraseDepTag(What,Nicknames,nsubj)
+PhraseDepTag(Nicknames,The,det)
+PhraseDepTag(Nicknames,Francisco,nmod:of)
+PhraseDepTag(Francisco,Of,case)
+PhraseDepTag(Francisco,San,compound)
+//[(('http://dbpedia.org/resource/', 'San_Francisco'), ('http://dbpedia.org/property/', 'nickname'), SparqlVar('string'))]
+
+ResourceType(Dbr_San_Francisco,Entity)
+0.81 PriorMatchScore(Dbr_San_Francisco,Francisco)
+
+
+ResourceType(Nickname,Class)
+0.82 PriorMatchScore(Nickname,Nicknames)
+
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:San_Francisco dbp:nickname ?string . }
+
+
+//Which Greek goddesses dwelt on Mount Olympus? 
+//[u'Which', u'Greek', u'goddesses', u'dwelt', u'on', u'Mount', u'Olympus', u'?']
+PhraseIndex(Which,1,1)
+PhraseIndex(Greek,2,2)
+PhraseIndex(goddesses,3,3)
+PhraseIndex(dwelt,4,4)
+PhraseIndex(on,5,5)
+PhraseIndex(Mount,6,6)
+PhraseIndex(Olympus,7,7)
+PhrasePosTag(Which,WDT)
+PhrasePosTag(Greek,JJ)
+PhrasePosTag(Goddesses,NNS)
+PhrasePosTag(Dwelt,VBP)
+PhrasePosTag(On,IN)
+PhrasePosTag(Mount,NNP)
+PhrasePosTag(Olympus,NNP)
+PhraseDepTag(Olympus,Dwelt,root)
+PhraseDepTag(Goddesses,Which,det)
+PhraseDepTag(Goddesses,Greek,amod)
+PhraseDepTag(Dwelt,Goddesses,nsubj)
+PhraseDepTag(Dwelt,Olympus,nmod:on)
+PhraseDepTag(Olympus,On,case)
+PhraseDepTag(Olympus,Mount,compound)
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'GreekGoddesses')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'abode'), ('http://dbpedia.org/resource/', 'Mount_Olympus'))]
+
+ResourceType(GreekGoddesses,Class)
+0.52 PriorMatchScore(GreekGoddesses,Greek)
+
+0.78 PriorMatchScore(GreekGoddesses,Goddesses)
+
+
+ResourceType(Abode,Class)
+
+ResourceType(Dbr_Mount_Olympus,Entity)
+0.55 PriorMatchScore(Dbr_Mount_Olympus,Mount)
+
+0.7 PriorMatchScore(Dbr_Mount_Olympus,Olympus)
+
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:GreekGoddesses . ?uri dbp:abode res:Mount_Olympus . }
+
+
+//When were the Hells Angels founded? 
+//[u'When', u'were', u'the', u'Hells', u'Angels', u'founded', u'?']
+PhraseIndex(When,1,1)
+PhraseIndex(were,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(Hells,4,4)
+PhraseIndex(Angels,5,5)
+PhraseIndex(founded,6,6)
+PhrasePosTag(When,WRB)
+PhrasePosTag(Were,VBD)
+PhrasePosTag(The,DT)
+PhrasePosTag(Hells,NNP)
+PhrasePosTag(Angels,NNPS)
+PhrasePosTag(Founded,VBN)
+PhraseDepTag(Founded,Founded,root)
+PhraseDepTag(Angels,The,det)
+PhraseDepTag(Angels,Hells,compound)
+PhraseDepTag(Founded,When,advmod)
+PhraseDepTag(Founded,Were,auxpass)
+PhraseDepTag(Founded,Angels,nsubjpass)
+//[(('http://dbpedia.org/resource/', 'Hells_Angels'), ('http://dbpedia.org/property/', 'founded'), SparqlVar('date'))]
+
+ResourceType(Dbr_Hells_Angels,Entity)
+0.58 PriorMatchScore(Dbr_Hells_Angels,Hells)
+
+0.66 PriorMatchScore(Dbr_Hells_Angels,Angels)
+
+
+ResourceType(Founded,Class)
+0.85 PriorMatchScore(Founded,Founded)
+
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Hells_Angels dbp:founded ?date . }
+
+
+//Give me all Apollo 14 astronauts. 
+//[u'Give', u'me', u'all', u'Apollo', u'14', u'astronauts', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(me,2,2)
+PhraseIndex(all,3,3)
+PhraseIndex(Apollo,4,4)
+PhraseIndex(14,5,5)
+PhraseIndex(astronauts,6,6)
+PhrasePosTag(Give,VB)
+PhrasePosTag(Me,PRP)
+PhrasePosTag(All,DT)
+PhrasePosTag(Apollo,NNP)
+PhrasePosTag(14,CD)
+PhrasePosTag(Astronauts,NNS)
+PhraseDepTag(Astronauts,Give,root)
+PhraseDepTag(Give,Me,iobj)
+PhraseDepTag(Give,Astronauts,dobj)
+PhraseDepTag(Astronauts,All,det)
+PhraseDepTag(Astronauts,Apollo,compound)
+PhraseDepTag(Astronauts,14,nummod)
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'mission'), ('http://dbpedia.org/resource/', 'Apollo_14'))]
+
+ResourceType(Dbo_Mission,Relation)
+
+ResourceType(Dbr_Apollo_14,Entity)
+0.8 PriorMatchScore(Dbr_Apollo_14,Apollo)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 . }
+
+
+//What is the time zone of Salt Lake City? 
+//[u'What', u'is', u'the', u'time', u'zone', u'of', u'Salt', u'Lake', u'City', u'?']
+PhraseIndex(What,1,1)
+PhraseIndex(is,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(time,4,4)
+PhraseIndex(zone,5,5)
+PhraseIndex(of,6,6)
+PhraseIndex(Salt,7,7)
+PhraseIndex(Lake,8,8)
+PhraseIndex(City,9,9)
+PhrasePosTag(What,WP)
+PhrasePosTag(Is,VBZ)
+PhrasePosTag(The,DT)
+PhrasePosTag(Time,NN)
+PhrasePosTag(Zone,NN)
+PhrasePosTag(Of,IN)
+PhrasePosTag(Salt,NNP)
+PhrasePosTag(Lake,NNP)
+PhrasePosTag(City,NNP)
+PhraseDepTag(City,What,root)
+PhraseDepTag(What,Is,cop)
+PhraseDepTag(What,Zone,nsubj)
+PhraseDepTag(Zone,The,det)
+PhraseDepTag(Zone,Time,compound)
+PhraseDepTag(Zone,City,nmod:of)
+PhraseDepTag(City,Of,case)
+PhraseDepTag(City,Salt,compound)
+PhraseDepTag(City,Lake,compound)
+//[(('http://dbpedia.org/resource/', 'Salt_Lake_City'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('uri'))]
+
+ResourceType(Dbr_Salt_Lake_City,Entity)
+
+ResourceType(Timezone,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Salt_Lake_City dbp:timezone ?uri . }
+
+
+PhraseIndex(Which,1,1)
+PhraseIndex(U.S.,2,2)
+PhraseIndex(States,3,3)
+PhraseIndex(Are,4,4)
+PhraseIndex(In,5,5)
+PhraseIndex(The,6,6)
+PhraseIndex(Same,7,7)
+PhraseIndex(Time,8,8)
+PhraseIndex(Zone,9,9)
+PhraseIndex(As,10,10)
+PhraseIndex(Utah,11,11)
+
+//[u'Which', u'U.S.', u'States', u'Are', u'In', u'The', u'Same', u'Time', u'Zone', u'As', u'Utah']
+//Which U.S. states are in the same time zone as Utah?
+
+//La ligne est isolée 
+PhrasePosTag(Which,WDT)
+PhrasePosTag(U.S.,NNP)
+PhrasePosTag(States,NNS)
+PhrasePosTag(Are,VBP)
+PhrasePosTag(In,IN)
+PhrasePosTag(The,DT)
+PhrasePosTag(Same,JJ)
+PhrasePosTag(Time,NN)
+PhrasePosTag(Zone,NN)
+PhrasePosTag(As,IN)
+PhrasePosTag(Utah,NNP)
+phraseDepTag(Utah,Are,root)
+phraseDepTag(States,Which,det)
+phraseDepTag(States,U.S.,compound)
+phraseDepTag(Are,States,nsubj)
+phraseDepTag(Are,Zone,nmod:in)
+phraseDepTag(Zone,In,case)
+phraseDepTag(Zone,The,det)
+phraseDepTag(Zone,Same,amod)
+phraseDepTag(Zone,Time,compound)
+phraseDepTag(Zone,Utah,nmod:as)
+phraseDepTag(Utah,As,case)
+//[(('http://dbpedia.org/resource/', 'Utah'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Utah'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x'))]
+
+ResourceType(Dbr_Utah,Entity)
+1.0 PriorMatchScore(Dbr_Utah,Utah)
+
+
+ResourceType(Timezone,Class)
+
+ResourceType(StatesOfTheUnitedStates,Class)
+
+ResourceType(Timezone,Class)
+
+ResourceType(Dbr_Utah,Entity)
+1.0 PriorMatchScore(Dbr_Utah,Utah)
+
+
+ResourceType(Timezone,Class)
+
+ResourceType(StatesOfTheUnitedStates,Class)
+
+ResourceType(Timezone,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:timezone ?x . FILTER (?uri != res:Utah) }
+
+
+//Give me the capitals of all countries in Africa. 
+//[u'Give', u'me', u'the', u'capitals', u'of', u'all', u'countries', u'in', u'Africa', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(me,2,2)
+PhraseIndex(the,3,3)
+PhraseIndex(capitals,4,4)
+PhraseIndex(of,5,5)
+PhraseIndex(all,6,6)
+PhraseIndex(countries,7,7)
+PhraseIndex(in,8,8)
+PhraseIndex(Africa,9,9)
+PhrasePosTag(Give,VB)
+PhrasePosTag(Me,PRP)
+PhrasePosTag(The,DT)
+PhrasePosTag(Capitals,NNS)
+PhrasePosTag(Of,IN)
+PhrasePosTag(All,DT)
+PhrasePosTag(Countries,NNS)
+PhrasePosTag(In,IN)
+PhrasePosTag(Africa,NNP)
+PhraseDepTag(Africa,Give,root)
+PhraseDepTag(Give,Me,iobj)
+PhraseDepTag(Give,Capitals,dobj)
+PhraseDepTag(Capitals,The,det)
+PhraseDepTag(Capitals,Countries,nmod:of)
+PhraseDepTag(Countries,Of,case)
+PhraseDepTag(Countries,All,det)
+PhraseDepTag(Countries,Africa,nmod:in)
+PhraseDepTag(Africa,In,case)
+//[(SparqlVar('states'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'AfricanCountries')), (SparqlVar('states'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('uri'))]
+
+ResourceType(AfricanCountries,Class)
+0.72 PriorMatchScore(AfricanCountries,Countries)
+
+0.54 PriorMatchScore(AfricanCountries,Africa)
+
+
+ResourceType(Dbo_Capital,Relation)
+0.8 PriorMatchScore(Dbo_Capital,Capitals)
+
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?states rdf:type yago:AfricanCountries . ?states dbo:capital ?uri . }
+
+
+//Give me a list of all lakes in Denmark. 
+//[u'Give', u'me', u'a', u'list', u'of', u'all', u'lakes', u'in', u'Denmark', u'.']
+PhraseIndex(Give,1,1)
+PhraseIndex(me,2,2)
+PhraseIndex(a,3,3)
+PhraseIndex(list,4,4)
+PhraseIndex(of,5,5)
+PhraseIndex(all,6,6)
+PhraseIndex(lakes,7,7)
+PhraseIndex(in,8,8)
+PhraseIndex(Denmark,9,9)
+PhrasePosTag(Give,VB)
+PhrasePosTag(Me,PRP)
+PhrasePosTag(A,DT)
+PhrasePosTag(List,NN)
+PhrasePosTag(Of,IN)
+PhrasePosTag(All,DT)
+PhrasePosTag(Lakes,NNS)
+PhrasePosTag(In,IN)
+PhrasePosTag(Denmark,NNP)
+PhraseDepTag(Denmark,Give,root)
+PhraseDepTag(Give,Me,iobj)
+PhraseDepTag(Give,List,dobj)
+PhraseDepTag(List,A,det)
+PhraseDepTag(List,Lakes,nmod:of)
+PhraseDepTag(Lakes,Of,case)
+PhraseDepTag(Lakes,All,det)
+PhraseDepTag(Lakes,Denmark,nmod:in)
+PhraseDepTag(Denmark,In,case)
+//[]
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { { ?uri rdf:type dbo:Lake . ?uri dbo:country res:Denmark . } UNION { ?uri rdf:type yago:LakesOfDenmark . } }
+
+
+//How many space missions have there been? 
+//[u'How', u'many', u'space', u'missions', u'have', u'there', u'been', u'?']
+PhraseIndex(How,1,1)
+PhraseIndex(many,2,2)
+PhraseIndex(space,3,3)
+PhraseIndex(missions,4,4)
+PhraseIndex(have,5,5)
+PhraseIndex(there,6,6)
+PhraseIndex(been,7,7)
+PhrasePosTag(How,WRB)
+PhrasePosTag(Many,JJ)
+PhrasePosTag(Space,NN)
+PhrasePosTag(Missions,NNS)
+PhrasePosTag(Have,VBP)
+PhrasePosTag(There,RB)
+PhrasePosTag(Been,VBN)
+PhraseDepTag(Been,Been,root)
+PhraseDepTag(Many,How,advmod)
+PhraseDepTag(Missions,Many,amod)
+PhraseDepTag(Missions,Space,compound)
+PhraseDepTag(Been,Missions,nsubj)
+PhraseDepTag(Been,Have,aux)
+PhraseDepTag(Been,There,advmod)
+//[(('http://dbpedia.org/resource/', 'Aristotle'), ('http://dbpedia.org/ontology/', 'influencedBy'), ('http://dbpedia.org/resource/', 'Socrates'))]
+
+ResourceType(Dbr_Aristotle,Entity)
+
+ResourceType(Dbo_Influencedby,Relation)
+
+ResourceType(Dbr_Socrates,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates . }

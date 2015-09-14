@@ -1,0 +1,11 @@
+Scripts extraction de données et  ===> /Stage/projet/prepro
+
+main.py => Sort l'ensemble des relations à partir du fichier ./input/donnee.xml
+et les places dans le fichier ./temp/general.txt qui peut ensuite servir d'evidence pour tuffy.
+
+prepro.py => Je m'en sert plus mais il peut y avoir des drafts intéressants.
+
+
+
+
+

@@ -1,0 +1,97 @@
+Database schema     = tuffy_london_panou_4328
+Current directory   = /people/panou/Stage/tuffy
+Temporary directory = /tmp/tuffy-workspace/tuffy_london_panou_4328
+*** Welcome to Tuffy 0.3!
+>>> Learning clause weight with MC-SAT.
+>>> Connecting to RDBMS at jdbc:postgresql://localhost:5432/tuffydb
+### Checking existence of tuffy_london_panou_4328
+### Creating schema tuffy_london_panou_4328
+>>> Parsing program file: ./probleme/prog2.mln
+
+Clause1
+[weight=infty] sign='+' 
+   !HasPhrase(v0)
+ v  HasResource(v0, v1)
+
+
+Clause2
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasPhrase(v0)
+
+
+Clause3
+[weight=infty] sign='+' 
+    HasPhrase(v0)
+ v !HasResource(v0, v1)
+
+
+Clause4
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasRelation(v1, v2, v3)
+ v  HasRelation(v4, v1, v5)
+
+
+Clause5
+[weight=infty] sign='+' 
+   !HasRelation(v0, v1, v2)
+ v  HasResource(v3, v0)
+ v  HasResource(v4, v1)
+
+
+Clause6
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v0, v1, c1)
+ v  HasRelation(v0, v2, c2)
+
+
+Clause7
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v1, v0, c1)
+ v  HasRelation(v0, v2, c2)
+
+
+Clause8
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasPhrase(v0)
+
+
+Clause9
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasResource(v0, v1)
+
+
+Clause10
+[weight=1.0] sign='+' 
+   !PhrasePosTag(v0, v1)
+ v !ResourceType(v2, v3)
+ v  HasResource(v0, v2)
+
+
+Clause11
+[weight=1.0] sign='+' 
+   !PhraseDepTag(v0, v1, v2)
+ v !HasResource(v0, v3)
+ v !HasResource(v1, v4)
+ v  HasRelation(v3, v4, v5)
+
+>>> Parsing query file: ./probleme/query.db
+>>> Creating predicate table pred_phraseindex
+>>> Creating predicate table pred_phrasepostag
+>>> Creating predicate table pred_phrasedeptag
+>>> Creating predicate table pred_phrasedepone
+>>> Creating predicate table pred_hasmeanword
+>>> Creating predicate table pred_hasphrase
+>>> Creating predicate table pred_hasresource
+>>> Creating predicate table pred_hasrelation
+>>> Creating predicate table pred_resourcetype
+>>> Creating predicate table pred_priormatchscore
+>>> Creating predicate table pred_hasrelatedness
+>>> Parsing evidence file: ./probleme/evidence.db
+removing database schema 'tuffy_london_panou_4328'...OK
+removing temporary dir '/tmp/tuffy-workspace/tuffy_london_panou_4328'...OK

@@ -1,0 +1,7 @@
+ChangeLog for Fyzz
+==================
+
+2009-07-30  --  0.1.0
+    * initial version
+    * yapps-based SPQARL parser
+    * passes 90% of W3C test suite

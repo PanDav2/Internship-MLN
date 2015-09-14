@@ -1,0 +1,30 @@
+utilisation de mes scripts :
+
+PRÉREQUIS :
+- Stanford CoreNLP pywrapper
+Source
+https://github.com/brendano/stanford_corenlp_pywrapper
+
+-Java
+
+
+Implémentations MLN :
+
+thebeast
+I have developed markov thebeast, a Markov Logic engine used in research institutes around the world. It has helped developers to create state-of-the-art probabilistic models—without the need of a post-graduate degree in Machine Learning.
+SOURCE :
+https://github.com/riedelcastro/thebeast
+NOTES :
+
+
+
+tuffy
+
+
+alchemy
+// Les librairies suivantes sont présentes en version 32bits et doivent être récupérées en version 64 afin que thebeast fonctionne.
+
+libcolamd.so.2.7.1
+liblpsolve55j.so
+liblpsolve55.so
+liblpsolve55j.jnilib / Récupéré sur https://code.google.com/p/thebeast/wiki/Installation

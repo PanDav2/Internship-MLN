@@ -1,0 +1,81 @@
+// Evidences
+
+*PhraseIndex(phrase,position,position)
+*PhrasePosTag(phrase,posttag)
+*PhraseDepTag(phrase,phrase,dependency)
+*PhraseDepOne(phrase,phrase)
+*HasMeanWord(phrase,phrase)
+HasPhrase(phrase)
+HasResource(phrase,resource!)
+HasRelation(resource,resource,relation!)
+*ResourceType(resource,class!)
+
+//Les prédicats priorMatchScore et HasRelatedness est indiqué avec une probabilité dans notre système
+
+PriorMatchScore(phrase,resource)
+
+HasRelatedness(resource,resource)
+
+//*IsTypeCompatible(resource,resource)
+
+//HasQueryResults(resource,resource,resource,argument,argument)
+
+
+//Hard constraints
+
+//h1
+HasPhrase(p) =>HasResource(p,v22).
+
+//h2
+HasResource(p,v23) => HasPhrase(p).
+
+//H4
+!HasPhrase(p)=>!HasResource(p,r).
+
+//h5
+HasResource(v24,r) => HasRelation(r,v3,v2) v HasRelation(v3,r,v4).
+
+//h7
+HasRelation(r1,r2,v5) => HasResource(v6,r1).
+
+
+//h7bis
+HasRelation(r1,r2,v5) => HasResource(v7,r2).
+
+//h9
+ResourceType(r,Entity) => HasRelation(r,v8,"D_u").
+
+//h9bis
+
+ResourceType(r,Entity) => HasRelation(r,v9,"D_d").
+
+//h10
+ResourceType(r,Entity) => HasRelation(v25,r,"D_u").
+
+//h10
+
+ResourceType(r,Entity) =>  HasRelation(r,v10,"D_d").
+
+//h11
+ResourceType(r,Class) => HasRelation(r,v11,"D_u").
+
+//h11bis
+
+ResourceType(r,Entity) =>HasRelation(r,v12,"D_d").
+
+//h12
+ResourceType(r,Class) => HasRelation(v13,r,"D_u").
+
+//h12bis
+ResourceType(r,Entity) => HasRelation(r,v14,"D_d").
+
+
+
+//SOFT CONSTRAINTS FORMULAS
+
+1 PriorMatchScore(p,r) => HasPhrase(p)
+1 PriorMatchScore(p,r) => HasResource(p,r)
+1 PhrasePosTag(p,pt), ResourceType(r,rt)  => HasResource(p,r)
+1 PhraseDepTag(p1,p2,dp), HasResource(p1,r1), HasResource(p2,r2)  => HasRelation(r1,r2,rr)
+
+

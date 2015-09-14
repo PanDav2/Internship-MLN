@@ -1,0 +1,12 @@
+../stanford_corenlp_pywrapper/__init__.py
+../stanford_corenlp_pywrapper/sockwrap.py
+../stanford_corenlp_pywrapper/lib/jackson-all-1.9.11.jar
+../stanford_corenlp_pywrapper/lib/corenlpwrapper.jar
+../stanford_corenlp_pywrapper/lib/guava-13.0.1.jar
+../stanford_corenlp_pywrapper/__init__.pyc
+../stanford_corenlp_pywrapper/sockwrap.pyc
+./
+dependency_links.txt
+SOURCES.txt
+PKG-INFO
+top_level.txt

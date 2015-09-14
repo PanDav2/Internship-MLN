@@ -1,0 +1,6 @@
+PhraseIndex(1,Give[1])
+PhraseIndex(2,Me[1])
+PhraseIndex(3,All[1])
+PhraseIndex(4,Cosmonauts[1])
+PhrasePosTag(Give[1],VB)
+PhrasePosTag(Me[1],PRP)

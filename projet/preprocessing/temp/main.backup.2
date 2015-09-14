@@ -1,0 +1,959 @@
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Astronaut')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Astronaut'))]
+ResourceType(Astronaut,Class)
+ResourceType(Astronaut,Class)
+//PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Astronaut . { ?uri dbo:nationality res:Russia . } UNION { ?uri dbo:nationality res:Soviet_Union . } }
+
+//[(('http://dbpedia.org/resource/', 'Nile'), ('http://dbpedia.org/ontology/', 'sourceCountry'), SparqlVar('uri'))]
+ResourceType(dbr_Nile,Entity)
+ResourceType(dbo_Sourcecountry,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Nile dbo:sourceCountry ?uri . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Germany')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('population')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Germany')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('population'))]
+ResourceType(dbo_Country,Relation)
+ResourceType(dbr_Germany,Entity)
+ResourceType(dbo_Populationtotal,Relation)
+ResourceType(dbo_Country,Relation)
+ResourceType(dbr_Germany,Entity)
+ResourceType(dbo_Populationtotal,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { { ?uri rdf:type dbo:City . } UNION { ?uri rdf:type dbo:Town . } ?uri dbo:country res:Germany . ?uri dbo:populationTotal ?population . FILTER ( ?population > 250000 ) }
+
+//[(('http://dbpedia.org/resource/', 'John_F._Kennedy'), ('http://dbpedia.org/ontology/', 'vicePresident'), SparqlVar('uri'))]
+ResourceType(dbr_John_F._Kennedy,Entity)
+ResourceType(dbo_Vicepresident,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:vicePresident ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Berlin'), ('http://dbpedia.org/ontology/', 'leader'), SparqlVar('uri'))]
+ResourceType(dbr_Berlin,Entity)
+ResourceType(dbo_Leader,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Berlin dbo:leader ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Vrije_Universiteit'), ('http://dbpedia.org/ontology/', 'numberOfStudents'), SparqlVar('num'))]
+ResourceType(dbr_Vrije_Universiteit,Entity)
+ResourceType(dbo_Numberofstudents,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Vrije_Universiteit dbo:numberOfStudents ?num . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation'))]
+ResourceType(Mountain,Class)
+ResourceType(dbo_Elevation,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain . ?uri dbo:elevation ?elevation . } ORDER BY DESC(?elevation) OFFSET 1 LIMIT 1
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'occupation'), ('http://dbpedia.org/resource/', 'Skateboarding')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'occupation'), ('http://dbpedia.org/resource/', 'Skateboarding'))]
+ResourceType(dbo_Occupation,Relation)
+ResourceType(dbr_Skateboarding,Entity)
+ResourceType(dbo_Occupation,Relation)
+ResourceType(dbr_Skateboarding,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Skateboarding . { ?uri dbo:birthPlace res:Sweden . } UNION { ?uri dbo:birthPlace ?place . ?place dbo:country res:Sweden . } }
+
+//[(('http://dbpedia.org/resource/', 'Alberta'), ('http://dbpedia.org/property/', 'admittancedate'), SparqlVar('date'))]
+ResourceType(dbr_Alberta,Entity)
+ResourceType(Admittancedate,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Alberta dbp:admittancedate ?date . }
+
+//[(('http://dbpedia.org/resource/', 'Himalayas'), ('http://dbpedia.org/property/', 'country'), SparqlVar('uri'))]
+ResourceType(dbr_Himalayas,Entity)
+ResourceType(Country,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Himalayas dbp:country ?uri . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'occupation'), ('http://dbpedia.org/resource/', 'Bandleader')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'instrument'), ('http://dbpedia.org/resource/', 'Trumpet'))]
+ResourceType(dbo_Occupation,Relation)
+ResourceType(dbr_Bandleader,Entity)
+ResourceType(dbo_Instrument,Relation)
+ResourceType(dbr_Trumpet,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Bandleader . ?uri dbo:instrument res:Trumpet . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('cave'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Cave')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('cave'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Cave'))]
+ResourceType(Country,Class)
+ResourceType(Cave,Class)
+ResourceType(Country,Class)
+ResourceType(Cave,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country . ?cave rdf:type dbo:Cave . { ?cave dbo:location ?uri . } UNION { ?cave dbo:location ?loc . ?loc dbo:country ?uri . } } GROUP BY ?uri HAVING(COUNT(?cave) > 10)
+
+//[(('http://dbpedia.org/resource/', 'New_York_City_Fire_Department'), ('http://dbpedia.org/property/', 'strength'), SparqlVar('num'))]
+ResourceType(dbr_New_York_City_Fire_Department,Entity)
+ResourceType(Strength,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:New_York_City_Fire_Department dbp:strength ?num . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'product'), ('http://dbpedia.org/resource/', 'Orangina'))]
+ResourceType(dbo_Product,Relation)
+ResourceType(dbr_Orangina,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:product res:Orangina . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'FormulaOneRacer')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'races'), SparqlVar('x'))]
+ResourceType(FormulaOneRacer,Class)
+ResourceType(dbo_Races,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:FormulaOneRacer . ?uri dbo:races ?x . } ORDER BY DESC(?x) OFFSET 0 LIMIT 1
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'team'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'league'), ('http://dbpedia.org/resource/', 'Premier_League')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthDate'), SparqlVar('y'))]
+ResourceType(dbo_Team,Relation)
+ResourceType(dbo_League,Relation)
+ResourceType(dbr_Premier_League,Entity)
+ResourceType(dbo_Birthdate,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:team ?x . ?x dbo:league res:Premier_League . ?uri dbo:birthDate ?y . } ORDER BY DESC(?y) OFFSET 0 LIMIT 1
+
+//[(('http://dbpedia.org/resource/', 'The_Prodigy'), ('http://dbpedia.org/ontology/', 'bandMember'), SparqlVar('uri'))]
+ResourceType(dbr_The_Prodigy,Entity)
+ResourceType(dbo_Bandmember,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Prodigy dbo:bandMember ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'River')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'River'))]
+ResourceType(River,Class)
+ResourceType(River,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:River . { ?uri dbo:length ?l . } UNION { ?uri dbp:length ?l . } } ORDER BY DESC(?l) OFFSET 0 LIMIT 1
+
+//[(('http://dbpedia.org/resource/', 'Breaking_Bad'), ('http://dbpedia.org/ontology/', 'numberOfEpisodes'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Game_of_Thrones'), ('http://dbpedia.org/ontology/', 'numberOfEpisodes'), SparqlVar('y')), (('http://dbpedia.org/resource/', 'Breaking_Bad'), ('http://dbpedia.org/ontology/', 'numberOfEpisodes'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Game_of_Thrones'), ('http://dbpedia.org/ontology/', 'numberOfEpisodes'), SparqlVar('y'))]
+ResourceType(dbr_Breaking_Bad,Entity)
+ResourceType(dbo_Numberofepisodes,Relation)
+ResourceType(dbr_Game_Of_Thrones,Entity)
+ResourceType(dbo_Numberofepisodes,Relation)
+ResourceType(dbr_Breaking_Bad,Entity)
+ResourceType(dbo_Numberofepisodes,Relation)
+ResourceType(dbr_Game_Of_Thrones,Entity)
+ResourceType(dbo_Numberofepisodes,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Breaking_Bad dbo:numberOfEpisodes ?x . res:Game_of_Thrones dbo:numberOfEpisodes ?y . FILTER (?y > ?x) }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Automobile')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Automobile'))]
+ResourceType(Automobile,Class)
+ResourceType(Automobile,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Automobile . { ?uri dbo:assembly res:Germany . } UNION { ?uri dbp:assembly res:Germany . } UNION { { ?uri dbo:manufacturer ?x . } UNION { ?uri dbp:manufacturer ?x . } { ?x dbo:locationCountry res:Germany . } UNION { ?x dbo:location res:Germany . } } }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthPlace'), ('http://dbpedia.org/resource/', 'Vienna')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'deathPlace'), ('http://dbpedia.org/resource/', 'Berlin'))]
+ResourceType(dbo_Birthplace,Relation)
+ResourceType(dbr_Vienna,Entity)
+ResourceType(dbo_Deathplace,Relation)
+ResourceType(dbr_Berlin,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:birthPlace res:Vienna . ?uri dbo:deathPlace res:Berlin . }
+
+//[(('http://dbpedia.org/resource/', 'Proinsulin'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Protein'))]
+ResourceType(Protein,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ASK WHERE { res:Proinsulin rdf:type dbo:Protein . }
+
+//[(('http://dbpedia.org/resource/', 'Michael_Jordan'), ('http://dbpedia.org/ontology/', 'height'), SparqlVar('num'))]
+ResourceType(dbr_Michael_Jordan,Entity)
+ResourceType(dbo_Height,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Michael_Jordan dbo:height ?num . }
+
+//[(('http://dbpedia.org/resource/', 'Canada'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('uri'))]
+ResourceType(dbr_Canada,Entity)
+ResourceType(dbo_Capital,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Canada dbo:capital ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Wyoming'), ('http://dbpedia.org/property/', 'governor'), SparqlVar('uri'))]
+ResourceType(dbr_Wyoming,Entity)
+ResourceType(Governor,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Wyoming dbp:governor ?uri . }
+
+//[('<http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge>', ('http://dbpedia.org/property/', 'mother'), SparqlVar('x')), ('<http://dbpedia.org/resource/Prince_Harry_of_Wales>', ('http://dbpedia.org/property/', 'mother'), SparqlVar('y')), ('<http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge>', ('http://dbpedia.org/property/', 'mother'), SparqlVar('x')), ('<http://dbpedia.org/resource/Prince_Harry_of_Wales>', ('http://dbpedia.org/property/', 'mother'), SparqlVar('y'))]
+ResourceType(Mother,Class)
+ResourceType(Mother,Class)
+ResourceType(Mother,Class)
+ResourceType(Mother,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> ASK WHERE { <http://dbpedia.org/resource/Prince_William,_Duke_of_Cambridge> dbp:mother ?x . <http://dbpedia.org/resource/Prince_Harry_of_Wales> dbp:mother ?y . FILTER (?x = ?y) }
+
+//[(('http://dbpedia.org/resource/', 'Elizabeth_II'), ('http://dbpedia.org/property/', 'father'), SparqlVar('uri'))]
+ResourceType(dbr_Elizabeth_Ii,Entity)
+ResourceType(Father,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Elizabeth_II dbp:father ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'admittancedate'), SparqlVar('x'))]
+ResourceType(StatesOfTheUnitedStates,Class)
+ResourceType(Admittancedate,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:admittancedate ?x . } ORDER BY DESC(?x) OFFSET 0 LIMIT 1
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'governor'), ('http://dbpedia.org/resource/', 'Sean_Parnell'))]
+ResourceType(StatesOfTheUnitedStates,Class)
+ResourceType(Governor,Class)
+ResourceType(dbr_Sean_Parnell,Entity)
+//PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:governor res:Sean_Parnell . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'Francis_Ford_Coppola'))]
+ResourceType(Film,Class)
+ResourceType(dbo_Director,Relation)
+ResourceType(dbr_Francis_Ford_Coppola,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:director res:Francis_Ford_Coppola . }
+
+//[(SparqlVar('x'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'William_Shatner')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'starring'), SparqlVar('uri'))]
+ResourceType(dbo_Director,Relation)
+ResourceType(dbr_William_Shatner,Entity)
+ResourceType(dbo_Starring,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?x dbo:director res:William_Shatner . ?x dbo:starring ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Hylidae'), ('http://dbpedia.org/ontology/', 'class'), ('http://dbpedia.org/resource/', 'Amphibian'))]
+ResourceType(dbr_Hylidae,Entity)
+ResourceType(dbo_Class,Relation)
+ResourceType(dbr_Amphibian,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Hylidae dbo:class res:Amphibian . }
+
+//[(('http://dbpedia.org/resource/', 'Angela_Merkel'), ('http://dbpedia.org/property/', 'birthName'), SparqlVar('string'))]
+ResourceType(dbr_Angela_Merkel,Entity)
+ResourceType(Birthname,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Angela_Merkel dbp:birthName ?string . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Politician')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'religion'), ('http://dbpedia.org/resource/', 'Methodism'))]
+ResourceType(Politician,Class)
+ResourceType(dbo_Religion,Relation)
+ResourceType(dbr_Methodism,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Politician . ?uri dbo:religion res:Methodism . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'type'), ('http://dbpedia.org/resource/', 'Nonprofit_organization')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'type'), ('http://dbpedia.org/resource/', 'Nonprofit_organization'))]
+ResourceType(dbo_Type,Relation)
+ResourceType(dbr_Nonprofit_Organization,Entity)
+ResourceType(dbo_Type,Relation)
+ResourceType(dbr_Nonprofit_Organization,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:type res:Nonprofit_organization . { ?uri dbo:locationCountry res:Australia . } UNION { ?uri dbo:location ?x . ?x dbo:country res:Australia . } }
+
+//[(('http://dbpedia.org/resource/', 'T._E._Lawrence'), ('http://dbpedia.org/ontology/', 'battle'), SparqlVar('uri'))]
+ResourceType(dbr_T._E._Lawrence,Entity)
+ResourceType(dbo_Battle,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:T._E._Lawrence dbo:battle ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Minecraft'), ('http://dbpedia.org/ontology/', 'developer'), SparqlVar('uri'))]
+ResourceType(dbr_Minecraft,Entity)
+ResourceType(dbo_Developer,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Minecraft dbo:developer ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Maribor'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('num'))]
+ResourceType(dbr_Maribor,Entity)
+ResourceType(dbo_Populationtotal,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Maribor dbo:populationTotal ?num . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company'))]
+ResourceType(Company,Class)
+ResourceType(Company,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company . { ?uri dbo:location res:Munich . } UNION { ?uri dbo:headquarter res:Munich . } UNION { ?uri dbo:locationCity res:Munich . } }
+
+//[(('http://dbpedia.org/resource/', 'Claudia_Schiffer'), ('http://dbpedia.org/ontology/', 'height'), SparqlVar('height'))]
+ResourceType(dbr_Claudia_Schiffer,Entity)
+ResourceType(dbo_Height,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?height WHERE { res:Claudia_Schiffer dbo:height ?height . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'publisher'), ('http://dbpedia.org/resource/', 'GMT_Games'))]
+ResourceType(dbo_Publisher,Relation)
+ResourceType(dbr_Gmt_Games,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:publisher res:GMT_Games . }
+
+//[(('http://dbpedia.org/resource/', 'Intel'), ('http://dbpedia.org/ontology/', 'foundedBy'), SparqlVar('uri'))]
+ResourceType(dbr_Intel,Entity)
+ResourceType(dbo_Foundedby,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Intel dbo:foundedBy ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Amanda_Palmer'), ('http://dbpedia.org/property/', 'spouse'), SparqlVar('uri'))]
+ResourceType(dbr_Amanda_Palmer,Entity)
+ResourceType(Spouse,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Amanda_Palmer dbp:spouse ?uri . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/property/', 'breed'), ('http://dbpedia.org/resource/', 'German_Shepherd'))]
+ResourceType(Breed,Class)
+ResourceType(dbr_German_Shepherd,Entity)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbp:breed res:German_Shepherd . }
+
+//[(('http://dbpedia.org/resource/', 'Weser'), ('http://dbpedia.org/ontology/', 'city'), SparqlVar('uri'))]
+ResourceType(dbr_Weser,Entity)
+ResourceType(dbo_City,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Weser dbo:city ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Rhine'), ('http://dbpedia.org/property/', 'country'), SparqlVar('string')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('uri'), ('http://www.w3.org/2000/01/rdf-schema#', 'label'), SparqlVar('string'))]
+ResourceType(dbr_Rhine,Entity)
+ResourceType(Country,Class)
+ResourceType(Country,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT DISTINCT ?uri WHERE { res:Rhine dbp:country ?string . ?uri rdf:type dbo:Country . ?uri rdfs:label ?string . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'occupation'), ('http://dbpedia.org/resource/', 'Surfing')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthPlace'), ('http://dbpedia.org/resource/', 'Australia'))]
+ResourceType(dbo_Occupation,Relation)
+ResourceType(dbr_Surfing,Entity)
+ResourceType(dbo_Birthplace,Relation)
+ResourceType(dbr_Australia,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:occupation res:Surfing . ?uri dbo:birthPlace res:Australia . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'City')), (('http://dbpedia.org/resource/', 'Secret_Intelligence_Service'), ('http://dbpedia.org/ontology/', 'headquarter'), SparqlVar('uri'))]
+ResourceType(City,Class)
+ResourceType(dbr_Secret_Intelligence_Service,Entity)
+ResourceType(dbo_Headquarter,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City . res:Secret_Intelligence_Service dbo:headquarter ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Weapon')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Uzi'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Weapon')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Uzi'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('x'))]
+ResourceType(Weapon,Class)
+ResourceType(Designer,Class)
+ResourceType(dbr_Uzi,Entity)
+ResourceType(Designer,Class)
+ResourceType(Weapon,Class)
+ResourceType(Designer,Class)
+ResourceType(dbr_Uzi,Entity)
+ResourceType(Designer,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Weapon . ?uri dbp:designer ?x . res:Uzi dbp:designer ?x . FILTER (?uri != res:Uzi) }
+
+//[(('http://dbpedia.org/resource/', 'Goofy'), ('http://dbpedia.org/ontology/', 'creator'), SparqlVar('uri'))]
+ResourceType(dbr_Goofy,Entity)
+ResourceType(dbo_Creator,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Goofy dbo:creator ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Cuban_missile_crisis'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Bay_of_Pigs_Invasion'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('y')), (('http://dbpedia.org/resource/', 'Cuban_missile_crisis'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Bay_of_Pigs_Invasion'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('y'))]
+ResourceType(dbr_Cuban_Missile_Crisis,Entity)
+ResourceType(dbo_Date,Relation)
+ResourceType(dbr_Bay_Of_Pigs_Invasion,Entity)
+ResourceType(dbo_Date,Relation)
+ResourceType(dbr_Cuban_Missile_Crisis,Entity)
+ResourceType(dbo_Date,Relation)
+ResourceType(dbr_Bay_Of_Pigs_Invasion,Entity)
+ResourceType(dbo_Date,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Cuban_missile_crisis dbo:date ?x . res:Bay_of_Pigs_Invasion dbo:date ?y . FILTER (?x < ?y) }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Island')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Japan'))]
+ResourceType(Island,Class)
+ResourceType(dbo_Country,Relation)
+ResourceType(dbr_Japan,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Island . ?uri dbo:country res:Japan . }
+
+//[(('http://dbpedia.org/resource/', 'Lisbon'), ('http://dbpedia.org/property/', 'leaderParty'), SparqlVar('uri'))]
+ResourceType(dbr_Lisbon,Entity)
+ResourceType(Leaderparty,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Lisbon dbp:leaderParty ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'San_Francisco'), ('http://dbpedia.org/property/', 'nickname'), SparqlVar('string'))]
+ResourceType(dbr_San_Francisco,Entity)
+ResourceType(Nickname,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:San_Francisco dbp:nickname ?string . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'GreekGoddesses')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'abode'), ('http://dbpedia.org/resource/', 'Mount_Olympus'))]
+ResourceType(GreekGoddesses,Class)
+ResourceType(Abode,Class)
+ResourceType(dbr_Mount_Olympus,Entity)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:GreekGoddesses . ?uri dbp:abode res:Mount_Olympus . }
+
+//[(('http://dbpedia.org/resource/', 'Hells_Angels'), ('http://dbpedia.org/property/', 'founded'), SparqlVar('date'))]
+ResourceType(dbr_Hells_Angels,Entity)
+ResourceType(Founded,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Hells_Angels dbp:founded ?date . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'mission'), ('http://dbpedia.org/resource/', 'Apollo_14'))]
+ResourceType(dbo_Mission,Relation)
+ResourceType(dbr_Apollo_14,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:mission res:Apollo_14 . }
+
+//[(('http://dbpedia.org/resource/', 'Salt_Lake_City'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('uri'))]
+ResourceType(dbr_Salt_Lake_City,Entity)
+ResourceType(Timezone,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Salt_Lake_City dbp:timezone ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Utah'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x')), (('http://dbpedia.org/resource/', 'Utah'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'timezone'), SparqlVar('x'))]
+ResourceType(dbr_Utah,Entity)
+ResourceType(Timezone,Class)
+ResourceType(StatesOfTheUnitedStates,Class)
+ResourceType(Timezone,Class)
+ResourceType(dbr_Utah,Entity)
+ResourceType(Timezone,Class)
+ResourceType(StatesOfTheUnitedStates,Class)
+ResourceType(Timezone,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Utah dbp:timezone ?x . ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:timezone ?x . FILTER (?uri != res:Utah) }
+
+//[(SparqlVar('states'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'AfricanCountries')), (SparqlVar('states'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('uri'))]
+ResourceType(AfricanCountries,Class)
+ResourceType(dbo_Capital,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?states rdf:type yago:AfricanCountries . ?states dbo:capital ?uri . }
+
+//[]
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { { ?uri rdf:type dbo:Lake . ?uri dbo:country res:Denmark . } UNION { ?uri rdf:type yago:LakesOfDenmark . } }
+
+//[(('http://dbpedia.org/resource/', 'Aristotle'), ('http://dbpedia.org/ontology/', 'influencedBy'), ('http://dbpedia.org/resource/', 'Socrates'))]
+ResourceType(dbr_Aristotle,Entity)
+ResourceType(dbo_Influencedby,Relation)
+ResourceType(dbr_Socrates,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Aristotle dbo:influencedBy res:Socrates . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Denmark'))]
+ResourceType(Film,Class)
+ResourceType(dbo_Country,Relation)
+ResourceType(dbr_Denmark,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:country res:Denmark . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'LaunchPad')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'operator'), ('http://dbpedia.org/resource/', 'NASA'))]
+ResourceType(LaunchPad,Class)
+ResourceType(dbo_Operator,Relation)
+ResourceType(dbr_Nasa,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:LaunchPad . ?uri dbo:operator res:NASA . }
+
+//[(('http://dbpedia.org/resource/', 'Cat_Stevens'), ('http://dbpedia.org/ontology/', 'instrument'), SparqlVar('uri'))]
+ResourceType(dbr_Cat_Stevens,Entity)
+ResourceType(dbo_Instrument,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Cat_Stevens dbo:instrument ?uri . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/property/', 'shipNamesake'), ('http://dbpedia.org/resource/', 'Benjamin_Franklin'))]
+ResourceType(Shipnamesake,Class)
+ResourceType(dbr_Benjamin_Franklin,Entity)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { ?uri dbp:shipNamesake res:Benjamin_Franklin . }
+
+//[(('http://dbpedia.org/resource/', 'Juan_Carlos_I_of_Spain'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'parent'), SparqlVar('uri'))]
+ResourceType(dbr_Juan_Carlos_I_Of_Spain,Entity)
+ResourceType(dbo_Spouse,Relation)
+ResourceType(dbo_Parent,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Juan_Carlos_I_of_Spain dbo:spouse ?x . ?x dbo:parent ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Google'), ('http://dbpedia.org/ontology/', 'numberOfEmployees'), SparqlVar('num'))]
+ResourceType(dbr_Google,Entity)
+ResourceType(dbo_Numberofemployees,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?num WHERE { res:Google dbo:numberOfEmployees ?num . }
+
+//[(('http://dbpedia.org/resource/', 'Nikola_Tesla'), ('http://dbpedia.org/ontology/', 'award'), ('http://dbpedia.org/resource/', 'Nobel_Prize_in_Physics'))]
+ResourceType(dbr_Nikola_Tesla,Entity)
+ResourceType(dbo_Award,Relation)
+ResourceType(dbr_Nobel_Prize_In_Physics,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Nikola_Tesla dbo:award res:Nobel_Prize_in_Physics . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'City')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'isPartOf'), ('http://dbpedia.org/resource/', 'New_Jersey')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('inhabitants')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'City')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'isPartOf'), ('http://dbpedia.org/resource/', 'New_Jersey')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('inhabitants'))]
+ResourceType(City,Class)
+ResourceType(dbo_Ispartof,Relation)
+ResourceType(dbr_New_Jersey,Entity)
+ResourceType(dbo_Populationtotal,Relation)
+ResourceType(City,Class)
+ResourceType(dbo_Ispartof,Relation)
+ResourceType(dbr_New_Jersey,Entity)
+ResourceType(dbo_Populationtotal,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:City . ?uri dbo:isPartOf res:New_Jersey . ?uri dbo:populationTotal ?inhabitants . FILTER (?inhabitants > 100000) . }
+
+//[(('http://dbpedia.org/resource/', 'Barack_Obama'), ('http://dbpedia.org/ontology/', 'spouse'), ('http://dbpedia.org/resource/', 'Michelle_Obama'))]
+ResourceType(dbr_Barack_Obama,Entity)
+ResourceType(dbo_Spouse,Relation)
+ResourceType(dbr_Michelle_Obama,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Barack_Obama dbo:spouse res:Michelle_Obama . }
+
+//[(('http://dbpedia.org/resource/', 'Statue_of_Liberty'), ('http://dbpedia.org/property/', 'beginningDate'), SparqlVar('date'))]
+ResourceType(dbr_Statue_Of_Liberty,Entity)
+ResourceType(Beginningdate,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Statue_of_Liberty dbp:beginningDate ?date . }
+
+//[(('http://dbpedia.org/resource/', 'Fort_Knox'), ('http://dbpedia.org/property/', 'location'), SparqlVar('uri')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'United_States'))]
+ResourceType(dbr_Fort_Knox,Entity)
+ResourceType(Location,Class)
+ResourceType(dbo_Country,Relation)
+ResourceType(dbr_United_States,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Fort_Knox dbp:location ?uri . ?uri dbo:country res:United_States . }
+
+//[(('http://dbpedia.org/resource/', 'Michael_Jackson'), ('http://dbpedia.org/ontology/', 'deathDate'), SparqlVar('date'))]
+ResourceType(dbr_Michael_Jackson,Entity)
+ResourceType(dbo_Deathdate,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Michael_Jackson dbo:deathDate ?date . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'ChessPlayer')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthPlace'), SparqlVar('x')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'deathPlace'), SparqlVar('y')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'ChessPlayer')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'birthPlace'), SparqlVar('x')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'deathPlace'), SparqlVar('y'))]
+ResourceType(ChessPlayer,Class)
+ResourceType(dbo_Birthplace,Relation)
+ResourceType(dbo_Deathplace,Relation)
+ResourceType(ChessPlayer,Class)
+ResourceType(dbo_Birthplace,Relation)
+ResourceType(dbo_Deathplace,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:ChessPlayer . ?uri dbo:birthPlace ?x . ?uri dbo:deathPlace ?y . FILTER (?x = ?y) . }
+
+//[(('http://dbpedia.org/resource/', 'Margaret_Thatcher'), ('http://dbpedia.org/ontology/', 'child'), SparqlVar('uri'))]
+ResourceType(dbr_Margaret_Thatcher,Entity)
+ResourceType(dbo_Child,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Margaret_Thatcher dbo:child ?uri . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/property/', 'nickname'), ('http://dbpedia.org/resource/', 'Scarface'))]
+ResourceType(Nickname,Class)
+ResourceType(dbr_Scarface,Entity)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbp:nickname res:Scarface . }
+
+//[(('http://dbpedia.org/resource/', 'Margaret_Thatcher'), ('http://dbpedia.org/ontology/', 'profession'), ('http://dbpedia.org/resource/', 'Chemist'))]
+ResourceType(dbr_Margaret_Thatcher,Entity)
+ResourceType(dbo_Profession,Relation)
+ResourceType(dbr_Chemist,Entity)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> ASK WHERE { res:Margaret_Thatcher dbo:profession res:Chemist . }
+
+//[(('http://dbpedia.org/resource/', 'The_Scream'), ('http://dbpedia.org/ontology/', 'museum'), SparqlVar('uri'))]
+ResourceType(dbr_The_Scream,Entity)
+ResourceType(dbo_Museum,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Scream dbo:museum ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Book')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'author'), ('http://dbpedia.org/resource/', 'William_Goldman')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'numberOfPages'), SparqlVar('x')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Book')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'author'), ('http://dbpedia.org/resource/', 'William_Goldman')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'numberOfPages'), SparqlVar('x'))]
+ResourceType(Book,Class)
+ResourceType(dbo_Author,Relation)
+ResourceType(dbr_William_Goldman,Entity)
+ResourceType(dbo_Numberofpages,Relation)
+ResourceType(Book,Class)
+ResourceType(dbo_Author,Relation)
+ResourceType(dbr_William_Goldman,Entity)
+ResourceType(dbo_Numberofpages,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book . ?uri dbo:author res:William_Goldman . ?uri dbo:numberOfPages ?x . FILTER (?x > 300) }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Book')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'publisher'), ('http://dbpedia.org/resource/', 'Viking_Press')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'author'), ('http://dbpedia.org/resource/', 'Jack_Kerouac'))]
+ResourceType(Book,Class)
+ResourceType(dbo_Publisher,Relation)
+ResourceType(dbr_Viking_Press,Entity)
+ResourceType(dbo_Author,Relation)
+ResourceType(dbr_Jack_Kerouac,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book . ?uri dbo:publisher res:Viking_Press . ?uri dbo:author res:Jack_Kerouac . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'AmericanInventions'))]
+ResourceType(AmericanInventions,Class)
+//PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:AmericanInventions . }
+
+//[(('http://dbpedia.org/resource/', 'Mount_Everest'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('num'))]
+ResourceType(dbr_Mount_Everest,Entity)
+ResourceType(dbo_Elevation,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Mount_Everest dbo:elevation ?num. }
+
+//[(('http://dbpedia.org/resource/', 'Captain_America'), ('http://dbpedia.org/ontology/', 'creator'), SparqlVar('uri'))]
+ResourceType(dbr_Captain_America,Entity)
+ResourceType(dbo_Creator,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Captain_America dbo:creator ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Australia'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'populationTotal'), SparqlVar('num'))]
+ResourceType(dbr_Australia,Entity)
+ResourceType(dbo_Capital,Relation)
+ResourceType(dbo_Populationtotal,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Australia dbo:capital ?x . ?x dbo:populationTotal ?num . }
+
+//[(('http://dbpedia.org/resource/', 'Australia'), ('http://dbpedia.org/ontology/', 'largestCity'), SparqlVar('uri'))]
+ResourceType(dbr_Australia,Entity)
+ResourceType(dbo_Largestcity,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Australia dbo:largestCity ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Harold_and_Maude'), ('http://dbpedia.org/ontology/', 'musicComposer'), SparqlVar('uri'))]
+ResourceType(dbr_Harold_And_Maude,Entity)
+ResourceType(dbo_Musiccomposer,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Harold_and_Maude dbo:musicComposer ?uri . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'Clint_Eastwood')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Clint_Eastwood'))]
+ResourceType(dbo_Director,Relation)
+ResourceType(dbr_Clint_Eastwood,Entity)
+ResourceType(dbo_Starring,Relation)
+ResourceType(dbr_Clint_Eastwood,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:director res:Clint_Eastwood . ?uri dbo:starring res:Clint_Eastwood . }
+
+//[(('http://dbpedia.org/resource/', 'Juliana_of_the_Netherlands'), ('http://dbpedia.org/ontology/', 'restingPlace'), SparqlVar('uri')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Settlement'))]
+ResourceType(dbr_Juliana_Of_The_Netherlands,Entity)
+ResourceType(dbo_Restingplace,Relation)
+ResourceType(Settlement,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Juliana_of_the_Netherlands dbo:restingPlace ?uri. ?uri rdf:type dbo:Settlement . }
+
+//[(('http://dbpedia.org/resource/', 'Egypt'), ('http://dbpedia.org/ontology/', 'largestCity'), SparqlVar('large')), (('http://dbpedia.org/resource/', 'Egypt'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('capital')), (('http://dbpedia.org/resource/', 'Egypt'), ('http://dbpedia.org/ontology/', 'largestCity'), SparqlVar('large')), (('http://dbpedia.org/resource/', 'Egypt'), ('http://dbpedia.org/ontology/', 'capital'), SparqlVar('capital'))]
+ResourceType(dbr_Egypt,Entity)
+ResourceType(dbo_Largestcity,Relation)
+ResourceType(dbr_Egypt,Entity)
+ResourceType(dbo_Capital,Relation)
+ResourceType(dbr_Egypt,Entity)
+ResourceType(dbo_Largestcity,Relation)
+ResourceType(dbr_Egypt,Entity)
+ResourceType(dbo_Capital,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> ASK WHERE { res:Egypt dbo:largestCity ?large . res:Egypt dbo:capital ?capital . FILTER (?large = ?capital) }
+
+//[(('http://dbpedia.org/resource/', 'Prime_Minister_of_Spain'), ('http://dbpedia.org/property/', 'residence'), SparqlVar('uri'))]
+ResourceType(dbr_Prime_Minister_Of_Spain,Entity)
+ResourceType(Residence,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Prime_Minister_of_Spain dbp:residence ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'Akira_Kurosawa')), (('http://dbpedia.org/resource/', 'Rashomon'), ('http://dbpedia.org/ontology/', 'releaseDate'), SparqlVar('y')), (('http://dbpedia.org/resource/', 'Rashomon'), ('http://dbpedia.org/ontology/', 'releaseDate'), SparqlVar('y'))]
+ResourceType(Film,Class)
+ResourceType(dbo_Director,Relation)
+ResourceType(dbr_Akira_Kurosawa,Entity)
+ResourceType(dbr_Rashomon,Entity)
+ResourceType(dbo_Releasedate,Relation)
+ResourceType(dbr_Rashomon,Entity)
+ResourceType(dbo_Releasedate,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:director res:Akira_Kurosawa . { ?uri dbo:releaseDate ?x . } UNION { ?uri dbp:released ?x . } res:Rashomon dbo:releaseDate ?y . FILTER (?y > ?x) }
+
+//[(('http://dbpedia.org/resource/', 'Pilsner_Urquell'), ('http://dbpedia.org/property/', 'brewery'), SparqlVar('uri')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'foundation'), SparqlVar('num'))]
+ResourceType(dbr_Pilsner_Urquell,Entity)
+ResourceType(Brewery,Class)
+ResourceType(Foundation,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?num WHERE { res:Pilsner_Urquell dbp:brewery ?uri . ?uri dbp:foundation ?num . }
+
+//[(('http://dbpedia.org/resource/', 'Poland'), ('http://dbpedia.org/ontology/', 'anthem'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/property/', 'author'), SparqlVar('uri'))]
+ResourceType(dbr_Poland,Entity)
+ResourceType(dbo_Anthem,Relation)
+ResourceType(Author,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Poland dbo:anthem ?x . ?x dbp:author ?uri . }
+
+//[(SparqlVar('x'), ('http://dbpedia.org/ontology/', 'musicalArtist'), ('http://dbpedia.org/resource/', 'Ramones')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'bSide'), SparqlVar('string'))]
+ResourceType(dbo_Musicalartist,Relation)
+ResourceType(dbr_Ramones,Entity)
+ResourceType(dbo_Bside,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { ?x dbo:musicalArtist res:Ramones . ?x dbo:bSide ?string . }
+
+//[(('http://dbpedia.org/resource/', 'The_Storm_on_the_Sea_of_Galilee'), ('http://dbpedia.org/ontology/', 'author'), SparqlVar('uri'))]
+ResourceType(dbr_The_Storm_On_The_Sea_Of_Galilee,Entity)
+ResourceType(dbo_Author,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Storm_on_the_Sea_of_Galilee dbo:author ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Miffy'), ('http://dbpedia.org/ontology/', 'creator'), SparqlVar('x')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'nationality'), SparqlVar('uri'))]
+ResourceType(dbr_Miffy,Entity)
+ResourceType(dbo_Creator,Relation)
+ResourceType(dbo_Nationality,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Miffy dbo:creator ?x . ?x dbo:nationality ?uri . }
+
+//[(SparqlVar('x'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Album')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'artist'), ('http://dbpedia.org/resource/', 'Elvis_Presley')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'releaseDate'), SparqlVar('y')), (SparqlVar('x'), ('http://dbpedia.org/ontology/', 'recordLabel'), SparqlVar('uri'))]
+ResourceType(Album,Class)
+ResourceType(dbo_Artist,Relation)
+ResourceType(dbr_Elvis_Presley,Entity)
+ResourceType(dbo_Releasedate,Relation)
+ResourceType(dbo_Recordlabel,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?x rdf:type dbo:Album . ?x dbo:artist res:Elvis_Presley . ?x dbo:releaseDate ?y . ?x dbo:recordLabel ?uri . } ORDER BY ASC(?y) OFFSET 0 LIMIT 1
+
+//[(('http://dbpedia.org/resource/', 'Charmed'), ('http://dbpedia.org/ontology/', 'starring'), SparqlVar('actor')), (SparqlVar('actor'), ('http://dbpedia.org/ontology/', 'birthDate'), SparqlVar('date'))]
+ResourceType(dbr_Charmed,Entity)
+ResourceType(dbo_Starring,Relation)
+ResourceType(dbo_Birthdate,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Charmed dbo:starring ?actor . ?actor dbo:birthDate ?date . }
+
+//[(('http://dbpedia.org/resource/', 'IBM'), ('http://dbpedia.org/ontology/', 'numberOfEmployees'), SparqlVar('number'))]
+ResourceType(dbr_Ibm,Entity)
+ResourceType(dbo_Numberofemployees,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?number WHERE { res:IBM dbo:numberOfEmployees ?number . }
+
+//[(('http://dbpedia.org/resource/', 'Illinois'), ('http://dbpedia.org/property/', 'borderingstates'), SparqlVar('uri'))]
+ResourceType(dbr_Illinois,Entity)
+ResourceType(Borderingstates,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Illinois dbp:borderingstates ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Limerick_Lake'), ('http://dbpedia.org/ontology/', 'country'), SparqlVar('uri'))]
+ResourceType(dbr_Limerick_Lake,Entity)
+ResourceType(dbo_Country,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Limerick_Lake dbo:country ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'TelevisionShow')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'creator'), ('http://dbpedia.org/resource/', 'Walt_Disney'))]
+ResourceType(TelevisionShow,Class)
+ResourceType(dbo_Creator,Relation)
+ResourceType(dbr_Walt_Disney,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:TelevisionShow . ?uri dbo:creator res:Walt_Disney . }
+
+//[(('http://dbpedia.org/resource/', 'Annapurna'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('otherelevation')), (('http://dbpedia.org/resource/', 'Annapurna'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('otherelevation'))]
+ResourceType(dbr_Annapurna,Entity)
+ResourceType(dbo_Elevation,Relation)
+ResourceType(Mountain,Class)
+ResourceType(dbo_Elevation,Relation)
+ResourceType(dbr_Annapurna,Entity)
+ResourceType(dbo_Elevation,Relation)
+ResourceType(Mountain,Class)
+ResourceType(dbo_Elevation,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Annapurna dbo:elevation ?elevation . ?uri rdf:type dbo:Mountain . ?uri dbo:elevation ?otherelevation . FILTER (?otherelevation < ?elevation) . } ORDER BY DESC(?otherelevation) OFFSET 0 LIMIT 1
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Julia_Roberts')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'director'), ('http://dbpedia.org/resource/', 'Garry_Marshall'))]
+ResourceType(Film,Class)
+ResourceType(dbo_Starring,Relation)
+ResourceType(dbr_Julia_Roberts,Entity)
+ResourceType(dbo_Director,Relation)
+ResourceType(dbr_Garry_Marshall,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:starring res:Julia_Roberts . ?uri dbo:director res:Garry_Marshall . }
+
+//[(('http://dbpedia.org/resource/', 'Andrew_Jackson'), ('http://dbpedia.org/ontology/', 'battle'), SparqlVar('battle'))]
+ResourceType(dbr_Andrew_Jackson,Entity)
+ResourceType(dbo_Battle,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Andrew_Jackson dbo:battle ?battle . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country'))]
+ResourceType(Country,Class)
+ResourceType(Country,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country . { ?uri dbo:governmentType res:Communism . } UNION { ?uri dbo:governmentType res:Communist_state . } }
+
+//[(('http://dbpedia.org/resource/', 'WikiLeaks'), ('http://dbpedia.org/property/', 'awards'), SparqlVar('uri'))]
+ResourceType(dbr_Wikileaks,Entity)
+ResourceType(Awards,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:WikiLeaks dbp:awards ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Ingrid_Bergman'), ('http://dbpedia.org/ontology/', 'child'), SparqlVar('child')), (SparqlVar('child'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('uri'))]
+ResourceType(dbr_Ingrid_Bergman,Entity)
+ResourceType(dbo_Child,Relation)
+ResourceType(dbo_Spouse,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ingrid_Bergman dbo:child ?child . ?child dbo:spouse ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'densityrank'), SparqlVar('rank'))]
+ResourceType(StatesOfTheUnitedStates,Class)
+ResourceType(Densityrank,Class)
+//PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:StatesOfTheUnitedStates . ?uri dbp:densityrank ?rank . } ORDER BY ASC(?rank) OFFSET 0 LIMIT 1
+
+//[(('http://dbpedia.org/resource/', 'Czech_Republic'), ('http://dbpedia.org/ontology/', 'currency'), SparqlVar('uri'))]
+ResourceType(dbr_Czech_Republic,Entity)
+ResourceType(dbo_Currency,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Czech_Republic dbo:currency ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Berlin'), ('http://dbpedia.org/ontology/', 'areaCode'), SparqlVar('string'))]
+ResourceType(dbr_Berlin,Entity)
+ResourceType(dbo_Areacode,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Berlin dbo:areaCode ?string . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Country')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'officialLanguage'), SparqlVar('language'))]
+ResourceType(Country,Class)
+ResourceType(dbo_Officiallanguage,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Country . ?uri dbo:officialLanguage ?language . } GROUP BY ?uri HAVING (COUNT(?language) > 2)
+
+//[(('http://dbpedia.org/resource/', 'Universal_Studios'), ('http://dbpedia.org/ontology/', 'owner'), SparqlVar('uri'))]
+ResourceType(dbr_Universal_Studios,Entity)
+ResourceType(dbo_Owner,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Universal_Studios dbo:owner ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Yenisei_River'), ('http://dbpedia.org/ontology/', 'country'), SparqlVar('uri'))]
+ResourceType(dbr_Yenisei_River,Entity)
+ResourceType(dbo_Country,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Yenisei_River dbo:country ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Latvia'), ('http://dbpedia.org/property/', 'accessioneudate'), SparqlVar('date'))]
+ResourceType(dbr_Latvia,Entity)
+ResourceType(Accessioneudate,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?date WHERE { res:Latvia dbp:accessioneudate ?date . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Monarch')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('spouse')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Monarch')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('spouse'))]
+ResourceType(Monarch,Class)
+ResourceType(dbo_Spouse,Relation)
+ResourceType(Monarch,Class)
+ResourceType(dbo_Spouse,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Monarch . ?uri dbo:spouse ?spouse . { ?spouse dbo:birthPlace res:Germany. } UNION { ?spouse dbo:birthPlace ?p . ?p dbo:country res:Germany. } }
+
+//[(('http://dbpedia.org/resource/', 'Battle_of_Gettysburg'), ('http://dbpedia.org/ontology/', 'date'), SparqlVar('date'))]
+ResourceType(dbr_Battle_Of_Gettysburg,Entity)
+ResourceType(dbo_Date,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Battle_of_Gettysburg dbo:date ?date . }
+
+//[(('http://dbpedia.org/resource/', 'Brooklyn_Bridge'), ('http://dbpedia.org/ontology/', 'crosses'), SparqlVar('uri'))]
+ResourceType(dbr_Brooklyn_Bridge,Entity)
+ResourceType(dbo_Crosses,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbo:crosses ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'locatedInArea'), ('http://dbpedia.org/resource/', 'Australia')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation'))]
+ResourceType(Mountain,Class)
+ResourceType(dbo_Locatedinarea,Relation)
+ResourceType(dbr_Australia,Entity)
+ResourceType(dbo_Elevation,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain . ?uri dbo:locatedInArea res:Australia . ?uri dbo:elevation ?elevation . } ORDER BY DESC(?elevation) OFFSET 0 LIMIT 1
+
+//[(('http://dbpedia.org/resource/', 'Suriname'), ('http://dbpedia.org/ontology/', 'officialLanguage'), SparqlVar('uri'))]
+ResourceType(dbr_Suriname,Entity)
+ResourceType(dbo_Officiallanguage,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Suriname dbo:officialLanguage ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Tel_Aviv'), ('http://dbpedia.org/ontology/', 'leaderName'), SparqlVar('uri'))]
+ResourceType(dbr_Tel_Aviv,Entity)
+ResourceType(dbo_Leadername,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Tel_Aviv dbo:leaderName ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Brooklyn_Bridge'), ('http://dbpedia.org/property/', 'designer'), SparqlVar('uri'))]
+ResourceType(dbr_Brooklyn_Bridge,Entity)
+ResourceType(Designer,Class)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbp: <http://dbpedia.org/property/> SELECT DISTINCT ?uri WHERE { res:Brooklyn_Bridge dbp:designer ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Ural_Mountains'), ('http://dbpedia.org/ontology/', 'highestPlace'), SparqlVar('uri'))]
+ResourceType(dbr_Ural_Mountains,Entity)
+ResourceType(dbo_Highestplace,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Ural_Mountains dbo:highestPlace ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Forbes'), ('http://dbpedia.org/ontology/', 'editor'), SparqlVar('uri'))]
+ResourceType(dbr_Forbes,Entity)
+ResourceType(dbo_Editor,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Forbes dbo:editor ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Bruce_Carver'), ('http://dbpedia.org/ontology/', 'deathCause'), SparqlVar('uri'))]
+ResourceType(dbr_Bruce_Carver,Entity)
+ResourceType(dbo_Deathcause,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?uri WHERE { res:Bruce_Carver dbo:deathCause ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Library')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'established'), SparqlVar('year')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Library')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'established'), SparqlVar('year'))]
+ResourceType(Library,Class)
+ResourceType(Established,Class)
+ResourceType(Library,Class)
+ResourceType(Established,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Library . ?uri dbp:established ?year . FILTER (?year < 1400) }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/property/', 'office'), ('http://dbpedia.org/resource/', 'Chancellor_of_Germany'))]
+ResourceType(Office,Class)
+ResourceType(dbr_Chancellor_Of_Germany,Entity)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbp:office res:Chancellor_of_Germany . }
+
+//[(('http://dbpedia.org/resource/', 'Abraham_Lincoln'), ('http://dbpedia.org/ontology/', 'spouse'), SparqlVar('uri'))]
+ResourceType(dbr_Abraham_Lincoln,Entity)
+ResourceType(dbo_Spouse,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Abraham_Lincoln dbo:spouse ?uri. }
+
+//[(('http://dbpedia.org/resource/', 'World_of_Warcraft'), ('http://dbpedia.org/ontology/', 'developer'), SparqlVar('uri'))]
+ResourceType(dbr_World_Of_Warcraft,Entity)
+ResourceType(dbo_Developer,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:World_of_Warcraft dbo:developer ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Tom_Cruise'), ('http://dbpedia.org/property/', 'website'), SparqlVar('string'))]
+ResourceType(dbr_Tom_Cruise,Entity)
+ResourceType(Website,Class)
+//PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?string WHERE { res:Tom_Cruise dbp:website ?string . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'series'), ('http://dbpedia.org/resource/', 'The_Sopranos')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'seasonNumber'), '1')]
+ResourceType(dbo_Series,Relation)
+ResourceType(dbr_The_Sopranos,Entity)
+ResourceType(dbo_Seasonnumber,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:series res:The_Sopranos . ?uri dbo:seasonNumber 1 . }
+
+//[(('http://dbpedia.org/resource/', 'John_F._Kennedy'), ('http://dbpedia.org/ontology/', 'deathPlace'), SparqlVar('uri')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'City'))]
+ResourceType(dbr_John_F._Kennedy,Entity)
+ResourceType(dbo_Deathplace,Relation)
+ResourceType(City,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:John_F._Kennedy dbo:deathPlace ?uri . ?uri rdf:type dbo:City . }
+
+//[(('http://dbpedia.org/resource/', 'Nanga_Parbat'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (('http://dbpedia.org/resource/', 'Nanga_Parbat'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (('http://dbpedia.org/resource/', 'Nanga_Parbat'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain'))]
+ResourceType(dbr_Nanga_Parbat,Entity)
+ResourceType(dbo_Elevation,Relation)
+ResourceType(Mountain,Class)
+ResourceType(dbr_Nanga_Parbat,Entity)
+ResourceType(dbo_Elevation,Relation)
+ResourceType(Mountain,Class)
+ResourceType(dbr_Nanga_Parbat,Entity)
+ResourceType(dbo_Elevation,Relation)
+ResourceType(Mountain,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { res:Nanga_Parbat dbo:elevation ?elevation . ?uri rdf:type dbo:Mountain . { ?uri dbo:elevation ?otherelevation . } UNION { ?uri dbp:elevationM ?otherelevation . } FILTER (?otherelevation > ?elevation) . }
+
+//[(('http://dbpedia.org/resource/', 'Wikipedia'), ('http://dbpedia.org/ontology/', 'author'), SparqlVar('uri'))]
+ResourceType(dbr_Wikipedia,Entity)
+ResourceType(dbo_Author,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Wikipedia dbo:author ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Last_Action_Hero'), ('http://dbpedia.org/ontology/', 'starring'), SparqlVar('uri'))]
+ResourceType(dbr_Last_Action_Hero,Entity)
+ResourceType(dbo_Starring,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:Last_Action_Hero dbo:starring ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Software')), (SparqlVar('company'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'developer'), SparqlVar('company')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Software')), (SparqlVar('company'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'developer'), SparqlVar('company'))]
+ResourceType(Software,Class)
+ResourceType(Company,Class)
+ResourceType(dbo_Developer,Relation)
+ResourceType(Software,Class)
+ResourceType(Company,Class)
+ResourceType(dbo_Developer,Relation)
+//PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Software . ?company rdf:type dbo:Company . ?uri dbo:developer ?company . { ?company dbo:foundationPlace res:California . } UNION { ?company dbp:foundation res:California . } }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'industry'), ('http://dbpedia.org/resource/', 'Aerospace')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'industry'), ('http://dbpedia.org/resource/', 'Medicine'))]
+ResourceType(Company,Class)
+ResourceType(dbo_Industry,Relation)
+ResourceType(dbr_Aerospace,Entity)
+ResourceType(dbo_Industry,Relation)
+ResourceType(dbr_Medicine,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Company . ?uri dbo:industry res:Aerospace . ?uri dbo:industry res:Medicine . }
+
+//[(('http://dbpedia.org/resource/', 'Velvet_Goldmine'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Christian_Bale'))]
+ResourceType(dbr_Velvet_Goldmine,Entity)
+ResourceType(dbo_Starring,Relation)
+ResourceType(dbr_Christian_Bale,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Velvet_Goldmine dbo:starring res:Christian_Bale . }
+
+//[(SparqlVar('c'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('c'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Company')), (SparqlVar('c'), ('http://dbpedia.org/property/', 'homepage'), SparqlVar('string'))]
+ResourceType(Company,Class)
+ResourceType(Company,Class)
+ResourceType(Homepage,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> SELECT DISTINCT ?string WHERE { ?c rdf:type dbo:Company . { ?c dbo:numberOfEmployees ?employees . } UNION { ?c dbp:numEmployees ?employees . } FILTER( xsd:integer(?employees) > 500000 ) . ?c dbp:homepage ?string . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Actor')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Actor'))]
+ResourceType(Actor,Class)
+ResourceType(Actor,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Actor . { ?uri dbo:birthPlace res:Germany . } UNION { ?uri dbo:birthPlace ?place . ?place dbo:country res:Germany . } }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Cave')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'entranceCount'), SparqlVar('entrance')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Cave')), (SparqlVar('uri'), ('http://dbpedia.org/property/', 'entranceCount'), SparqlVar('entrance'))]
+ResourceType(Cave,Class)
+ResourceType(Entrancecount,Class)
+ResourceType(Cave,Class)
+ResourceType(Entrancecount,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX dbp: <http://dbpedia.org/property/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Cave . ?uri dbp:entranceCount ?entrance . FILTER (?entrance > 3) . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'producer'), ('http://dbpedia.org/resource/', 'Hal_Roach'))]
+ResourceType(Film,Class)
+ResourceType(dbo_Producer,Relation)
+ResourceType(dbr_Hal_Roach,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:producer res:Hal_Roach . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'VideoGame')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'publisher'), ('http://dbpedia.org/resource/', 'Mean_Hamster_Software'))]
+ResourceType(VideoGame,Class)
+ResourceType(dbo_Publisher,Relation)
+ResourceType(dbr_Mean_Hamster_Software,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:VideoGame . ?uri dbo:publisher res:Mean_Hamster_Software . }
+
+//[(SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'spokenIn'), ('http://dbpedia.org/resource/', 'Estonia'))]
+ResourceType(dbo_Spokenin,Relation)
+ResourceType(dbr_Estonia,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { ?uri dbo:spokenIn res:Estonia . }
+
+//[(('http://dbpedia.org/resource/', 'Aldi'), ('http://dbpedia.org/ontology/', 'numberOfLocations'), SparqlVar('number'))]
+ResourceType(dbr_Aldi,Entity)
+ResourceType(dbo_Numberoflocations,Relation)
+//PREFIX res: <http://dbpedia.org/resource/> PREFIX dbo: <http://dbpedia.org/ontology/> SELECT DISTINCT ?number WHERE { res:Aldi dbo:numberOfLocations ?number . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'CapitalsInEurope')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'HostCitiesOfTheSummerOlympicGames'))]
+ResourceType(CapitalsInEurope,Class)
+ResourceType(HostCitiesOfTheSummerOlympicGames,Class)
+//PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:CapitalsInEurope . ?uri rdf:type yago:HostCitiesOfTheSummerOlympicGames . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Book')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'author'), ('http://dbpedia.org/resource/', 'Danielle_Steel'))]
+ResourceType(Book,Class)
+ResourceType(dbo_Author,Relation)
+ResourceType(dbr_Danielle_Steel,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Book . ?uri dbo:author res:Danielle_Steel . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Airport')), (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Airport'))]
+ResourceType(Airport,Class)
+ResourceType(Airport,Class)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Airport . { ?uri dbo:location res:California . } UNION { ?uri dbo:city res:California . } UNION { ?uri dbo:city ?city . ?city dbo:isPartOf res:California . } UNION { ?uri dbo:operator res:California . } }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'RecordLabel')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'genre'), ('http://dbpedia.org/resource/', 'Grunge')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'Canada'))]
+ResourceType(RecordLabel,Class)
+ResourceType(dbo_Genre,Relation)
+ResourceType(dbr_Grunge,Entity)
+ResourceType(dbo_Country,Relation)
+ResourceType(dbr_Canada,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:RecordLabel . ?uri dbo:genre res:Grunge . ?uri dbo:country res:Canada . }
+
+//[(('http://dbpedia.org/resource/', 'GIMP'), ('http://dbpedia.org/ontology/', 'programmingLanguage'), SparqlVar('uri'))]
+ResourceType(dbr_Gimp,Entity)
+ResourceType(dbo_Programminglanguage,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:GIMP dbo:programmingLanguage ?uri . }
+
+//[(SparqlVar('film'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('film'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Natalie_Portman')), (SparqlVar('film'), ('http://dbpedia.org/ontology/', 'producer'), SparqlVar('uri'))]
+ResourceType(Film,Class)
+ResourceType(dbo_Starring,Relation)
+ResourceType(dbr_Natalie_Portman,Entity)
+ResourceType(dbo_Producer,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?film rdf:type dbo:Film . ?film dbo:starring res:Natalie_Portman . ?film dbo:producer ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Tom_Cruise'))]
+ResourceType(Film,Class)
+ResourceType(dbo_Starring,Relation)
+ResourceType(dbr_Tom_Cruise,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film. ?uri dbo:starring res:Tom_Cruise . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Film')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Julia_Roberts')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'starring'), ('http://dbpedia.org/resource/', 'Richard_Gere'))]
+ResourceType(Film,Class)
+ResourceType(dbo_Starring,Relation)
+ResourceType(dbr_Julia_Roberts,Entity)
+ResourceType(dbo_Starring,Relation)
+ResourceType(dbr_Richard_Gere,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Film . ?uri dbo:starring res:Julia_Roberts . ?uri dbo:starring res:Richard_Gere. }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'GivenName')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'gender'), ('http://dbpedia.org/resource/', 'Female'))]
+ResourceType(GivenName,Class)
+ResourceType(dbo_Gender,Relation)
+ResourceType(dbr_Female,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:GivenName . ?uri dbo:gender res:Female . }
+
+//[(('http://dbpedia.org/resource/', 'The_Pillars_of_the_Earth'), ('http://dbpedia.org/ontology/', 'author'), SparqlVar('uri'))]
+ResourceType(dbr_The_Pillars_Of_The_Earth,Entity)
+ResourceType(dbo_Author,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?uri WHERE { res:The_Pillars_of_the_Earth dbo:author ?uri . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'SoccerClub')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'league'), ('http://dbpedia.org/resource/', 'Premier_League'))]
+ResourceType(SoccerClub,Class)
+ResourceType(dbo_League,Relation)
+ResourceType(dbr_Premier_League,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:SoccerClub . ?uri dbo:league res:Premier_League . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (('http://dbpedia.org/resource/', 'Mount_McKinley'), ('http://dbpedia.org/ontology/', 'locatedInArea'), SparqlVar('uri'))]
+ResourceType(StatesOfTheUnitedStates,Class)
+ResourceType(dbr_Mount_Mckinley,Entity)
+ResourceType(dbo_Locatedinarea,Relation)
+//PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:StatesOfTheUnitedStates . res:Mount_McKinley dbo:locatedInArea ?uri . }
+
+//[(('http://dbpedia.org/resource/', 'Capcom'), ('http://dbpedia.org/ontology/', 'foundingDate'), SparqlVar('date'))]
+ResourceType(dbr_Capcom,Entity)
+ResourceType(dbo_Foundingdate,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> SELECT DISTINCT ?date WHERE { res:Capcom dbo:foundingDate ?date . }
+
+//[(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/ontology/', 'Mountain')), (SparqlVar('uri'), ('http://dbpedia.org/ontology/', 'elevation'), SparqlVar('elevation'))]
+ResourceType(Mountain,Class)
+ResourceType(dbo_Elevation,Relation)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type dbo:Mountain . ?uri dbo:elevation ?elevation . } ORDER BY DESC(?elevation) OFFSET 0 LIMIT 1
+
+//[(('http://dbpedia.org/resource/', 'Natalie_Portman'), ('http://dbpedia.org/ontology/', 'birthPlace'), SparqlVar('city')), (SparqlVar('city'), ('http://dbpedia.org/ontology/', 'country'), ('http://dbpedia.org/resource/', 'United_States'))]
+ResourceType(dbr_Natalie_Portman,Entity)
+ResourceType(dbo_Birthplace,Relation)
+ResourceType(dbo_Country,Relation)
+ResourceType(dbr_United_States,Entity)
+//PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> ASK WHERE { res:Natalie_Portman dbo:birthPlace ?city . ?city dbo:country res:United_States . }
+

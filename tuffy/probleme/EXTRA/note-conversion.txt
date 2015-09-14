@@ -1,0 +1,13 @@
+tr -d "\r" < file
+take a look here for examples using sed:
+
+# IN UNIX ENVIRONMENT: convert DOS newlines (CR/LF) to Unix format.
+sed 's/.$//'               # assumes that all lines end with CR/LF
+sed 's/^M$//'              # in bash/tcsh, press Ctrl-V then Ctrl-M
+sed 's/\x0D$//'            # works on ssed, gsed 3.02.80 or higher
+
+# IN UNIX ENVIRONMENT: convert Unix newlines (LF) to DOS format.
+sed "s/$/`echo -e \\\r`/"            # command line under ksh
+sed 's/$'"/`echo \\\r`/"             # command line under bash
+sed "s/$/`echo \\\r`/"               # command line under zsh
+sed 's/$/\r/'                        # gsed 3.02.80 or higher

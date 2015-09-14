@@ -1,0 +1,408 @@
+
+>resourceType
+"RussianCosmonauts"   Class
+
+>hasPhrase
+"Russian"
+
+>priorMatchScore
+"Russian"  "RussianCosmonauts"  0.538
+
+>resourceType
+"FemaleAstronauts"   Class
+
+>hasPhrase
+"astronauts"
+
+>priorMatchScore
+"astronauts"  "FemaleAstronauts"  0.714
+
+>resourceType
+"dbr_Nile"   Entity
+
+>resourceType
+"dbr_Germany"   Entity
+
+>resourceType
+"dbr_Germany"   Entity
+
+>resourceType
+"dbr_John_F._Kennedy"   Entity
+
+>resourceType
+"dbr_Berlin"   Entity
+
+>resourceType
+"dbr_Vrije_Universiteit"   Entity
+
+>resourceType
+"Mountain"   Class
+
+>hasPhrase
+"mountain"
+
+>priorMatchScore
+"mountain"  "Mountain"  0.777
+
+>resourceType
+"dbr_Skateboarding"   Entity
+
+>resourceType
+"dbr_Skateboarding"   Entity
+
+>resourceType
+"dbr_Alberta"   Entity
+
+>resourceType
+"admittancedate"   Class
+
+>resourceType
+"dbr_Himalayas"   Entity
+
+>resourceType
+"country"   Class
+
+>resourceType
+"dbr_Bandleader"   Entity
+
+>resourceType
+"dbr_Trumpet"   Entity
+
+>resourceType
+"Cave"   Class
+
+>resourceType
+"Country"   Class
+
+>resourceType
+"dbr_New_York_City_Fire_Department"   Entity
+
+>resourceType
+"strength"   Class
+
+>resourceType
+"dbr_Orangina"   Entity
+
+>resourceType
+"FormulaOneRacer"   Class
+
+>resourceType
+"dbr_Premier_League"   Entity
+
+>resourceType
+"dbr_The_Prodigy"   Entity
+
+>resourceType
+"River"   Class
+
+>hasPhrase
+"river"
+
+>priorMatchScore
+"river"  "River"  0.666
+
+>resourceType
+"length"   Class
+
+>resourceType
+"Automobile"   Class
+
+>resourceType
+"Automobile"   Class
+
+>resourceType
+"dbr_Vienna"   Entity
+
+>resourceType
+"dbr_Berlin"   Entity
+
+>resourceType
+"Protein"   Class
+
+>hasPhrase
+"protein"
+
+>priorMatchScore
+"protein"  "Protein"  0.75
+
+>resourceType
+"dbr_Michael_Jordan"   Entity
+
+>resourceType
+"dbr_Canada"   Entity
+
+>resourceType
+"dbr_Wyoming"   Entity
+
+>resourceType
+"governor"   Class
+
+>resourceType
+"mother"   Class
+
+>resourceType
+"mother"   Class
+
+>resourceType
+"mother"   Class
+
+>resourceType
+"mother"   Class
+
+>resourceType
+"dbr_Elizabeth_II"   Entity
+
+>resourceType
+"father"   Class
+
+>resourceType
+"StatesOfTheUnitedStates"   Class
+
+>resourceType
+"admittancedate"   Class
+
+>resourceType
+"StatesOfTheUnitedStates"   Class
+
+>resourceType
+"governor"   Class
+
+>resourceType
+"dbr_Sean_Parnell"   Entity
+
+>resourceType
+"Film"   Class
+
+>resourceType
+"dbr_Francis_Ford_Coppola"   Entity
+
+>resourceType
+"dbr_William_Shatner"   Entity
+
+>resourceType
+"dbr_William_Shatner"   Entity
+
+>resourceType
+"dbr_William_Shatner"   Entity
+
+>resourceType
+"dbr_William_Shatner"   Entity
+
+>resourceType
+"dbr_Hylidae"   Entity
+
+>resourceType
+"classis"   Class
+
+>resourceType
+"dbr_Angela_Merkel"   Entity
+
+>resourceType
+"birthName"   Class
+
+>resourceType
+"CurrentNationalLeaders"   Class
+
+>resourceType
+"religion"   Class
+
+>resourceType
+"dbr_Methodism"   Entity
+
+>resourceType
+"dbr_Nonprofit_organization"   Entity
+
+>resourceType
+"dbr_Nonprofit_organization"   Entity
+
+>resourceType
+"dbr_T._E._Lawrence"   Entity
+
+>resourceType
+"dbr_Minecraft"   Entity
+
+>resourceType
+"dbr_Maribor"   Entity
+
+>resourceType
+"Company"   Class
+
+>hasPhrase
+"companies"
+
+>priorMatchScore
+"companies"  "Company"  0.555
+
+>resourceType
+"Company"   Class
+
+>hasPhrase
+"companies"
+
+>priorMatchScore
+"companies"  "Company"  0.555
+
+>resourceType
+"dbr_Claudia_Schiffer"   Entity
+
+>resourceType
+"dbr_GMT_Games"   Entity
+
+>resourceType
+"dbr_Intel"   Entity
+
+>resourceType
+"dbr_Amanda_Palmer"   Entity
+
+>resourceType
+"spouse"   Class
+
+>resourceType
+"breed"   Class
+
+>resourceType
+"dbr_German_Shepherd"   Entity
+
+>resourceType
+"dbr_Weser"   Entity
+
+>resourceType
+"dbr_Rhine"   Entity
+
+>resourceType
+"dbr_Surfing"   Entity
+
+>resourceType
+"dbr_Philippines"   Entity
+
+>resourceType
+"dbr_Secret_Intelligence_Service"   Entity
+
+>resourceType
+"dbr_United_Kingdom"   Entity
+
+>resourceType
+"Weapon"   Class
+
+>resourceType
+"designer"   Class
+
+>resourceType
+"dbr_Uzi"   Entity
+
+>resourceType
+"designer"   Class
+
+>resourceType
+"Weapon"   Class
+
+>resourceType
+"designer"   Class
+
+>resourceType
+"dbr_Uzi"   Entity
+
+>resourceType
+"designer"   Class
+
+>resourceType
+"dbr_Goofy"   Entity
+
+>resourceType
+"dbr_Cuban_Missile_Crisis"   Entity
+
+>resourceType
+"dbr_Bay_of_Pigs_Invasion"   Entity
+
+>resourceType
+"dbr_Cuban_Missile_Crisis"   Entity
+
+>resourceType
+"dbr_Bay_of_Pigs_Invasion"   Entity
+
+>resourceType
+"FrisianIslands"   Class
+
+>resourceType
+"dbr_Netherlands"   Entity
+
+>resourceType
+"dbr_Lisbon"   Entity
+
+>resourceType
+"leaderParty"   Class
+
+>resourceType
+"dbr_San_Francisco"   Entity
+
+>resourceType
+"nickname"   Class
+
+>resourceType
+"GreekGoddesses"   Class
+
+>hasPhrase
+"goddesses"
+
+>priorMatchScore
+"goddesses"  "GreekGoddesses"  0.64
+
+>resourceType
+"abode"   Class
+
+>resourceType
+"dbr_Mount_Olympus"   Entity
+
+>resourceType
+"dbr_Hells_Angels"   Entity
+
+>resourceType
+"founded"   Class
+
+>resourceType
+"dbr_Apollo_14"   Entity
+
+>resourceType
+"dbr_Salt_Lake_City"   Entity
+
+>resourceType
+"timezone"   Class
+
+>resourceType
+"dbr_Utah"   Entity
+
+>resourceType
+"timezone"   Class
+
+>resourceType
+"StatesOfTheUnitedStates"   Class
+
+>resourceType
+"timezone"   Class
+
+>resourceType
+"dbr_Utah"   Entity
+
+>resourceType
+"timezone"   Class
+
+>resourceType
+"StatesOfTheUnitedStates"   Class
+
+>resourceType
+"timezone"   Class
+
+>resourceType
+"AfricanCountries"   Class
+
+>hasPhrase
+"countries"
+
+>priorMatchScore
+"countries"  "AfricanCountries"  0.666
+
+>resourceType
+"dbr_Aristotle"   Entity
+
+>resourceType
+"dbr_Socrates"   Entity

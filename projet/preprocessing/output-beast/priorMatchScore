@@ -1,0 +1,1596 @@
+
+>hasPhrase
+"Nile"
+
+>priorMatchScore
+"Nile"  "dbr_Nile"  0.8
+
+>resourceType
+"dbo_sourceCountry"   Relation
+
+>hasPhrase
+"country"
+
+>priorMatchScore
+"country"  "dbo_sourceCountry"  0.636
+
+>resourceType
+"dbo_country"   Relation
+
+>hasPhrase
+"country"
+
+>priorMatchScore
+"country"  "dbo_country"  0.875
+
+>resourceType
+"dbo_populationTotal"   Relation
+
+>resourceType
+"dbo_country"   Relation
+
+>hasPhrase
+"country"
+
+>priorMatchScore
+"country"  "dbo_country"  0.875
+
+>resourceType
+"dbo_populationTotal"   Relation
+
+>hasPhrase
+"Kennedy"
+
+>priorMatchScore
+"Kennedy"  "dbr_John_F._Kennedy"  0.583
+
+>resourceType
+"dbo_vicePresident"   Relation
+
+>hasPhrase
+"president"
+
+>priorMatchScore
+"president"  "dbo_vicePresident"  0.666
+
+>hasPhrase
+"Berlin"
+
+>priorMatchScore
+"Berlin"  "dbr_Berlin"  0.857
+
+>resourceType
+"dbo_leader"   Relation
+
+>resourceType
+"dbo_numberOfStudents"   Relation
+
+>resourceType
+"dbo_elevation"   Relation
+
+>resourceType
+"dbo_occupation"   Relation
+
+>resourceType
+"dbo_occupation"   Relation
+
+>hasPhrase
+"Alberta"
+
+>priorMatchScore
+"Alberta"  "dbr_Alberta"  0.875
+
+>hasPhrase
+"admitted"
+
+>priorMatchScore
+"admitted"  "admittancedate"  0.666
+
+>resourceType
+"dbo_occupation"   Relation
+
+>resourceType
+"dbo_instrument"   Relation
+
+>resourceType
+"dbo_product"   Relation
+
+>hasPhrase
+"produces"
+
+>priorMatchScore
+"produces"  "dbo_product"  0.705
+
+>hasPhrase
+"Orangina"
+
+>priorMatchScore
+"Orangina"  "dbr_Orangina"  0.888
+
+>resourceType
+"dbo_races"   Relation
+
+>hasPhrase
+"produces"
+
+>priorMatchScore
+"produces"  "dbo_races"  0.533
+
+>resourceType
+"dbo_team"   Relation
+
+>resourceType
+"dbo_league"   Relation
+
+>resourceType
+"dbo_birthDate"   Relation
+
+>hasPhrase
+"Prodigy"
+
+>priorMatchScore
+"Prodigy"  "dbr_The_Prodigy"  0.7
+
+>resourceType
+"dbo_bandMember"   Relation
+
+>hasPhrase
+"members"
+
+>priorMatchScore
+"members"  "dbo_bandMember"  0.526
+
+>resourceType
+"dbo_numberOfEpisodes"   Relation
+
+>resourceType
+"dbo_numberOfEpisodes"   Relation
+
+>resourceType
+"dbo_numberOfEpisodes"   Relation
+
+>resourceType
+"dbo_numberOfEpisodes"   Relation
+
+>resourceType
+"dbo_birthPlace"   Relation
+
+>resourceType
+"dbo_deathPlace"   Relation
+
+>hasPhrase
+"Michael"
+
+>priorMatchScore
+"Michael"  "dbr_Michael_Jordan"  0.608
+
+>hasPhrase
+"Jordan"
+
+>priorMatchScore
+"Jordan"  "dbr_Michael_Jordan"  0.545
+
+>resourceType
+"dbo_height"   Relation
+
+>hasPhrase
+"Canada"
+
+>priorMatchScore
+"Canada"  "dbr_Canada"  0.857
+
+>resourceType
+"dbo_capital"   Relation
+
+>hasPhrase
+"capital"
+
+>priorMatchScore
+"capital"  "dbo_capital"  0.875
+
+>hasPhrase
+"Wyoming"
+
+>priorMatchScore
+"Wyoming"  "dbr_Wyoming"  0.875
+
+>hasPhrase
+"governor"
+
+>priorMatchScore
+"governor"  "governor"  0.888
+
+>hasPhrase
+"the"
+
+>priorMatchScore
+"the"  "mother"  0.545
+
+>hasPhrase
+"the"
+
+>priorMatchScore
+"the"  "mother"  0.545
+
+>hasPhrase
+"the"
+
+>priorMatchScore
+"the"  "mother"  0.545
+
+>hasPhrase
+"the"
+
+>priorMatchScore
+"the"  "mother"  0.545
+
+>hasPhrase
+"Elizabeth"
+
+>priorMatchScore
+"Elizabeth"  "dbr_Elizabeth_II"  0.782
+
+>hasPhrase
+"the"
+
+>priorMatchScore
+"the"  "father"  0.545
+
+>hasPhrase
+"father"
+
+>priorMatchScore
+"father"  "father"  0.857
+
+>hasPhrase
+"admitted"
+
+>priorMatchScore
+"admitted"  "admittancedate"  0.666
+
+>resourceType
+"dbo_director"   Relation
+
+>resourceType
+"dbo_director"   Relation
+
+>resourceType
+"dbo_starring"   Relation
+
+>resourceType
+"dbo_class"   Relation
+
+>hasPhrase
+"amphibian"
+
+>priorMatchScore
+"amphibian"  "dbr_Amphibian"  0.8
+
+>hasPhrase
+"Angela"
+
+>priorMatchScore
+"Angela"  "dbr_Angela_Merkel"  0.571
+
+>hasPhrase
+"Merkel"
+
+>priorMatchScore
+"Merkel"  "dbr_Angela_Merkel"  0.571
+
+>hasPhrase
+"birth"
+
+>priorMatchScore
+"birth"  "birthName"  0.625
+
+>resourceType
+"dbo_religion"   Relation
+
+>hasPhrase
+"Methodist"
+
+>priorMatchScore
+"Methodist"  "dbr_Methodism"  0.8
+
+>resourceType
+"dbo_type"   Relation
+
+>resourceType
+"dbo_type"   Relation
+
+>resourceType
+"dbo_battle"   Relation
+
+>hasPhrase
+"Minecraft"
+
+>priorMatchScore
+"Minecraft"  "dbr_Minecraft"  0.9
+
+>resourceType
+"dbo_developer"   Relation
+
+>hasPhrase
+"developed"
+
+>priorMatchScore
+"developed"  "dbo_developer"  0.8
+
+>hasPhrase
+"Maribor"
+
+>priorMatchScore
+"Maribor"  "dbr_Maribor"  0.875
+
+>resourceType
+"dbo_populationTotal"   Relation
+
+>hasPhrase
+"Claudia"
+
+>priorMatchScore
+"Claudia"  "dbr_Claudia_Schiffer"  0.56
+
+>hasPhrase
+"Schiffer"
+
+>priorMatchScore
+"Schiffer"  "dbr_Claudia_Schiffer"  0.615
+
+>resourceType
+"dbo_height"   Relation
+
+>resourceType
+"dbo_publisher"   Relation
+
+>hasPhrase
+"Intel"
+
+>priorMatchScore
+"Intel"  "dbr_Intel"  0.833
+
+>resourceType
+"dbo_foundedBy"   Relation
+
+>hasPhrase
+"founded"
+
+>priorMatchScore
+"founded"  "dbo_foundedBy"  0.777
+
+>hasPhrase
+"Amanda"
+
+>priorMatchScore
+"Amanda"  "dbr_Amanda_Palmer"  0.571
+
+>hasPhrase
+"Palmer"
+
+>priorMatchScore
+"Palmer"  "dbr_Amanda_Palmer"  0.571
+
+>hasPhrase
+"breeds"
+
+>priorMatchScore
+"breeds"  "breed"  0.769
+
+>hasPhrase
+"German"
+
+>priorMatchScore
+"German"  "dbr_German_Shepherd"  0.521
+
+>hasPhrase
+"Shepherd"
+
+>priorMatchScore
+"Shepherd"  "dbr_German_Shepherd"  0.64
+
+>hasPhrase
+"Weser"
+
+>priorMatchScore
+"Weser"  "dbr_Weser"  0.833
+
+>resourceType
+"dbo_city"   Relation
+
+>hasPhrase
+"Rhine"
+
+>priorMatchScore
+"Rhine"  "dbr_Rhine"  0.833
+
+>hasPhrase
+"countries"
+
+>priorMatchScore
+"countries"  "country"  0.666
+
+>resourceType
+"dbo_occupation"   Relation
+
+>resourceType
+"dbo_birthPlace"   Relation
+
+>hasPhrase
+"Australia"
+
+>priorMatchScore
+"Australia"  "dbr_Australia"  0.9
+
+>resourceType
+"dbo_headquarter"   Relation
+
+>hasPhrase
+"headquarters"
+
+>priorMatchScore
+"headquarters"  "dbo_headquarter"  0.88
+
+>hasPhrase
+"Goofy"
+
+>priorMatchScore
+"Goofy"  "dbr_Goofy"  0.833
+
+>resourceType
+"dbo_creator"   Relation
+
+>hasPhrase
+"created"
+
+>priorMatchScore
+"created"  "dbo_creator"  0.625
+
+>resourceType
+"dbo_date"   Relation
+
+>resourceType
+"dbo_date"   Relation
+
+>resourceType
+"dbo_date"   Relation
+
+>resourceType
+"dbo_date"   Relation
+
+>resourceType
+"dbo_country"   Relation
+
+>hasPhrase
+"Japan"
+
+>priorMatchScore
+"Japan"  "dbr_Japan"  0.833
+
+>hasPhrase
+"Lisbon"
+
+>priorMatchScore
+"Lisbon"  "dbr_Lisbon"  0.857
+
+>hasPhrase
+"Francisco"
+
+>priorMatchScore
+"Francisco"  "dbr_San_Francisco"  0.75
+
+>hasPhrase
+"nicknames"
+
+>priorMatchScore
+"nicknames"  "nickname"  0.842
+
+>hasPhrase
+"Olympus"
+
+>priorMatchScore
+"Olympus"  "dbr_Mount_Olympus"  0.636
+
+>hasPhrase
+"Hells"
+
+>priorMatchScore
+"Hells"  "dbr_Hells_Angels"  0.526
+
+>hasPhrase
+"Angels"
+
+>priorMatchScore
+"Angels"  "dbr_Hells_Angels"  0.6
+
+>hasPhrase
+"founded"
+
+>priorMatchScore
+"founded"  "founded"  0.875
+
+>resourceType
+"dbo_mission"   Relation
+
+>hasPhrase
+"Apollo"
+
+>priorMatchScore
+"Apollo"  "dbr_Apollo_14"  0.705
+
+>hasPhrase
+"time"
+
+>priorMatchScore
+"time"  "timezone"  0.571
+
+>hasPhrase
+"zone"
+
+>priorMatchScore
+"zone"  "timezone"  0.571
+
+>hasPhrase
+"time"
+
+>priorMatchScore
+"time"  "timezone"  0.571
+
+>hasPhrase
+"zone"
+
+>priorMatchScore
+"zone"  "timezone"  0.571
+
+>hasPhrase
+"time"
+
+>priorMatchScore
+"time"  "timezone"  0.571
+
+>hasPhrase
+"zone"
+
+>priorMatchScore
+"zone"  "timezone"  0.571
+
+>hasPhrase
+"time"
+
+>priorMatchScore
+"time"  "timezone"  0.571
+
+>hasPhrase
+"zone"
+
+>priorMatchScore
+"zone"  "timezone"  0.571
+
+>hasPhrase
+"time"
+
+>priorMatchScore
+"time"  "timezone"  0.571
+
+>hasPhrase
+"zone"
+
+>priorMatchScore
+"zone"  "timezone"  0.571
+
+>resourceType
+"dbo_capital"   Relation
+
+>hasPhrase
+"capitals"
+
+>priorMatchScore
+"capitals"  "dbo_capital"  0.823
+
+>resourceType
+"dbo_influencedBy"   Relation
+
+>resourceType
+"dbo_country"   Relation
+
+>resourceType
+"dbo_operator"   Relation
+
+>hasPhrase
+"operated"
+
+>priorMatchScore
+"operated"  "dbo_operator"  0.666
+
+>hasPhrase
+"NASA"
+
+>priorMatchScore
+"NASA"  "dbr_NASA"  0.8
+
+>hasPhrase
+"Stevens"
+
+>priorMatchScore
+"Stevens"  "dbr_Cat_Stevens"  0.7
+
+>resourceType
+"dbo_instrument"   Relation
+
+>hasPhrase
+"instruments"
+
+>priorMatchScore
+"instruments"  "dbo_instrument"  0.869
+
+>hasPhrase
+"ships"
+
+>priorMatchScore
+"ships"  "shipNamesake"  0.526
+
+>hasPhrase
+"Benjamin"
+
+>priorMatchScore
+"Benjamin"  "dbr_Benjamin_Franklin"  0.592
+
+>hasPhrase
+"Franklin"
+
+>priorMatchScore
+"Franklin"  "dbr_Benjamin_Franklin"  0.592
+
+>resourceType
+"dbo_spouse"   Relation
+
+>resourceType
+"dbo_parent"   Relation
+
+>hasPhrase
+"are"
+
+>priorMatchScore
+"are"  "dbo_parent"  0.545
+
+>hasPhrase
+"parents"
+
+>priorMatchScore
+"parents"  "dbo_parent"  0.8
+
+>hasPhrase
+"Google"
+
+>priorMatchScore
+"Google"  "dbr_Google"  0.857
+
+>resourceType
+"dbo_numberOfEmployees"   Relation
+
+>hasPhrase
+"employees"
+
+>priorMatchScore
+"employees"  "dbo_numberOfEmployees"  0.642
+
+>hasPhrase
+"Tesla"
+
+>priorMatchScore
+"Tesla"  "dbr_Nikola_Tesla"  0.526
+
+>resourceType
+"dbo_award"   Relation
+
+>resourceType
+"dbo_isPartOf"   Relation
+
+>resourceType
+"dbo_populationTotal"   Relation
+
+>resourceType
+"dbo_isPartOf"   Relation
+
+>resourceType
+"dbo_populationTotal"   Relation
+
+>hasPhrase
+"Obama"
+
+>priorMatchScore
+"Obama"  "dbr_Barack_Obama"  0.526
+
+>hasPhrase
+"Barack"
+
+>priorMatchScore
+"Barack"  "dbr_Barack_Obama"  0.6
+
+>hasPhrase
+"Obama"
+
+>priorMatchScore
+"Obama"  "dbr_Barack_Obama"  0.526
+
+>resourceType
+"dbo_spouse"   Relation
+
+>hasPhrase
+"Michelle"
+
+>priorMatchScore
+"Michelle"  "dbr_Michelle_Obama"  0.666
+
+>hasPhrase
+"Liberty"
+
+>priorMatchScore
+"Liberty"  "dbr_Statue_of_Liberty"  0.538
+
+>hasPhrase
+"Fort"
+
+>priorMatchScore
+"Fort"  "dbr_Fort_Knox"  0.533
+
+>hasPhrase
+"Knox"
+
+>priorMatchScore
+"Knox"  "dbr_Fort_Knox"  0.533
+
+>hasPhrase
+"located"
+
+>priorMatchScore
+"located"  "location"  0.588
+
+>resourceType
+"dbo_country"   Relation
+
+>resourceType
+"dbo_deathDate"   Relation
+
+>resourceType
+"dbo_birthPlace"   Relation
+
+>resourceType
+"dbo_deathPlace"   Relation
+
+>resourceType
+"dbo_birthPlace"   Relation
+
+>resourceType
+"dbo_deathPlace"   Relation
+
+>hasPhrase
+"Margaret"
+
+>priorMatchScore
+"Margaret"  "dbr_Margaret_Thatcher"  0.592
+
+>hasPhrase
+"Thatcher"
+
+>priorMatchScore
+"Thatcher"  "dbr_Margaret_Thatcher"  0.592
+
+>resourceType
+"dbo_child"   Relation
+
+>hasPhrase
+"children"
+
+>priorMatchScore
+"children"  "dbo_child"  0.666
+
+>hasPhrase
+"Scarface"
+
+>priorMatchScore
+"Scarface"  "dbr_Scarface"  0.888
+
+>hasPhrase
+"Margaret"
+
+>priorMatchScore
+"Margaret"  "dbr_Margaret_Thatcher"  0.592
+
+>hasPhrase
+"Thatcher"
+
+>priorMatchScore
+"Thatcher"  "dbr_Margaret_Thatcher"  0.592
+
+>resourceType
+"dbo_profession"   Relation
+
+>hasPhrase
+"chemist"
+
+>priorMatchScore
+"chemist"  "dbr_Chemist"  0.75
+
+>resourceType
+"dbo_museum"   Relation
+
+>resourceType
+"dbo_author"   Relation
+
+>resourceType
+"dbo_numberOfPages"   Relation
+
+>resourceType
+"dbo_author"   Relation
+
+>resourceType
+"dbo_numberOfPages"   Relation
+
+>resourceType
+"dbo_publisher"   Relation
+
+>resourceType
+"dbo_author"   Relation
+
+>hasPhrase
+"Everest"
+
+>priorMatchScore
+"Everest"  "dbr_Mount_Everest"  0.636
+
+>resourceType
+"dbo_elevation"   Relation
+
+>hasPhrase
+"Captain"
+
+>priorMatchScore
+"Captain"  "dbr_Captain_America"  0.583
+
+>hasPhrase
+"America"
+
+>priorMatchScore
+"America"  "dbr_Captain_America"  0.583
+
+>resourceType
+"dbo_creator"   Relation
+
+>hasPhrase
+"created"
+
+>priorMatchScore
+"created"  "dbo_creator"  0.625
+
+>hasPhrase
+"Australia"
+
+>priorMatchScore
+"Australia"  "dbr_Australia"  0.9
+
+>resourceType
+"dbo_capital"   Relation
+
+>hasPhrase
+"capital"
+
+>priorMatchScore
+"capital"  "dbo_capital"  0.875
+
+>resourceType
+"dbo_populationTotal"   Relation
+
+>hasPhrase
+"Australia"
+
+>priorMatchScore
+"Australia"  "dbr_Australia"  0.9
+
+>resourceType
+"dbo_largestCity"   Relation
+
+>hasPhrase
+"largest"
+
+>priorMatchScore
+"largest"  "dbo_largestCity"  0.7
+
+>resourceType
+"dbo_musicComposer"   Relation
+
+>hasPhrase
+"composed"
+
+>priorMatchScore
+"composed"  "dbo_musicComposer"  0.608
+
+>resourceType
+"dbo_director"   Relation
+
+>resourceType
+"dbo_starring"   Relation
+
+>resourceType
+"dbo_restingPlace"   Relation
+
+>hasPhrase
+"Egypts"
+
+>priorMatchScore
+"Egypts"  "dbr_Egypt"  0.769
+
+>resourceType
+"dbo_largestCity"   Relation
+
+>hasPhrase
+"largest"
+
+>priorMatchScore
+"largest"  "dbo_largestCity"  0.7
+
+>hasPhrase
+"Egypts"
+
+>priorMatchScore
+"Egypts"  "dbr_Egypt"  0.769
+
+>resourceType
+"dbo_capital"   Relation
+
+>hasPhrase
+"capital"
+
+>priorMatchScore
+"capital"  "dbo_capital"  0.875
+
+>hasPhrase
+"Egypts"
+
+>priorMatchScore
+"Egypts"  "dbr_Egypt"  0.769
+
+>resourceType
+"dbo_largestCity"   Relation
+
+>hasPhrase
+"largest"
+
+>priorMatchScore
+"largest"  "dbo_largestCity"  0.7
+
+>hasPhrase
+"Egypts"
+
+>priorMatchScore
+"Egypts"  "dbr_Egypt"  0.769
+
+>resourceType
+"dbo_capital"   Relation
+
+>hasPhrase
+"capital"
+
+>priorMatchScore
+"capital"  "dbo_capital"  0.875
+
+>resourceType
+"dbo_director"   Relation
+
+>resourceType
+"dbo_releaseDate"   Relation
+
+>resourceType
+"dbo_releaseDate"   Relation
+
+>resourceType
+"dbo_anthem"   Relation
+
+>hasPhrase
+"the"
+
+>priorMatchScore
+"the"  "dbo_anthem"  0.545
+
+>resourceType
+"dbo_musicalArtist"   Relation
+
+>hasPhrase
+"Ramones"
+
+>priorMatchScore
+"Ramones"  "dbr_Ramones"  0.875
+
+>resourceType
+"dbo_bSide"   Relation
+
+>resourceType
+"dbo_author"   Relation
+
+>hasPhrase
+"Miffy"
+
+>priorMatchScore
+"Miffy"  "dbr_Miffy"  0.833
+
+>resourceType
+"dbo_creator"   Relation
+
+>hasPhrase
+"creator"
+
+>priorMatchScore
+"creator"  "dbo_creator"  0.875
+
+>resourceType
+"dbo_nationality"   Relation
+
+>resourceType
+"dbo_artist"   Relation
+
+>resourceType
+"dbo_releaseDate"   Relation
+
+>resourceType
+"dbo_recordLabel"   Relation
+
+>hasPhrase
+"record"
+
+>priorMatchScore
+"record"  "dbo_recordLabel"  0.631
+
+>resourceType
+"dbo_starring"   Relation
+
+>resourceType
+"dbo_birthDate"   Relation
+
+>hasPhrase
+"IBM"
+
+>priorMatchScore
+"IBM"  "dbr_IBM"  0.75
+
+>resourceType
+"dbo_numberOfEmployees"   Relation
+
+>hasPhrase
+"employees"
+
+>priorMatchScore
+"employees"  "dbo_numberOfEmployees"  0.642
+
+>hasPhrase
+"Illinois"
+
+>priorMatchScore
+"Illinois"  "dbr_Illinois"  0.888
+
+>hasPhrase
+"states"
+
+>priorMatchScore
+"states"  "borderingstates"  0.521
+
+>hasPhrase
+"border"
+
+>priorMatchScore
+"border"  "borderingstates"  0.521
+
+>hasPhrase
+"Limerick"
+
+>priorMatchScore
+"Limerick"  "dbr_Limerick_Lake"  0.695
+
+>resourceType
+"dbo_country"   Relation
+
+>hasPhrase
+"country"
+
+>priorMatchScore
+"country"  "dbo_country"  0.875
+
+>resourceType
+"dbo_creator"   Relation
+
+>hasPhrase
+"Annapurna"
+
+>priorMatchScore
+"Annapurna"  "dbr_Annapurna"  0.9
+
+>resourceType
+"dbo_elevation"   Relation
+
+>resourceType
+"dbo_elevation"   Relation
+
+>hasPhrase
+"Annapurna"
+
+>priorMatchScore
+"Annapurna"  "dbr_Annapurna"  0.9
+
+>resourceType
+"dbo_elevation"   Relation
+
+>resourceType
+"dbo_elevation"   Relation
+
+>resourceType
+"dbo_starring"   Relation
+
+>resourceType
+"dbo_director"   Relation
+
+>resourceType
+"dbo_battle"   Relation
+
+>hasPhrase
+"WikiLeaks"
+
+>priorMatchScore
+"WikiLeaks"  "dbr_WikiLeaks"  0.9
+
+>hasPhrase
+"awards"
+
+>priorMatchScore
+"awards"  "awards"  0.857
+
+>hasPhrase
+"Ingrid"
+
+>priorMatchScore
+"Ingrid"  "dbr_Ingrid_Bergman"  0.545
+
+>hasPhrase
+"Bergman"
+
+>priorMatchScore
+"Bergman"  "dbr_Ingrid_Bergman"  0.608
+
+>resourceType
+"dbo_child"   Relation
+
+>resourceType
+"dbo_spouse"   Relation
+
+>hasPhrase
+"Republic"
+
+>priorMatchScore
+"Republic"  "dbr_Czech_Republic"  0.666
+
+>resourceType
+"dbo_currency"   Relation
+
+>hasPhrase
+"currency"
+
+>priorMatchScore
+"currency"  "dbo_currency"  0.888
+
+>resourceType
+"dbo_areaCode"   Relation
+
+>resourceType
+"dbo_officialLanguage"   Relation
+
+>hasPhrase
+"Universal"
+
+>priorMatchScore
+"Universal"  "dbr_Universal_Studios"  0.642
+
+>hasPhrase
+"Studios"
+
+>priorMatchScore
+"Studios"  "dbr_Universal_Studios"  0.538
+
+>resourceType
+"dbo_owner"   Relation
+
+>hasPhrase
+"owner"
+
+>priorMatchScore
+"owner"  "dbo_owner"  0.833
+
+>resourceType
+"dbo_country"   Relation
+
+>hasPhrase
+"Latvia"
+
+>priorMatchScore
+"Latvia"  "dbr_Latvia"  0.857
+
+>resourceType
+"dbo_spouse"   Relation
+
+>resourceType
+"dbo_spouse"   Relation
+
+>hasPhrase
+"Gettysburg"
+
+>priorMatchScore
+"Gettysburg"  "dbr_Battle_of_Gettysburg"  0.625
+
+>resourceType
+"dbo_date"   Relation
+
+>hasPhrase
+"Brooklyn"
+
+>priorMatchScore
+"Brooklyn"  "dbr_Brooklyn_Bridge"  0.64
+
+>hasPhrase
+"Bridge"
+
+>priorMatchScore
+"Bridge"  "dbr_Brooklyn_Bridge"  0.521
+
+>resourceType
+"dbo_crosses"   Relation
+
+>hasPhrase
+"cross"
+
+>priorMatchScore
+"cross"  "dbo_crosses"  0.714
+
+>resourceType
+"dbo_locatedInArea"   Relation
+
+>hasPhrase
+"Australia"
+
+>priorMatchScore
+"Australia"  "dbr_Australia"  0.9
+
+>resourceType
+"dbo_elevation"   Relation
+
+>resourceType
+"dbo_officialLanguage"   Relation
+
+>hasPhrase
+"Aviv"
+
+>priorMatchScore
+"Aviv"  "dbr_Tel_Aviv"  0.571
+
+>resourceType
+"dbo_leaderName"   Relation
+
+>hasPhrase
+"Brooklyn"
+
+>priorMatchScore
+"Brooklyn"  "dbr_Brooklyn_Bridge"  0.64
+
+>hasPhrase
+"Bridge"
+
+>priorMatchScore
+"Bridge"  "dbr_Brooklyn_Bridge"  0.521
+
+>hasPhrase
+"designed"
+
+>priorMatchScore
+"designed"  "designer"  0.777
+
+>resourceType
+"dbo_highestPlace"   Relation
+
+>hasPhrase
+"Forbes"
+
+>priorMatchScore
+"Forbes"  "dbr_Forbes"  0.857
+
+>resourceType
+"dbo_editor"   Relation
+
+>hasPhrase
+"editor"
+
+>priorMatchScore
+"editor"  "dbo_editor"  0.857
+
+>resourceType
+"dbo_deathCause"   Relation
+
+>hasPhrase
+"Lincoln"
+
+>priorMatchScore
+"Lincoln"  "dbr_Abraham_Lincoln"  0.583
+
+>resourceType
+"dbo_spouse"   Relation
+
+>hasPhrase
+"Warcraft"
+
+>priorMatchScore
+"Warcraft"  "dbr_World_of_Warcraft"  0.592
+
+>resourceType
+"dbo_developer"   Relation
+
+>hasPhrase
+"developed"
+
+>priorMatchScore
+"developed"  "dbo_developer"  0.8
+
+>hasPhrase
+"Cruise"
+
+>priorMatchScore
+"Cruise"  "dbr_Tom_Cruise"  0.666
+
+>hasPhrase
+"website"
+
+>priorMatchScore
+"website"  "website"  0.875
+
+>resourceType
+"dbo_series"   Relation
+
+>resourceType
+"dbo_seasonNumber"   Relation
+
+>resourceType
+"dbo_deathPlace"   Relation
+
+>resourceType
+"dbo_elevation"   Relation
+
+>resourceType
+"dbo_elevation"   Relation
+
+>resourceType
+"dbo_elevation"   Relation
+
+>hasPhrase
+"Wikipedia"
+
+>priorMatchScore
+"Wikipedia"  "dbr_Wikipedia"  0.9
+
+>resourceType
+"dbo_author"   Relation
+
+>resourceType
+"dbo_starring"   Relation
+
+>hasPhrase
+"starring"
+
+>priorMatchScore
+"starring"  "dbo_starring"  0.888
+
+>resourceType
+"dbo_developer"   Relation
+
+>resourceType
+"dbo_developer"   Relation
+
+>resourceType
+"dbo_industry"   Relation
+
+>resourceType
+"dbo_industry"   Relation
+
+>hasPhrase
+"Velvet"
+
+>priorMatchScore
+"Velvet"  "dbr_Velvet_Goldmine"  0.521
+
+>hasPhrase
+"Goldmine"
+
+>priorMatchScore
+"Goldmine"  "dbr_Velvet_Goldmine"  0.64
+
+>resourceType
+"dbo_starring"   Relation
+
+>hasPhrase
+"starring"
+
+>priorMatchScore
+"starring"  "dbo_starring"  0.888
+
+>hasPhrase
+"Christian"
+
+>priorMatchScore
+"Christian"  "dbr_Christian_Bale"  0.72
+
+>hasPhrase
+"entrances"
+
+>priorMatchScore
+"entrances"  "entranceCount"  0.666
+
+>hasPhrase
+"entrances"
+
+>priorMatchScore
+"entrances"  "entranceCount"  0.666
+
+>resourceType
+"dbo_producer"   Relation
+
+>resourceType
+"dbo_publisher"   Relation
+
+>resourceType
+"dbo_spokenIn"   Relation
+
+>hasPhrase
+"spoken"
+
+>priorMatchScore
+"spoken"  "dbo_spokenIn"  0.75
+
+>hasPhrase
+"Estonia"
+
+>priorMatchScore
+"Estonia"  "dbr_Estonia"  0.875
+
+>hasPhrase
+"Aldi"
+
+>priorMatchScore
+"Aldi"  "dbr_Aldi"  0.8
+
+>resourceType
+"dbo_numberOfLocations"   Relation
+
+>resourceType
+"dbo_genre"   Relation
+
+>resourceType
+"dbo_country"   Relation
+
+>resourceType
+"dbo_programmingLanguage"   Relation
+
+>resourceType
+"dbo_starring"   Relation
+
+>hasPhrase
+"starring"
+
+>priorMatchScore
+"starring"  "dbo_starring"  0.888
+
+>hasPhrase
+"Natalie"
+
+>priorMatchScore
+"Natalie"  "dbr_Natalie_Portman"  0.583
+
+>hasPhrase
+"Portman"
+
+>priorMatchScore
+"Portman"  "dbr_Natalie_Portman"  0.583
+
+>resourceType
+"dbo_producer"   Relation
+
+>hasPhrase
+"produced"
+
+>priorMatchScore
+"produced"  "dbo_producer"  0.777
+
+>resourceType
+"dbo_starring"   Relation
+
+>hasPhrase
+"Cruise"
+
+>priorMatchScore
+"Cruise"  "dbr_Tom_Cruise"  0.666
+
+>resourceType
+"dbo_starring"   Relation
+
+>resourceType
+"dbo_starring"   Relation
+
+>resourceType
+"dbo_gender"   Relation
+
+>hasPhrase
+"female"
+
+>priorMatchScore
+"female"  "dbr_Female"  0.714
+
+>resourceType
+"dbo_author"   Relation
+
+>resourceType
+"dbo_league"   Relation
+
+>hasPhrase
+"McKinley"
+
+>priorMatchScore
+"McKinley"  "dbr_Mount_McKinley"  0.666
+
+>resourceType
+"dbo_locatedInArea"   Relation
+
+>hasPhrase
+"located"
+
+>priorMatchScore
+"located"  "dbo_locatedInArea"  0.636
+
+>hasPhrase
+"Capcom"
+
+>priorMatchScore
+"Capcom"  "dbr_Capcom"  0.857
+
+>resourceType
+"dbo_foundingDate"   Relation
+
+>hasPhrase
+"founded"
+
+>priorMatchScore
+"founded"  "dbo_foundingDate"  0.571
+
+>resourceType
+"dbo_elevation"   Relation
+
+>hasPhrase
+"Natalie"
+
+>priorMatchScore
+"Natalie"  "dbr_Natalie_Portman"  0.583
+
+>hasPhrase
+"Portman"
+
+>priorMatchScore
+"Portman"  "dbr_Natalie_Portman"  0.583
+
+>resourceType
+"dbo_birthPlace"   Relation
+
+>resourceType
+"dbo_country"   Relation
+
+>hasPhrase
+"United"
+
+>priorMatchScore
+"United"  "dbr_United_States"  0.571
+
+>hasPhrase
+"States"
+
+>priorMatchScore
+"States"  "dbr_United_States"  0.571

@@ -1,0 +1,108 @@
+### TODO CODER LE RESTE DES VALEURS
+
+resourceType(software[c],C)
+resourceType(software[e],E)
+resourceType(software[r],R)
+resourceType(developed[c],C)
+resourceType(developed[e],E)
+resourceType(developed[r],R)
+resourceType(developedby[c],C)
+resourceType(developedby[e],E)
+resourceType(developedby[r],R)
+resourceType(california[c],C)
+resourceType(california[e],E)
+resourceType(california[r],R)
+resourceType(organization[c],C)
+resourceType(organization[e],E)
+resourceType(organization[r],R)
+resourceType(founded[c],C)
+resourceType(founded[e],E)
+resourceType(founded[r],R)
+resourceType(foundedin[c],C)
+resourceType(foundedin[e],E)
+resourceType(foundedin[r],R)
+resourceType(usa[c],C)
+resourceType(usa[e],E)
+resourceType(usa[r],R)
+
+========================================================================
+
+phraseIndex(Software,1,1)
+phraseIndex(Developed,4,4)
+phraseIndex(developedBy,4,5)
+phraseIndex(California,9,9)
+phraseIndex(Organizations,6,6)
+phraseIndex(Founded,7,7)
+phraseIndex(FoundedIn,7,8)
+phraseIndex(USA,10,10)
+
+=======================================
+hasRelatedness(software[c],software[e], XXX  )
+hasRelatedness(software[c],software[r], XXX  )
+hasRelatedness(software[c],developed[c], XXX  )
+hasRelatedness(software[c],developed[e], XXX  )
+hasRelatedness(software[c],developed[r], XXX  )
+hasRelatedness(software[c],developedby[c], XXX  )
+hasRelatedness(software[c],developedby[e], XXX  )
+hasRelatedness(software[c],developedby[r], XXX  )
+hasRelatedness(software[c],california[c], XXX  )
+hasRelatedness(software[c],california[e], XXX  )
+hasRelatedness(software[c],california[r], XXX  )
+hasRelatedness(software[c],organization[c], XXX  )
+hasRelatedness(software[c],organization[e], XXX  )
+hasRelatedness(software[c],organization[r], XXX  )
+hasRelatedness(software[c],founded[c], XXX  )
+hasRelatedness(software[c],founded[e], XXX  )
+hasRelatedness(software[c],founded[r], XXX  )
+hasRelatedness(software[c],foundedin[c], XXX  )
+hasRelatedness(software[c],foundedin[e], XXX  )
+hasRelatedness(software[c],foundedin[r], XXX  )
+hasRelatedness(software[c],usa[c], XXX  )
+hasRelatedness(software[c],usa[e], XXX  )
+hasRelatedness(software[c],usa[r], XXX  )
+========================================
+
+priorMatchScore(Software,sofware[c],0.4)
+priorMatchScore(Software,software[e],0.8)
+
+priorMatchScore(Developed,developed[r],0.6)
+priorMatchScore(Developed,developed[e],0.4)
+
+priorMatchScore(developedBy,developer[c],0.5)
+priorMatchScore(developedBy,developedby[c],0.5)
+
+priorMatchScore(Organizations,organization[e],0.8)
+priorMatchScore(Organizations,organizer[e],0.9)
+
+priorMatchScore(Founded,founded[r],0.4)
+priorMatchScore(Founded,founder[e],0.6)
+
+priorMatchScore(FoundedIn,foundedin[r],0.7)
+
+priorMatchScore(USA,usa[e],0.8)
+
+
+
+==============================================
+
+
+# This feature is created using 
+
+
+phraseDepTag(Developed,Software,nsubjpass)
+phraseDepTag(Organization,developedBy,case)
+phraseDepTag(Organization,Developed,mod:agent)
+phraseDepTag(Organization,Founded,acl)
+phraseDepTag(USA,FoundedIn,case)
+phraseDepTag(USA,California,compound)
+phraseDepTag(Founded,USA,nmod:in)
+
+
+phrasePosTag(Software,NN)     
+phrasePosTag(Developed,VBN)
+phrasePosTag(developedBy,IN)  
+phrasePosTag(California,NNP)
+phrasePosTag(Organization,NNS)
+phrasePosTag(Founded,VBN)
+phrasePosTag(FoundedIn,IN)    
+phrasePosTag(USA,NNP)  

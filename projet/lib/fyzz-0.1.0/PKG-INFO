@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: fyzz
+Version: 0.1.0
+Summary: SPARQL parser
+Home-page: http://www.logilab.org/project/fyzz
+Author: Logilab
+Author-email: contact@logilab.fr
+License: LGPL v2
+Description: SPARQL parser written in Python using yapps
+Platform: UNKNOWN

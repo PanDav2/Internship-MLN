@@ -1,0 +1,7 @@
+
+REQUETE PREFIX yago: <http://dbpedia.org/class/yago/> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX res: <http://dbpedia.org/resource/> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> SELECT DISTINCT ?uri WHERE { ?uri rdf:type yago:StatesOfTheUnitedStates . res:Mount_McKinley dbo:locatedInArea ?uri . }
+
+
+REFERENCE [(SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates')), (('http://dbpedia.org/resource/', 'Mount_McKinley'), ('http://dbpedia.org/ontology/', 'locatedInArea'), SparqlVar('uri'))]
+
+Il y a 3 valeurs dans l'élement (SparqlVar('uri'), ('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'type'), ('http://dbpedia.org/class/yago/', 'StatesOfTheUnitedStates'))

@@ -1,0 +1,563 @@
+Database schema     = tuffy_london_panou_21235
+Current directory   = /people/panou/Stage/tuffy
+Temporary directory = /tmp/tuffy-workspace/tuffy_london_panou_21235
+*** Welcome to Tuffy 0.3!
+>>> Running partition-aware inference.
+>>> Connecting to RDBMS at jdbc:postgresql://localhost:5432/tuffydb
+### Checking existence of tuffy_london_panou_21235
+### Creating schema tuffy_london_panou_21235
+>>> Parsing program file: ./probleme/prog2.mln
+
+Clause1
+[weight=infty] sign='+' 
+   !HasPhrase(v0)
+ v  HasResource(v0, v1)
+
+
+Clause2
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasPhrase(v0)
+
+
+Clause3
+[weight=infty] sign='+' 
+    HasPhrase(v0)
+ v !HasResource(v0, v1)
+
+
+Clause4
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasRelation(v1, v2, v3)
+ v  HasRelation(v4, v1, v5)
+
+
+Clause5
+[weight=infty] sign='+' 
+   !HasRelation(v0, v1, v2)
+ v  HasResource(v3, v0)
+ v  HasResource(v4, v1)
+
+
+Clause6
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v0, v1, c1)
+ v  HasRelation(v0, v2, c2)
+
+
+Clause7
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v1, v0, c1)
+ v  HasRelation(v0, v2, c2)
+
+
+Clause8
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasPhrase(v0)
+
+
+Clause9
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasResource(v0, v1)
+
+
+Clause10
+[weight=1.0] sign='+' 
+   !PhrasePosTag(v0, v1)
+ v !ResourceType(v2, v3)
+ v  HasResource(v0, v2)
+
+
+Clause11
+[weight=1.0] sign='+' 
+   !PhraseDepTag(v0, v1, v2)
+ v !HasResource(v0, v3)
+ v !HasResource(v1, v4)
+ v  HasRelation(v3, v4, v5)
+
+>>> Parsing query file: ./probleme/query.db
+>>> Creating predicate table pred_phraseindex
+>>> Creating predicate table pred_phrasepostag
+>>> Creating predicate table pred_phrasedeptag
+>>> Creating predicate table pred_phrasedepone
+>>> Creating predicate table pred_hasmeanword
+>>> Creating predicate table pred_hasphrase
+>>> Creating predicate table pred_hasresource
+>>> Creating predicate table pred_hasrelation
+>>> Creating predicate table pred_resourcetype
+>>> Creating predicate table pred_priormatchscore
+>>> Creating predicate table pred_hasrelatedness
+>>> Parsing evidence file: ./probleme/evidence.db
+>>> Storing symbol tables...
+    constants = 45
+>>> Storing evidence...
+>>> KBMC: Identifying relevant atoms/clauses...
+HasResource(v1, v2)
+>>> KBMC: Materializing predicates...
+    HasRelation(v1, v2, v3) - 12 tuples
+    Skipped PhraseDepTag
+    HasPhrase(v1) - 10 tuples
+    Skipped PhraseDepOne
+    Skipped PhraseIndex
+    Skipped PhrasePosTag
+    Skipped HasMeanWord
+    Skipped ResourceType
+    PriorMatchScore(v1, v2) - 20 tuples
+    HasResource(v1, v2) - 20 tuples
+>>> Marking queries...
+>>> Storing query HasResource(v1, v2)
+    updated 20 rows
+>>> Grounding...
+>>> Computing closure of active atoms...
+>>> Activating soft evidence atoms...
+>>> Activating soft evidence from PriorMatchScore
+### activated atoms = 3
+### active soft evidence = 3
+>>> Reactivating already active atoms...
+### active unknown atoms = 0
+>>> Round #1:
+>>> Grounding Clause1
+[weight=infty] sign='+' 
+   !HasPhrase(v0)
+ v  HasResource(v0, v1)
+
+SELECT DISTINCT t2.club as club2, t2.id as id2 FROM pred_hasphrase t1 JOIN pred_hasresource t2 ON (t2.phrase1=t1.phrase1) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_hasphrase))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasresource)) OR ((t2.club < 2))) AND (1=1)
+    Created 8 groundings
+>>> Expanding active atoms...
+    Found 8 new active atoms for predicate [HasResource]
+
+>>> Grounding Clause11
+[weight=1.0] sign='+' 
+   !PhraseDepTag(v0, v1, v2)
+ v !HasResource(v0, v3)
+ v !HasResource(v1, v4)
+ v  HasRelation(v3, v4, v5)
+
+SELECT DISTINCT t4.club as club4, t4.id as id4 FROM pred_phrasedeptag t1 JOIN pred_hasresource t2 ON (t2.phrase1=t1.phrase1) JOIN pred_hasresource t3 ON (t3.phrase1=t1.phrase2) JOIN pred_hasrelation t4 ON (t4.resource1=t2.resource2) AND (t4.resource2=t3.resource2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_phrasedeptag))) AND ((t2.truth='1') OR (t2.id IN (SELECT * FROM act_pred_hasresource))) AND ((t3.truth='1') OR (t3.id IN (SELECT * FROM act_pred_hasresource))) AND ((t4.truth='0') OR (t4.id IS NULL) OR (t4.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t4.club < 2))) AND (1=1)
+    Created 11 groundings
+>>> Expanding active atoms...
+    Found 11 new active atoms for predicate [HasRelation]
+
+>>> Grounding Clause4
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasRelation(v1, v2, v3)
+ v  HasRelation(v4, v1, v5)
+
+SELECT DISTINCT t2.club as club2, t3.club as club3, t2.id as id2, t3.id as id3 FROM pred_hasresource t1 JOIN pred_hasrelation t2 ON (t2.resource1=t1.resource2) JOIN pred_hasrelation t3 ON (t3.resource2=t1.resource2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_hasresource))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t2.club < 2))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t3.club < 2))) AND (1=1)
+    Created 60 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause7
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v1, v0, c1)
+ v  HasRelation(v0, v2, c2)
+
+SELECT DISTINCT t2.club as club2, t3.club as club3, t2.id as id2, t3.id as id3 FROM Clause7_instances metaTable  JOIN pred_resourcetype t1 ON (t1.class2=metaTable.c0) JOIN pred_hasrelation t2 ON (t2.resource2=t1.resource1) AND (t2.relation3=metaTable.c1) JOIN pred_hasrelation t3 ON (t3.resource1=t1.resource1) AND (t3.relation3=metaTable.c2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_resourcetype))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t2.club < 2))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t3.club < 2))) AND (1=1)
+    Created 4 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause2
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasPhrase(v0)
+
+SELECT DISTINCT t2.club as club2, t2.id as id2 FROM pred_hasresource t1 LEFT OUTER JOIN pred_hasphrase t2 ON (t2.phrase1=t1.phrase1) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_hasresource))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasphrase)) OR ((t2.club < 2))) AND (1=1)
+    Created 0 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause5
+[weight=infty] sign='+' 
+   !HasRelation(v0, v1, v2)
+ v  HasResource(v3, v0)
+ v  HasResource(v4, v1)
+
+SELECT DISTINCT t2.club as club2, t3.club as club3, t2.id as id2, t3.id as id3 FROM pred_hasrelation t1 JOIN pred_hasresource t2 ON (t2.resource2=t1.resource1) JOIN pred_hasresource t3 ON (t3.resource2=t1.resource2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_hasrelation))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasresource)) OR ((t2.club < 2))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasresource)) OR ((t3.club < 2))) AND (1=1)
+    Created 400 groundings
+>>> Expanding active atoms...
+    Found 12 new active atoms for predicate [HasResource]
+
+>>> Grounding Clause3
+[weight=infty] sign='+' 
+    HasPhrase(v0)
+ v !HasResource(v0, v1)
+
+SELECT DISTINCT t1.club as club1, t1.id as id1 FROM pred_hasresource t2 LEFT OUTER JOIN pred_hasphrase t1 ON (t1.phrase1=t2.phrase1) WHERE ((t1.truth='0') OR (t1.id IS NULL) OR (t1.id IN (SELECT * FROM act_pred_hasphrase)) OR ((t1.club < 2))) AND ((t2.truth='1') OR (t2.id IN (SELECT * FROM act_pred_hasresource))) AND (1=1)
+    Created 6 groundings
+>>> Expanding active atoms...
+    Found 6 new active atoms for predicate [HasPhrase]
+
+>>> Grounding Clause8
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasPhrase(v0)
+
+SELECT DISTINCT t2.club as club2, t2.id as id2 FROM pred_priormatchscore t1 LEFT OUTER JOIN pred_hasphrase t2 ON (t2.phrase1=t1.phrase1) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_priormatchscore))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasphrase)) OR ((t2.club < 2))) AND (1=1)
+    Created 0 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause6
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v0, v1, c1)
+ v  HasRelation(v0, v2, c2)
+
+SELECT DISTINCT t2.club as club2, t3.club as club3, t2.id as id2, t3.id as id3 FROM Clause6_instances metaTable  JOIN pred_resourcetype t1 ON (t1.class2=metaTable.c0) JOIN pred_hasrelation t2 ON (t2.resource1=t1.resource1) AND (t2.relation3=metaTable.c1) JOIN pred_hasrelation t3 ON (t3.resource1=t1.resource1) AND (t3.relation3=metaTable.c2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_resourcetype))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t2.club < 2))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t3.club < 2))) AND (1=1)
+    Created 4 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause9
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasResource(v0, v1)
+
+SELECT DISTINCT t2.club as club2, t2.id as id2 FROM pred_priormatchscore t1 LEFT OUTER JOIN pred_hasresource t2 ON (t2.phrase1=t1.phrase1) AND (t2.resource2=t1.resource2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_priormatchscore))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasresource)) OR ((t2.club < 2))) AND (1=1)
+    Created 3 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause10
+[weight=1.0] sign='+' 
+   !PhrasePosTag(v0, v1)
+ v !ResourceType(v2, v3)
+ v  HasResource(v0, v2)
+
+SELECT DISTINCT t3.club as club3, t3.id as id3 FROM pred_phrasepostag t1 JOIN pred_resourcetype t2 ON 1=1 LEFT OUTER JOIN pred_hasresource t3 ON (t3.phrase1=t1.phrase1) AND (t3.resource2=t2.resource1) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_phrasepostag))) AND ((t2.truth='1') OR (t2.id IN (SELECT * FROM act_pred_resourcetype))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasresource)) OR ((t3.club < 2))) AND (1=1)
+    Created 20 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+
+>>> Round #2:
+>>> Grounding Clause1
+[weight=infty] sign='+' 
+   !HasPhrase(v0)
+ v  HasResource(v0, v1)
+
+SELECT DISTINCT t2.club as club2, t2.id as id2 FROM pred_hasphrase t1 JOIN pred_hasresource t2 ON (t2.phrase1=t1.phrase1) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_hasphrase))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasresource)) OR ((t2.club < 2))) AND (1=1)
+    Created 20 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause11
+[weight=1.0] sign='+' 
+   !PhraseDepTag(v0, v1, v2)
+ v !HasResource(v0, v3)
+ v !HasResource(v1, v4)
+ v  HasRelation(v3, v4, v5)
+
+SELECT DISTINCT t4.club as club4, t4.id as id4 FROM pred_phrasedeptag t1 JOIN pred_hasresource t2 ON (t2.phrase1=t1.phrase1) JOIN pred_hasresource t3 ON (t3.phrase1=t1.phrase2) JOIN pred_hasrelation t4 ON (t4.resource1=t2.resource2) AND (t4.resource2=t3.resource2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_phrasedeptag))) AND ((t2.truth='1') OR (t2.id IN (SELECT * FROM act_pred_hasresource))) AND ((t3.truth='1') OR (t3.id IN (SELECT * FROM act_pred_hasresource))) AND ((t4.truth='0') OR (t4.id IS NULL) OR (t4.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t4.club < 2))) AND (1=1)
+    Created 11 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause4
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasRelation(v1, v2, v3)
+ v  HasRelation(v4, v1, v5)
+
+SELECT DISTINCT t2.club as club2, t3.club as club3, t2.id as id2, t3.id as id3 FROM pred_hasresource t1 JOIN pred_hasrelation t2 ON (t2.resource1=t1.resource2) JOIN pred_hasrelation t3 ON (t3.resource2=t1.resource2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_hasresource))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t2.club < 2))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t3.club < 2))) AND (1=1)
+    Created 60 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause7
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v1, v0, c1)
+ v  HasRelation(v0, v2, c2)
+
+SELECT DISTINCT t2.club as club2, t3.club as club3, t2.id as id2, t3.id as id3 FROM Clause7_instances metaTable  JOIN pred_resourcetype t1 ON (t1.class2=metaTable.c0) JOIN pred_hasrelation t2 ON (t2.resource2=t1.resource1) AND (t2.relation3=metaTable.c1) JOIN pred_hasrelation t3 ON (t3.resource1=t1.resource1) AND (t3.relation3=metaTable.c2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_resourcetype))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t2.club < 2))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t3.club < 2))) AND (1=1)
+    Created 4 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause2
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasPhrase(v0)
+
+SELECT DISTINCT t2.club as club2, t2.id as id2 FROM pred_hasresource t1 LEFT OUTER JOIN pred_hasphrase t2 ON (t2.phrase1=t1.phrase1) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_hasresource))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasphrase)) OR ((t2.club < 2))) AND (1=1)
+    Created 6 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause5
+[weight=infty] sign='+' 
+   !HasRelation(v0, v1, v2)
+ v  HasResource(v3, v0)
+ v  HasResource(v4, v1)
+
+SELECT DISTINCT t2.club as club2, t3.club as club3, t2.id as id2, t3.id as id3 FROM pred_hasrelation t1 JOIN pred_hasresource t2 ON (t2.resource2=t1.resource1) JOIN pred_hasresource t3 ON (t3.resource2=t1.resource2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_hasrelation))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasresource)) OR ((t2.club < 2))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasresource)) OR ((t3.club < 2))) AND (1=1)
+    Created 400 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause3
+[weight=infty] sign='+' 
+    HasPhrase(v0)
+ v !HasResource(v0, v1)
+
+SELECT DISTINCT t1.club as club1, t1.id as id1 FROM pred_hasresource t2 LEFT OUTER JOIN pred_hasphrase t1 ON (t1.phrase1=t2.phrase1) WHERE ((t1.truth='0') OR (t1.id IS NULL) OR (t1.id IN (SELECT * FROM act_pred_hasphrase)) OR ((t1.club < 2))) AND ((t2.truth='1') OR (t2.id IN (SELECT * FROM act_pred_hasresource))) AND (1=1)
+    Created 6 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause8
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasPhrase(v0)
+
+SELECT DISTINCT t2.club as club2, t2.id as id2 FROM pred_priormatchscore t1 LEFT OUTER JOIN pred_hasphrase t2 ON (t2.phrase1=t1.phrase1) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_priormatchscore))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasphrase)) OR ((t2.club < 2))) AND (1=1)
+    Created 0 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause6
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v0, v1, c1)
+ v  HasRelation(v0, v2, c2)
+
+SELECT DISTINCT t2.club as club2, t3.club as club3, t2.id as id2, t3.id as id3 FROM Clause6_instances metaTable  JOIN pred_resourcetype t1 ON (t1.class2=metaTable.c0) JOIN pred_hasrelation t2 ON (t2.resource1=t1.resource1) AND (t2.relation3=metaTable.c1) JOIN pred_hasrelation t3 ON (t3.resource1=t1.resource1) AND (t3.relation3=metaTable.c2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_resourcetype))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t2.club < 2))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasrelation)) OR ((t3.club < 2))) AND (1=1)
+    Created 4 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause9
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasResource(v0, v1)
+
+SELECT DISTINCT t2.club as club2, t2.id as id2 FROM pred_priormatchscore t1 LEFT OUTER JOIN pred_hasresource t2 ON (t2.phrase1=t1.phrase1) AND (t2.resource2=t1.resource2) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_priormatchscore))) AND ((t2.truth='0') OR (t2.id IS NULL) OR (t2.id IN (SELECT * FROM act_pred_hasresource)) OR ((t2.club < 2))) AND (1=1)
+    Created 3 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+>>> Grounding Clause10
+[weight=1.0] sign='+' 
+   !PhrasePosTag(v0, v1)
+ v !ResourceType(v2, v3)
+ v  HasResource(v0, v2)
+
+SELECT DISTINCT t3.club as club3, t3.id as id3 FROM pred_phrasepostag t1 JOIN pred_resourcetype t2 ON 1=1 LEFT OUTER JOIN pred_hasresource t3 ON (t3.phrase1=t1.phrase1) AND (t3.resource2=t2.resource1) WHERE ((t1.truth='1') OR (t1.id IN (SELECT * FROM act_pred_phrasepostag))) AND ((t2.truth='1') OR (t2.id IN (SELECT * FROM act_pred_resourcetype))) AND ((t3.truth='0') OR (t3.id IS NULL) OR (t3.id IN (SELECT * FROM act_pred_hasresource)) OR ((t3.club < 2))) AND (1=1)
+    Created 20 groundings
+>>> Expanding active atoms...
+    Found no new atoms.
+
+
+>>> Gathering active atoms...
+--- Not using atoms from HasMeanWord
++++ Using atoms from HasResource
+INSERT INTO mln0_atoms(atomid,tupleID,predID,truth,prob,isquery,isqueryevid) SELECT (case when atomid is null then nextval('seq_atom_ids') else atomid end),p.id,6,truth,prior,(club=1),(club=3) FROM pred_hasresource p LEFT OUTER JOIN act_pred_hasresource ta  ON p.id=ta.id WHERE p.atomid>0 or ta.id IS NOT NULL
+UPDATE pred_hasresource pt SET atomID=ra.atomID  FROM mln0_atoms ra  WHERE ra.predID=6 AND ra.tupleID=pt.id
+analyzing table
++++ Using atoms from HasRelation
+INSERT INTO mln0_atoms(atomid,tupleID,predID,truth,prob,isquery,isqueryevid) SELECT (case when atomid is null then nextval('seq_atom_ids') else atomid end),p.id,7,truth,prior,(club=1),(club=3) FROM pred_hasrelation p LEFT OUTER JOIN act_pred_hasrelation ta  ON p.id=ta.id WHERE p.atomid>0 or ta.id IS NOT NULL
+UPDATE pred_hasrelation pt SET atomID=ra.atomID  FROM mln0_atoms ra  WHERE ra.predID=7 AND ra.tupleID=pt.id
+analyzing table
+--- Not using atoms from PhraseIndex
++++ Using atoms from PriorMatchScore
+INSERT INTO mln0_atoms(atomid,tupleID,predID,truth,prob,isquery,isqueryevid) SELECT (case when atomid is null then nextval('seq_atom_ids') else atomid end),p.id,9,truth,prior,(club=1),(club=3) FROM pred_priormatchscore p LEFT OUTER JOIN act_pred_priormatchscore ta  ON p.id=ta.id WHERE p.atomid>0 or ta.id IS NOT NULL
+UPDATE pred_priormatchscore pt SET atomID=ra.atomID  FROM mln0_atoms ra  WHERE ra.predID=9 AND ra.tupleID=pt.id
+analyzing table
++++ Using atoms from HasRelatedness
+INSERT INTO mln0_atoms(atomid,tupleID,predID,truth,prob,isquery,isqueryevid) SELECT (case when atomid is null then nextval('seq_atom_ids') else atomid end),p.id,10,truth,prior,(club=1),(club=3) FROM pred_hasrelatedness p LEFT OUTER JOIN act_pred_hasrelatedness ta  ON p.id=ta.id WHERE p.atomid>0 or ta.id IS NOT NULL
+UPDATE pred_hasrelatedness pt SET atomID=ra.atomID  FROM mln0_atoms ra  WHERE ra.predID=10 AND ra.tupleID=pt.id
+analyzing table
+--- Not using atoms from PhraseDepTag
+--- Not using atoms from PhraseDepOne
++++ Using atoms from HasPhrase
+INSERT INTO mln0_atoms(atomid,tupleID,predID,truth,prob,isquery,isqueryevid) SELECT (case when atomid is null then nextval('seq_atom_ids') else atomid end),p.id,5,truth,prior,(club=1),(club=3) FROM pred_hasphrase p LEFT OUTER JOIN act_pred_hasphrase ta  ON p.id=ta.id WHERE p.atomid>0 or ta.id IS NOT NULL
+UPDATE pred_hasphrase pt SET atomID=ra.atomID  FROM mln0_atoms ra  WHERE ra.predID=5 AND ra.tupleID=pt.id
+analyzing table
+--- Not using atoms from PhrasePosTag
+--- Not using atoms from ResourceType
+### active atoms = 40
+>>> Computing active clauses...
+>>> Grounding clauses...
+>>> Grounding clause 1 / 11
+Clause1
+[weight=infty] sign='+' 
+   !HasPhrase(v0)
+ v  HasResource(v0, v1)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 1 ELSE -1 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('1.' || ffid) ELSE ('-1.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[-(CASE WHEN t1.id IS NULL THEN 0 WHEN t1.atomID IS NULL THEN 0 ELSE t1.atomID END), (CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END)]-0)) as list2, CAST(5.2E7 AS FLOAT8) as weight2 ,CAST('0' as TEXT)|| 'hardfixed' as ffid  FROM pred_hasphrase t1 JOIN pred_hasresource t2 ON (t2.phrase1=t1.phrase1) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=FALSE) OR (t2.id IS NULL) OR (t2.club < 2 OR t2.prior IS NOT NULL)) AND CAST(5.2E7 AS FLOAT8) > 0 ) as Clause1 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.008 sec]
+### new clauses = 20; total = 20
+
+>>> Grounding clause 2 / 11
+Clause11
+[weight=1.0] sign='+' 
+   !PhraseDepTag(v0, v1, v2)
+ v !HasResource(v0, v3)
+ v !HasResource(v1, v4)
+ v  HasRelation(v3, v4, v5)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 11 ELSE -11 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('11.' || ffid) ELSE ('-11.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[-(CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END), -(CASE WHEN t3.id IS NULL THEN 0 WHEN t3.atomID IS NULL THEN 0 ELSE t3.atomID END), (CASE WHEN t4.id IS NULL THEN 0 WHEN t4.atomID IS NULL THEN 0 ELSE t4.atomID END)]-0)) as list2, CAST(1.0 AS FLOAT8) as weight2 ,CAST('0' as TEXT) as ffid  FROM pred_phrasedeptag t1 JOIN pred_hasresource t2 ON (t2.phrase1=t1.phrase1) JOIN pred_hasresource t3 ON (t3.phrase1=t1.phrase2) JOIN pred_hasrelation t4 ON (t4.resource1=t2.resource2) AND (t4.resource2=t3.resource2) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=TRUE) OR (t2.atomID IS NOT NULL)) AND ((t3.truth=TRUE) OR (t3.atomID IS NOT NULL)) AND ((t4.truth=FALSE) OR (t4.id IS NULL) OR (t4.club < 2 OR t4.prior IS NOT NULL)) AND CAST(1.0 AS FLOAT8) > 0 ) as Clause11 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.008 sec]
+### new clauses = 99; total = 119
+
+>>> Grounding clause 3 / 11
+Clause4
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasRelation(v1, v2, v3)
+ v  HasRelation(v4, v1, v5)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 4 ELSE -4 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('4.' || ffid) ELSE ('-4.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[-(CASE WHEN t1.id IS NULL THEN 0 WHEN t1.atomID IS NULL THEN 0 ELSE t1.atomID END), (CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END), (CASE WHEN t3.id IS NULL THEN 0 WHEN t3.atomID IS NULL THEN 0 ELSE t3.atomID END)]-0)) as list2, CAST(5.2E7 AS FLOAT8) as weight2 ,CAST('0' as TEXT)|| 'hardfixed' as ffid  FROM pred_hasresource t1 JOIN pred_hasrelation t2 ON (t2.resource1=t1.resource2) JOIN pred_hasrelation t3 ON (t3.resource2=t1.resource2) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=FALSE) OR (t2.id IS NULL) OR (t2.club < 2 OR t2.prior IS NOT NULL)) AND ((t3.truth=FALSE) OR (t3.id IS NULL) OR (t3.club < 2 OR t3.prior IS NOT NULL)) AND CAST(5.2E7 AS FLOAT8) > 0 ) as Clause4 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.025 sec]
+### new clauses = 600; total = 719
+
+>>> Grounding clause 4 / 11
+Clause7
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v1, v0, c1)
+ v  HasRelation(v0, v2, c2)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 7 ELSE -7 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('7.' || ffid) ELSE ('-7.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[(CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END), (CASE WHEN t3.id IS NULL THEN 0 WHEN t3.atomID IS NULL THEN 0 ELSE t3.atomID END)]-0)) as list2, metaTable.weight as weight2 ,metaTable.myid::TEXT|| metaTable.myisfixed as ffid  FROM Clause7_instances metaTable  JOIN pred_resourcetype t1 ON (t1.class2=metaTable.c0) JOIN pred_hasrelation t2 ON (t2.resource2=t1.resource1) AND (t2.relation3=metaTable.c1) JOIN pred_hasrelation t3 ON (t3.resource1=t1.resource1) AND (t3.relation3=metaTable.c2) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=FALSE) OR (t2.id IS NULL) OR (t2.club < 2 OR t2.prior IS NOT NULL)) AND ((t3.truth=FALSE) OR (t3.id IS NULL) OR (t3.club < 2 OR t3.prior IS NOT NULL)) AND metaTable.weight > 0 ) as Clause7 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.008 sec]
+### new clauses = 4; total = 723
+
+>>> Grounding clause 5 / 11
+Clause2
+[weight=infty] sign='+' 
+   !HasResource(v0, v1)
+ v  HasPhrase(v0)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 2 ELSE -2 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('2.' || ffid) ELSE ('-2.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[-(CASE WHEN t1.id IS NULL THEN 0 WHEN t1.atomID IS NULL THEN 0 ELSE t1.atomID END), (CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END)]-0)) as list2, CAST(5.2E7 AS FLOAT8) as weight2 ,CAST('0' as TEXT)|| 'hardfixed' as ffid  FROM pred_hasresource t1 LEFT OUTER JOIN pred_hasphrase t2 ON (t2.phrase1=t1.phrase1) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=FALSE) OR (t2.id IS NULL) OR (t2.club < 2 OR t2.prior IS NOT NULL)) AND CAST(5.2E7 AS FLOAT8) > 0 ) as Clause2 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.008 sec]
+### new clauses = 12; total = 735
+
+>>> Grounding clause 6 / 11
+Clause5
+[weight=infty] sign='+' 
+   !HasRelation(v0, v1, v2)
+ v  HasResource(v3, v0)
+ v  HasResource(v4, v1)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 5 ELSE -5 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('5.' || ffid) ELSE ('-5.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[-(CASE WHEN t1.id IS NULL THEN 0 WHEN t1.atomID IS NULL THEN 0 ELSE t1.atomID END), (CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END), (CASE WHEN t3.id IS NULL THEN 0 WHEN t3.atomID IS NULL THEN 0 ELSE t3.atomID END)]-0)) as list2, CAST(5.2E7 AS FLOAT8) as weight2 ,CAST('0' as TEXT)|| 'hardfixed' as ffid  FROM pred_hasrelation t1 JOIN pred_hasresource t2 ON (t2.resource2=t1.resource1) JOIN pred_hasresource t3 ON (t3.resource2=t1.resource2) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=FALSE) OR (t2.id IS NULL) OR (t2.club < 2 OR t2.prior IS NOT NULL)) AND ((t3.truth=FALSE) OR (t3.id IS NULL) OR (t3.club < 2 OR t3.prior IS NOT NULL)) AND CAST(5.2E7 AS FLOAT8) > 0 ) as Clause5 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.038 sec]
+### new clauses = 1,200; total = 1,935
+
+>>> Grounding clause 7 / 11
+Clause3
+[weight=infty] sign='+' 
+    HasPhrase(v0)
+ v !HasResource(v0, v1)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 3 ELSE -3 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('3.' || ffid) ELSE ('-3.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[(CASE WHEN t1.id IS NULL THEN 0 WHEN t1.atomID IS NULL THEN 0 ELSE t1.atomID END), -(CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END)]-0)) as list2, CAST(5.2E7 AS FLOAT8) as weight2 ,CAST('0' as TEXT)|| 'hardfixed' as ffid  FROM pred_hasresource t2 LEFT OUTER JOIN pred_hasphrase t1 ON (t1.phrase1=t2.phrase1) WHERE (1=1) AND ((t1.truth=FALSE) OR (t1.id IS NULL) OR (t1.club < 2 OR t1.prior IS NOT NULL)) AND ((t2.truth=TRUE) OR (t2.atomID IS NOT NULL)) AND CAST(5.2E7 AS FLOAT8) > 0 ) as Clause3 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.008 sec]
+### new clauses = 12; total = 1,947
+
+>>> Grounding clause 8 / 11
+Clause8
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasPhrase(v0)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 8 ELSE -8 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('8.' || ffid) ELSE ('-8.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[-(CASE WHEN t1.id IS NULL THEN 0 WHEN t1.atomID IS NULL THEN 0 ELSE t1.atomID END), (CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END)]-0)) as list2, CAST(1.0 AS FLOAT8) as weight2 ,CAST('0' as TEXT) as ffid  FROM pred_priormatchscore t1 LEFT OUTER JOIN pred_hasphrase t2 ON (t2.phrase1=t1.phrase1) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=FALSE) OR (t2.id IS NULL) OR (t2.club < 2 OR t2.prior IS NOT NULL)) AND CAST(1.0 AS FLOAT8) > 0 ) as Clause8 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.001 sec]
+### new clauses = 0; total = 1,947
+
+>>> Grounding clause 9 / 11
+Clause6
+[#instances=2] sign='+' 
+   !ResourceType(v0, c0)
+ v  HasRelation(v0, v1, c1)
+ v  HasRelation(v0, v2, c2)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 6 ELSE -6 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('6.' || ffid) ELSE ('-6.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[(CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END), (CASE WHEN t3.id IS NULL THEN 0 WHEN t3.atomID IS NULL THEN 0 ELSE t3.atomID END)]-0)) as list2, metaTable.weight as weight2 ,metaTable.myid::TEXT|| metaTable.myisfixed as ffid  FROM Clause6_instances metaTable  JOIN pred_resourcetype t1 ON (t1.class2=metaTable.c0) JOIN pred_hasrelation t2 ON (t2.resource1=t1.resource1) AND (t2.relation3=metaTable.c1) JOIN pred_hasrelation t3 ON (t3.resource1=t1.resource1) AND (t3.relation3=metaTable.c2) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=FALSE) OR (t2.id IS NULL) OR (t2.club < 2 OR t2.prior IS NOT NULL)) AND ((t3.truth=FALSE) OR (t3.id IS NULL) OR (t3.club < 2 OR t3.prior IS NOT NULL)) AND metaTable.weight > 0 ) as Clause6 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.007 sec]
+### new clauses = 4; total = 1,951
+
+>>> Grounding clause 10 / 11
+Clause9
+[weight=1.0] sign='+' 
+   !PriorMatchScore(v0, v1)
+ v  HasResource(v0, v1)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 9 ELSE -9 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('9.' || ffid) ELSE ('-9.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[-(CASE WHEN t1.id IS NULL THEN 0 WHEN t1.atomID IS NULL THEN 0 ELSE t1.atomID END), (CASE WHEN t2.id IS NULL THEN 0 WHEN t2.atomID IS NULL THEN 0 ELSE t2.atomID END)]-0)) as list2, CAST(1.0 AS FLOAT8) as weight2 ,CAST('0' as TEXT) as ffid  FROM pred_priormatchscore t1 LEFT OUTER JOIN pred_hasresource t2 ON (t2.phrase1=t1.phrase1) AND (t2.resource2=t1.resource2) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=FALSE) OR (t2.id IS NULL) OR (t2.club < 2 OR t2.prior IS NOT NULL)) AND CAST(1.0 AS FLOAT8) > 0 ) as Clause9 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.008 sec]
+### new clauses = 3; total = 1,954
+
+>>> Grounding clause 11 / 11
+Clause10
+[weight=1.0] sign='+' 
+   !PhrasePosTag(v0, v1)
+ v !ResourceType(v2, v3)
+ v  HasResource(v0, v2)
+
+SELECT (CASE WHEN unitNegativeClause(list2)>=0 THEN list2 ELSE array[-list2[1]] END) AS list, (CASE WHEN unitNegativeClause(list2)>=0 THEN weight2 ELSE -weight2 END) AS weight, (CASE WHEN unitNegativeClause(list2)>=0 THEN 10 ELSE -10 END) AS fcid , (CASE WHEN unitNegativeClause(list2)>=0 THEN ('10.' || ffid) ELSE ('-10.' || ffid) END) AS ffcid FROM (SELECT UNIQ(SORT(ARRAY[(CASE WHEN t3.id IS NULL THEN 0 WHEN t3.atomID IS NULL THEN 0 ELSE t3.atomID END)]-0)) as list2, CAST(1.0 AS FLOAT8) as weight2 ,CAST('0' as TEXT) as ffid  FROM pred_phrasepostag t1 JOIN pred_resourcetype t2 ON 1=1 LEFT OUTER JOIN pred_hasresource t3 ON (t3.phrase1=t1.phrase1) AND (t3.resource2=t2.resource1) WHERE (1=1) AND ((t1.truth=TRUE) OR (t1.atomID IS NOT NULL)) AND ((t2.truth=TRUE) OR (t2.atomID IS NOT NULL)) AND ((t3.truth=FALSE) OR (t3.id IS NULL) OR (t3.club < 2 OR t3.prior IS NOT NULL)) AND CAST(1.0 AS FLOAT8) > 0 ) as Clause10 WHERE array_upper(list2,1)>=1
+### took [0 min, 0.008 sec]
+### new clauses = 20; total = 1,974
+
+### total grounding = [0 min, 0.130 sec]
+>>> Adding unit clauses for soft evidence...
+### soft-evidence clauses = 3
+>>> Adding key constraint clauses...
+INSERT INTO mln0_cbuffer SELECT array[-t0.atomid, -t1.atomid], 5.2E7, 12, '12.1' FROM pred_hasresource t0, pred_hasresource t1  WHERE ((t0.phrase1=t1.phrase1)) AND ((t0.resource2<>t1.resource2)) AND  t0.atomid IN (SELECT atomid FROM mln0_atoms) AND  t1.atomid IN (SELECT atomid FROM mln0_atoms)
+    added 3 clauses for HasResource
+INSERT INTO mln0_cbuffer SELECT lits, 5.2E7, 12, '12.1' FROM (SELECT array_agg(atomid) as lits, phrase1 FROM pred_hasresource WHERE atomid IN (SELECT atomid FROM mln0_atoms)  GROUP BY phrase1) nt
+INSERT INTO mln0_cbuffer SELECT array[-t0.atomid, -t1.atomid], 5.2E7, 13, '13.1' FROM pred_hasrelation t0, pred_hasrelation t1  WHERE ((t0.resource1=t1.resource1) AND (t0.resource2=t1.resource2)) AND ((t0.relation3<>t1.relation3)) AND  t0.atomid IN (SELECT atomid FROM mln0_atoms) AND  t1.atomid IN (SELECT atomid FROM mln0_atoms)
+    added 3 clauses for HasRelation
+INSERT INTO mln0_cbuffer SELECT lits, 5.2E7, 13, '13.1' FROM (SELECT array_agg(atomid) as lits, resource1,resource2 FROM pred_hasrelation WHERE atomid IN (SELECT atomid FROM mln0_atoms)  GROUP BY resource1,resource2) nt
+INSERT INTO mln0_cbuffer SELECT array[-t0.atomid, -t1.atomid], 5.2E7, 14, '14.1' FROM pred_resourcetype t0, pred_resourcetype t1  WHERE ((t0.resource1=t1.resource1)) AND ((t0.class2<>t1.class2)) AND  t0.atomid IN (SELECT atomid FROM mln0_atoms) AND  t1.atomid IN (SELECT atomid FROM mln0_atoms)
+    added 3 clauses for ResourceType
+INSERT INTO mln0_cbuffer SELECT lits, 5.2E7, 14, '14.1' FROM (SELECT array_agg(atomid) as lits, resource1 FROM pred_resourcetype WHERE atomid IN (SELECT atomid FROM mln0_atoms)  GROUP BY resource1) nt
+>>> Consolidating ground clauses...
+### took [0 min, 0.019 sec]
+### atoms = 40; clauses = 1,668
+>>> Partitioning MRF...
+>>> Partitioning atoms...
+    maxRAM = 4.294967296E9
+### Num of components = 1
+### Num of partitions = 1
+>>> Computing component/partition sizes...
+>>> Writing partitioning scheme into database...
+>>> Writing mln0_atom_part
+>>> Writing mln0_query_components
+>>> Partitioning the MRF into 1 parts...
+>>> Writing mln0_clause_part
+------BEGIN: PARTITION STATS------
+#atoms = 40
+#clauses = 1668
+#components = 1
+#partitions = 1
+#max_comp_size = 203444.0
+#max_part_size = 203444.0
+#split_component = 0
+#max_num_atoms_in_comp = 40.0
+#max_num_atoms_in_part = 40.0
+#max_partitions_in_one_comp = 1
+#cut_clauses = 0
+------ END: PARTITION STATS-------
+>>> Grouping Components into Buckets...
+### 1 components; 1 partitions; 1 buckets
+### 1 components; 1 partitions; 1 buckets
+>>> Running marginal inference on 1 component (grouped into 1 bucket)
+>>> MCSAT FOR SAMPLES 0 ~ 100
+>>> Processing Bucket #1 (1 component)
+    Loading data...
+    Running inference with 4 thread(s)...
+    Flushing states...
+flushing states of 40 atoms
+### Average Cost 1635400016.99
+>>> Writing answer to file: out.txt
+>>> Cleaning up temporary data
+    Removing database schema 'tuffy_london_panou_21235'...OK
+    Removing temporary dir '/tmp/tuffy-workspace/tuffy_london_panou_21235'...OK
+*** Tuffy exited at 16:15:16 8/24/15 after running for [0 min, 4.974 sec]
